@@ -59,17 +59,3 @@ namespace Services
     }
 }
 
-//< div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-//    < div class= "card h-100" >
-//        < img src = "@recipe.ImageSource" class= "card-img-top" alt = "@recipe.Title" style = "max-height: 300px; object-fit: cover;" >
-//        < div class= "card-body" >
-//            < h5 class= "card-title" > @recipe.Title </ h5 >
-//            < p class= "card-text" > @recipe.Instructions </ p >
-//        </ div >
-//        < ul class= "list-group list-group-flush" >
-//            < li class= "list-group-item" >< strong > Minutes to Cook:</ strong > @recipe.MinutesToCook </ li >
-//            < li class= "list-group-item" >< strong > Approved:</ strong > @(recipe.IsAproved ? "Yes" : "No") </ li >
-//            < li class= "list-group-item" >< strong > User ID:</ strong > @recipe.UserId </ li >
-//        </ ul >
-//    </ div >
-//</ div >
