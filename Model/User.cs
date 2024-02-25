@@ -11,7 +11,7 @@ namespace Model
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ContentBio { get; set; }
-        public string ImgSrc { get; set; }
+        public string ImageSource { get; set; }
         public bool IsAdmin { get; set; }
         public bool IsBlocked { get; set; }
 

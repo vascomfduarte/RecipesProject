@@ -1,4 +1,5 @@
-﻿namespace RecipesWebApp.Model.Model
+﻿
+namespace RecipesWebApp.Model.Model
 {
     public class Comment
     {

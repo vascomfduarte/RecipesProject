@@ -14,7 +14,7 @@ namespace WebApp.Pages
         {
             //Recipes = new List<Recipe>() { };
 
-            Recipes = _recipeServices.GetRecipes();
+            //Recipes = _recipeServices.GetRecipes();
         }
     }
 }

@@ -7,7 +7,7 @@ namespace WebApp.Pages
 {
     public class ProfileModel : PageModel
     {
-        public User User { get; set; }
+        //public User User { get; set; }
 
         public void OnGet()
         {

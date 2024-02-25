@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecipesWebApp.Model.Model;
+using System;
 using System.Collections.Generic;
 
 namespace Model
@@ -6,42 +7,22 @@ namespace Model
     public class Recipe
     {
         public int Id { get; set; }
-        public string Title { get; set; }        
-        public List<Ingredient> Ingredients { get; set; }
+        public string Title { get; set; }
         public string Instructions { get; set; }
         public string ImageSource { get; set; }
         public int MinutesToCook { get; set; }
-        public bool IsAproved { get; set; }
+        public bool IsApproved { get; set; }
         public int UserId { get; set; }
-        public enum Ratings
-        {
-            One = 1,
-            Two = 2,
-            Three = 3,
-            Four = 4,
-            Five = 5,
-        }
-        public enum Category
-        {
-            Breakfast,
-            Lunch,
-            Dinner,
-            Appetizer,
-            Salad,
-            MainCourse,
-            SideDish,
-            Dessert,
-            Snack,
-            Soup,
-            Holiday,
-            Vegetarian
-        }
-        public enum Difficulty
-        {
-            Easy,
-            Medium,
-            Hard
-        }
+        public int DifficultyId { get; set; }
+        public string CreatedAt { get; set; }
 
+        // Navigation properties
+        public List<User> User { get; set; }
+        public Difficulty Difficulty { get; set; }
+        public List<Category> Categories { get; set; }
+        public List<Rating> Ratings { get; set; }
+        public List<Comment> Comments { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
     }
+
 }

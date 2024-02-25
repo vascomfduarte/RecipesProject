@@ -34,7 +34,7 @@ namespace Repository
                                                           reader["instructions"],
                                                           reader["image_source"],
                                                           reader["minutes_to_cook"],
-                                                          reader["is_aproved"],
+                                                          reader["is_approved"],
                                                           reader["user_id"]);
                             returnRecipes.Add(recipe);
                         }
@@ -53,7 +53,7 @@ namespace Repository
 			{
                 string query;
 
-                if (String.IsNullOrEmpty(title))
+                if (title == "0")
                     query = "SELECT * FROM recipe";
                 else
                     query = "SELECT * FROM recipe WHERE title LIKE '%' + @title + '%'";
@@ -71,21 +71,20 @@ namespace Repository
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.HasRows)
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                // Construct the string representation of the recipe
-                                string recipe = string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}",
-                                                              reader["ID"],
-                                                              reader["title"],
-                                                              reader["instructions"],
-                                                              reader["image_source"],
-                                                              reader["minutes_to_cook"],
-                                                              reader["user_id"],
-                                                              reader["is_aproved"]);
-                                returnRecipes.Add(recipe); 
-                            }
+                            // Construct the string representation of the recipe
+                            string recipe = string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}",
+                                                            reader["ID"],
+                                                            reader["title"],
+                                                            reader["instructions"],
+                                                            reader["image_source"],
+                                                            reader["minutes_to_cook"],
+                                                            reader["is_approved"],
+                                                            reader["user_id"],
+                                                            reader["difficulty_id"],
+                                                            reader["created_at"]);
+                            returnRecipes.Add(recipe); 
                         }
                     }
                 }
