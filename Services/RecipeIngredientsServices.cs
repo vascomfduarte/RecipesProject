@@ -4,18 +4,15 @@ using Repository;
 namespace Services
 {
     public class RecipeIngredientsServices
-    {
-        private static IngredientRepository _ingredientRepository = new IngredientRepository();
-        private static UnitRepository _unitRepository = new UnitRepository();
-        // Tem de aceder aos serviços. Tenho de alterar
+    {        
+        private static IngredientServices _ingredientServices = new IngredientServices();
+        private static UnitServices _unitServices = new UnitServices();
 
         public List<RecipeIngredients> GetRecipeIngredients(int recipeId)
         {
             // Retrieve the list of recipe strings from the repository
-            List<string> ingredientStrings = _ingredientRepository.GetIngredient(recipeId);
-            List<string> unitStrings = _unitRepository.GetIngredient(recipeId);
-
-
+            List<string> ingredientStrings = _ingredientServices.GetIngredient(recipeId);
+            List<string> unitStrings = _unitServices.GetIngredient(recipeId);
 
             throw new NotImplementedException();
         }
