@@ -1,0 +1,19 @@
+﻿@page
+@model WebApp.Pages.Recipes.ReadModel
+@{
+    @foreach (var recipe in Model.Recipes)
+    {
+        <br/>
+        <img src="@recipe.ImageSource"></img>
+        <br/>
+        <h2>@recipe.Title</h2>     
+        <br/>
+        <p>@recipe.Instructions</p>
+        <br/>
+        @foreach (var user in recipe.User)
+        {
+            <p>Submitted by <strong>@user.Username</strong> | Created at @recipe.CreatedAt </p>
+        }
+        
+    }
+}

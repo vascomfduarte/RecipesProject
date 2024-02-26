@@ -2,11 +2,8 @@
 
 namespace Services
 {
-    internal class IngredientServices
+    public class IngredientServices
     {
-        internal static List<Ingredient> GetIngredient(int id)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

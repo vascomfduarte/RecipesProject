@@ -1,4 +1,5 @@
-﻿using static System.Net.WebRequestMethods;
+﻿using RecipesWebApp.Model.Model;
+using static System.Net.WebRequestMethods;
 
 namespace Model
 {
@@ -15,5 +16,8 @@ namespace Model
         public bool IsAdmin { get; set; }
         public bool IsBlocked { get; set; }
 
+        public List<Comment> Comments { get; set; }
+        public List<Recipe> Recipes { get; set; }
+        //public List<UserFavoriteRecipe> UserFavoriteRecipes { get; set; }
     }
 }

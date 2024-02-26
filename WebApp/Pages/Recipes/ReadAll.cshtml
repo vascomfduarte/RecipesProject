@@ -1,7 +1,7 @@
-﻿@page "Search/Results"
-@model WebApp.Pages.SearchResultsModel
+﻿@page 
+@model WebApp.Pages.Recipes.ReadAllModel
 @{
-    @if (Model.SearchResults != null && Model.SearchResults.Any())
+    @if (Model.RecipesSearch != null && Model.RecipesSearch.Any())
     {
         <div class="container">
             @if (!@String.IsNullOrEmpty(@Model.SearchTerm))
@@ -11,25 +11,28 @@
 
             <h1>We found @Model.ResultsCounter Recipes</h1>
             <div class="row">
-            @foreach (var recipe in Model.SearchResults)
+            @foreach (var recipe in Model.RecipesSearch)
             {
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100">
-                        <img src="@recipe.ImageSource" class="card-img-top" alt="@recipe.Title" style="max-height: 300px; object-fit: cover;">
+                        <a asp-page="/Recipes/Read" asp-route-recipeId="@recipe.Id">
+                            <img src="@recipe.ImageSource" class="card-img-top" alt="@recipe.Title" style="max-height: 300px; object-fit: cover;">
+                        </a>
                         <div class="card-body">
-                            <h5 class="card-title">@recipe.Title</h5>
+                            <span class="card-title">@recipe.Title</span>
                             <p class="card-text">@recipe.Instructions</p>
-                        </div>
+                        </div>                       
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><strong>Minutes to Cook:</strong> @recipe.MinutesToCook</li>
                             <li class="list-group-item"><strong>Approved:</strong> @(recipe.IsApproved ? "Yes" : "No")</li>
                             <li class="list-group-item"><strong>Difficulty:</strong> @recipe.Difficulty</li>
+                            <li class="list-group-item"><strong>Id:</strong> @recipe.Id</li>
                             @foreach (var user in recipe.User)
                             {
                                 <li class="list-group-item"><strong>Author:</strong> @user.Username</li>
                             }
                             <li class="list-group-item"><strong>Created at:</strong> @recipe.CreatedAt</li>
-                        </ul>
+                        </ul>                            
                     </div>
                 </div>
             }
@@ -38,6 +41,6 @@
     }
     else
     {
-                <p>No results found.</p>
+        <p>No results found.</p>
     }
 }

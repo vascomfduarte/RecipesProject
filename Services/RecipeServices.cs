@@ -1,9 +1,5 @@
 ﻿using Repository;
 using Model;
-using static System.Net.WebRequestMethods;
-using System.ComponentModel.DataAnnotations;
-using RecipesWebApp.Model.Model;
-using System.Globalization;
 
 namespace Services
 {
@@ -11,6 +7,7 @@ namespace Services
     {
         private static RecipeRepository _recipeRepository = new RecipeRepository();
         private static UserServices _userServices = new UserServices();
+        private static RecipeIngredientsServices _recipeIngredientsServices = new RecipeIngredientsServices();
 
         public static List<Recipe> BuildRecipe(List<string> recipeStrings)
         {
@@ -39,7 +36,7 @@ namespace Services
                     IsApproved = isApproved,
                     UserId = int.Parse(parameters[6]),
                     DifficultyId = int.Parse(parameters[7]),
-                    CreatedAt = parameters[8]
+                    CreatedAt = parameters[8],
                 };
 
                 recipe.User = _userServices.GetUserById(recipe.UserId);
@@ -47,7 +44,7 @@ namespace Services
                 // recipe.Categories = CategoryServices.GetCategory(recipe.Id);
                 // recipe.Ratings = RatingServices.GetRating(recipe.Id);
                 // recipe.Comments = CommentServices.GetComment(recipe.Id);
-                // recipe.Ingredients = IngredientServices.GetIngredient(recipe.Id);
+                recipe.RecipeIngredients = _recipeIngredientsServices.GetRecipeIngredients(recipe.Id);
 
                 if (true) //recipe.IsApproved
                 {
@@ -62,6 +59,15 @@ namespace Services
         {
             // Retrieve the list of recipe strings from the repository
             List<string> recipeStrings = _recipeRepository.GetRecipesByName(title.ToLower().Trim());
+
+            // Call and return Recipe builder method
+            return BuildRecipe(recipeStrings);
+        }
+        
+        public List<Recipe> GetRecipesById(int recipeId)
+        {
+            // Retrieve the list of recipe strings from the repository
+            List<string> recipeStrings = _recipeRepository.GetRecipesById(recipeId);
 
             // Call and return Recipe builder method
             return BuildRecipe(recipeStrings);
