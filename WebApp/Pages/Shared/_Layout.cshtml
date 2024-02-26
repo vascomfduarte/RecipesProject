@@ -18,16 +18,19 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Search">Search</a>
                         </li>
                     </ul>
                     <form method="GET" action="/Search" class="form-inline my-2 my-lg-0">
                         <div class="input-group">
                             <input class="form-control mr-sm-2" type="search" name="query" placeholder="&#128269; Delicious recipes" aria-label="Search">
                             <div class="input-group-append">
-                                <button asp-page="/Search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                <button asp-page="/SearchResults" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                             </div>
                         </div>
                     </form>
@@ -43,7 +46,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - WebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; @DateTime.Now.Year - WebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 

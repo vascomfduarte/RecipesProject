@@ -1,0 +1,43 @@
+﻿@page "Search/Results"
+@model WebApp.Pages.SearchResultsModel
+@{
+    @if (Model.SearchResults != null && Model.SearchResults.Any())
+    {
+        <div class="container">
+            @if (!@String.IsNullOrEmpty(@Model.SearchTerm))
+            {
+                <h5>Search Results for: @Model.SearchTerm</h5>
+            }
+
+            <h1>We found @Model.ResultsCounter Recipes</h1>
+            <div class="row">
+            @foreach (var recipe in Model.SearchResults)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <img src="@recipe.ImageSource" class="card-img-top" alt="@recipe.Title" style="max-height: 300px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">@recipe.Title</h5>
+                            <p class="card-text">@recipe.Instructions</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Minutes to Cook:</strong> @recipe.MinutesToCook</li>
+                            <li class="list-group-item"><strong>Approved:</strong> @(recipe.IsApproved ? "Yes" : "No")</li>
+                            <li class="list-group-item"><strong>Difficulty:</strong> @recipe.Difficulty</li>
+                            @foreach (var user in recipe.User)
+                            {
+                                <li class="list-group-item"><strong>Author:</strong> @user.Username</li>
+                            }
+                            <li class="list-group-item"><strong>Created at:</strong> @recipe.CreatedAt</li>
+                        </ul>
+                    </div>
+                </div>
+            }
+            </div>
+        </div>
+    }
+    else
+    {
+                <p>No results found.</p>
+    }
+}
