@@ -10,7 +10,6 @@ namespace Model
 
         public Unit Unit { get; set; }
         public List<Recipe> Recipes { get; set; }
-        //public List<RecipeIngredient> RecipeIngredients { get; set; }
 
     }
 }

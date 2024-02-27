@@ -19,14 +19,14 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
+                        <li class="nav-item" style="{color: blue; background: white} :hover{background:#111}">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item ml-auto">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Search">Search</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/UserPage">Users</a>
                         </li>
                     </ul>
-                    <form method="GET" action="/Search" class="form-inline my-2 my-lg-0">
+                    <form method="GET" action="/ReadAll" class="form-inline my-2 my-lg-0">
                         <div class="input-group">
                             <input class="form-control mr-sm-2" type="search" name="query" placeholder="&#128269; Find a recipes" aria-label="Search">
                             <div class="input-group-append">

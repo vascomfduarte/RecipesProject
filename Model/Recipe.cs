@@ -16,7 +16,7 @@ namespace Model
         public int DifficultyId { get; set; }
         public string CreatedAt { get; set; }
 
-        public List<User> User { get; set; }
+        public User User { get; set; }
         public Difficulty Difficulty { get; set; }
         public List<Category> Categories { get; set; }
         public List<Rating> Ratings { get; set; }

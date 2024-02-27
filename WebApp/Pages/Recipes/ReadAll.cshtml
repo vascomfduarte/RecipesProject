@@ -1,7 +1,7 @@
 ﻿@page 
 @model WebApp.Pages.Recipes.ReadAllModel
 @{
-    @if (Model.RecipesSearch != null && Model.RecipesSearch.Any())
+    @if (Model.Recipes != null && Model.Recipes.Any())
     {
         <div class="container">
             @if (!@String.IsNullOrEmpty(@Model.SearchTerm))
@@ -11,7 +11,7 @@
 
             <h1>We found @Model.ResultsCounter Recipes</h1>
             <div class="row">
-            @foreach (var recipe in Model.RecipesSearch)
+            @foreach (var recipe in Model.Recipes)
             {
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100">
@@ -27,10 +27,7 @@
                             <li class="list-group-item"><strong>Approved:</strong> @(recipe.IsApproved ? "Yes" : "No")</li>
                             <li class="list-group-item"><strong>Difficulty:</strong> @recipe.Difficulty</li>
                             <li class="list-group-item"><strong>Id:</strong> @recipe.Id</li>
-                            @foreach (var user in recipe.User)
-                            {
-                                <li class="list-group-item"><strong>Author:</strong> @user.Username</li>
-                            }
+                            <li class="list-group-item"><strong>Author:</strong> @recipe.User.Username</li>
                             <li class="list-group-item"><strong>Created at:</strong> @recipe.CreatedAt</li>
                         </ul>                            
                     </div>
