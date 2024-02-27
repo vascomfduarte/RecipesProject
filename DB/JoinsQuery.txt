@@ -13,3 +13,5 @@ WHERE id = @RecipeId
                              INNER JOIN ingredient i ON ri.ingredient_id = i.id
                              INNER JOIN unit u ON ri.unit_id = u.id
                              WHERE r.id = @RecipeId"
+
+Colocar em RecipeRepository. Adicionar parametros adicionais a recipe.
