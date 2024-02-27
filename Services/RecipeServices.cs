@@ -44,7 +44,7 @@ namespace Services
                 // recipe.Categories = CategoryServices.GetCategory(recipe.Id);
                 // recipe.Ratings = RatingServices.GetRating(recipe.Id);
                 // recipe.Comments = CommentServices.GetComment(recipe.Id);
-                recipe.RecipeIngredients = _recipeIngredientsServices.GetRecipeIngredients(recipe.Id);
+                //recipe.RecipeIngredients = _recipeIngredientsServices.GetRecipeIngredients(recipe.Id);
 
                 if (true) //recipe.IsApproved
                 {
