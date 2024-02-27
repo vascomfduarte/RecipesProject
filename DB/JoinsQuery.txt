@@ -1,0 +1,17 @@
+FROM recipe
+INNER JOIN recipe_ingredients ON id = recipe_id
+INNER JOIN ingredient ON ingredient_id = id
+INNER JOIN unit ON unit_id = id
+WHERE id = @RecipeId
+
+"SELECT r.id, r.title, r.instructions, r.image_source, r.minutes_to_cook, 
+                                    r.is_approved, r.user_id, r.difficulty_id, r.created_at,
+                                    i.id AS ingredient_id, i.name AS ingredient_name,
+                                    ri.amount, u.id AS unit_id, u.name AS unit_name
+                             FROM recipe r
+                             INNER JOIN recipe_ingredients ri ON r.id = ri.recipe_id
+                             INNER JOIN ingredient i ON ri.ingredient_id = i.id
+                             INNER JOIN unit u ON ri.unit_id = u.id
+                             WHERE r.id = @RecipeId"
+
+Colocar em RecipeRepository. Adicionar parametros adicionais a recipe.
