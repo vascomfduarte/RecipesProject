@@ -8,7 +8,8 @@ namespace Services
     {
         private static UserRepository _userRepository = new UserRepository();
 
-        public bool CreateUser(string username,
+        public bool CreateUser(User user, 
+                               string username,
                                string password,
                                string email,
                                string firstName,
@@ -18,20 +19,43 @@ namespace Services
                                string isAdmin = "0",
                                string isBlocked = "0")
         {
-            bool success = _userRepository.CreateUser(username,
-                                                      password,
-                                                      email,
-                                                      firstName,
-                                                      lastName,
-                                                      contentBio,
-                                                      imageSource,
-                                                      isAdmin,
-                                                      isBlocked);
+            //List<User> existingUsers = GetAllUsers()
+            foreach (User u in GetAllUsers())
+            {
+                if (u.username == username)
+                    return false;
+                else if (u.email == email)
+                    return false;
+            }
 
-            return true; 
+            return success; 
         }
 
-        public User BuildUser (string userString)
+        public bool UpdateUser(User user)
+        {           
+            throwNotEmplementedException; 
+        }
+
+        public bool BlockeUser(User adminUser, User user)
+        {            
+            if (adminUser.isAdmin)
+            {
+                bool success = _userRepository.BlockUser(User adminUser, User user);
+            }
+            else
+                return false;
+
+            return success; 
+        }
+
+        /// <summary>
+        /// Method associated with all the GetUser Methods. 
+        /// It is responsible for receiving a string from GetUser Methods, creating an instance of User with the parameters contained in the string and returning it.
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        public User BuildUser(string userString)
         {
             // Split the user string into individual parameters
             string[] parameters = userString.Split('|');
