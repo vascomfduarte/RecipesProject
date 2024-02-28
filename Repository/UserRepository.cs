@@ -24,7 +24,35 @@ namespace Repository
                                string isAdmin,
                                string isBlocked)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"INSERT INTO [dbo].[user] (username, password, email, first_name, last_name, content_bio, image_source, is_admin, is_blocked, created_at)
+                             VALUES (@username, @password, @email, @firstName, @lastName, @contentBio, @imageSource, @isAdmin, @isBlocked, @created_at)";
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = query;
+                    cmd.Connection = con;
+                    // Add parameter to command
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@firstName", firstName);
+                    cmd.Parameters.AddWithValue("@lastName", lastName);
+                    cmd.Parameters.AddWithValue("@contentBio", contentBio);
+                    cmd.Parameters.AddWithValue("@imageSource", imageSource);
+                    cmd.Parameters.AddWithValue("@isAdmin", isAdmin);
+                    cmd.Parameters.AddWithValue("@isBlocked", isBlocked);
+                    cmd.Parameters.AddWithValue("@created_at", DateTime.UtcNow);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
         }
 
         public List<string> GetAllUsers()

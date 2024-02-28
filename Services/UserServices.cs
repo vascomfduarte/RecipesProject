@@ -1,15 +1,17 @@
 ﻿using Model;
 using Repository;
+using System;
+using System.Text.RegularExpressions;
 using static System.Net.WebRequestMethods;
 
 namespace Services
 {
     public class UserServices
     {
+
         private static UserRepository _userRepository = new UserRepository();
 
-        public bool CreateUser(User user, 
-                               string username,
+        public (bool success, string errorMessage) CreateUser(string username,
                                string password,
                                string email,
                                string firstName,
@@ -19,34 +21,53 @@ namespace Services
                                string isAdmin = "0",
                                string isBlocked = "0")
         {
-            //List<User> existingUsers = GetAllUsers()
-            foreach (User u in GetAllUsers())
-            {
-                if (u.username == username)
-                    return false;
-                else if (u.email == email)
-                    return false;
-            }
+            // Validate username
+            if (string.IsNullOrWhiteSpace(username) || GetAllUsers().Any(u => u.Username == username))
+                return (false, "Invalid username or username already exists.");
 
-            return success; 
+            // Validate password strength (Example: Minimum 8 characters with at least one letter and one digit)
+            if (string.IsNullOrWhiteSpace(password) || password.Length < 8 || !password.Any(char.IsLetter) || !password.Any(char.IsDigit))
+                return (false, "Invalid password. Password must be at least 8 characters long and contain at least one letter and one digit.");
+
+            // Validate email format
+            if (string.IsNullOrWhiteSpace(email) || 
+                !string.IsNullOrWhiteSpace(email) && Regex.IsMatch(email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$") || 
+                GetAllUsers().Any(u => u.Email == email))
+                return (false, "Invalid email address or email address already exists.");
+
+            // Validate first name and last name format
+            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
+                return (false, "First name and last name are required.");
+
+            // Validate image source format
+            if (!Uri.TryCreate(imageSource, UriKind.Absolute, out Uri uriResult) || (uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps))
+                return (false, "Invalid image URL.");
+
+            // Set isAdmin to 0 by default if not provided
+            if (isAdmin != "1" && isAdmin != "0")
+                isAdmin = "0";
+
+            // Call repository method to create user
+            bool success = _userRepository.CreateUser(username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked);
+            return (success, success ? "" : "Failed to create user. Please try again later.");
         }
 
         public bool UpdateUser(User user)
-        {           
-            throwNotEmplementedException; 
+        {
+            throw new NotImplementedException();
         }
 
-        public bool BlockeUser(User adminUser, User user)
-        {            
-            if (adminUser.isAdmin)
-            {
-                bool success = _userRepository.BlockUser(User adminUser, User user);
-            }
-            else
-                return false;
+        //public bool BlockeUser(User adminUser, User user)
+        //{            
+        //    if (adminUser.isAdmin)
+        //    {
+        //        bool success = _userRepository.BlockUser(User adminUser, User user);
+        //    }
+        //    else
+        //        return false;
 
-            return success; 
-        }
+        //    return success; 
+        //}
 
         /// <summary>
         /// Method associated with all the GetUser Methods. 
