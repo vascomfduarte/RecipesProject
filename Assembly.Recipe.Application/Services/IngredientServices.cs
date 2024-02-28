@@ -1,7 +1,7 @@
 ﻿using Model;
 using Repository;
 
-namespace Services
+namespace Assembly.Recipe.Application.Services
 {
     public class IngredientServices
     {

@@ -1,6 +1,6 @@
 ﻿using Repository;
 
-namespace Services
+namespace Assembly.Recipe.Application.Services
 {
     internal class UnitServices
     {

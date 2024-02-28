@@ -1,6 +1,6 @@
-﻿using RecipesWebApp.Model.Model;
+﻿using Assembly.Recipe.Domain.Model;
 
-namespace Services
+namespace Assembly.Recipe.Application.Services
 {
     internal class CommentServices
     {

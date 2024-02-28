@@ -1,7 +1,6 @@
-﻿
-using Model;
+﻿using Model;
 
-namespace RecipesWebApp.Model.Model
+namespace Assembly.Recipe.Domain.Model
 {
     public class Comment
     {

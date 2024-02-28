@@ -1,6 +1,6 @@
 ﻿using ConsoleApp;
-using Model;
-using Services;
+using Assembly.Recipe.Domain.Model;
+using Assembly.Recipe.Services;
 
 public class Program
 {

@@ -1,6 +1,5 @@
-﻿using Services;
-using ConsoleApp;
-using Model;
+﻿using ConsoleApp;
+using Assembly.Recipe.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.Design;
 using Microsoft.VisualBasic.FileIO;
+using Assembly.Recipe.Domain.Model;
+using Assembly.Recipe.Application.Services;
 
 namespace ConsoleApp.User
 {
@@ -16,7 +17,7 @@ namespace ConsoleApp.User
         internal static void Start()
         {
             UserServices _userServices = new UserServices();
-            Model.User user = new Model.User();
+            Assembly.Recipe.Domain.Model.User user = new Assembly.Recipe.Domain.Model.User();
             List<Model.User> users = new List<Model.User>();
 
             bool run = true;
@@ -40,7 +41,7 @@ namespace ConsoleApp.User
 
                         users = _userServices.GetAllUsers();
 
-                        foreach (Model.User u in users)
+                        foreach (Assembly.Recipe.Domain.Model.User u in users)
                         {
                             Console.WriteLine($"\nUsername: {u.Username}");
                             Console.WriteLine($"Email: {u.Email}");
@@ -56,7 +57,7 @@ namespace ConsoleApp.User
 
                         string choose = "";
 
-                        foreach (Model.User u in _userServices.GetAllUsers())
+                        foreach (Assembly.Recipe.Domain.Model.User u in _userServices.GetAllUsers())
                         {
                             choose += $"{u.Id},";
                         }

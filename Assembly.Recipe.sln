@@ -5,17 +5,17 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{0CF49E31-B5A9-4279-813E-EA176796A632}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{7F839B9B-5B35-4983-812C-74803DCC3320}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.Recipe.Domain", "Model\Assembly.Recipe.Domain.csproj", "{7F839B9B-5B35-4983-812C-74803DCC3320}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{34B3D792-31DF-4DC7-82E1-40F1F39889BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.Recipe.Application", "Services\Assembly.Recipe.Application.csproj", "{34B3D792-31DF-4DC7-82E1-40F1F39889BB}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7F839B9B-5B35-4983-812C-74803DCC3320} = {7F839B9B-5B35-4983-812C-74803DCC3320}
 		{BB7196E7-430E-42C3-AEDA-6F878141827A} = {BB7196E7-430E-42C3-AEDA-6F878141827A}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{BB7196E7-430E-42C3-AEDA-6F878141827A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.Recipe.Repository", "Repository\Assembly.Recipe.Repository.csproj", "{BB7196E7-430E-42C3-AEDA-6F878141827A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{63644D9B-2CFE-472C-ABF4-6782CEF7B338}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.Recipe.ConsoleApp", "ConsoleApp\Assembly.Recipe.ConsoleApp.csproj", "{63644D9B-2CFE-472C-ABF4-6782CEF7B338}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

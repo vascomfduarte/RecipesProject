@@ -1,13 +1,14 @@
-﻿using Model;
+﻿using Assembly.Recipe.Application.Interface;
+using Model;
 using Repository;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using static System.Net.WebRequestMethods;
 
-namespace Services
+namespace Assembly.Recipe.Application.Services
 {
-    public class UserServices
+    public class UserServices : IUserService
     {
 
         private static UserRepository _userRepository = new UserRepository();
@@ -31,8 +32,8 @@ namespace Services
                 return (false, "Invalid password. Password must be at least 8 characters long and contain at least one letter and one digit.");
 
             // Validate email format
-            if (string.IsNullOrWhiteSpace(email) || 
-                !Regex.IsMatch(email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$") || 
+            if (string.IsNullOrWhiteSpace(email) ||
+                !Regex.IsMatch(email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$") ||
                 GetAllUsers().Any(u => u.Email == email))
                 return (false, "Invalid email address or email address already exists.");
 
@@ -41,7 +42,7 @@ namespace Services
                 return (false, "First name and last name are required.");
 
             // Validate image source format
-            if (!Uri.TryCreate(imageSource, UriKind.Absolute, out Uri uriResult) || (uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps))
+            if (!Uri.TryCreate(imageSource, UriKind.Absolute, out Uri uriResult) || uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps)
                 return (false, "Invalid image URL.");
 
             // Set isAdmin to 0 by default if not provided
@@ -83,7 +84,7 @@ namespace Services
             string[] parameters = userString.Split('|');
 
             // Define a default image
-            string imageUrl = String.IsNullOrEmpty(parameters[7]) ? "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg" : parameters[7];
+            string imageUrl = string.IsNullOrEmpty(parameters[7]) ? "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg" : parameters[7];
 
             // Convert integer representations to boolean
             bool isBlocked = parameters[8] == "1";
@@ -140,7 +141,7 @@ namespace Services
             {
                 // Call User builder method and assign it 
                 user = BuildUser(strg);
-                
+
                 // Add the User to return list
                 returnUsers.Add(user);
             }

@@ -1,11 +1,10 @@
-﻿using RecipesWebApp.Model.Model;
-using static System.Net.WebRequestMethods;
+﻿using static System.Net.WebRequestMethods;
 
-namespace Model
+namespace Assembly.Recipe.Domain.Model
 {
     public class User
     {
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
@@ -19,5 +18,14 @@ namespace Model
         public List<Comment> Comments { get; set; }
         public List<Recipe> Recipes { get; set; }
         //public List<UserFavoriteRecipe> UserFavoriteRecipes { get; set; }
+
+        public User(string username, string password, string email)
+        { }
+
+        public User(int id, string username, string password, string email)
+        { }
+
+        // Construtores para definir estado inicial do objeto
+        // A class é que se conhece a si mesma. Validações de parâmetros feitas aqui. 
     }
 }

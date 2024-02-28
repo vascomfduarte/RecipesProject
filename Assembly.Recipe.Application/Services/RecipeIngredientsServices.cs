@@ -1,10 +1,10 @@
-﻿using Model;
+﻿using Assembly.Recipe.Domain.Model;
 using Repository;
 
-namespace Services
+namespace Assembly.Recipe.Application.Services
 {
     public class RecipeIngredientsServices
-    {        
+    {
         private static IngredientServices _ingredientServices = new IngredientServices();
         private static UnitServices _unitServices = new UnitServices();
 

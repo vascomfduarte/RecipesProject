@@ -1,7 +1,7 @@
+using Assembly.Recipe.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Model;
-using Services;
 
 namespace WebApp.Pages.Users
 {

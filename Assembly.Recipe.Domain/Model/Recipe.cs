@@ -1,8 +1,7 @@
-﻿using RecipesWebApp.Model.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace Model
+namespace Assembly.Recipe.Domain.Model
 {
     public class Recipe
     {

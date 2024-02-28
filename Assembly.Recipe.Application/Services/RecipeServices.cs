@@ -1,7 +1,7 @@
 ﻿using Repository;
 using Model;
 
-namespace Services
+namespace Assembly.Recipe.Application.Services
 {
     public class RecipeServices
     {
@@ -15,7 +15,7 @@ namespace Services
             string[] parameters = recipeString.Split('|');
 
             // Set a default image
-            string imageUrl = String.IsNullOrEmpty(parameters[3]) ? "https://iili.io/JGnl0eS.png" : parameters[3];
+            string imageUrl = string.IsNullOrEmpty(parameters[3]) ? "https://iili.io/JGnl0eS.png" : parameters[3];
 
             // Convert integer representation of IsApproved to boolean
             bool isApproved = parameters[6] == "1";

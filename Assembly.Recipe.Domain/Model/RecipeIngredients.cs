@@ -1,4 +1,4 @@
-﻿namespace Model
+﻿namespace Assembly.Recipe.Domain.Model
 {
     public class RecipeIngredients
     {
