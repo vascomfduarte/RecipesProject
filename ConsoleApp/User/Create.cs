@@ -41,10 +41,12 @@ namespace ConsoleApp.User
                 if (success)
                 {
                     Console.WriteLine("\nUser created successfully");
+                    run = false;
                 }
                 else
                 {
                     Console.WriteLine("\nFailed to create user: " + message);
+                    run = false;
                 }
 
                 Console.ReadLine();

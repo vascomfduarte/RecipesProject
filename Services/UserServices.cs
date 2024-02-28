@@ -1,6 +1,7 @@
 ﻿using Model;
 using Repository;
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using static System.Net.WebRequestMethods;
 
@@ -31,7 +32,7 @@ namespace Services
 
             // Validate email format
             if (string.IsNullOrWhiteSpace(email) || 
-                !string.IsNullOrWhiteSpace(email) && Regex.IsMatch(email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$") || 
+                !Regex.IsMatch(email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$") || 
                 GetAllUsers().Any(u => u.Email == email))
                 return (false, "Invalid email address or email address already exists.");
 
@@ -139,10 +140,9 @@ namespace Services
             {
                 // Call User builder method and assign it 
                 user = BuildUser(strg);
-
-                // Check if the constructed Recipe object is approved and add it to the returnlist
-                if (true) //recipe.IsApproved           
-                    returnUsers.Add(user);
+                
+                // Add the User to return list
+                returnUsers.Add(user);
             }
 
             return returnUsers;
@@ -178,6 +178,8 @@ namespace Services
                 {
                     // Call User builder method and assign it 
                     user = BuildUser(strg);
+
+                    // Add the User to return list
                     returnUsers.Add(user);
                 }
 
