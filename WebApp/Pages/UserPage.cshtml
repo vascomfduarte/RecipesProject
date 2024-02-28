@@ -3,6 +3,17 @@
 @{
 	<h1>User Page</h1>
 	<p>This page displays user info</p>
+    <form method="get" class="row">
+        <div class="col-md-4">
+            <input type="search" name="parameter" aria-label="Search" class="form-control"></input>
+        </div>
+        <div class="col-md-4">
+            <button asp-page="/Read" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
+        <div class="col-md-12 mt-2">
+            <button asp-page="/AnotherPage" class="btn btn-outline-success my-2 my-sm-0" type="submit">Show blocked users</button>
+        </div>
+    </form>
 
 
 }

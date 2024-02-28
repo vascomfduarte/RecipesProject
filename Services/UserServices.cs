@@ -1,5 +1,6 @@
 ﻿using Model;
 using Repository;
+using static System.Net.WebRequestMethods;
 
 namespace Services
 {
@@ -7,6 +8,28 @@ namespace Services
     {
         private static UserRepository _userRepository = new UserRepository();
 
+        public bool CreateUser(string username,
+                               string password,
+                               string email,
+                               string firstName,
+                               string lastName,
+                               string contentBio = "Let others know who you are",
+                               string imageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg",
+                               string isAdmin = "0",
+                               string isBlocked = "0")
+        {
+            bool success = _userRepository.CreateUser(username,
+                                                      password,
+                                                      email,
+                                                      firstName,
+                                                      lastName,
+                                                      contentBio,
+                                                      imageSource,
+                                                      isAdmin,
+                                                      isBlocked);
+
+            return true; 
+        }
 
         public User BuildUser (string userString)
         {
@@ -50,6 +73,31 @@ namespace Services
             {
                 // Call User builder method and assign it 
                 user = BuildUser(strg);
+                returnUsers.Add(user);
+            }
+
+            return returnUsers;
+        }
+
+        public List<User> GetUserByName(string username)
+        {
+            if (string.IsNullOrEmpty(username))
+                username = "";
+
+            // Retrieve the list of User parameters through a string from the repository
+            List<string> userStrings = _userRepository.GetUserByName(username);
+
+            List<User> returnUsers = new List<User>();
+            User user = new User();
+
+            foreach (string strg in userStrings)
+            {
+                // Call User builder method and assign it 
+                user = BuildUser(strg);
+
+                // Check if the constructed Recipe object is approved and add it to the returnlist
+                if (true) //recipe.IsApproved           
+                    returnUsers.Add(user);
             }
 
             return returnUsers;
@@ -85,6 +133,7 @@ namespace Services
                 {
                     // Call User builder method and assign it 
                     user = BuildUser(strg);
+                    returnUsers.Add(user);
                 }
 
                 return returnUsers;
