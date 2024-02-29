@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Assembly.Recipe.Domain\Assembly.RecipeApp.Domain.csproj" />
+    <ProjectReference Include="..\Assembly.Recipe.Repository\Assembly.RecipeApp.Repository.csproj" />
+    <ProjectReference Include="..\Assembly.RecipeApp.Domain\Assembly.RecipeApp.Domain.csproj" />
+    <ProjectReference Include="..\Assembly.RecipeApp.Repository\Assembly.RecipeApp.Repository.csproj" />
+    <ProjectReference Include="..\Model\Assembly.Recipe.Domain.csproj" />
+    <ProjectReference Include="..\Repository\Assembly.Recipe.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

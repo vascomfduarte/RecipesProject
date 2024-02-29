@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Assembly.Recipe.Application\Assembly.RecipeApp.Application.csproj" />
+    <ProjectReference Include="..\Assembly.Recipe.Domain\Assembly.RecipeApp.Domain.csproj" />
+    <ProjectReference Include="..\Model\Assembly.Recipe.Domain.csproj" />
+    <ProjectReference Include="..\Services\Assembly.Recipe.Application.csproj" />
+  </ItemGroup>
+
+</Project>
