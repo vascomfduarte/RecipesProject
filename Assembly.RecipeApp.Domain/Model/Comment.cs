@@ -1,4 +1,4 @@
-﻿using Model;
+﻿
 
 namespace Assembly.RecipeApp.Domain.Model
 {

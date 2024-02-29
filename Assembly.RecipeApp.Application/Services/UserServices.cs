@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Reflection.Metadata;
 using System.Text.RegularExpressions;
 using Assembly.RecipeApp.Application.Interface;
 using Assembly.RecipeApp.Domain.Model;
@@ -65,119 +66,21 @@ namespace Assembly.RecipeApp.Application.Services
         //    return success; 
         //}
 
-        /// <summary>
-        /// Method associated with all the GetUser Methods. 
-        /// It is responsible for receiving a string from GetUser Methods, creating an instance of User with the parameters contained in the string and returning it.
-        /// </summary>
-        /// <param name="parameter"></param>
-        /// <param name="status"></param>
-        /// <returns></returns>
-        public User ParseUser(string userString)
+
+        public void Add(User user)
         {
-            // Split the user string into individual parameters
-            string[] parameters = userString.Split('|');           
+            // Format the User object's properties into a string representation
+            string userString = $"{user.Id}|{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}|{(user.IsAdmin ? "1" : "0")}|{(user.IsBlocked ? "1" : "0")}";
 
-            // Extract individual data
-            int id = int.Parse(userData[0]);
-            string username = userData[1];
-            string password = userData[2];
-            string email = userData[3];
-            string firstName = userData[4];
-            string lastName = userData[5];
-            string contentBio = userData[6];
-            // Define a default image
-            string imageUrl = string.IsNullOrEmpty(parameters[7]) ? "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg" : parameters[7];
-            // Convert integer representations to boolean
-            bool isBlocked = parameters[8] == "1";
-            bool isAdmin = parameters[9] == "1";
-
-            // Create a new User object with the extracted data
-            User user = new User(id, username, password, email)
-            {
-                FirstName = firstName,
-                LastName = lastName,
-                ContentBio = contentBio,
-                ImageSource = imageSource,
-                IsAdmin = isAdmin,
-                IsBlocked = isBlocked
-            };
-            
-            // Additional processing for Comments and Recipes if needed
-
-            return user;
+            // Call the UserRepository's Add method with the formatted string representation of the User
+            _userRepository.Add(userString);
+            throw new NotImplementedException();
         }
-
-        public List<User> GetUserByName(string username)
-        {
-            if (string.IsNullOrEmpty(username))
-                username = "";
-
-            // Retrieve the list of User parameters through a string from the repository
-            List<string> userStrings = _userRepository.GetUserByName(username);
-
-            List<User> returnUsers = new List<User>();
-            User user = new User();
-
-            foreach (string strg in userStrings)
-            {
-                // Call User builder method and assign it 
-                user = BuildUser(strg);
-
-                // Add the User to return list
-                returnUsers.Add(user);
-            }
-
-            return returnUsers;
-        }
-
-        public User GetUserById(int userId)
-        {
-            // Retrieve the list of User parameters through a string from the repository
-            string userString = _userRepository.GetUserById(userId);
-
-            // Call and return Recipe builder method
-            return BuildUser(userString);
-        }
-
-        /// <summary>
-        /// Get a User by it status. It returns the users that have the corresponding parameter as true.
-        /// (Possible parameters: admin, blocked)
-        /// </summary>
-        /// <param name="parameter"></param>
-        /// <param name="status"></param>
-        /// <returns></returns>
-        public List<User> GetUserByStatus(string parameter)
-        {
-            if (parameter.Trim().ToLower() == "admin" || parameter.Trim().ToLower() == "blocked")
-            {
-                // Retrieve the list of user strings from the repository
-                List<string> userString = _userRepository.GetUserByStatus(parameter);
-
-                List<User> returnUsers = new List<User>();
-                User user = new User();
-
-                foreach (string strg in userString)
-                {
-                    // Call User builder method and assign it 
-                    user = BuildUser(strg);
-
-                    // Add the User to return list
-                    returnUsers.Add(user);
-                }
-
-                return returnUsers;
-            }
-
-            return null;
-        }
-
-
-        
 
         public List<User> GetAll()
         {
             // Retrieve the list of user strings from the repository
-            List<string> userStrings = _userRepository.GetAllUsers();
+            List<string> userStrings = _userRepository.GetAll();
 
             List<User> returnUsers = new List<User>();
 
@@ -195,12 +98,33 @@ namespace Assembly.RecipeApp.Application.Services
 
         public User GetById(int id)
         {
-            throw new NotImplementedException();
+            // Retrieve the list of User parameters through a string from the repository
+            string userString = _userRepository.GetById(id);
+
+            // Call and return Recipe builder method
+            return ParseUser(userString);
         }
 
-        public void Add(User entity)
+        public List<User> GetFilteredUsers(string name)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(name))
+                name = "";
+
+            // Retrieve the list of User parameters through a string from the repository
+            List<string> userStrings = _userRepository.GetUserByName(name);
+
+            List<User> returnUsers = new List<User>();
+
+            foreach (string strg in userStrings)
+            {
+                // Call User builder method and assign it 
+                User user = ParseUser(strg);
+
+                // Add the User to return list
+                returnUsers.Add(user);
+            }
+
+            return returnUsers;
         }
 
         public void Update(User entity)
@@ -212,5 +136,49 @@ namespace Assembly.RecipeApp.Application.Services
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Method associated with all the GetUser Methods. 
+        /// It is responsible for receiving a string from GetUser Methods, creating an instance of User with the parameters contained in the string and returning it.
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        public User ParseUser(string userString)
+        {
+            // Split the user string into individual parameters
+            string[] userData = userString.Split('|');
+
+            // Extract individual data
+            int id = int.Parse(userData[0]);
+            string username = userData[1];
+            string password = userData[2];
+            string email = userData[3];
+            string firstName = userData[4];
+            string lastName = userData[5];
+            string contentBio = userData[6];
+            // Define a default image
+            string imageSource = string.IsNullOrEmpty(userData[7]) ? "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg" : userData[7];
+            // Convert integer representations to boolean
+            bool isBlocked = userData[8] == "1";
+            bool isAdmin = userData[9] == "1";
+
+            // Create a new User object with the extracted data
+            User user = new User(id,
+                                 username,
+                                 password,
+                                 email,
+                                 firstName,
+                                 lastName,
+                                 contentBio,
+                                 imageSource,
+                                 isBlocked,
+                                 isAdmin);
+
+            // Additional processing for Comments and Recipes if needed
+
+            return user;
+        }
+
     }
 }
