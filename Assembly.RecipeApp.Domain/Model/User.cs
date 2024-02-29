@@ -20,7 +20,11 @@ namespace Assembly.RecipeApp.Domain.Model
         //public List<UserFavoriteRecipe> UserFavoriteRecipes { get; set; }
 
         public User(string username, string password, string email)
-        { }
+        {
+            Username = username;
+            Password = password;
+            Email = email;
+        }
 
         public User(int id, string username, string password, string email)
         { }
