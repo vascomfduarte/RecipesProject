@@ -72,32 +72,37 @@ namespace Assembly.RecipeApp.Application.Services
         /// <param name="parameter"></param>
         /// <param name="status"></param>
         /// <returns></returns>
-        public User BuildUser(string userString)
+        public User ParseUser(string userString)
         {
             // Split the user string into individual parameters
-            string[] parameters = userString.Split('|');
+            string[] parameters = userString.Split('|');           
 
+            // Extract individual data
+            int id = int.Parse(userData[0]);
+            string username = userData[1];
+            string password = userData[2];
+            string email = userData[3];
+            string firstName = userData[4];
+            string lastName = userData[5];
+            string contentBio = userData[6];
             // Define a default image
             string imageUrl = string.IsNullOrEmpty(parameters[7]) ? "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg" : parameters[7];
-
             // Convert integer representations to boolean
             bool isBlocked = parameters[8] == "1";
             bool isAdmin = parameters[9] == "1";
 
-            // Create a new User object and populate its properties
-            User user = new User
+            // Create a new User object with the extracted data
+            User user = new User(id, username, password, email)
             {
-                Id = int.Parse(parameters[0]),
-                Username = parameters[1],
-                Password = parameters[2],
-                Email = parameters[3],
-                FirstName = parameters[4],
-                LastName = parameters[5],
-                ContentBio = parameters[6],
-                ImageSource = imageUrl,
+                FirstName = firstName,
+                LastName = lastName,
+                ContentBio = contentBio,
+                ImageSource = imageSource,
                 IsAdmin = isAdmin,
-                IsBlocked = isBlocked,
+                IsBlocked = isBlocked
             };
+            
+            // Additional processing for Comments and Recipes if needed
 
             return user;
         }
@@ -166,18 +171,22 @@ namespace Assembly.RecipeApp.Application.Services
             return null;
         }
 
+
+        
+
         public List<User> GetAll()
         {
             // Retrieve the list of user strings from the repository
-            List<string> userString = _userRepository.GetAllUsers();
+            List<string> userStrings = _userRepository.GetAllUsers();
 
             List<User> returnUsers = new List<User>();
-            User user = new User();
 
-            foreach (string strg in userString)
+            foreach (string userString in userStrings)
             {
-                // Call User builder method and assign it 
-                user = BuildUser(strg);
+                // Parse user string to extract user data
+                User user = ParseUser(userString);
+        
+                // Add the parsed user to the list
                 returnUsers.Add(user);
             }
 
