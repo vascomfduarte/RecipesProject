@@ -6,8 +6,9 @@ using System.Xml.Linq;
 namespace Assembly.RecipeApp.Domain.Model
 {
     public class User
-    {
+    {      
         public int Id { get; private set; }
+        
         public string _username { get; private set; }
         public string Username
         {
@@ -18,6 +19,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 _username = value;
             }
         }
+        
         public string _password { get; private set; }
         public string Password
         {
@@ -28,6 +30,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 _password = value;
             }
         }
+        
         public string _email { get; private set; }
         public string Email
         {
@@ -38,8 +41,29 @@ namespace Assembly.RecipeApp.Domain.Model
                 _email = value;
             }
         }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        
+        public string _firstName { get; private set; }
+        public string FirstName
+        {
+            get { return _firstName; }
+            set 
+            {
+                ValidateFirstName(value);
+                _firstName = value;
+            }
+        }
+
+        public string _lastName { get; private set; }
+        public string LastName
+        {
+            get { return _lastName; }
+            set 
+            {
+                ValidateLastName(value);
+                _lastName = value;
+            }
+        }
+
         public string ContentBio { get; set; }
         public string ImageSource { get; set; }
         public bool IsAdmin { get; private set; }
@@ -116,6 +140,43 @@ namespace Assembly.RecipeApp.Domain.Model
             if (!Regex.IsMatch(email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
             {                
                 throw new DomainException("Invalid email format.");
+            }
+        }
+        private void ValidateFirstName(string firstName)
+        {
+            // Check if First Name is null or empty
+            if (string.IsNullOrWhiteSpace(firstName))
+            {
+                throw new DomainException("First name cannot be null or empty.");
+            }
+            
+            if (firstName.Length > 50)
+            {
+                throw new DomainException("First name cannot exceed 50 characters.");
+            }
+
+            // Check if name format is valid
+            if (!Regex.IsMatch(firstName, @"^[a-zA-Z]+$"))
+            {
+                throw new DomainException("First name can only contain letters.");
+            }
+        }
+        private void ValidateLastName(string lastName)
+        {
+            if (string.IsNullOrWhiteSpace(lastName))
+            {
+                throw new DomainException("Last name cannot be null or empty.");
+            }
+            
+            if (lastName.Length > 50)
+            {
+                throw new DomainException("Last name cannot exceed 50 characters.");
+            }
+
+            // Check if name format is valid
+            if (!Regex.IsMatch(lastName, @"^[a-zA-Z]+$"))
+            {
+                throw new DomainException("Last name can only contain letters.");
             }
         }
 
