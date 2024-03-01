@@ -66,23 +66,13 @@ namespace Assembly.RecipeApp.Application.Services
 
         public bool Add(User user)
         {
-            // Validate username
-            if (string.IsNullOrWhiteSpace(user.Username) || GetAll().Any(u => u.Username == user.Username))
-                throw new ArgumentException("Invalid username or username already exists.", nameof(user.Username));
+            // Validate if username already exist
+            if (GetAll().Any(u => u.Username == user.Username))
+                throw new ArgumentException("Username already exists.", nameof(user.Username));
 
-            // Validate password strength (Example: Minimum 8 characters with at least one letter and one digit)
-            if (string.IsNullOrWhiteSpace(user.Password) || user.Password.Length < 8 || !user.Password.Any(char.IsLetter) || !user.Password.Any(char.IsDigit))
-                throw new ArgumentException("Invalid password. Password must be at least 8 characters long and contain at least one letter and one digit.", nameof(user.Password));
-
-            // Validate email format
-            if (string.IsNullOrWhiteSpace(user.Email) ||
-                !Regex.IsMatch(user.Email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$") ||
-                GetAll().Any(u => u.Email == user.Email))
-                throw new ArgumentException("Invalid email address or email address already exists.", nameof(user.Email));
-
-            // Validate first name and last name format
-            if (string.IsNullOrWhiteSpace(user.FirstName) || string.IsNullOrWhiteSpace(user.LastName))
-                throw new ArgumentException("First name and last name are required.", $"{nameof(user.FirstName)} or {nameof(user.LastName)}");
+            // Validate if email already exist
+            if (GetAll().Any(u => u.Email == user.Email))
+                throw new ArgumentException("Email address already exists.", nameof(user.Email));
 
             // Validate image source format
             if (user.ImageSource is not null)
