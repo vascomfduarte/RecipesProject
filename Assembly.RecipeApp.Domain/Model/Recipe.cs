@@ -5,8 +5,26 @@ namespace Assembly.RecipeApp.Domain.Model
     public class Recipe
     {
         public int Id { get; private set; }
-        public string Title { get; set; }
-        public string Instructions { get; set; }
+        public string _title { get; private set; }
+        public string Title
+        {
+            get { return _title; }
+            set
+            {
+                ValidateTitle(value);
+                _title = value;
+            }
+        }
+        public string _instructions { get; private set; }
+        public string Instructions
+        {
+            get { return _instructions; }
+            set
+            {
+                ValidateInstructions(value);
+                _instructions = value;
+            }
+        }
         public string ImageSource { get; set; }
         public int MinutesToCook { get; set; }
         public bool IsApproved { get; private set; }
