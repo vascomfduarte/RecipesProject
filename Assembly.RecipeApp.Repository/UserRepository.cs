@@ -16,13 +16,11 @@ namespace Assembly.RecipeApp.Repository
                 string query = @"INSERT INTO [dbo].[user] (username, password, email, first_name, last_name, content_bio, image_source, is_admin, is_blocked, created_at)
                              VALUES (@username, @password, @email, @firstName, @lastName, @contentBio, @imageSource, @isAdmin, @isBlocked, @created_at)";
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     // Parse the userData string to extract individual properties
                     string[] userData = userString.Split('|');
 
-                    cmd.CommandText = query;
-                    cmd.Connection = con;
                     // Add parameter to command
                     cmd.Parameters.AddWithValue("@username", userData[0]);
                     cmd.Parameters.AddWithValue("@password", userData[1]);
@@ -54,11 +52,8 @@ namespace Assembly.RecipeApp.Repository
             {
                 string query = "SELECT * FROM [dbo].[user]";
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.CommandText = query;
-                    cmd.Connection = con;
-
                     if (con.State != ConnectionState.Open)
                         con.Open();
 
@@ -95,13 +90,10 @@ namespace Assembly.RecipeApp.Repository
             {
                 string query = "SELECT * FROM [dbo].[user] WHERE id = @id";
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.CommandText = query;
-                    cmd.Connection = con;
                     // Add parameter to command
-                    cmd.Parameters.Add("@id", SqlDbType.Int);
-                    cmd.Parameters["@id"].Value = userId;
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = userId;
 
                     if (con.State != ConnectionState.Open)
                         con.Open();
@@ -137,15 +129,12 @@ namespace Assembly.RecipeApp.Repository
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM [dbo].[user] WHERE username LIKE '%' + @username + '%'";
+                string query = "SELECT * FROM [dbo].[user] WHERE LOWER([username]) LIKE '%' + @username + '%' OR LOWER([first_name]) LIKE '%' + @username + '%'";
 
-                using (SqlCommand cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.CommandText = query;
-                    cmd.Connection = con;
                     // Add parameter to command
-                    cmd.Parameters.Add("@username", SqlDbType.VarChar);
-                    cmd.Parameters["@username"].Value = username;
+                    cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = username.ToLower();
 
                     if (con.State != ConnectionState.Open)
                         con.Open();
@@ -170,13 +159,50 @@ namespace Assembly.RecipeApp.Repository
                         }
                     }
                 }
-
             }
 
             return returnUser;
         }
 
-        public void Update(string entity)
+        public bool Update(string userString)
+        {
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "UPDATE [dbo].[user] SET [username] = @username, [email] = @email, [first_name] = @firstName, " +
+                               "[last_name] = @lastName, [content_bio] = @contentBio, [is_admin] = @isAdmin, [is_blocked] = @isBlocked, " +
+                               "[image_source] = @imageSource WHERE [ID] = @userId";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Parse the userData string to extract individual properties
+                    string[] userData = userString.Split('|');
+
+                    // Add parameter to command
+                    cmd.Parameters.AddWithValue("@userId", userData[0]);
+                    cmd.Parameters.AddWithValue("@username", userData[0]);
+                    cmd.Parameters.AddWithValue("@email", userData[0]);
+                    cmd.Parameters.AddWithValue("@firstName", userData[0]);
+                    cmd.Parameters.AddWithValue("@lastName", userData[0]);
+                    cmd.Parameters.AddWithValue("@contentBio", userData[0]);
+                    cmd.Parameters.AddWithValue("@isAdmin", userData[0]);
+                    cmd.Parameters.AddWithValue("@isBlocked", userData[0]);
+                    cmd.Parameters.AddWithValue("@imageSource", userData[0]);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        }
+    
+        public bool UpdateIsAdmin(string userString)
+        {
+            throw new NotImplementedException();
+        }
+        public bool UpdateIsBlocked(string userString)
         {
             throw new NotImplementedException();
         }

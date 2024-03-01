@@ -76,8 +76,22 @@ namespace Assembly.RecipeApp.Application.Services
 
             // Validate image source format
             if (user.ImageSource is not null)
+            {
                 if (!Uri.TryCreate(user.ImageSource, UriKind.Absolute, out Uri uriResult) || uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps)
-                    throw new ArgumentException("Invalid image URL.", nameof(user.ImageSource));
+                {
+                    user.ImageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg";
+                    //throw new ArgumentException("Invalid image URL.", nameof(user.ImageSource));
+                }
+            }
+            else if (user.ImageSource is null)
+            {
+                // Set a default to ImageSource
+                user.ImageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg";
+            }
+
+            // Set a default to contentBio
+            if (user.ContentBio is null)
+                user.ContentBio = "Let others know who you are";
 
             // Set isAdmin to false by default if not provided
             if (user.IsAdmin == null)
@@ -88,7 +102,7 @@ namespace Assembly.RecipeApp.Application.Services
                 user.SetIsBlocked(user, false);
 
             // Format the User object's properties into a string representation
-            string userString = $"{user.Id}|{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}|{(user.IsAdmin ? "1" : "0")}|{(user.IsBlocked ? "1" : "0")}";
+            string userString = $"{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}|{(user.IsAdmin ? "1" : "0")}|{(user.IsBlocked ? "1" : "0")}";
 
             // Call the UserRepository's Add method with the formatted string representation of the User
             return _userRepository.Add(userString);
@@ -128,7 +142,7 @@ namespace Assembly.RecipeApp.Application.Services
                 name = "";
 
             // Retrieve the list of User parameters through a string from the repository
-            List<string> userStrings = _userRepository.GetFilteredUsers(name);
+            List<string> userStrings = _userRepository.GetFilteredUsers(name.ToLower());
 
             List<User> returnUsers = new List<User>();
 
@@ -144,7 +158,37 @@ namespace Assembly.RecipeApp.Application.Services
             return returnUsers;
         }
 
-        public bool Update(User entity)
+        public bool Update(User user)
+        {
+            // Validate image source format
+            if (user.ImageSource is not null)
+            {
+                if (!Uri.TryCreate(user.ImageSource, UriKind.Absolute, out Uri uriResult) || uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps)
+                {
+                    user.ImageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg";
+                    //throw new ArgumentException("Invalid image URL.", nameof(user.ImageSource));
+                }
+            }
+            else if (user.ImageSource is null)
+            {
+                // Set a default to ImageSource
+                user.ImageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg";
+            }
+
+            // Set a default to contentBio
+            if (user.ContentBio is null)
+                user.ContentBio = "Let others know who you are";
+
+            // Format the User object's properties into a string representation
+            string userString = $"{user.Id}|{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}";
+
+            return _userRepository.Update(userString);
+        }
+        public bool UpdateIsAdmin(User adminUser, User userToModify)
+        {
+            throw new NotImplementedException();
+        }
+        public bool UpdateIsBlocked(User adminUser, User userToModify)
         {
             throw new NotImplementedException();
         }

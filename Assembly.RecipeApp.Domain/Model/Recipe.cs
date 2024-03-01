@@ -41,7 +41,7 @@ namespace Assembly.RecipeApp.Domain.Model
         //public List<RecipeIngredients> RecipeIngredients { get; set; }
         //public List<RecipeCategory> RecipeCategories { get; set; }
 
-        public Recipe (string title, string instructions, int minutesToCook, int userId, int difficultyId, string createdAt)
+        public Recipe(string title, string instructions, int minutesToCook, int userId, int difficultyId, string createdAt)
         {
             Title = title;
             Instructions = instructions;
@@ -51,18 +51,28 @@ namespace Assembly.RecipeApp.Domain.Model
             //CreatedAt = DateTime.UtcNow();
         }
 
-        public Recipe(int id, string title, string instructions, int minutesToCook, int userId, int difficultyId, string createdAt) 
+        public Recipe(int id, string title, string instructions, int minutesToCook, int userId, int difficultyId, string createdAt)
             : this(title, instructions, minutesToCook, userId, difficultyId, createdAt)
         {
-            Id = id;            
+            Id = id;
         }
 
-        public Recipe(int id, string title, string instructions, string imageSource, int minutesToCook, bool isApproved, int userId, int difficultyId, string createdAt) 
-            : this (id, title, instructions, minutesToCook, userId, difficultyId, createdAt)
+        public Recipe(int id, string title, string instructions, string imageSource, int minutesToCook, bool isApproved, int userId, int difficultyId, string createdAt)
+            : this(id, title, instructions, minutesToCook, userId, difficultyId, createdAt)
         {
             ImageSource = imageSource;
             IsApproved = isApproved;
         }
-    }
 
+
+        private void ValidateTitle(string value)
+        {
+            throw new NotImplementedException();
+        }
+        private void ValidateInstructions(string value)
+        {
+            throw new NotImplementedException();
+        }
+
+    }
 }

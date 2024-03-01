@@ -250,8 +250,50 @@ namespace Assembly.RecipeApp.ConsoleApp
         }
         public static void Update()
         {
-            throw new NotImplementedException();
+            UserServices _userServices = new UserServices();
+
+            bool run = true;
+            while (run)
+            {
+                Console.Clear();
+                Console.WriteLine("Update User:\n");
+                Console.Write("Username: ");
+                string username = Console.ReadLine();
+                Console.Write("Password: ");
+                string password = Console.ReadLine();
+                Console.Write("Email: ");
+                string email = Console.ReadLine();
+                Console.Write("FirstName: ");
+                string firstName = Console.ReadLine();
+                Console.Write("LastName: ");
+                string lastName = Console.ReadLine();
+                //Console.Write("ContentBio: -");
+                //string username = Console.ReadLine();
+                //Console.Write("ImageSource: -");
+                //string username = Console.ReadLine();
+                //Console.Write("IsAdmin: -");
+                //string username = Console.ReadLine();
+                //Console.Write("IsBlocked: -");
+
+                User user = new User(username, password, email, firstName, lastName);
+
+                bool success = _userServices.Update(user);
+
+                if (success)
+                {
+                    Console.WriteLine("\nUser updated successfully");
+                    run = false;
+                }
+                else
+                {
+                    Console.WriteLine("\nFailed to update user");
+                    run = false;
+                }
+
+                Console.ReadLine();
+            }
         }
+
         public static void Delete()
         {
             throw new NotImplementedException();
