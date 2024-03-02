@@ -168,9 +168,8 @@ namespace Assembly.RecipeApp.Repository
         {
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "UPDATE [dbo].[user] SET [username] = @username, [email] = @email, [first_name] = @firstName, " +
-                               "[last_name] = @lastName, [content_bio] = @contentBio, [is_admin] = @isAdmin, [is_blocked] = @isBlocked, " +
-                               "[image_source] = @imageSource WHERE [ID] = @userId";
+                string query = "UPDATE [dbo].[user] SET [username] = @username, [password] = @password, [email] = @email, [first_name] = @firstName, " +
+                               "[last_name] = @lastName, [content_bio] = @contentBio, [image_source] = @imageSource WHERE [ID] = @userId";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -179,14 +178,13 @@ namespace Assembly.RecipeApp.Repository
 
                     // Add parameter to command
                     cmd.Parameters.AddWithValue("@userId", userData[0]);
-                    cmd.Parameters.AddWithValue("@username", userData[0]);
-                    cmd.Parameters.AddWithValue("@email", userData[0]);
-                    cmd.Parameters.AddWithValue("@firstName", userData[0]);
-                    cmd.Parameters.AddWithValue("@lastName", userData[0]);
-                    cmd.Parameters.AddWithValue("@contentBio", userData[0]);
-                    cmd.Parameters.AddWithValue("@isAdmin", userData[0]);
-                    cmd.Parameters.AddWithValue("@isBlocked", userData[0]);
-                    cmd.Parameters.AddWithValue("@imageSource", userData[0]);
+                    cmd.Parameters.AddWithValue("@username", userData[1]);
+                    cmd.Parameters.AddWithValue("@password", userData[2]);
+                    cmd.Parameters.AddWithValue("@email", userData[3]);
+                    cmd.Parameters.AddWithValue("@firstName", userData[4]);
+                    cmd.Parameters.AddWithValue("@lastName", userData[5]);
+                    cmd.Parameters.AddWithValue("@contentBio", userData[6]);
+                    cmd.Parameters.AddWithValue("@imageSource", userData[7]);
 
                     if (con.State != ConnectionState.Open)
                         con.Open();

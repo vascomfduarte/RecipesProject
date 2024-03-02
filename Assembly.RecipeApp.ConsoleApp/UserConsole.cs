@@ -1,5 +1,6 @@
 ﻿using Assembly.RecipeApp.Application.Services;
 using Assembly.RecipeApp.Domain.Model;
+using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -257,16 +258,82 @@ namespace Assembly.RecipeApp.ConsoleApp
             {
                 Console.Clear();
                 Console.WriteLine("Update User:\n");
+                Console.WriteLine("User Selection: ");
+                Console.WriteLine("1. Search by Name");
+                Console.WriteLine("2. See all");
+                Console.WriteLine("0. Go back");
+                Console.Write("\nSelect an option: ");
+                string selection = Console.ReadLine();
+
+                List<User> showUsers = new List<User>();
+
+                switch (selection.Trim())
+                {
+                    case "1":
+                        Console.Write("\nEnter user's first name or username: ");
+                        string searchTerm = Console.ReadLine();
+                        if (string.IsNullOrEmpty(searchTerm))
+                        {
+                            Console.WriteLine("\nInvalid search term.");
+                            Console.ReadLine();
+                            break;
+                        }
+
+                        showUsers = _userServices.GetFilteredUsers(searchTerm);
+
+                        break;
+
+                    case "2":
+
+                        break;
+
+                    case "3":
+
+                        break;
+
+                    case "0":
+                        Program.Main();
+                        break;
+
+                    default:
+
+                        if (String.IsNullOrEmpty(selection))
+                        {
+                            Console.WriteLine("Wrong Input. Please choose again.");
+                            Console.ReadLine();
+                            continue;
+                        }
+
+                        break;
+                }
+
+                int count = 1;
+                foreach (User u in showUsers)
+                {
+                    Console.WriteLine($"\n{count++}: ");
+                    Console.WriteLine($"    Username: {u.Username}");
+                    Console.WriteLine($"    FirstName: {u.FirstName}\n");
+                }
+
+                Console.Write("\nSelect an option: ");
+                if (int.TryParse((Console.ReadLine().Trim()), out int option) == false)
+                {
+                    Console.WriteLine("Wrong Input");
+                    continue;
+                }
+
+                Console.Clear();
+                Console.WriteLine("Update User:\n");
                 Console.Write("Username: ");
-                string username = Console.ReadLine();
+                string username2 = Console.ReadLine();
                 Console.Write("Password: ");
-                string password = Console.ReadLine();
+                string password2 = Console.ReadLine();
                 Console.Write("Email: ");
-                string email = Console.ReadLine();
+                string email2 = Console.ReadLine();
                 Console.Write("FirstName: ");
-                string firstName = Console.ReadLine();
+                string firstName2 = Console.ReadLine();
                 Console.Write("LastName: ");
-                string lastName = Console.ReadLine();
+                string lastName2 = Console.ReadLine();
                 //Console.Write("ContentBio: -");
                 //string username = Console.ReadLine();
                 //Console.Write("ImageSource: -");
@@ -275,7 +342,9 @@ namespace Assembly.RecipeApp.ConsoleApp
                 //string username = Console.ReadLine();
                 //Console.Write("IsBlocked: -");
 
-                User user = new User(username, password, email, firstName, lastName);
+                int userid = showUsers[option - 1].Id;
+
+                User user = new User(userid, username2, password2, email2, firstName2, lastName2, "", "");
 
                 bool success = _userServices.Update(user);
 
@@ -293,7 +362,6 @@ namespace Assembly.RecipeApp.ConsoleApp
                 Console.ReadLine();
             }
         }
-
         public static void Delete()
         {
             throw new NotImplementedException();

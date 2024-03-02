@@ -161,7 +161,7 @@ namespace Assembly.RecipeApp.Application.Services
         public bool Update(User user)
         {
             // Validate image source format
-            if (user.ImageSource is not null)
+            if (!String.IsNullOrEmpty(user.ImageSource))
             {
                 if (!Uri.TryCreate(user.ImageSource, UriKind.Absolute, out Uri uriResult) || uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps)
                 {
@@ -169,14 +169,14 @@ namespace Assembly.RecipeApp.Application.Services
                     //throw new ArgumentException("Invalid image URL.", nameof(user.ImageSource));
                 }
             }
-            else if (user.ImageSource is null)
+            else if (String.IsNullOrEmpty(user.ImageSource))
             {
                 // Set a default to ImageSource
                 user.ImageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg";
             }
 
             // Set a default to contentBio
-            if (user.ContentBio is null)
+            if (String.IsNullOrEmpty(user.ContentBio))
                 user.ContentBio = "Let others know who you are";
 
             // Format the User object's properties into a string representation
