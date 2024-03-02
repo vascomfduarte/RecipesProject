@@ -160,6 +160,18 @@ namespace Assembly.RecipeApp.Application.Services
 
         public bool Update(User user)
         {
+            // Passei validação para repositorio
+
+            //if (user.Id == 0)
+            //{
+            //    List <User> oldUser = GetFilteredUsers(user.Username);
+
+            //    foreach (User u in oldUser)
+            //    {
+            //        user.Id = u.Id; // Não é possível pois ID é privado
+            //    }
+            //}
+
             // Validate image source format
             if (!String.IsNullOrEmpty(user.ImageSource))
             {
