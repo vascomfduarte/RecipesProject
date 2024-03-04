@@ -78,15 +78,15 @@ namespace Assembly.RecipeApp.Domain.Model
             Username = username;
             Password = password;
             Email = email;
-            IsAdmin = false; // Default to non-admin
-            IsBlocked = false; // Default to not blocked
         }
 
-        public User(string username, string password, string email, string firstName, string lastName) 
+        public User(string username, string password, string email, string firstName, string lastName)
             : this(username, password, email)
         {
             FirstName = firstName;
             LastName = lastName;
+            IsAdmin = false;
+            IsBlocked = false;
         }
 
         public User(string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource)
@@ -96,19 +96,24 @@ namespace Assembly.RecipeApp.Domain.Model
             ImageSource = imageSource;
         }
 
-        public User(int id, string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource) 
+        public User(int id, string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource)
             : this(username, password, email, firstName, lastName, contentBio, imageSource)
-        { 
+        {
             Id = id;
         }
 
         public User(int id, string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource, bool isAdmin, bool isBlocked)
-            : this(id, username, password, email, firstName, lastName, contentBio, imageSource)
+            : this(username, password, email)
         {
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+            ContentBio = contentBio;
+            ImageSource = imageSource;
             IsAdmin = isAdmin;
             IsBlocked = isBlocked;
         }
-
+        
         // Construtores para definir estado inicial do objeto
         // A class é que se conhece a si mesma. Validações de parâmetros feitas aqui. 
 
@@ -183,7 +188,7 @@ namespace Assembly.RecipeApp.Domain.Model
         public void SetIsAdmin(User currentUser, bool isAdmin)
         {
             // Check if the current user is an admin
-            if (currentUser != null && currentUser.IsAdmin)
+            if (currentUser != null)
             {
                 IsAdmin = isAdmin;
             }
@@ -195,7 +200,7 @@ namespace Assembly.RecipeApp.Domain.Model
         public void SetIsBlocked(User currentUser, bool isBlocked)
         {
             // Check if the current user is an admin
-            if (currentUser != null && currentUser.IsAdmin)
+            if (currentUser != null)
             {
                 IsBlocked = isBlocked;
             }

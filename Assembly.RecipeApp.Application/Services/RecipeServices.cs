@@ -11,32 +11,14 @@ namespace Assembly.RecipeApp.Application.Services
         private static UserServices _userServices = new UserServices();
         //private static RecipeIngredientsServices _recipeIngredientsServices = new RecipeIngredientsServices();
 
-        public List<Recipe> GetAll()
+        public bool Add(Recipe entity)
         {
             throw new NotImplementedException();
         }
 
-        public List<Recipe> GetFilteredProducts(string name)
+        public List<Recipe> GetAll()
         {
-            if (string.IsNullOrEmpty(name))
-                name = "";
-
-            // Retrieve the list of recipe strings from the repository
-            List<string> recipeStrings = _recipeRepository.GetRecipesByName(name);
-
-            List<Recipe> returnRecipes = new List<Recipe>();
-
-            foreach (string recipeString in recipeStrings)
-            {
-                // Call Recipe builder method and assign it 
-                Recipe recipe = ParseRecipe(recipeString);
-
-                // Check if the constructed Recipe object is approved and add it to the returnlist
-                if (true) //recipe.IsApproved
-                    returnRecipes.Add(recipe);
-            }
-
-            return returnRecipes;
+            throw new NotImplementedException();
         }
 
         public Recipe GetById(int id)
@@ -48,9 +30,27 @@ namespace Assembly.RecipeApp.Application.Services
             return ParseRecipe(recipeString);
         }
 
-        public bool Add(Recipe entity)
+        public List<Recipe> GetFilteredRecipes(string name)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(name))
+                name = "";
+
+            // Retrieve the list of recipe strings from the repository
+            List<string> recipeStrings = _recipeRepository.GetFilteredRecipes(name);
+
+            List<Recipe> returnRecipes = new List<Recipe>();
+
+            foreach (string recipeString in recipeStrings)
+            {
+                // Call Recipe builder method and assign it
+                Recipe recipe = ParseRecipe(recipeString);
+
+                // Check if the constructed Recipe object is approved and add it to the returnlist
+                if (true) //recipe.IsApproved
+                    returnRecipes.Add(recipe);
+            }
+
+            return returnRecipes;
         }
 
         public bool Update(Recipe entity)
@@ -64,7 +64,7 @@ namespace Assembly.RecipeApp.Application.Services
         }
 
         /// <summary>
-        /// Method associated with all the get methods from Recipe. 
+        /// Method associated with all the get methods from Recipe.
         /// It is responsible for receiving a string, creating an instance of Recipe with the parameters contained in the string and returning it.
         /// </summary>
         /// <param recipeString="parameter"></param>
@@ -77,9 +77,9 @@ namespace Assembly.RecipeApp.Application.Services
             // Extract individual data
             int id = int.Parse(recipeData[0]);
             string title = recipeData[1];
-            string instructions = recipeData[2];            
+            string instructions = recipeData[2];
             string imageSource = string.IsNullOrEmpty(recipeData[3]) ? "https://iili.io/JGnl0eS.png" : recipeData[3]; // Define a default image
-            int minutesToCook = int.Parse(recipeData[4]);            
+            int minutesToCook = int.Parse(recipeData[4]);
             bool isApproved = recipeData[5] == "1"; // Convert integer representation to boolean
             int userId = int.Parse(recipeData[6]);
             int difficultyId = int.Parse(recipeData[7]);
@@ -105,6 +105,5 @@ namespace Assembly.RecipeApp.Application.Services
 
             return recipe;
         }
-
     }
 }

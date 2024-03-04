@@ -94,11 +94,11 @@ namespace Assembly.RecipeApp.Application.Services
                 user.ContentBio = "Let others know who you are";
 
             // Set isAdmin to false by default if not provided
-            if (user.IsAdmin == null)
+            if (user.IsAdmin == null || user.IsAdmin == true)
                 user.SetIsAdmin(user, false);
 
             // Set isBlocked to false by default if not provided
-            if (user.IsBlocked == null)
+            if (user.IsBlocked == null || user.IsBlocked == true)
                 user.SetIsBlocked(user, false);
 
             // Format the User object's properties into a string representation

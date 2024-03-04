@@ -4,7 +4,7 @@ namespace Assembly.RecipeApp.Application.Interface
 {
     public interface IRecipeService : IService<Recipe>
     {
-        List<Domain.Model.Recipe> GetFilteredProducts(string name);
+        List<Recipe> GetFilteredRecipes(string name);
     }
 
 }
