@@ -61,6 +61,7 @@ namespace Assembly.RecipeApp.Repository
                     {
                         while (reader.Read())
                         {
+                            // Construct the string representation of the user
                             string user = string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
                                                           reader["ID"],
                                                           reader["username"],
@@ -102,6 +103,7 @@ namespace Assembly.RecipeApp.Repository
                     {
                         while (reader.Read())
                         {
+                            // Construct the string representation of the user
                             User = string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
                                                           reader["ID"],
                                                           reader["username"],
@@ -126,6 +128,7 @@ namespace Assembly.RecipeApp.Repository
         public List<string> GetFilteredUsers(string username)
         {
             List<string> returnUser = new List<string>();
+
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -143,6 +146,7 @@ namespace Assembly.RecipeApp.Repository
                     {
                         while (reader.Read())
                         {
+                            // Construct the string representation of the user
                             string user = string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
                                                           reader["ID"],
                                                           reader["username"],

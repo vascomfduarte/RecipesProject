@@ -194,7 +194,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
             else
             {
-                throw new DomainException("Only admin users can change the IsAdmin status.");
+                throw new DomainException("Unable to change IsAdmin status.");
             }
         }
         public void SetIsBlocked(User currentUser, bool isBlocked)
@@ -206,7 +206,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
             else
             {
-                throw new DomainException("Only admin users can change the IsBlocked status.");
+                throw new DomainException("Unable to change IsBlocked status.");
             }
         }
 

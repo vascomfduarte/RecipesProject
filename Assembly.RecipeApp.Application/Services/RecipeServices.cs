@@ -2,6 +2,7 @@
 using Assembly.RecipeApp.Domain.Model;
 using Assembly.RecipeApp.Repository;
 using System.ComponentModel;
+using System.Globalization;
 
 namespace Assembly.RecipeApp.Application.Services
 {
@@ -11,20 +12,60 @@ namespace Assembly.RecipeApp.Application.Services
         private static UserServices _userServices = new UserServices();
         //private static RecipeIngredientsServices _recipeIngredientsServices = new RecipeIngredientsServices();
 
-        public bool Add(Recipe entity)
+        public bool Add(Recipe recipe)
         {
-            throw new NotImplementedException();
+            // Validate if Title is already in use
+            if (GetAll().Any(r => r.Title == recipe.Title))
+                throw new ArgumentException("Title is already in use.", nameof(recipe.Title));
+
+            // Validate image source format
+            if (recipe.ImageSource is not null)
+            {
+                if (!Uri.TryCreate(recipe.ImageSource, UriKind.Absolute, out Uri uriResult) || uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps)
+                {
+                    recipe.ImageSource = "https://iili.io/JGnl0eS.png";
+                    //throw new ArgumentException("Invalid image URL.", nameof(user.ImageSource));
+                }
+            }
+            else if (recipe.ImageSource is null)
+            {
+                // Set a default to ImageSource
+                recipe.ImageSource = "https://iili.io/JGnl0eS.png";
+            }
+
+            // Set isBlocked to false by default if not provided
+            recipe.SetIsApproved(recipe, false);
+
+            // Format the User object's properties into a string representation
+            string recipeString = $"{recipe.Title}|{recipe.Instructions}|{recipe.ImageSource}|{recipe.MinutesToCook}|{(recipe.IsApproved ? "1" : "0")}|{recipe.UserId}|{recipe.DifficultyId}|{recipe.CreatedAt:yyyy-MM-dd}";
+
+            // Call the UserRepository's Add method with the formatted string representation of the User
+            return _recipeRepository.Add(recipeString);
         }
 
         public List<Recipe> GetAll()
         {
-            throw new NotImplementedException();
+            // Retrieve the list of user strings from the repository
+            List<string> recipeStrings = _recipeRepository.GetAll();
+
+            List<Recipe> returnRecipes = new List<Recipe>();
+
+            foreach (string recipeString in recipeStrings)
+            {
+                // Parse user string to extract user data
+                Recipe recipe = ParseRecipe(recipeString);
+
+                // Add the parsed user to the list
+                returnRecipes.Add(recipe);
+            }
+
+            return returnRecipes;
         }
 
         public Recipe GetById(int id)
         {
             // Retrieve the list of recipe parameters through a string from the repository
-            string recipeString = _recipeRepository.GetRecipeById(id);
+            string recipeString = _recipeRepository.GetById(id);
 
             // Call and return Recipe builder method
             return ParseRecipe(recipeString);
@@ -32,11 +73,11 @@ namespace Assembly.RecipeApp.Application.Services
 
         public List<Recipe> GetFilteredRecipes(string name)
         {
-            if (string.IsNullOrEmpty(name))
-                name = "";
-
             // Retrieve the list of recipe strings from the repository
             List<string> recipeStrings = _recipeRepository.GetFilteredRecipes(name);
+
+            if (string.IsNullOrEmpty(name))
+                recipeStrings = _recipeRepository.GetAll();
 
             List<Recipe> returnRecipes = new List<Recipe>();
 
@@ -83,7 +124,7 @@ namespace Assembly.RecipeApp.Application.Services
             bool isApproved = recipeData[5] == "1"; // Convert integer representation to boolean
             int userId = int.Parse(recipeData[6]);
             int difficultyId = int.Parse(recipeData[7]);
-            string createdAt = recipeData[8];
+            DateTime createdAt = DateTime.ParseExact(recipeData[8], "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             // Create a new Recipe object and populate its properties
             Recipe recipe = new Recipe(id,

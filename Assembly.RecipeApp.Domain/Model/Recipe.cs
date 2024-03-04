@@ -131,5 +131,39 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new DomainException("Minutes to cook cannot exceed 1440 minutes.");
             }
         }
+
+        public void SetIsApproved(Recipe recipe, bool isApproved)
+        {
+            // Check if the current user is an admin
+            if (recipe != null)
+            {
+                IsApproved = isApproved;
+            }
+            else
+            {
+                throw new DomainException("Unable to change IsApproved status.");
+            }
+        }
+
+        /// <summary>
+        /// Method to allow an admin user to approve a recipe.
+        /// </summary>
+        /// <param name="currentUser"></param>
+        /// <exception cref="InvalidOperationException"></exception>
+        public void ChangeIsApproved(User currentUser, Recipe recipe)
+        {
+            if (currentUser == null || !currentUser.IsAdmin)
+            {
+                throw new DomainException("Only admin users can approve recipes.");
+            }
+            else if (recipe != null && currentUser.IsAdmin)
+            {
+                recipe.IsApproved = !recipe.IsApproved;
+            }
+            else
+            {
+                throw new ArgumentNullException(nameof(recipe), "Recipe cannot be null.");
+            }
+        }
     }
 }

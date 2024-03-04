@@ -94,12 +94,10 @@ namespace Assembly.RecipeApp.Application.Services
                 user.ContentBio = "Let others know who you are";
 
             // Set isAdmin to false by default if not provided
-            if (user.IsAdmin == null || user.IsAdmin == true)
-                user.SetIsAdmin(user, false);
+            user.SetIsAdmin(user, false);
 
             // Set isBlocked to false by default if not provided
-            if (user.IsBlocked == null || user.IsBlocked == true)
-                user.SetIsBlocked(user, false);
+            user.SetIsBlocked(user, false);
 
             // Format the User object's properties into a string representation
             string userString = $"{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}|{(user.IsAdmin ? "1" : "0")}|{(user.IsBlocked ? "1" : "0")}";
@@ -138,11 +136,11 @@ namespace Assembly.RecipeApp.Application.Services
 
         public List<User> GetFilteredUsers(string name)
         {
-            if (string.IsNullOrEmpty(name))
-                name = "";
-
             // Retrieve the list of User parameters through a string from the repository
             List<string> userStrings = _userRepository.GetFilteredUsers(name.ToLower());
+
+            if (string.IsNullOrEmpty(name))
+                userStrings = _userRepository.GetAll();
 
             List<User> returnUsers = new List<User>();
 
