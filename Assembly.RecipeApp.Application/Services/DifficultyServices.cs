@@ -3,7 +3,7 @@ using Assembly.RecipeApp.Domain.Model;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    internal class DifficultyServices : IRecipeService
+    internal class DifficultyServices 
     {
         internal static Difficulty GetDifficultyById(int difficultyId)
         {

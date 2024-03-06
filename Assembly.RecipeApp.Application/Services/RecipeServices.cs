@@ -10,6 +10,8 @@ namespace Assembly.RecipeApp.Application.Services
     {
         private static RecipeRepository _recipeRepository = new RecipeRepository();
         private static UserServices _userServices = new UserServices();
+        private static IngredientServices _ingredientServices = new IngredientServices();
+
         //private static RecipeIngredientsServices _recipeIngredientsServices = new RecipeIngredientsServices();
 
         public bool Add(Recipe recipe)
@@ -45,17 +47,17 @@ namespace Assembly.RecipeApp.Application.Services
 
         public List<Recipe> GetAll()
         {
-            // Retrieve the list of user strings from the repository
+            // Retrieve the list of recipe strings from the repository
             List<string> recipeStrings = _recipeRepository.GetAll();
 
             List<Recipe> returnRecipes = new List<Recipe>();
 
             foreach (string recipeString in recipeStrings)
             {
-                // Parse user string to extract user data
+                // Parse recipe string to extract recipe data
                 Recipe recipe = ParseRecipe(recipeString);
 
-                // Add the parsed user to the list
+                // Add the parsed recipe to the list
                 returnRecipes.Add(recipe);
             }
 
@@ -67,7 +69,7 @@ namespace Assembly.RecipeApp.Application.Services
             // Retrieve the list of recipe parameters through a string from the repository
             string recipeString = _recipeRepository.GetById(id);
 
-            // Call and return Recipe builder method
+            // Call and return recipe builder method
             return ParseRecipe(recipeString);
         }
 
@@ -124,7 +126,10 @@ namespace Assembly.RecipeApp.Application.Services
             bool isApproved = recipeData[5] == "1"; // Convert integer representation to boolean
             int userId = int.Parse(recipeData[6]);
             int difficultyId = int.Parse(recipeData[7]);
-            DateTime createdAt = DateTime.ParseExact(recipeData[8], "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            DateTime createdAt = DateTime.ParseExact(recipeData[8], "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+
+            //Add additional data
+            List<Ingredient> ingredients = _ingredientServices.GetRecipeIngredients(id);
 
             // Create a new Recipe object and populate its properties
             Recipe recipe = new Recipe(id,
@@ -135,14 +140,14 @@ namespace Assembly.RecipeApp.Application.Services
                                  isApproved,
                                  userId,
                                  difficultyId,
-                                 createdAt);
+                                 createdAt,
+                                 ingredients);
 
             //recipe.User = _userServices.GetUserById(recipe.UserId);
             // recipe.Difficulty = DifficultyServices.GetDifficultyById(recipe.DifficultyId);
             // recipe.Categories = CategoryServices.GetCategory(recipe.Id);
             // recipe.Ratings = RatingServices.GetRating(recipe.Id);
-            // recipe.Comments = CommentServices.GetComment(recipe.Id);
-            //recipe.RecipeIngredients = _recipeIngredientsServices.GetRecipeIngredients(recipe.Id);
+            // recipe.Comments = CommentServices.GetComment(recipe.Id);            
 
             return recipe;
         }

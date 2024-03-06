@@ -1,9 +1,15 @@
-﻿using Assembly.RecipeApp.Domain.Model;
+﻿using Assembly.RecipeApp.Application.Services;
+using Assembly.RecipeApp.Domain.Model;
+using Assembly.RecipeApp.Repository;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 public class Program
 {
     public static void Main()
     {
+        New();
+
         bool run = true;
         while (run)
         {
@@ -75,4 +81,34 @@ public class Program
 
         }
     }
+
+    public static void New()
+    {
+        RecipeServices _recipeService = new RecipeServices();
+
+        Console.Write("Enter search term: ");
+        string term = Console.ReadLine();
+
+        List<Recipe> recipes = _recipeService.GetFilteredRecipes(term);
+
+        foreach (Recipe r in recipes)
+        {
+            Console.WriteLine($"{r.Title}\n");
+            Console.WriteLine($"Ingredients:");
+
+            foreach (Ingredient i in r.Ingredients)
+            {
+                Console.WriteLine($"Name: {i.Name}");
+                Console.WriteLine($"Amount: {i.Amount}");
+                Console.WriteLine($"Units: {i.Unit.Name}\n");
+                
+            }
+        }
+
+        Console.ReadLine();
+
+        // Está a devolver os mesmos ingredientes mesmo para as receitas sem ingredientes
+
+    }
+
 }

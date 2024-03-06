@@ -175,20 +175,9 @@ namespace Assembly.RecipeApp.Repository
                 // Parse the userData string to extract individual properties
                 string[] userData = userString.Split('|');
 
-                string query;
-
-                // If the provided new user's id is 0 it can't set by id. User constructor allows for users to be constructed without id, as the id is set by the db
-                if (userData[0] == "0")
-                {
-                    //query = "UPDATE [dbo].[user] SET [username] = @username, [password] = @password, [email] = @email, [first_name] = @firstName, " +
-                               //"[last_name] = @lastName, [content_bio] = @contentBio, [image_source] = @imageSource WHERE [ID] = @userId";
-                }
-                else
-                {
-                    query = "UPDATE [dbo].[user] SET [username] = @username, [password] = @password, [email] = @email, [first_name] = @firstName, " +
+                string query = "UPDATE [dbo].[user] SET [username] = @username, [password] = @password, [email] = @email, [first_name] = @firstName, " +
                                "[last_name] = @lastName, [content_bio] = @contentBio, [image_source] = @imageSource WHERE [ID] = @userId";
-                }
-
+                
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     // Add parameter to command

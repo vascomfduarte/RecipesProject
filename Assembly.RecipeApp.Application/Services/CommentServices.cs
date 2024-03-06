@@ -3,7 +3,7 @@ using Assembly.RecipeApp.Domain.Model;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    internal class CommentServices : IRecipeService
+    internal class CommentServices
     {
         internal static List<Comment> GetComment(int id)
         {

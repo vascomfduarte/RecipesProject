@@ -43,16 +43,17 @@ namespace Assembly.RecipeApp.Domain.Model
         public int DifficultyId { get; set; }
         public DateTime CreatedAt { get; private set; }
 
-        public User User { get; set; }
-        public Difficulty Difficulty { get; set; }
-        public List<Category> Categories { get; set; }
+        public User User { get; set; } // Obrigatório
+        public Difficulty Difficulty { get; set; } // Obrigatório
+        public List<Category> Categories { get; set; } // Obrigatório
         public List<Rating> Ratings { get; set; }
         public List<Comment> Comments { get; set; }
-        public List<Ingredient> Ingredients { get; set; }
+        public List<Ingredient> Ingredients { get; set; } // Obrigatório
+
         //public List<RecipeIngredients> RecipeIngredients { get; set; }
         //public List<RecipeCategory> RecipeCategories { get; set; }
 
-        public Recipe(string title, string instructions, int minutesToCook, int userId, int difficultyId)
+        public Recipe(string title, string instructions, int minutesToCook, int userId, int difficultyId, List<Ingredient> ingredients)
         {
             Title = title;
             Instructions = instructions;
@@ -60,17 +61,18 @@ namespace Assembly.RecipeApp.Domain.Model
             UserId = userId;
             DifficultyId = difficultyId;
             CreatedAt = DateTime.Now.Date;
+            Ingredients = ingredients;
         }
 
-        public Recipe(string title, string instructions, string imageSource, int minutesToCook, int userId, int difficultyId)
-            : this(title, instructions, minutesToCook, userId, difficultyId)
+        public Recipe(string title, string instructions, string imageSource, int minutesToCook, int userId, int difficultyId, List<Ingredient> ingredients)
+            : this(title, instructions, minutesToCook, userId, difficultyId, ingredients)
         {
             ImageSource = imageSource;
             IsApproved = false;
         }
 
         // Used when retriving data from the database
-        public Recipe(int id, string title, string instructions, string imageSource, int minutesToCook, bool isApproved, int userId, int difficultyId, DateTime createdAt)
+        public Recipe(int id, string title, string instructions, string imageSource, int minutesToCook, bool isApproved, int userId, int difficultyId, DateTime createdAt, List<Ingredient> ingredients)
         {
             Id = id;
             Title = title;
@@ -81,6 +83,8 @@ namespace Assembly.RecipeApp.Domain.Model
             ImageSource = imageSource;
             IsApproved = isApproved;
             CreatedAt = createdAt;
+            Ingredients = ingredients;
+            // Tenho de adicionar Comments, Ratings, Difficulty, Categories, User
         }
 
         private void ValidateTitle(string value)

@@ -5,11 +5,6 @@ namespace Assembly.RecipeApp.Application.Services
 {
     internal class CategoryServices : IRecipeService
     {
-        internal static List<Category> GetCategory(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Add(Recipe entity)
         {
             throw new NotImplementedException();
@@ -30,7 +25,7 @@ namespace Assembly.RecipeApp.Application.Services
             throw new NotImplementedException();
         }
 
-        public List<Recipe> GetFilteredProducts(string name)
+        public List<Recipe> GetFilteredRecipes(string name)
         {
             throw new NotImplementedException();
         }

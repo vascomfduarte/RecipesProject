@@ -2,7 +2,7 @@
 using Assembly.RecipeApp.Domain.Model;
 namespace Assembly.RecipeApp.Application.Services
 {
-    internal class RatingServices : IRecipeService
+    internal class RatingServices 
     {
         internal static List<Rating> GetRating(int id)
         {
