@@ -4,10 +4,17 @@ using Assembly.RecipeApp.Repository;
 using System.Text.RegularExpressions;
 
 namespace Assembly.RecipeApp.Application.Services
-{
+{3.
     public class UserServices : IUserService
     {
-        private static UserRepository _userRepository = new UserRepository();
+        //private static UserRepository _userRepository = new UserRepository();
+
+        private IUserRepository _userRepository;
+
+        public UserServices(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
         
         public bool Add(User user)
         {
@@ -181,6 +188,8 @@ namespace Assembly.RecipeApp.Application.Services
             // Convert integer representations to boolean
             bool isBlocked = userData[8] == "1";
             bool isAdmin = userData[9] == "1";
+
+            // Adicionar as receitas
 
             // Create a new User object with the extracted data
             User user = new User(id,
