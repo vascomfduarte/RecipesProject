@@ -42,3 +42,14 @@
 /Assembly.RecipeApp.Repository/obj/project.nuget.cache
 /.gitignore
 /Assembly.RecipeApp.Application/obj/Debug/net8.0/Assembly.RecipeApp.Application.AssemblyInfoInputs.cache
+/Assembly.RecipeApp.Application/Interfaces/IUnitService.cs
+/Assembly.RecipeApp.Application/Services/IngredientServices.cs
+/Assembly.RecipeApp.Application/Services/RecipeServices.cs
+/Assembly.RecipeApp.ConsoleApp/Assembly.RecipeApp.ConsoleApp.csproj
+/Assembly.RecipeApp.Domain/Model/Ingredient.cs
+/Assembly.RecipeApp.Domain/Model/Rating.cs
+/Assembly.RecipeApp.Domain/Model/Recipe.cs
+/Assembly.RecipeApp.Domain/Model/Unit.cs
+/Assembly.RecipeApp.Domain/Model/User.cs
+/Assembly.RecipeApp.Repository/Repos/ConnectionStringProvider.cs
+/.gitignore
