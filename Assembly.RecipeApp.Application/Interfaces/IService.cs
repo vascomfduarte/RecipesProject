@@ -1,4 +1,4 @@
-﻿namespace Assembly.RecipeApp.Application.Interface
+﻿namespace Assembly.RecipeApp.Application.Interfaces
 {
     public interface IService<T>
     {

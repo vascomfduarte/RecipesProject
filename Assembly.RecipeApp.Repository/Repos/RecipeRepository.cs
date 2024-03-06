@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Assembly.RecipeApp.Repository
+namespace Assembly.RecipeApp.Repository.Repos
 {
     public class RecipeRepository
     {

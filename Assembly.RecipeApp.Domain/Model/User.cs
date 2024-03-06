@@ -1,11 +1,10 @@
 ﻿using Assembly.RecipeApp.Domain.Exceptions;
-using System.Linq;
+using Assembly.RecipeApp.Domain.Interfaces;
 using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 namespace Assembly.RecipeApp.Domain.Model
 {
-    public class User
+    public class User : AuditableEntity, IEntity
     {      
         public int Id { get; private set; }
         
@@ -78,6 +77,8 @@ namespace Assembly.RecipeApp.Domain.Model
             Username = username;
             Password = password;
             Email = email;
+            CreatedBy = FirstName;
+            CreatedDate = DateTime.Now.Date;
         }
 
         public User(string username, string password, string email, string firstName, string lastName)
@@ -111,13 +112,10 @@ namespace Assembly.RecipeApp.Domain.Model
             ContentBio = contentBio;
             ImageSource = imageSource;
             IsAdmin = isAdmin;
-            IsBlocked = isBlocked;
+            IsBlocked = isBlocked;            
         }
-        
-        // Construtores para definir estado inicial do objeto
-        // A class é que se conhece a si mesma. Validações de parâmetros feitas aqui. 
 
-        private void ValidateUsername(string username)
+        private static void ValidateUsername(string username)
         {
             // Check if username is null or empty
             if (string.IsNullOrEmpty(username))
@@ -125,7 +123,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new DomainException("Username cannot be null or empty.");
             }
         }
-        private void ValidatePassword(string password)
+        private static void ValidatePassword(string password)
         {
             // Check if password is null or empty
             if (string.IsNullOrEmpty(password) || password.Length < 8 || !password.Any(char.IsLetter) || !password.Any(char.IsDigit))
@@ -133,7 +131,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new DomainException("Invalid password. Password must be at least 8 characters long and contain at least one letter and one digit.");
             }
         }
-        private void ValidateEmail(string email)
+        private static void ValidateEmail(string email)
         {
             // Check if email is null or empty
             if (string.IsNullOrEmpty(email))
@@ -185,24 +183,22 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
-        public void SetIsAdmin(User currentUser, bool isAdmin)
-        {
-            // Check if the current user is an admin
+        public void SetAdminDefault(User currentUser)
+        {            
             if (currentUser != null)
             {
-                IsAdmin = isAdmin;
+                IsAdmin = false;
             }
             else
             {
                 throw new DomainException("Unable to change IsAdmin status.");
             }
         }
-        public void SetIsBlocked(User currentUser, bool isBlocked)
+        public void SetBlockedDefault(User currentUser)
         {
-            // Check if the current user is an admin
             if (currentUser != null)
             {
-                IsBlocked = isBlocked;
+                IsBlocked = false;
             }
             else
             {
@@ -216,7 +212,7 @@ namespace Assembly.RecipeApp.Domain.Model
         /// </summary>
         /// <param name="currentUser"></param>
         /// <exception cref="InvalidOperationException"></exception>
-        public void ChangeIsAdminStatus(User currentUser, User userToModify)
+        public void SwitchAdminStatus(User currentUser, User userToModify)
         {
             if (currentUser == null || !currentUser.IsAdmin)
             {
@@ -238,7 +234,7 @@ namespace Assembly.RecipeApp.Domain.Model
         /// </summary>
         /// <param name="currentUser"></param>
         /// <exception cref="InvalidOperationException"></exception>
-        public void ChangeIsBlockedStatus(User currentUser, User userToModify)
+        public void SwitchBlockStatus(User currentUser, User userToModify)
         {
             if (currentUser == null || !currentUser.IsAdmin)
             {

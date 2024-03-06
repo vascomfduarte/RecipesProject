@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace Assembly.RecipeApp.Repository
+namespace Assembly.RecipeApp.Repository.Repos
 {
     public class UserRepository
     {
@@ -177,7 +177,7 @@ namespace Assembly.RecipeApp.Repository
 
                 string query = "UPDATE [dbo].[user] SET [username] = @username, [password] = @password, [email] = @email, [first_name] = @firstName, " +
                                "[last_name] = @lastName, [content_bio] = @contentBio, [image_source] = @imageSource WHERE [ID] = @userId";
-                
+
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     // Add parameter to command
@@ -199,7 +199,7 @@ namespace Assembly.RecipeApp.Repository
                 }
             }
         }
-    
+
         public bool UpdateIsAdmin(string userString)
         {
             throw new NotImplementedException();

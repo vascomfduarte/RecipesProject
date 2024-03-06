@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 
-namespace Assembly.RecipeApp.Repository
+namespace Assembly.RecipeApp.Repository.Repos
 {
     public class IngredientRepository
     {

@@ -1,6 +1,6 @@
-﻿using Assembly.RecipeApp.Application.Interface;
+﻿using Assembly.RecipeApp.Application.Interfaces;
 using Assembly.RecipeApp.Domain.Model;
-using Assembly.RecipeApp.Repository;
+using Assembly.RecipeApp.Repository.Repos;
 using System.ComponentModel;
 using System.Globalization;
 

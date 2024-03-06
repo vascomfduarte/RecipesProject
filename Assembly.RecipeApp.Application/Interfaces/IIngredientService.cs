@@ -1,6 +1,6 @@
 ﻿using Assembly.RecipeApp.Domain.Model;
 
-namespace Assembly.RecipeApp.Application.Interface
+namespace Assembly.RecipeApp.Application.Interfaces
 {
     public interface IIngredientService
     {

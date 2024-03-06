@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assembly.RecipeApp.Application.Interface
+namespace Assembly.RecipeApp.Application.Interfaces
 {
     public interface IDifficultyService
     {

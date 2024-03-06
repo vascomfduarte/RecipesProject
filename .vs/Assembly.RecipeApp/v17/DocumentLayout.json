@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.application\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|solutionrelative:assembly.recipeapp.application\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B4795C7-A936-4991-8063-D7D1E74AF81A}|Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B4795C7-A936-4991-8063-D7D1E74AF81A}|Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj|solutionrelative:assembly.recipeapp.repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}|Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.domain\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}|Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj|solutionrelative:assembly.recipeapp.domain\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.application\\interface\\iratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|solutionrelative:assembly.recipeapp.application\\interface\\iratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}|Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.domain\\model\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}|Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj|solutionrelative:assembly.recipeapp.domain\\model\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.application\\interface\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|solutionrelative:assembly.recipeapp.application\\interface\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}|Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.domain\\interfaces\\iauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}|Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj|solutionrelative:assembly.recipeapp.domain\\interfaces\\iauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.application\\interface\\idifficultyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|solutionrelative:assembly.recipeapp.application\\interface\\idifficultyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.application\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|solutionrelative:assembly.recipeapp.application\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.application\\interface\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|solutionrelative:assembly.recipeapp.application\\interface\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B4795C7-A936-4991-8063-D7D1E74AF81A}|Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.repository\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B4795C7-A936-4991-8063-D7D1E74AF81A}|Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj|solutionrelative:assembly.recipeapp.repository\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B4795C7-A936-4991-8063-D7D1E74AF81A}|Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.repository\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B4795C7-A936-4991-8063-D7D1E74AF81A}|Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj|solutionrelative:assembly.recipeapp.repository\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.application\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|solutionrelative:assembly.recipeapp.application\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.application\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|solutionrelative:assembly.recipeapp.application\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}|Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.domain\\interfaces\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}|Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj|solutionrelative:assembly.recipeapp.domain\\interfaces\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,41 +54,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Model\\User.cs",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.Domain\\Model\\User.cs",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Model\\User.cs",
-              "RelativeToolTip": "Assembly.RecipeApp.Domain\\Model\\User.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAIwFAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T16:14:34.778Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Repository\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.Repository\\UserRepository.cs",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Repository\\UserRepository.cs",
-              "RelativeToolTip": "Assembly.RecipeApp.Repository\\UserRepository.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAowLkAAABKAAAA",
+              "Title": "Recipe.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Model\\Recipe.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Domain\\Model\\Recipe.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Model\\Recipe.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Domain\\Model\\Recipe.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAkwD4AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T16:13:09.343Z",
+              "WhenOpened": "2024-03-06T23:29:20.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Model\\User.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Domain\\Model\\User.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Model\\User.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Domain\\Model\\User.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAA2wKUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T22:59:09.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Repository\\Interfaces\\IRepository.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Repository\\Interfaces\\IRepository.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Repository\\Interfaces\\IRepository.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Repository\\Interfaces\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T22:55:31.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Repository\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Repository\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Repository\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Repository\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T22:54:49.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "UserServices.cs",
               "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Services\\UserServices.cs",
               "RelativeDocumentMoniker": "Assembly.RecipeApp.Application\\Services\\UserServices.cs",
               "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Services\\UserServices.cs",
               "RelativeToolTip": "Assembly.RecipeApp.Application\\Services\\UserServices.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAE8AAAAJAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T16:10:07.406Z",
+              "WhenOpened": "2024-03-06T22:46:42.198Z",
               "EditorCaption": ""
             }
           ]
@@ -92,12 +126,12 @@
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
         "Id": "0e0af30b-81d7-4feb-98fe-a50c3483583a",
-        "Display": 1,
-        "X": 287,
-        "Y": -16,
+        "Display": 0,
+        "X": 602,
+        "Y": 71,
         "Width": 1620,
         "Height": 965,
-        "WindowState": 2
+        "WindowState": 0
       },
       "DocumentGroups": [
         {
@@ -106,54 +140,54 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "IService.cs",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interface\\IService.cs",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.Application\\Interface\\IService.cs",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interface\\IService.cs",
-              "RelativeToolTip": "Assembly.RecipeApp.Application\\Interface\\IService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interfaces\\IService.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Application\\Interfaces\\IService.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interfaces\\IService.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Application\\Interfaces\\IService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-06T15:42:50.175Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IDifficultyService.cs",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interface\\IDifficultyService.cs",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.Application\\Interface\\IDifficultyService.cs",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interface\\IDifficultyService.cs",
-              "RelativeToolTip": "Assembly.RecipeApp.Application\\Interface\\IDifficultyService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "DocumentIndex": 7,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Application\\Interfaces\\IUserService.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Application\\Interfaces\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T15:48:59.337Z",
+              "WhenOpened": "2024-03-06T22:44:26.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IRatingService.cs",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interface\\IRatingService.cs",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.Application\\Interface\\IRatingService.cs",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interface\\IRatingService.cs",
-              "RelativeToolTip": "Assembly.RecipeApp.Application\\Interface\\IRatingService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "DocumentIndex": 2,
+              "Title": "IAuditableEntity.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Interfaces\\IAuditableEntity.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Domain\\Interfaces\\IAuditableEntity.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Interfaces\\IAuditableEntity.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Domain\\Interfaces\\IAuditableEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T15:49:51.895Z",
+              "WhenOpened": "2024-03-06T22:56:34.502Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ICommentService.cs",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interface\\ICommentService.cs",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.Application\\Interface\\ICommentService.cs",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Interface\\ICommentService.cs",
-              "RelativeToolTip": "Assembly.RecipeApp.Application\\Interface\\ICommentService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "DocumentIndex": 8,
+              "Title": "IEntity.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Interfaces\\IEntity.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Domain\\Interfaces\\IEntity.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Interfaces\\IEntity.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Domain\\Interfaces\\IEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T16:00:36.916Z",
+              "WhenOpened": "2024-03-06T22:56:23.186Z",
               "EditorCaption": ""
             }
           ]

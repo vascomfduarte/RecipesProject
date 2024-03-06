@@ -1,6 +1,6 @@
-﻿using Assembly.RecipeApp.Application.Interface;
+﻿using Assembly.RecipeApp.Application.Interfaces;
 using Assembly.RecipeApp.Domain.Model;
-using Assembly.RecipeApp.Repository;
+using Assembly.RecipeApp.Repository.Repos;
 
 namespace Assembly.RecipeApp.Application.Services
 {

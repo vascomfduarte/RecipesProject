@@ -1,4 +1,4 @@
-﻿namespace Assembly.RecipeApp.Repository
+﻿namespace Assembly.RecipeApp.Repository.Repos
 {
     internal class DifficultyRepository
     {
