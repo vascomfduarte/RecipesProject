@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Vasco Duarte\\.nuget\\packages\\": {}
+    "C:\\Users\\vasco\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj",
       "projectName": "Assembly.RecipeApp.Domain",
-      "projectPath": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj",
-      "packagesPath": "C:\\Users\\Vasco Duarte\\.nuget\\packages\\",
-      "outputPath": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\obj\\",
+      "projectPath": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj",
+      "packagesPath": "C:\\Users\\vasco\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Vasco Duarte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vasco\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -40,11 +40,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -66,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

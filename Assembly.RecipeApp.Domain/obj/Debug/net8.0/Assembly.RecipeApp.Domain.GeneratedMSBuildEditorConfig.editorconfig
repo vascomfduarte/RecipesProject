@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Assembly.RecipeApp.Domain
-build_property.ProjectDir = A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Domain\
+build_property.ProjectDir = C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
