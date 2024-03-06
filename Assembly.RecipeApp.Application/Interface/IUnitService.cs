@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assembly.RecipeApp.Application.Interface
 {
-    public interface IUnitService
+    public interface IUnitService : IService<Unit>
     {
         List<Unit> GetAll();
         Unit GetById(int id);

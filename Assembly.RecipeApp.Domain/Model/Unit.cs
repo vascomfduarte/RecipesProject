@@ -1,24 +1,48 @@
-﻿using System.Globalization;
+﻿using Assembly.RecipeApp.Domain.Exceptions;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Assembly.RecipeApp.Domain.Model
 {
     public class Unit
     {
         public int Id { get; private set; }
-        public string Name { get; private set; }
+        private string _name { get; set; }
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                ValidateName(value);
+                _name = value;
+            }
+        }
 
-        //public List<Ingredient> Ingredients { get; set; }
-        
         public Unit(int id, string name) 
         { 
             Id = id;
             Name = name;
         }
 
-        //public Unit(int id, string name, List<Ingredient> ingredients) :this(id, name)
-        //{ 
-        //    Ingredients = ingredients;
-        //}
+        private void ValidateName(string name)
+        {
+            // Check if Unit name is null or empty
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new DomainException("Unit name cannot be null or empty.");
+            }
+
+            if (name.Length > 50)
+            {
+                throw new DomainException("Unit name cannot exceed 50 characters.");
+            }
+
+            // Check if Unit name format is valid
+            if (!Regex.IsMatch(name, @"^[a-zA-Z]+$"))
+            {
+                throw new DomainException("Unit name can only contain letters.");
+            }
+        }
 
     }
 }

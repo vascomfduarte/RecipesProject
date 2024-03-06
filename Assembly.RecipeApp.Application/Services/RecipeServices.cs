@@ -122,12 +122,13 @@ namespace Assembly.RecipeApp.Application.Services
             string imageSource = string.IsNullOrEmpty(recipeData[3]) ? "https://iili.io/JGnl0eS.png" : recipeData[3]; // Define a default image
             int minutesToCook = int.Parse(recipeData[4]);
             bool isApproved = recipeData[5] == "1"; // Convert integer representation to boolean
-            int userId = int.Parse(recipeData[6]);
+            int userId = int.Parse(recipeData[6]); // Converter para User
             int difficultyId = int.Parse(recipeData[7]);
-            DateTime createdAt = DateTime.ParseExact(recipeData[8], "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+            DateTime createdAt = DateTime.ParseExact(recipeData[8], "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
             //Add additional data
             List<Ingredient> ingredients = _ingredientServices.GetRecipeIngredients(id);
+            User user = _userServices.GetById(userId);
 
             // Create a new Recipe object and populate its properties
             Recipe recipe = new Recipe(id,
@@ -136,9 +137,9 @@ namespace Assembly.RecipeApp.Application.Services
                                  imageSource,
                                  minutesToCook,
                                  isApproved,
-                                 userId,
-                                 difficultyId,
+                                 difficultyId,                                                                
                                  createdAt,
+                                 user,
                                  ingredients);
 
             //recipe.User = _userServices.GetUserById(recipe.UserId);

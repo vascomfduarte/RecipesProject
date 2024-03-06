@@ -8,8 +8,8 @@ namespace Assembly.RecipeApp.Domain.Model
     public class User
     {      
         public int Id { get; private set; }
-        
-        public string _username { get; private set; }
+
+        private string _username { get; set; }
         public string Username
         {
             get { return _username; }
@@ -19,8 +19,8 @@ namespace Assembly.RecipeApp.Domain.Model
                 _username = value;
             }
         }
-        
-        public string _password { get; private set; }
+
+        private string _password { get; set; }
         public string Password
         {
             get { return _password; }
@@ -30,8 +30,8 @@ namespace Assembly.RecipeApp.Domain.Model
                 _password = value;
             }
         }
-        
-        public string _email { get; private set; }
+
+        private string _email { get; set; }
         public string Email
         {
             get { return _email; }
@@ -41,8 +41,8 @@ namespace Assembly.RecipeApp.Domain.Model
                 _email = value;
             }
         }
-        
-        public string _firstName { get; private set; }
+
+        private string _firstName { get; set; }
         public string FirstName
         {
             get { return _firstName; }
@@ -53,7 +53,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
-        public string _lastName { get; private set; }
+        private string _lastName { get; set; }
         public string LastName
         {
             get { return _lastName; }

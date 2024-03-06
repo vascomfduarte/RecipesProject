@@ -7,7 +7,7 @@ namespace Assembly.RecipeApp.Domain.Model
     public class Recipe
     {
         public int Id { get; private set; }
-        public string _title { get; private set; }
+        private string _title { get; set; }
         public string Title
         {
             get { return _title; }
@@ -17,7 +17,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 _title = value;
             }
         }
-        public string _instructions { get; private set; }
+        private string _instructions { get; set; }
         public string Instructions
         {
             get { return _instructions; }
@@ -28,7 +28,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
         public string ImageSource { get; set; }
-        public int _minutesToCook { get; set; }
+        private int _minutesToCook { get; set; }
         public int MinutesToCook
         {
             get { return _minutesToCook; }
@@ -39,8 +39,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
         public bool IsApproved { get; private set; }
-        public int UserId { get; private set; }
-        public int DifficultyId { get; set; }
+        public int DifficultyId { get; set; } // Retirar
         public DateTime CreatedAt { get; private set; }
 
         public User User { get; set; } // Obrigatório
@@ -50,41 +49,38 @@ namespace Assembly.RecipeApp.Domain.Model
         public List<Comment> Comments { get; set; }
         public List<Ingredient> Ingredients { get; set; } // Obrigatório
 
-        //public List<RecipeIngredients> RecipeIngredients { get; set; }
-        //public List<RecipeCategory> RecipeCategories { get; set; }
-
-        public Recipe(string title, string instructions, int minutesToCook, int userId, int difficultyId, List<Ingredient> ingredients)
+        public Recipe(string title, string instructions, int minutesToCook, int difficultyId, User user, List<Ingredient> ingredients)
         {
             Title = title;
             Instructions = instructions;
-            MinutesToCook = minutesToCook;
-            UserId = userId;
+            MinutesToCook = minutesToCook;            
             DifficultyId = difficultyId;
             CreatedAt = DateTime.Now.Date;
+            User = user;
             Ingredients = ingredients;
         }
 
-        public Recipe(string title, string instructions, string imageSource, int minutesToCook, int userId, int difficultyId, List<Ingredient> ingredients)
-            : this(title, instructions, minutesToCook, userId, difficultyId, ingredients)
+        public Recipe(string title, string instructions, string imageSource, int minutesToCook, int difficultyId, User user, List<Ingredient> ingredients)
+            : this(title, instructions, minutesToCook, difficultyId, user, ingredients)
         {
             ImageSource = imageSource;
             IsApproved = false;
         }
 
         // Used when retriving data from the database
-        public Recipe(int id, string title, string instructions, string imageSource, int minutesToCook, bool isApproved, int userId, int difficultyId, DateTime createdAt, List<Ingredient> ingredients)
+        public Recipe(int id, string title, string instructions, string imageSource, int minutesToCook, bool isApproved, int difficultyId, DateTime createdAt, User user, List<Ingredient> ingredients)
         {
             Id = id;
             Title = title;
             Instructions = instructions;
-            MinutesToCook = minutesToCook;
-            UserId = userId;
+            MinutesToCook = minutesToCook;            
             DifficultyId = difficultyId;
             ImageSource = imageSource;
             IsApproved = isApproved;
             CreatedAt = createdAt;
+            User = user;
             Ingredients = ingredients;
-            // Tenho de adicionar Comments, Ratings, Difficulty, Categories, User
+            // Tenho de adicionar Comments, Ratings, Difficulty, Categories
         }
 
         private void ValidateTitle(string value)

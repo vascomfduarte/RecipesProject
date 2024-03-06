@@ -8,7 +8,7 @@ namespace Assembly.RecipeApp.Application.Services
     public class UserServices : IUserService
     {
         private static UserRepository _userRepository = new UserRepository();
-
+        
         public bool Add(User user)
         {
             // Validate if username already exist
@@ -103,7 +103,7 @@ namespace Assembly.RecipeApp.Application.Services
 
         public bool Update(User user)
         {
-            //Get UserByID? (como sei o ID?)
+            //Quando se acede a opção de Update já se correu GetUserByID
 
 
             // Passei validação para repositorio

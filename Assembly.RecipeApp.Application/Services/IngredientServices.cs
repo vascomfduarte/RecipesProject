@@ -65,21 +65,6 @@ namespace Assembly.RecipeApp.Application.Services
 
             foreach (string ingredientString in ingredientStrings)
             {
-                //// Split the ingredient string into individual parameters
-                //string[] ingredientData = ingredientString.Split('|');
-
-                //// Extract individual data
-                //int id = int.Parse(ingredientData[0]);
-                //string name = ingredientData[1];
-                //int amount = int.Parse(ingredientData[2]);
-                //int unitId = int.Parse(ingredientData[3]);
-
-                ////Add additional data
-                //Unit unit = _unitServices.GetById(unitId);
-
-                //// Create a new Ingredient object and populate its properties
-                //Ingredient ingredient = new Ingredient(id, name, amount, unit);
-
                 Ingredient ingredient = ParseIngredient(ingredientString);
 
                 returnIngredients.Add(ingredient);
