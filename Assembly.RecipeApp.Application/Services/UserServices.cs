@@ -7,62 +7,7 @@ namespace Assembly.RecipeApp.Application.Services
 {
     public class UserServices : IUserService
     {
-
         private static UserRepository _userRepository = new UserRepository();
-
-        //public (bool success, string errorMessage) CreateUser(string username,
-        //                       string password,
-        //                       string email,
-        //                       string firstName,
-        //                       string lastName,
-        //                       string contentBio = "Let others know who you are",
-        //                       string imageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg",
-        //                       string isAdmin = "0",
-        //                       string isBlocked = "0")
-        //{
-        //    // Validate username
-        //    if (string.IsNullOrWhiteSpace(username) || GetAll().Any(u => u.Username == username))
-        //        return (false, "Invalid username or username already exists.");
-
-        //    // Validate password strength (Example: Minimum 8 characters with at least one letter and one digit)
-        //    if (string.IsNullOrWhiteSpace(password) || password.Length < 8 || !password.Any(char.IsLetter) || !password.Any(char.IsDigit))
-        //        return (false, "Invalid password. Password must be at least 8 characters long and contain at least one letter and one digit.");
-
-        //    // Validate email format
-        //    if (string.IsNullOrWhiteSpace(email) ||
-        //        !Regex.IsMatch(email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$") ||
-        //        GetAll().Any(u => u.Email == email))
-        //        return (false, "Invalid email address or email address already exists.");
-
-        //    // Validate first name and last name format
-        //    if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
-        //        return (false, "First name and last name are required.");
-
-        //    // Validate image source format
-        //    if (!Uri.TryCreate(imageSource, UriKind.Absolute, out Uri uriResult) || uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps)
-        //        return (false, "Invalid image URL.");
-
-        //    // Set isAdmin to 0 by default if not provided
-        //    if (isAdmin != "1" && isAdmin != "0")
-        //        isAdmin = "0";
-
-        //    // Call repository method to create user
-        //    bool success = _userRepository.CreateUser(username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked);
-        //    return (success, success ? "" : "Failed to create user. Please try again later.");
-        //}
-
-        //public bool BlockeUser(User adminUser, User user)
-        //{            
-        //    if (adminUser.isAdmin)
-        //    {
-        //        bool success = _userRepository.BlockUser(User adminUser, User user);
-        //    }
-        //    else
-        //        return false;
-
-        //    return success; 
-        //}
-
 
         public bool Add(User user)
         {
@@ -158,6 +103,9 @@ namespace Assembly.RecipeApp.Application.Services
 
         public bool Update(User user)
         {
+            //Get UserByID? (como sei o ID?)
+
+
             // Passei validação para repositorio
 
             //if (user.Id == 0)
@@ -194,10 +142,12 @@ namespace Assembly.RecipeApp.Application.Services
 
             return _userRepository.Update(userString);
         }
+
         public bool UpdateIsAdmin(User adminUser, User userToModify)
         {
             throw new NotImplementedException();
         }
+
         public bool UpdateIsBlocked(User adminUser, User userToModify)
         {
             throw new NotImplementedException();

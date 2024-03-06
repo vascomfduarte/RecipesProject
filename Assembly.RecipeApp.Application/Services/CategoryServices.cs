@@ -3,34 +3,29 @@ using Assembly.RecipeApp.Domain.Model;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    internal class CategoryServices : IRecipeService
+    public class CategoryServices : ICategoryService
     {
-        public bool Add(Recipe entity)
+        public bool Add(Category entity, User adminUser)
         {
             throw new NotImplementedException();
         }
 
-        public bool Delete(int id)
+        public bool Delete(int id, User adminUser)
         {
             throw new NotImplementedException();
         }
 
-        public List<Recipe> GetAll()
+        public List<Category> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Recipe GetById(int id)
+        public Category GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Recipe> GetFilteredRecipes(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Update(Recipe entity)
+        public bool Update(Category entity, User adminUser)
         {
             throw new NotImplementedException();
         }

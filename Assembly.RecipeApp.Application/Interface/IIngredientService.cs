@@ -2,9 +2,13 @@
 
 namespace Assembly.RecipeApp.Application.Interface
 {
-    public interface IIngredientService : IService<Ingredient>
+    public interface IIngredientService
     {
-        bool Add(Ingredient entity, User user);
+        List<Ingredient> GetAll();
+        Ingredient GetById(int id);
+        bool Add(Ingredient entity, User adminUser);
+        bool Update(Ingredient entity, User adminUser);
+        bool Delete(int id, User adminUser);
 
         List<Ingredient> GetRecipeIngredients(int recipeId);
     }

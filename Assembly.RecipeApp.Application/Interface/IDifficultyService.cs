@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Assembly.RecipeApp.Application.Interface
 {
-    public interface IUnitService
+    public interface IDifficultyService
     {
-        List<Unit> GetAll();
-        Unit GetById(int id);
-        bool Add(Unit entity, User adminUser);
-        bool Update(Unit entity, User adminUser);
+        List<Ingredient> GetAll();
+        Ingredient GetById(int id);
+        bool Add(Difficulty entity, User adminUser);
+        bool Update(Difficulty entity, User adminUser);
         bool Delete(int id, User adminUser);
     }
 }

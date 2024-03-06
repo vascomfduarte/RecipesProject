@@ -3,39 +3,29 @@ using Assembly.RecipeApp.Domain.Model;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    internal class DifficultyServices 
+    internal class DifficultyServices : IDifficultyService
     {
-        internal static Difficulty GetDifficultyById(int difficultyId)
+        public bool Add(Difficulty entity, User adminUser)
         {
             throw new NotImplementedException();
         }
 
-        public bool Add(Recipe entity)
+        public bool Delete(int id, User adminUser)
         {
             throw new NotImplementedException();
         }
 
-        public bool Delete(int id)
+        public List<Ingredient> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public List<Recipe> GetAll()
+        public Ingredient GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Recipe GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Recipe> GetFilteredProducts(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Update(Recipe entity)
+        public bool Update(Difficulty entity, User adminUser)
         {
             throw new NotImplementedException();
         }

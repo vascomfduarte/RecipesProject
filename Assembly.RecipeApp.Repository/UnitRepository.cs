@@ -10,6 +10,11 @@ namespace Assembly.RecipeApp.Repository
 
         public string Unit;
 
+        public bool Add(string unitString)
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetById(int unitId)
         {
             // Collect data from database

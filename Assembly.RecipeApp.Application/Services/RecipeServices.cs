@@ -12,8 +12,6 @@ namespace Assembly.RecipeApp.Application.Services
         private static UserServices _userServices = new UserServices();
         private static IngredientServices _ingredientServices = new IngredientServices();
 
-        //private static RecipeIngredientsServices _recipeIngredientsServices = new RecipeIngredientsServices();
-
         public bool Add(Recipe recipe)
         {
             // Validate if Title is already in use

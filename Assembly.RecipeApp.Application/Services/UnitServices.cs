@@ -8,12 +8,7 @@ namespace Assembly.RecipeApp.Application.Services
     {
         private static UnitRepository _unitRepository = new UnitRepository();
 
-        public bool Add(Unit entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Delete(int id)
+        public bool Add(Unit entity, User adminUser)
         {
             throw new NotImplementedException();
         }
@@ -41,9 +36,15 @@ namespace Assembly.RecipeApp.Application.Services
             return unit;
         }
 
-        public bool Update(Unit entity)
+        public bool Update(Unit entity, User adminUser)
         {
             throw new NotImplementedException();
         }
+
+        public bool Delete(int id, User adminUser)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

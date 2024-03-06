@@ -3,39 +3,29 @@ using Assembly.RecipeApp.Domain.Model;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    internal class CommentServices
+    public class CommentServices : ICommentService
     {
-        internal static List<Comment> GetComment(int id)
+        public bool Add(Comment entity)
         {
             throw new NotImplementedException();
         }
 
-        public bool Add(Recipe entity)
+        public bool Delete(int id, User user)
         {
             throw new NotImplementedException();
         }
 
-        public bool Delete(int id)
+        public List<Comment> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public List<Recipe> GetAll()
+        public Comment GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Recipe GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Recipe> GetFilteredProducts(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Update(Recipe entity)
+        public bool Update(Comment entity, User user)
         {
             throw new NotImplementedException();
         }

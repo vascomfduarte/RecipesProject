@@ -88,12 +88,12 @@ namespace Assembly.RecipeApp.Application.Services
             return returnIngredients;
         }
 
-        public bool Update(Ingredient entity)
+        public bool Update(Ingredient entity, User adminUser)
         {
             throw new NotImplementedException();
         }
 
-        public bool Delete(int id)
+        public bool Delete(int id, User adminUser)
         {
             throw new NotImplementedException();
         }
@@ -124,9 +124,5 @@ namespace Assembly.RecipeApp.Application.Services
             return ingredient;
         }
 
-        public bool Add(Ingredient entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
