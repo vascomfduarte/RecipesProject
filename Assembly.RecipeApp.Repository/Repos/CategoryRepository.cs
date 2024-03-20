@@ -1,25 +1,39 @@
-﻿
+﻿using Assembly.RecipeApp.Domain.Model;
+using Assembly.RecipeApp.Repository.Interfaces;
+using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using Assembly.RecipeApp.Repository.Interfaces;
-using Assembly.RecipeApp.Domain.Model;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Assembly.RecipeApp.Repository.Repos
 {
-    public class UnitRepository : IUnitRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private static string _connectionString = ConnectionStringProvider.GetConnectionString();
 
-        public Unit Unit;
+        public Category Category;
 
-        public List<Unit> GetAll()
+        public bool Add(Category entity, User adminUser)
         {
-            List<Unit> units = new List<Unit>();
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(int id, User adminUser)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Category> GetAll()
+        {
+            List<Category> categories = new List<Category>();
 
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM unit;";
+                string query = "SELECT * FROM category;";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -33,23 +47,23 @@ namespace Assembly.RecipeApp.Repository.Repos
                             int id = reader.GetInt32(0);
                             string name = reader.GetString(1);
 
-                            var unit = new Unit(id, name);
+                            var category = new Category(id, name);
 
-                            units.Add(unit);
+                            categories.Add(category);
                         }
                     }
                 }
             }
 
-            return units;
+            return categories;
         } // Feito
 
-        public Unit GetById(int id)
+        public Category GetById(int id)
         {
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM unit WHERE id = @id;";
+                string query = "SELECT * FROM category WHERE id = @id;";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -63,32 +77,21 @@ namespace Assembly.RecipeApp.Repository.Repos
                     {
                         while (reader.Read())
                         {
-                            int unitId = reader.GetInt32(0);
+                            int categoryId = reader.GetInt32(0);
                             string name = reader.GetString(1);
 
-                            Unit = new Unit(unitId, name);
+                            Category = new Category(categoryId, name);
                         }
                     }
                 }
             }
 
-            return Unit;
+            return Category;
         } // Feito
 
-        public bool Add(Unit entity, User adminUser)
+        public bool Update(Category entity, User adminUser)
         {
             throw new NotImplementedException();
         }
-
-        public bool Update(Unit entity, User adminUser)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Delete(int id, User adminUser)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

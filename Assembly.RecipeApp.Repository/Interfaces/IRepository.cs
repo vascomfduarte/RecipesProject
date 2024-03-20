@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assembly.RecipeApp.Repository.Interfaces
 {
-    public interface IRepository<T> where T : class, IEntity, IAuditableEntity
+    public interface IRepository<T> where T : class, IEntity
     {
         List<T> GetAll();
         T GetById(int id);

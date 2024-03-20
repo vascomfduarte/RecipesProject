@@ -8,7 +8,7 @@ namespace Assembly.RecipeApp.Application.Services
 {
     public class UserServices : IUserService
     {
-        private IUserRepository _userRepository;
+        IUserRepository _userRepository;
 
         public UserServices(IUserRepository userRepository) 
         { 
@@ -18,38 +18,17 @@ namespace Assembly.RecipeApp.Application.Services
         public List<User> GetAll()
         {
             return _userRepository.GetAll();
-        }
+        } // Feito 
 
         public User GetById(int id)
         {
-            // Retrieve the list of User parameters through a string from the repository
-            string userString = _userRepository.GetById(id);
-
-            // Call and return Recipe builder method
-            return ParseUser(userString);
-        }
+            return _userRepository.GetById(id);
+        } // Feito 
 
         public List<User> GetFilteredUsers(string name)
         {
-            // Retrieve the list of User parameters through a string from the repository
-            List<string> userStrings = _userRepository.GetFilteredUsers(name.ToLower());
-
-            if (string.IsNullOrEmpty(name))
-                userStrings = _userRepository.GetAll();
-
-            List<User> returnUsers = new List<User>();
-
-            foreach (string strg in userStrings)
-            {
-                // Call User builder method and assign it 
-                User user = ParseUser(strg);
-
-                // Add the User to return list
-                returnUsers.Add(user);
-            }
-
-            return returnUsers;
-        }
+            return _userRepository.GetFilteredUsers(name.ToLower());
+        } // Feito 
 
         public bool Add(User user)
         {
@@ -91,7 +70,7 @@ namespace Assembly.RecipeApp.Application.Services
 
             // Call the UserRepository's Add method with the formatted string representation of the User
             return _userRepository.Add(userString);
-        }
+        } // Para alterar
 
         public bool Update(User user)
         {
@@ -133,7 +112,7 @@ namespace Assembly.RecipeApp.Application.Services
             string userString = $"{user.Id}|{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}";
 
             return _userRepository.Update(userString);
-        }
+        } // Para alterar
 
         public bool UpdateBlockStatus(User user, User adminUser)
         {
@@ -154,47 +133,6 @@ namespace Assembly.RecipeApp.Application.Services
         public bool Delete(int id)
         {
             throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Method associated with all the get methods from User. 
-        /// It is responsible for receiving a string, creating an instance of User with the parameters contained in the string and returning it.
-        /// </summary>
-        /// <param userString="parameter"></param>
-        /// <returns></returns>
-        public User ParseUser(string userString)
-        {
-            // Split the user string into individual parameters
-            string[] userData = userString.Split('|');
-
-            // Extract individual data
-            int id = int.Parse(userData[0]);
-            string username = userData[1];
-            string password = userData[2];
-            string email = userData[3];
-            string firstName = userData[4];
-            string lastName = userData[5];
-            string contentBio = userData[6];            
-            string imageSource = string.IsNullOrEmpty(userData[7]) ? "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg" : userData[7]; // Define a default image
-            // Convert integer representations to boolean
-            bool isBlocked = userData[8] == "1";
-            bool isAdmin = userData[9] == "1";
-
-            // Create a new User object with the extracted data
-            User user = new User(id,
-                                 username,
-                                 password,
-                                 email,
-                                 firstName,
-                                 lastName,
-                                 contentBio,
-                                 imageSource,
-                                 isBlocked,
-                                 isAdmin);
-
-            // Additional processing for Comments and Recipes if needed
-
-            return user;
         }
 
         public User Login(string username, string password)

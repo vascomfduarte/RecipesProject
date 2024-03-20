@@ -1,31 +1,28 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
+using Assembly.RecipeApp.Repository.Interfaces;
+using Assembly.RecipeApp.Domain.Model;
 
 namespace Assembly.RecipeApp.Repository.Repos
 {
-    public class IngredientRepository
+    public class IngredientRepository : IIngredientRepository
     {
         private static string _connectionString = ConnectionStringProvider.GetConnectionString();
 
-        List<string> Ingredients = new List<string>();
-
-        public bool Add(string ingredient)
+        public List<Ingredient> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public List<string> GetAll()
+        public Ingredient GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public string GetById(int id)
+        public List<Ingredient> GetRecipeIngredients(int recipeId)
         {
-            throw new NotImplementedException();
-        }
+            List<Ingredient> ingredients = new List<Ingredient>();
 
-        public List<string> GetRecipeIngredients(int recipeId)
-        {
             // join de recipes com tabela de ingredients e amount
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
@@ -47,27 +44,42 @@ namespace Assembly.RecipeApp.Repository.Repos
                     {
                         while (reader.Read())
                         {
-                            // Construct the string representation of the recipe
-                            string ingredient = string.Format("{0}|{1}|{2}|{3}",
-                                                reader["ingredient_id"],
-                                                reader["ingredient_name"],
-                                                reader["amount"],
-                                                reader["unit_id"]);
+                            int id = reader.GetInt32(0);
+                            string name = reader.GetString(1);
+                            int amount = reader.GetInt32(2);
+                            // Unit
+                            Unit unit = new Unit(reader.GetInt32(3),
+                                                 reader.GetString(4));
 
-                            Ingredients.Add(ingredient);
+                            var ingredient = new Ingredient(id, name, amount, unit);
+
+                            ingredients.Add(ingredient);
                         }
                     }
                 }
             }
 
-            return Ingredients;
-
-            throw new NotImplementedException();
+            return ingredients;
         }
 
-        public List<string> GetIngredient(int recipeId)
+        public Ingredient Add(Ingredient entity)
         {
             throw new NotImplementedException();
         }
+
+        public Ingredient Update(Ingredient entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Ingredient Delete(Ingredient entity)
+        {
+            throw new NotImplementedException();
+        }
+        public Ingredient Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

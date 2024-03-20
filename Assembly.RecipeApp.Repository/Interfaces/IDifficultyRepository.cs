@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assembly.RecipeApp.Application.Interfaces
+namespace Assembly.RecipeApp.Repository.Interfaces
 {
-    public interface IDifficultyService
+    public interface IDifficultyRepository
     {
         List<Difficulty> GetAll();
         Difficulty GetById(int id);

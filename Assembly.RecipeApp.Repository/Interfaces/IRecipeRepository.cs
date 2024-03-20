@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Assembly.RecipeApp.Repository.Interfaces
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IRecipeRepository : IRepository<Recipe>
     {
-        List<User> GetFilteredUsers(string name);
-        bool UpdateBlockStatus(User user);
-        bool UpdateAdminStatus(User user);
+        List<Recipe> GetFilteredRecipes(string name);
     }
 }

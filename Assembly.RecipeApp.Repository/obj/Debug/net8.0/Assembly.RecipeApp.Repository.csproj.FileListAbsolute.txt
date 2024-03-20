@@ -23,3 +23,6 @@ A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly
 A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Repository\obj\Debug\net8.0\refint\Assembly.RecipeApp.Repository.dll
 A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Repository\obj\Debug\net8.0\Assembly.RecipeApp.Repository.pdb
 A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Repository\obj\Debug\net8.0\ref\Assembly.RecipeApp.Repository.dll
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Repository\bin\Debug\net8.0\Assembly.RecipeApp.Domain.dll
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Repository\bin\Debug\net8.0\Assembly.RecipeApp.Domain.pdb
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Repository\obj\Debug\net8.0\Assembly.D0436198.Up2Date

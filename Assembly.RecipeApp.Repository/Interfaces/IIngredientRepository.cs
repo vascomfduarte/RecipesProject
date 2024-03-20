@@ -1,16 +1,15 @@
 ﻿using Assembly.RecipeApp.Domain.Model;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Assembly.RecipeApp.Repository.Interfaces
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IIngredientRepository : IRepository<Ingredient>
     {
-        List<User> GetFilteredUsers(string name);
-        bool UpdateBlockStatus(User user);
-        bool UpdateAdminStatus(User user);
+        List<Ingredient> GetRecipeIngredients(int recipeId);
     }
 }

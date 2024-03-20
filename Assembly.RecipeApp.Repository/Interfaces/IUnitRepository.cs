@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assembly.RecipeApp.Application.Interfaces
+namespace Assembly.RecipeApp.Repository.Interfaces
 {
-    public interface IUnitService
+    public interface IUnitRepository
     {
         List<Unit> GetAll();
         Unit GetById(int id);

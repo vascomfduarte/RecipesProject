@@ -1,14 +1,20 @@
-﻿using System.Data;
+﻿using Assembly.RecipeApp.Domain.Model;
+using Assembly.RecipeApp.Repository.Interfaces;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Assembly.RecipeApp.Repository.Repos
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         private static string _connectionString = ConnectionStringProvider.GetConnectionString();
 
-        public string User;
+        public User User;
 
+        public User Add(User entity)
+        {
+            throw new NotImplementedException();
+        }        
         public bool Add(string userString)
         {
             using (SqlConnection con = new SqlConnection(_connectionString))
@@ -41,16 +47,16 @@ namespace Assembly.RecipeApp.Repository.Repos
                     return rowsAffected > 0;
                 }
             }
-        }
+        } // Para eliminar
 
-        public List<string> GetAll()
+        public List<User> GetAll()
         {
-            List<string> returnUser = new List<string>();
+            List<User> users = new List<User>();
 
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM [dbo].[user]";
+                string query = "SELECT * FROM [dbo].[user];";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -61,30 +67,30 @@ namespace Assembly.RecipeApp.Repository.Repos
                     {
                         while (reader.Read())
                         {
-                            // Construct the string representation of the user
-                            string user = string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
-                                                          reader["ID"],
-                                                          reader["username"],
-                                                          reader["password"],
-                                                          reader["email"],
-                                                          reader["first_name"],
-                                                          reader["last_name"],
-                                                          reader["content_bio"],
-                                                          reader["image_source"],
-                                                          reader["is_admin"],
-                                                          reader["is_blocked"],
-                                                          reader["created_at"]);
-                            returnUser.Add(user);
+                            int id = reader.GetInt32(0);
+                            string username = reader.GetString(1);
+                            string password = reader.GetString(2);
+                            string email = reader.GetString(3);
+                            string firstName = reader.GetString(4);
+                            string lastName = reader.GetString(5);
+                            string contentBio = reader.GetString(6);
+                            string imageSource = reader.GetString(7);
+                            bool isAdmin = reader.GetBoolean(8);
+                            bool isBlocked = reader.GetBoolean(9);
+                            DateTime createdDate = reader.GetDateTime(10);
+
+                            var user = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);
+
+                            users.Add(user);
                         }
                     }
                 }
 
             }
 
-            return returnUser;
-        }
-
-        public string GetById(int userId)
+            return users;
+        } // Feito 
+        public User GetById(int userId)
         {
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
@@ -103,42 +109,37 @@ namespace Assembly.RecipeApp.Repository.Repos
                     {
                         while (reader.Read())
                         {
-                            // Construct the string representation of the user
-                            User = string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
-                                                          reader["ID"],
-                                                          reader["username"],
-                                                          reader["password"],
-                                                          reader["email"],
-                                                          reader["first_name"],
-                                                          reader["last_name"],
-                                                          reader["content_bio"],
-                                                          reader["image_source"],
-                                                          reader["is_admin"],
-                                                          reader["is_blocked"],
-                                                          reader["created_at"]);
+                            int id = reader.GetInt32(0);
+                            string username = reader.GetString(1);
+                            string password = reader.GetString(2);
+                            string email = reader.GetString(3);
+                            string firstName = reader.GetString(4);
+                            string lastName = reader.GetString(5);
+                            string contentBio = reader.GetString(6);
+                            string imageSource = reader.GetString(7);
+                            bool isAdmin = reader.GetBoolean(8);
+                            bool isBlocked = reader.GetBoolean(9);
+                            DateTime createdDate = reader.GetDateTime(10);
+
+                            User = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);                            
                         }
                     }
                 }
-
             }
 
             return User;
-        }
-
-        public List<string> GetFilteredUsers(string username)
+        } // Feito
+        public List<User> GetFilteredUsers(string input)
         {
-            List<string> returnUser = new List<string>();
+            List<User> users = new List<User>();
 
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM [dbo].[user] WHERE LOWER([username]) LIKE '%' + @username + '%' OR LOWER([first_name]) LIKE '%' + @username + '%'";
+                string query = "SELECT * FROM [dbo].[user] WHERE LOWER([username]) LIKE '%' + @input + '%' OR LOWER([first_name]) LIKE '%' + @input + '%'";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    // Add parameter to command
-                    cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = username.ToLower();
-
                     if (con.State != ConnectionState.Open)
                         con.Open();
 
@@ -146,27 +147,28 @@ namespace Assembly.RecipeApp.Repository.Repos
                     {
                         while (reader.Read())
                         {
-                            // Construct the string representation of the user
-                            string user = string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
-                                                          reader["ID"],
-                                                          reader["username"],
-                                                          reader["password"],
-                                                          reader["email"],
-                                                          reader["first_name"],
-                                                          reader["last_name"],
-                                                          reader["content_bio"],
-                                                          reader["image_source"],
-                                                          reader["is_admin"],
-                                                          reader["is_blocked"],
-                                                          reader["created_at"]);
-                            returnUser.Add(user);
+                            int id = reader.GetInt32(0);
+                            string username = reader.GetString(1);
+                            string password = reader.GetString(2);
+                            string email = reader.GetString(3);
+                            string firstName = reader.GetString(4);
+                            string lastName = reader.GetString(5);
+                            string contentBio = reader.GetString(6);
+                            string imageSource = reader.GetString(7);
+                            bool isAdmin = reader.GetBoolean(8);
+                            bool isBlocked = reader.GetBoolean(9);
+                            DateTime createdDate = reader.GetDateTime(10);
+
+                            var user = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);
+
+                            users.Add(user);
                         }
                     }
                 }
             }
 
-            return returnUser;
-        }
+            return users;
+        } // Feito
 
         public bool Update(string userString)
         {
@@ -198,20 +200,27 @@ namespace Assembly.RecipeApp.Repository.Repos
                     return rowsAffected > 0;
                 }
             }
+        } // Para eliminar
+        public User Update(User entity)
+        {
+            throw new NotImplementedException();
+        }
+        public bool UpdateBlockStatus(User user)
+        {
+            throw new NotImplementedException();
+        }
+        public bool UpdateAdminStatus(User user)
+        {
+            throw new NotImplementedException();
         }
 
-        public bool UpdateIsAdmin(string userString)
+        public User Delete(User entity)
         {
             throw new NotImplementedException();
         }
-        public bool UpdateIsBlocked(string userString)
+        public User Delete(int id)
         {
             throw new NotImplementedException();
-        }
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-
         }
 
     }

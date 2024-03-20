@@ -1,39 +1,32 @@
 ﻿using Assembly.RecipeApp.Application.Interfaces;
 using Assembly.RecipeApp.Domain.Model;
+using Assembly.RecipeApp.Repository.Interfaces;
 using Assembly.RecipeApp.Repository.Repos;
 
 namespace Assembly.RecipeApp.Application.Services
 {
     internal class UnitServices : IUnitService
     {
-        private static UnitRepository _unitRepository = new UnitRepository();
+        IUnitRepository _unitRepository;
 
-        public bool Add(Unit entity, User adminUser)
+        public UnitServices(IUnitRepository unitRepository)
         {
-            throw new NotImplementedException();
+            _unitRepository = unitRepository;
         }
 
         public List<Unit> GetAll()
         {
-            throw new NotImplementedException();
-        }
+            return _unitRepository.GetAll();
+        } // Feito
 
         public Unit GetById(int unitId)
         {
-            // Retrieve the list of ingredient parameters through a string from the repository
-            string unitString = _unitRepository.GetById(unitId);
+            return _unitRepository.GetById(unitId);
+        } // Feito
 
-            // Split the ingredient string into individual parameters
-            string[] unitData = unitString.Split('|');
-
-            // Extract individual data
-            int id = int.Parse(unitData[0]);
-            string name = unitData[1];
-
-            // Create a new Unit object and populate its properties
-            Unit unit = new Unit(id, name);
-
-            return unit;
+        public bool Add(Unit entity, User adminUser)
+        {
+            throw new NotImplementedException();
         }
 
         public bool Update(Unit entity, User adminUser)
