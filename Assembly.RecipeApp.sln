@@ -3,13 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly.RecipeApp.Application", "Assembly.RecipeApp.Application\Assembly.RecipeApp.Application.csproj", "{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.RecipeApp.Application", "Assembly.RecipeApp.Application\Assembly.RecipeApp.Application.csproj", "{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly.RecipeApp.Domain", "Assembly.RecipeApp.Domain\Assembly.RecipeApp.Domain.csproj", "{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.RecipeApp.Domain", "Assembly.RecipeApp.Domain\Assembly.RecipeApp.Domain.csproj", "{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly.RecipeApp.Repository", "Assembly.RecipeApp.Repository\Assembly.RecipeApp.Repository.csproj", "{3B4795C7-A936-4991-8063-D7D1E74AF81A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.RecipeApp.Repository", "Assembly.RecipeApp.Repository\Assembly.RecipeApp.Repository.csproj", "{3B4795C7-A936-4991-8063-D7D1E74AF81A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly.RecipeApp.ConsoleApp", "Assembly.RecipeApp.ConsoleApp\Assembly.RecipeApp.ConsoleApp.csproj", "{868AA339-FDAD-4127-8B09-4F48C228D4DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.RecipeApp.ConsoleApp", "Assembly.RecipeApp.ConsoleApp\Assembly.RecipeApp.ConsoleApp.csproj", "{868AA339-FDAD-4127-8B09-4F48C228D4DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{741CA0E0-2897-4BEB-8E48-0AEB1CF9E1A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{FCBC55CC-EECE-4D63-8082-3D8C1FEA5203}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{BF9A64B1-20D0-42B3-BCA0-CDC4F49BF9C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{79DD7DF4-ED62-4C83-A653-A2A0420D5241}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +44,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D} = {741CA0E0-2897-4BEB-8E48-0AEB1CF9E1A7}
+		{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F} = {BF9A64B1-20D0-42B3-BCA0-CDC4F49BF9C6}
+		{3B4795C7-A936-4991-8063-D7D1E74AF81A} = {79DD7DF4-ED62-4C83-A653-A2A0420D5241}
+		{868AA339-FDAD-4127-8B09-4F48C228D4DD} = {FCBC55CC-EECE-4D63-8082-3D8C1FEA5203}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80819161-0C61-41E3-BA0E-A29BAE4036F0}

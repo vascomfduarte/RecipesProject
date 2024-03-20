@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Assembly.RecipeApp.Application\Assembly.RecipeApp.Application.csproj" />
+    <ProjectReference Include="..\Assembly.RecipeApp.Domain\Assembly.RecipeApp.Domain.csproj" />
   </ItemGroup>
 
 </Project>

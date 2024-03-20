@@ -19,8 +19,8 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
-        private int _amount { get; set; }
-        public int Amount
+        private double _amount { get; set; }
+        public double Amount
         {
             get { return _amount; }
             set
@@ -32,20 +32,20 @@ namespace Assembly.RecipeApp.Domain.Model
 
         public Unit Unit { get; set; }
 
-        public Ingredient(int id, string name, int amount) 
+        public Ingredient(int id, string name, double amount) 
         {
             Id = id;
             Name = name;
             Amount = amount;
         }
 
-        public Ingredient(int id, string name, int amount, Unit unit)
+        public Ingredient(int id, string name, double amount, Unit unit)
             : this(id, name, amount)
         {
             Unit = unit;
         }
 
-        private void ValidateAmount(int value)
+        private void ValidateAmount(double value)
         {
             if (value < 0 || value > 1000)
             {
