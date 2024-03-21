@@ -9,10 +9,18 @@ namespace Assembly.RecipeApp.Domain.Interfaces
 {
     public interface IAuditableEntity
     {
-        DateTime createdTime { get; set; }
-        DateTime modifiedTime { get; set; }
-        User User { get; set; }
-        
+        public string CreatedBy { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string UpdatedBy { get; set; }
+        public DateTime UpdatedDate { get; set; }
+    }
+
+    public class AuditableEntity : IAuditableEntity
+    {
+        public string CreatedBy { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string UpdatedBy { get; set; }
+        public DateTime UpdatedDate { get; set; }
     }
 
 }

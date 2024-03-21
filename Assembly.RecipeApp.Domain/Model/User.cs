@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Assembly.RecipeApp.Domain.Model
 {
-    public class User : IEntity
+    public class User : AuditableEntity, IEntity
     {      
         public int Id { get; private set; }
 
@@ -67,7 +67,6 @@ namespace Assembly.RecipeApp.Domain.Model
         public string ImageSource { get; set; }
         public bool IsAdmin { get; private set; }
         public bool IsBlocked { get; private set; }
-        public DateTime CreatedDate { get; set; }
 
         public List<Comment> Comments { get; set; }
         public List<Recipe> Recipes { get; set; }

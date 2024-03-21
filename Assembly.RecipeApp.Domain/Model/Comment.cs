@@ -1,6 +1,8 @@
-﻿namespace Assembly.RecipeApp.Domain.Model
+﻿using Assembly.RecipeApp.Domain.Interfaces;
+
+namespace Assembly.RecipeApp.Domain.Model
 {
-    public class Comment
+    public class Comment : AuditableEntity, IEntity
     {
         public int Id { get; set; }
         public string Body { get; set; }

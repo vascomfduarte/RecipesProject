@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace Assembly.RecipeApp.Domain.Model
 {
-    public class Recipe : IEntity
+    public class Recipe : AuditableEntity, IEntity
     {
         public int Id { get; private set; }
 
@@ -20,16 +20,18 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
-        private string _instructions { get; set; }
-        public string Instructions
+        private string _description { get; set; }
+        public string Description
         {
-            get { return _instructions; }
+            get { return _description; }
             set
             {
-                ValidateInstructions(value);
-                _instructions = value;
+                ValidateDescription(value);
+                _description = value;
             }
         }
+
+        public PreparationMethod PreparationMethod { get; set; }
 
         public string ImageSource { get; set; }
 
@@ -48,46 +50,50 @@ namespace Assembly.RecipeApp.Domain.Model
 
         public Difficulty Difficulty { get; set; } // Obrigatório
 
-        public DateTime CreatedDate { get; private set; }
-
         public User User { get; set; } // Obrigatório
         public List<Category> Categories { get; set; } // Obrigatório
         public List<Rating> Ratings { get; set; }
         public List<Comment> Comments { get; set; }
         public List<Ingredient> Ingredients { get; set; } // Obrigatório
 
-        public Recipe(string title, string instructions, int minutesToCook, User user, Difficulty difficulty, List<Ingredient> ingredients)
+        public Recipe(string title, string description, PreparationMethod preparationMethod, int minutesToCook, User user, Difficulty difficulty, List<Ingredient> ingredients)
         {
             Title = title;
-            Instructions = instructions;
-            MinutesToCook = minutesToCook;            
+            Description = description;
+            PreparationMethod = preparationMethod;
+            MinutesToCook = minutesToCook;
             Difficulty = difficulty;
-            CreatedDate = DateTime.Now.Date;
             User = user;
             Ingredients = ingredients;
+            CreatedBy = user.Username;
+            CreatedDate = DateTime.Now.Date;
         }
 
-        public Recipe(string title, string instructions, string imageSource, int minutesToCook, User user, Difficulty difficulty, List<Ingredient> ingredients)
-            : this(title, instructions, minutesToCook, user, difficulty, ingredients)
+        public Recipe(string title, string description, PreparationMethod preparationMethod, string imageSource, int minutesToCook, User user, Difficulty difficulty, List<Ingredient> ingredients)
+            : this(title, description, preparationMethod, minutesToCook, user, difficulty, ingredients)
         {
             ImageSource = imageSource;
             IsApproved = false;
         }
 
         // Used when retriving data from the database
-        public Recipe(int id, string title, string instructions, string imageSource, int minutesToCook, bool isApproved, User user, Difficulty difficulty, DateTime createdDate, List<Ingredient> ingredients)
+        public Recipe(int id, string title, string description, PreparationMethod preparationMethod, string imageSource, int minutesToCook, bool isApproved, User user, Difficulty difficulty, List<Ingredient> ingredients, string createdBy, DateTime createdDate, string updatedBy, DateTime updatedDate)
         {
             Id = id;
             Title = title;
-            Instructions = instructions;
-            MinutesToCook = minutesToCook;            
+            Description = description;
+            PreparationMethod = preparationMethod;
+            MinutesToCook = minutesToCook;
             Difficulty = difficulty;
             ImageSource = imageSource;
             IsApproved = isApproved;
-            CreatedDate = createdDate;
             User = user;
             Ingredients = ingredients;
             // Tenho de adicionar Comments, Ratings, Categories
+            CreatedBy = createdBy;
+            CreatedDate = createdDate;
+            UpdatedBy = updatedBy;
+            UpdatedDate = updatedDate;
         }
 
         private void ValidateTitle(string value)
@@ -110,18 +116,18 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new DomainException("Recipe title can only contain letters, numbers, and spaces.");
             }
         }
-        private void ValidateInstructions(string value)
+        private void ValidateDescription(string value)
         {
             // Check if instructions are null or empty
             if (string.IsNullOrEmpty(value))
             {
-                throw new DomainException("Recipe instructions cannot be null or empty.");
+                throw new DomainException("Recipe description cannot be null or empty.");
             }
 
             // Check if instructions length exceeds maximum allowed characters
             if (value.Length > 1000)
             {
-                throw new DomainException("Recipe instructions cannot exceed 1000 characters.");
+                throw new DomainException("Recipe description cannot exceed 500 characters.");
             }
         }
         private void ValidateMinutesToCook(int value)

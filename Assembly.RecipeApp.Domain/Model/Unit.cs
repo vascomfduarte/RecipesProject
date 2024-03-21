@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Assembly.RecipeApp.Domain.Model
 {
-    public class Unit : IEntity
+    public class Unit : AuditableEntity, IEntity
     {
         public int Id { get; private set; }
 

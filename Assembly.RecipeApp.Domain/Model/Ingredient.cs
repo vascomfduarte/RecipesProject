@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Assembly.RecipeApp.Domain.Model
 {
-    public class Ingredient : IEntity
+    public class Ingredient : AuditableEntity, IEntity
     {
         public int Id { get; set; }
 

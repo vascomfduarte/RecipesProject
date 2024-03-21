@@ -2,7 +2,7 @@
 
 namespace Assembly.RecipeApp.Domain.Model
 {
-    public class Category : IEntity
+    public class Category : AuditableEntity, IEntity
     {
         public int Id { get; set; }
 
