@@ -1,8 +1,6 @@
-﻿using Assembly.RecipeApp.Domain.Interfaces;
-
-namespace Assembly.RecipeApp.Domain.Model
+﻿namespace Assembly.RecipeApp.Domain.Model
 {
-    public class PreparationMethod : AuditableEntity, IEntity
+    public class PreparationMethod
     {
         public int Id { get; set; }
         public List<PreparationStep> Steps { get; set; }
@@ -12,9 +10,10 @@ namespace Assembly.RecipeApp.Domain.Model
             Steps = steps;
         }
 
-        public PreparationMethod(int id, List<PreparationStep> steps) : this (steps)
+        public PreparationMethod(int id, List<PreparationStep> steps)
         {
             Id = id;
+            Steps = steps;
         }
 
     }

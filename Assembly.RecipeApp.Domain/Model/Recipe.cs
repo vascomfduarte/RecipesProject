@@ -89,7 +89,7 @@ namespace Assembly.RecipeApp.Domain.Model
             IsApproved = isApproved;
             User = user;
             Ingredients = ingredients;
-            // Tenho de adicionar Comments, Ratings, Categories
+            // Tenho de adicionar Comments, Ratings, Categories, User
             CreatedBy = createdBy;
             CreatedDate = createdDate;
             UpdatedBy = updatedBy;

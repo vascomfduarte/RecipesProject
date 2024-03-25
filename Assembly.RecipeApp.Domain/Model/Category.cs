@@ -10,10 +10,19 @@ namespace Assembly.RecipeApp.Domain.Model
 
         public List<Recipe> Recipes { get; set; }
 
-        public Category(int id, string name) 
+        public Category(string name) 
+        {
+            Name = name;
+            CreatedDate = DateTime.Now;
+        }
+
+
+        public Category(int id, string name, List<Recipe> recipes, DateTime createdDate) 
         {
             Id = id;
             Name = name;
+            Recipes = recipes;
+            CreatedDate = createdDate;
         }
 
     }

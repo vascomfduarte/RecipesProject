@@ -102,10 +102,12 @@ namespace Assembly.RecipeApp.Domain.Model
             Id = id;
         }
 
-        public User(int id, string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource, bool isAdmin, bool isBlocked, DateTime createdDate)
-            : this(username, password, email)
+        public User(int id, string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource, bool isAdmin, bool isBlocked, DateTime createdDate)     
         {
             Id = id;
+            Username = username;
+            Password = password;
+            Email = email;
             FirstName = firstName;
             LastName = lastName;
             ContentBio = contentBio;

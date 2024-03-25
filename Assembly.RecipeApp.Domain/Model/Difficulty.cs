@@ -10,10 +10,17 @@ namespace Assembly.RecipeApp.Domain.Model
 
         public List<Recipe> Recipes { get; set; }
 
-        public Difficulty(int id, string name)
+        public Difficulty(string name) 
+        { 
+            Name = name;
+            CreatedDate = DateTime.Now;
+        }
+
+        public Difficulty(int id, string name, DateTime createdDate)
         {
             Id = id;
             Name = name;
+            CreatedDate = createdDate;
         }
 
     }

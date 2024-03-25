@@ -1,14 +1,13 @@
 ﻿using Assembly.RecipeApp.Domain.Exceptions;
 using Assembly.RecipeApp.Domain.Interfaces;
-using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace Assembly.RecipeApp.Domain.Model
 {
-    public class Unit : AuditableEntity, IEntity
+    public class Product : AuditableEntity
     {
-        public int Id { get; private set; }
-
+        public int Id { get; set; }
         private string _name { get; set; }
         public string Name
         {
@@ -20,14 +19,14 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
-        public Unit (string name)
+        public Product(string name)
         {
             Name = name;
-            CreatedDate = DateTime.Now;
+            CreatedDate = DateTime.Now;            
         }
 
-        public Unit(int id, string name, DateTime createdDate) 
-        { 
+        public Product(int id, string name, DateTime createdDate)
+        {
             Id = id;
             Name = name;
             CreatedDate = createdDate;
@@ -35,21 +34,21 @@ namespace Assembly.RecipeApp.Domain.Model
 
         private void ValidateName(string name)
         {
-            // Check if Unit name is null or empty
+            // Check if Ingredient Name is null or empty
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new DomainException("Unit name cannot be null or empty.");
+                throw new DomainException("Product name cannot be null or empty.");
             }
 
             if (name.Length > 50)
             {
-                throw new DomainException("Unit name cannot exceed 50 characters.");
+                throw new DomainException("Product name cannot exceed 50 characters.");
             }
 
-            // Check if Unit name format is valid
+            // Check if Ingredient name format is valid
             if (!Regex.IsMatch(name, @"^[a-zA-Z]+$"))
             {
-                throw new DomainException("Unit name can only contain letters.");
+                throw new DomainException("Product name can only contain letters.");
             }
         }
 

@@ -1,23 +1,13 @@
 ﻿using Assembly.RecipeApp.Domain.Exceptions;
 using Assembly.RecipeApp.Domain.Interfaces;
+using System.Net.Http.Headers;
 using System.Text.RegularExpressions;
 
 namespace Assembly.RecipeApp.Domain.Model
 {
     public class Ingredient : AuditableEntity, IEntity
     {
-        public int Id { get; set; }
-
-        private string _name { get; set; }
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                ValidateName(value);
-                _name = value;
-            }
-        }
+        public int Id { get; set; }        
 
         private double _amount { get; set; }
         public double Amount
@@ -30,19 +20,24 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
+        public Product Product { get; set; }
         public Unit Unit { get; set; }
 
-        public Ingredient(int id, string name, double amount) 
+        public Ingredient(Product product, double amount, Unit unit) 
         {
-            Id = id;
-            Name = name;
+            Product = product;
             Amount = amount;
+            Unit = unit;
+            CreatedDate = DateTime.Now;
         }
 
-        public Ingredient(int id, string name, double amount, Unit unit)
-            : this(id, name, amount)
+        public Ingredient(int id, Product product, double amount, Unit unit, DateTime createdDate)
         {
+            Id = id;
+            Product = product;
+            Amount = amount;
             Unit = unit;
+            CreatedDate = createdDate;
         }
 
         private void ValidateAmount(double value)
@@ -53,25 +48,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
-        private void ValidateName(string name)
-        {
-            // Check if Ingredient Name is null or empty
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                throw new DomainException("Ingredient name cannot be null or empty.");
-            }
 
-            if (name.Length > 50)
-            {
-                throw new DomainException("Ingredient name cannot exceed 50 characters.");
-            }
-
-            // Check if Ingredient name format is valid
-            if (!Regex.IsMatch(name, @"^[a-zA-Z]+$"))
-            {
-                throw new DomainException("Ingredient name can only contain letters.");
-            }
-        }
 
     }
 }

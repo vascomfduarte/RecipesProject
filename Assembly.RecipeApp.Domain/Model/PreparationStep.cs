@@ -26,6 +26,7 @@ namespace Assembly.RecipeApp.Domain.Model
         {
             Order = order;
             Description = description;
+            CreatedDate = DateTime.Now;
         }
 
         public PreparationStep (int order, string description, string imageSource) : this (order, description) 
@@ -33,9 +34,13 @@ namespace Assembly.RecipeApp.Domain.Model
             ImageSource = imageSource;
         }
 
-        public PreparationStep (int id, int order, string description, string imageSource) : this(order, description, imageSource)
+        public PreparationStep (int id, int order, string description, string imageSource, DateTime createdDate)
         {
             Id = id;
+            Order = order;
+            Description = description;
+            ImageSource = imageSource;
+            CreatedDate = createdDate;
         }
 
         private void ValidateDescription(string value)
@@ -49,7 +54,7 @@ namespace Assembly.RecipeApp.Domain.Model
             // Check if instructions length exceeds maximum allowed characters
             if (value.Length > 1000)
             {
-                throw new DomainException("Description cannot exceed 1000 characters.");
+                throw new DomainException("Description cannot exceed 500 characters.");
             }
         }
     }
