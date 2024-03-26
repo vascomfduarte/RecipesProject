@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{BF9A64
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{79DD7DF4-ED62-4C83-A653-A2A0420D5241}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly.RecipeApp.WebApp", "Assembly.RecipeApp.WebApp\Assembly.RecipeApp.WebApp.csproj", "{776E4FB5-1B50-4C09-90E7-950810F31B66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{868AA339-FDAD-4127-8B09-4F48C228D4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{868AA339-FDAD-4127-8B09-4F48C228D4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{868AA339-FDAD-4127-8B09-4F48C228D4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{776E4FB5-1B50-4C09-90E7-950810F31B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776E4FB5-1B50-4C09-90E7-950810F31B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776E4FB5-1B50-4C09-90E7-950810F31B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776E4FB5-1B50-4C09-90E7-950810F31B66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F} = {BF9A64B1-20D0-42B3-BCA0-CDC4F49BF9C6}
 		{3B4795C7-A936-4991-8063-D7D1E74AF81A} = {79DD7DF4-ED62-4C83-A653-A2A0420D5241}
 		{868AA339-FDAD-4127-8B09-4F48C228D4DD} = {FCBC55CC-EECE-4D63-8082-3D8C1FEA5203}
+		{776E4FB5-1B50-4C09-90E7-950810F31B66} = {FCBC55CC-EECE-4D63-8082-3D8C1FEA5203}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80819161-0C61-41E3-BA0E-A29BAE4036F0}
