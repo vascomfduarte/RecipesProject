@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace Assembly.RecipeApp.Domain.Model
 {
-    public class Product : AuditableEntity
+    public class Product : AuditableEntity, IEntity
     {
         public int Id { get; set; }
         private string _name { get; set; }

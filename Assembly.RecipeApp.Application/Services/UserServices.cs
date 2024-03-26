@@ -8,7 +8,7 @@ namespace Assembly.RecipeApp.Application.Services
 {
     public class UserServices : IUserService
     {
-        IUserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
         public UserServices(IUserRepository userRepository) 
         { 

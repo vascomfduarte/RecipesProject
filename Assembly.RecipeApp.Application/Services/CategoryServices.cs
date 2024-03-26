@@ -6,7 +6,7 @@ namespace Assembly.RecipeApp.Application.Services
 {
     public class CategoryServices : ICategoryService
     {
-        ICategoryRepository _categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
         public CategoryServices (ICategoryRepository categoryRepository) 
         {

@@ -8,7 +8,7 @@ namespace Assembly.RecipeApp.Application.Services
 {
     public class IngredientServices : IIngredientService
     {
-        IIngredientRepository _ingredientRepository;
+        private readonly IIngredientRepository _ingredientRepository;
 
         public IngredientServices(IIngredientRepository ingredientRepository)
         {
@@ -18,12 +18,12 @@ namespace Assembly.RecipeApp.Application.Services
         public List<Ingredient> GetAll()
         { 
             return _ingredientRepository.GetAll();
-        }
+        } // Feito 
 
         public Ingredient GetById(int id)
         {
             return _ingredientRepository.GetById(id);
-        }
+        } // Feito 
 
         public List<Ingredient> GetRecipeIngredients(int recipeId)
         {

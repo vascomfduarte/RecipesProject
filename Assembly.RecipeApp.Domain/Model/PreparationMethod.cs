@@ -1,6 +1,8 @@
-﻿namespace Assembly.RecipeApp.Domain.Model
+﻿using Assembly.RecipeApp.Domain.Interfaces;
+
+namespace Assembly.RecipeApp.Domain.Model
 {
-    public class PreparationMethod
+    public class PreparationMethod : IEntity
     {
         public int Id { get; set; }
         public List<PreparationStep> Steps { get; set; }

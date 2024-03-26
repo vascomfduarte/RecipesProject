@@ -9,7 +9,7 @@ namespace Assembly.RecipeApp.Application.Services
 {
     public class RecipeServices : IRecipeService
     {
-        IRecipeRepository _recipeRepository;
+        private readonly IRecipeRepository _recipeRepository;
 
         public RecipeServices(IRecipeRepository recipeRepository)
         {

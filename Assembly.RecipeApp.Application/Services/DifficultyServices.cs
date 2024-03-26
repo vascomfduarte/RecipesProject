@@ -6,7 +6,7 @@ namespace Assembly.RecipeApp.Application.Services
 {
     public class DifficultyServices : IDifficultyService
     {
-        IDifficultyRepository _difficultyRepository;
+        private readonly IDifficultyRepository _difficultyRepository;
 
         public DifficultyServices(IDifficultyRepository difficultyRepository)
         {

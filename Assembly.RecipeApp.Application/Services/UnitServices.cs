@@ -7,7 +7,7 @@ namespace Assembly.RecipeApp.Application.Services
 {
     internal class UnitServices : IUnitService
     {
-        IUnitRepository _unitRepository;
+        private readonly IUnitRepository _unitRepository;
 
         public UnitServices(IUnitRepository unitRepository)
         {

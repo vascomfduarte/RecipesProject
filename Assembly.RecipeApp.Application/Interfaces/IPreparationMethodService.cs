@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assembly.RecipeApp.Repository.Interfaces
+namespace Assembly.RecipeApp.Application.Interfaces
 {
-    public interface ICommentRepository : IRepository<Comment>
+    public interface IPreparationMethodService : IService<PreparationMethod>
     {
     }
 }

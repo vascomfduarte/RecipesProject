@@ -27,9 +27,10 @@ namespace Assembly.RecipeApp.Repository.Repos
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "SELECT ri.[amount], i.[id] AS [ingredient_id], i.[name] AS [ingredient_name], ri.[unit_id]" +
-                               " FROM [JD_FC_VD_RecipesProject].[dbo].[recipe_ingredients] AS ri" +
-                               " JOIN [JD_FC_VD_RecipesProject].[dbo].[ingredient] AS i ON ri.[ingredient_id] = i.[id]" +
+                // Refazer
+                string query = "SELECT ri.[amount], i.[id] AS [product_id], i.[name] AS [product_name], ri.[unit_id]" +
+                               " FROM [dbo].[ingredient] AS ri" +
+                               " JOIN [dbo].[ingredient] AS i ON ri.[product_id] = i.[id]" +
                                " WHERE ri.[recipe_id] = @recipeId";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
@@ -45,13 +46,14 @@ namespace Assembly.RecipeApp.Repository.Repos
                         while (reader.Read())
                         {
                             int id = reader.GetInt32(0);
-                            string name = reader.GetString(1);
+                            // Product
+                            Product product = new Product(reader.GetString(1));
                             int amount = reader.GetInt32(2);
                             // Unit
                             Unit unit = new Unit(reader.GetInt32(3),
                                                  reader.GetString(4));
 
-                            var ingredient = new Ingredient(id, name, amount, unit);
+                            var ingredient = new Ingredient(id, product, amount, unit);
 
                             ingredients.Add(ingredient);
                         }
