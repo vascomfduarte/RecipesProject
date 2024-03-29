@@ -31,8 +31,9 @@ namespace Assembly.RecipeApp.Repository.Repos
                         {
                             int id = reader.GetInt32(0);
                             string name = reader.GetString(1);
+                            DateTime date = reader.GetDateTime(2);
 
-                            var difficulty = new Difficulty(id, name);
+                            var difficulty = new Difficulty(id, name, date);
 
                             difficulties.Add(difficulty);
                         }
@@ -64,8 +65,9 @@ namespace Assembly.RecipeApp.Repository.Repos
                         {
                             int difficultyId = reader.GetInt32(0);
                             string name = reader.GetString(1);
+                            DateTime date = reader.GetDateTime(2);
 
-                            Difficulty = new Difficulty(difficultyId, name);
+                            Difficulty = new Difficulty(difficultyId, name, date);
                         }
                     }
                 }

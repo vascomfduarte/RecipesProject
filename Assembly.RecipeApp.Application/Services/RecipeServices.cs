@@ -10,10 +10,19 @@ namespace Assembly.RecipeApp.Application.Services
     public class RecipeServices : IRecipeService
     {
         private readonly IRecipeRepository _recipeRepository;
+        private readonly IPreparationMethodRepository _preparationMethodRepository;
+        private readonly ICommentRepository _commentRepository;
+        private readonly IIngredientRepository _ingredientRepository;
 
-        public RecipeServices(IRecipeRepository recipeRepository)
+        public RecipeServices(IRecipeRepository recipeRepository, 
+                              IPreparationMethodRepository preparationMethodRepository,
+                              ICommentRepository commentRepository, 
+                              IIngredientRepository ingredientRepository)
         {
             _recipeRepository = recipeRepository;
+            _preparationMethodRepository = preparationMethodRepository;
+            _ingredientRepository = ingredientRepository;
+            _commentRepository = commentRepository;
         }
 
         public bool Add(Recipe recipe)
@@ -52,9 +61,14 @@ namespace Assembly.RecipeApp.Application.Services
             return _recipeRepository.GetAll();
         } // Feito 
 
-        public Recipe GetById(int id)
+        public Recipe GetById(int recipeId)
         {
-            return _recipeRepository.GetById(id);
+            Recipe r = _recipeRepository.GetById(recipeId);
+            PreparationMethod p = _preparationMethodRepository.GetByRecipeId(recipeId);
+            List<Ingredient> i = _ingredientRepository.GetByRecipeId(recipeId);
+            List<Comment> c = _commentRepository.GetByRecipeId(recipeId);
+
+            return new Recipe(r.Id, r.Title, r.Description, p, r.ImageSource, r.MinutesToCook, r.IsApproved, r.User, r.Difficulty, r.Ratings, r.Categories, i, c, r.CreatedBy, r.CreatedDate);
         } // Feito 
 
         public List<Recipe> GetFilteredRecipes(string name)

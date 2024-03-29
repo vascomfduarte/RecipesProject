@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assembly.RecipeApp.Repository.Repos
 {
@@ -15,16 +16,6 @@ namespace Assembly.RecipeApp.Repository.Repos
         private static string _connectionString = ConnectionStringProvider.GetConnectionString();
 
         public Category Category;
-
-        public bool Add(Category entity, User adminUser)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Delete(int id, User adminUser)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<Category> GetAll()
         {
@@ -46,8 +37,9 @@ namespace Assembly.RecipeApp.Repository.Repos
                         {
                             int id = reader.GetInt32(0);
                             string name = reader.GetString(1);
+                            DateTime date = reader.GetDateTime(2);
 
-                            var category = new Category(id, name);
+                            var category = new Category(id, name, date);
 
                             categories.Add(category);
                         }
@@ -79,8 +71,9 @@ namespace Assembly.RecipeApp.Repository.Repos
                         {
                             int categoryId = reader.GetInt32(0);
                             string name = reader.GetString(1);
+                            DateTime date = reader.GetDateTime(2);
 
-                            Category = new Category(categoryId, name);
+                            Category = new Category(categoryId, name, date);
                         }
                     }
                 }
@@ -89,9 +82,24 @@ namespace Assembly.RecipeApp.Repository.Repos
             return Category;
         } // Feito
 
+        public List<Category> GetByRecipeId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Add(Category entity, User adminUser)
+        {
+            throw new NotImplementedException();
+        }
         public bool Update(Category entity, User adminUser)
         {
             throw new NotImplementedException();
         }
+
+        public bool Delete(int id, User adminUser)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

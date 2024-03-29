@@ -2,7 +2,10 @@
 using Assembly.RecipeApp.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,34 +15,40 @@ namespace Assembly.RecipeApp.Repository.Repos
     {
         private static string _connectionString = ConnectionStringProvider.GetConnectionString();
 
-        public List<PreparationMethod> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        List<PreparationStep> PreparationSteps;
 
-        public PreparationMethod GetById(int id)
+        public PreparationMethod GetByRecipeId(int recipeId)
         {
-            throw new NotImplementedException();
-        }
+            // Collect data from database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM preparation_step WHERE recipe_id = @id";
 
-        public PreparationMethod Add(PreparationMethod entity)
-        {
-            throw new NotImplementedException();
-        }
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameter to command
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = recipeId;
 
-        public PreparationMethod Delete(PreparationMethod entity)
-        {
-            throw new NotImplementedException();
-        }
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
 
-        public PreparationMethod Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int order = reader.GetInt32(0);
+                            string description = reader.GetString(1);
 
-        public PreparationMethod Update(PreparationMethod entity)
-        {
-            throw new NotImplementedException();
+                            var preparationStep = new PreparationStep(order, description);
+
+                            PreparationSteps.Add(preparationStep);
+                            
+                        }
+                    }
+                }
+            }
+
+            return new PreparationMethod(PreparationSteps);
         }
     }
 }

@@ -1,4 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
+using Assembly.RecipeApp.Application.Interfaces;
+using Assembly.RecipeApp.Domain.Model;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Assembly.RecipeApp.WebApp.Pages
@@ -6,15 +7,19 @@ namespace Assembly.RecipeApp.WebApp.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        private readonly IRecipeService _recipeService;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IEnumerable<Recipe> Recipes { get; private set; }
+
+        public IndexModel(ILogger<IndexModel> logger, IRecipeService recipeServices)
         {
             _logger = logger;
+            _recipeService = recipeServices;
         }
 
         public void OnGet()
         {
-
+            Recipes = _recipeService.GetAll();
         }
     }
 }

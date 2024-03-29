@@ -1,5 +1,6 @@
 ﻿using Assembly.RecipeApp.Domain.Exceptions;
 using Assembly.RecipeApp.Domain.Interfaces;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
@@ -29,9 +30,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 ValidateDescription(value);
                 _description = value;
             }
-        }
-
-        public PreparationMethod PreparationMethod { get; set; }
+        }        
 
         public string ImageSource { get; set; }
 
@@ -49,12 +48,13 @@ namespace Assembly.RecipeApp.Domain.Model
         public bool IsApproved { get; private set; }
 
         public Difficulty Difficulty { get; set; } // Obrigatório
-
         public User User { get; set; } // Obrigatório
-        public List<Category> Categories { get; set; } // Obrigatório
+
+        public PreparationMethod PreparationMethod { get; set; }
+        public List<Category> Categories { get; set; }
         public List<Rating> Ratings { get; set; }
         public List<Comment> Comments { get; set; }
-        public List<Ingredient> Ingredients { get; set; } // Obrigatório
+        public List<Ingredient> Ingredients { get; set; }
 
         public Recipe(string title, string description, PreparationMethod preparationMethod, int minutesToCook, User user, Difficulty difficulty, List<Ingredient> ingredients)
         {
@@ -77,21 +77,33 @@ namespace Assembly.RecipeApp.Domain.Model
         }
 
         // Used when retriving data from the database
-        public Recipe(int id, string title, string description, PreparationMethod preparationMethod, string imageSource, int minutesToCook, bool isApproved, User user, Difficulty difficulty, List<Ingredient> ingredients, string createdBy, DateTime createdDate, string updatedBy, DateTime updatedDate)
-        {
+        public Recipe(int id, string title, string description, string imageSource, int minutesToCook, bool isApproved, User user, Difficulty difficulty, List<Rating> ratings, List<Category> categories, string createdBy, DateTime createdDate) 
+        { 
             Id = id;
             Title = title;
             Description = description;
-            PreparationMethod = preparationMethod;
-            MinutesToCook = minutesToCook;
-            Difficulty = difficulty;
             ImageSource = imageSource;
+            MinutesToCook = minutesToCook;
             IsApproved = isApproved;
-            User = user;
-            Ingredients = ingredients;
-            // Tenho de adicionar Comments, Ratings, Categories, User
             CreatedBy = createdBy;
             CreatedDate = createdDate;
+            Difficulty = difficulty;
+            User = user;
+            Ratings = ratings;
+            Categories = categories;
+        }
+
+        public Recipe(int id, string title, string description, PreparationMethod preparationMethod, string imageSource, int minutesToCook, bool isApproved, User user, Difficulty difficulty, List<Rating> ratings, List<Category> categories, List<Ingredient> ingredients, List<Comment> comments, string createdBy, DateTime createdDate)
+               : this(id, title, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, createdBy, createdDate)
+        {
+            PreparationMethod = preparationMethod;            
+            Ingredients = ingredients;
+            Comments = comments;
+        }
+
+        public Recipe(int id, string title, string description, PreparationMethod preparationMethod, string imageSource, int minutesToCook, bool isApproved, User user, Difficulty difficulty, List<Rating> ratings, List<Category> categories, List<Ingredient> ingredients, List<Comment> comments, string createdBy, DateTime createdDate, string updatedBy, DateTime updatedDate) 
+               : this(id, title, description, preparationMethod, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, ingredients, comments, createdBy, createdDate)
+        { 
             UpdatedBy = updatedBy;
             UpdatedDate = updatedDate;
         }

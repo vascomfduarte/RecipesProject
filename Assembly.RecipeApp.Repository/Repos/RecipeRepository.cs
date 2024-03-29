@@ -15,10 +15,14 @@ namespace Assembly.RecipeApp.Repository.Repos
         public Recipe Recipe;
 
         IIngredientRepository _ingredientRepository;
+        IRatingRepository _ratingRepository;
+        ICategoryRepository _categoryRepository;
 
-        public RecipeRepository(IIngredientRepository ingredientRepository)
+        public RecipeRepository(IIngredientRepository ingredientRepository, IRatingRepository ratingRepository, ICategoryRepository categoryRepository)
         {
             _ingredientRepository = ingredientRepository;
+            _ratingRepository = ratingRepository;
+            _categoryRepository = categoryRepository;
         }
 
         public List<Recipe> GetAll()
@@ -28,7 +32,11 @@ namespace Assembly.RecipeApp.Repository.Repos
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM recipe";
+                //string query = "SELECT * FROM recipe";
+
+                string query = "SELECT * FROM [dbo].[recipe] AS r" +
+                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id]" +
+                               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id];";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -41,35 +49,36 @@ namespace Assembly.RecipeApp.Repository.Repos
                         {
                             int id = reader.GetInt32(0);
                             string title = reader.GetString(1);
-                            string instructions = reader.GetString(2);
+                            string description = reader.GetString(2);
                             string imageSource = reader.GetString(3);
                             int minutesToCook = reader.GetInt32(4);
                             bool isApproved = reader.GetBoolean(5);
-                            DateTime createdDate = reader.GetDateTime(19);
+                            DateTime createdDate = reader.GetDateTime(6);
 
                             // User
-                            User user = new User(reader.GetInt32(6), 
-                                                 reader.GetString(7), 
-                                                 reader.GetString(8), 
-                                                 reader.GetString(9), 
-                                                 reader.GetString(10), 
-                                                 reader.GetString(11), 
-                                                 reader.GetString(12), 
-                                                 reader.GetString(13), 
-                                                 reader.GetBoolean(14), 
-                                                 reader.GetBoolean(15), 
-                                                 reader.GetDateTime(16));
+                            User user = new User(reader.GetInt32(7),
+                                                 reader.GetString(8),
+                                                 reader.GetString(9),
+                                                 reader.GetString(10),
+                                                 reader.GetString(11),
+                                                 reader.GetString(12),
+                                                 reader.GetString(13),
+                                                 reader.GetString(14),
+                                                 reader.GetBoolean(15),
+                                                 reader.GetBoolean(16),
+                                                 reader.GetDateTime(17));
                             // Difficulty
-                            Difficulty difficulty = new Difficulty(reader.GetInt32(17), 
-                                                                   reader.GetString(18));
-                            // Ingredients
-                            List<Ingredient> ingredients = _ingredientRepository.GetRecipeIngredients(id);
+                            Difficulty difficulty = new Difficulty(reader.GetInt32(18),
+                                                                   reader.GetString(19),
+                                                                   reader.GetDateTime(20));
 
-                            //List<Comments> ingredients = ;
-                            //List<Ratings> ingredients = ;
-                            //List<Categories> ingredients = ;
+                            // Rating List
+                            List<Rating> ratings = _ratingRepository.GetByRecipeId(id);
 
-                            var recipe = new Recipe(id, title, instructions, imageSource, minutesToCook, isApproved, user, difficulty, createdDate, ingredients);
+                            // Category List
+                            List<Category> categories = _categoryRepository.GetByRecipeId(id);
+
+                            var recipe = new Recipe(id, title, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, user.Username, createdDate);
 
                             recipes.Add(recipe);
                         }
@@ -77,14 +86,19 @@ namespace Assembly.RecipeApp.Repository.Repos
                 }
             }
             return recipes;
-        }
+        } // Feito
 
         public Recipe GetById(int recipeId)
         {
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM recipe WHERE id = @id";
+                //string query = "SELECT * FROM recipe WHERE id = @id";
+
+                string query = "SELECT * FROM [dbo].[recipe] AS r" +
+                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id]" +
+                               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id]" +
+                               "WHERE r.[id] = @id;";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -100,61 +114,65 @@ namespace Assembly.RecipeApp.Repository.Repos
                         {
                             int id = reader.GetInt32(0);
                             string title = reader.GetString(1);
-                            string instructions = reader.GetString(2);
+                            string description = reader.GetString(2);
                             string imageSource = reader.GetString(3);
                             int minutesToCook = reader.GetInt32(4);
                             bool isApproved = reader.GetBoolean(5);
-                            DateTime createdDate = reader.GetDateTime(19);
+                            DateTime createdDate = reader.GetDateTime(6);
 
                             // User
-                            User user = new User(reader.GetInt32(6),
-                                                 reader.GetString(7),
+                            User user = new User(reader.GetInt32(7),
                                                  reader.GetString(8),
                                                  reader.GetString(9),
                                                  reader.GetString(10),
                                                  reader.GetString(11),
                                                  reader.GetString(12),
                                                  reader.GetString(13),
-                                                 reader.GetBoolean(14),
+                                                 reader.GetString(14),
                                                  reader.GetBoolean(15),
-                                                 reader.GetDateTime(16));
+                                                 reader.GetBoolean(16),
+                                                 reader.GetDateTime(17));
                             // Difficulty
-                            Difficulty difficulty = new Difficulty(reader.GetInt32(17),
-                                                                   reader.GetString(18));
-                            // Ingredients
-                            List<Ingredient> ingredients = _ingredientRepository.GetRecipeIngredients(id);
+                            Difficulty difficulty = new Difficulty(reader.GetInt32(18),
+                                                                   reader.GetString(19),
+                                                                   reader.GetDateTime(20));
 
-                            //List<Comments> ingredients = ;
-                            //List<Ratings> ingredients = ;
-                            //List<Categories> ingredients = ;
+                            // Rating List
+                            List<Rating> ratings = _ratingRepository.GetByRecipeId(id);
 
-                            Recipe = new Recipe(id, title, instructions, imageSource, minutesToCook, isApproved, user, difficulty, createdDate, ingredients);
+                            // Category List
+                            List<Category> categories = _categoryRepository.GetByRecipeId(id);
+
+                            Recipe = new Recipe(id, title, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, user.Username, createdDate);
                         }
                     }
                 }
             }
 
             return Recipe;
-        }
+        } // Feito
 
         /// <summary>
-        /// Method that queries throw all recipes or for a given name
+        /// Method that searches for a given name
         /// </summary>
         /// <param name="title"></param>
         /// <returns></returns>
-        public List<Recipe> GetFilteredRecipes(string name)
+        public List<Recipe> GetFilteredRecipes(string searchTerm)
         {
             List<Recipe> recipes = new List<Recipe>();
 
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM recipe WHERE title LIKE '%' + @name + '%'";
+                string query = "SELECT * FROM [dbo].[recipe] AS r" +
+                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id]" +
+                               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id]" +
+                               "WHERE r.[title] LIKE '%' + @searchTerm + '%';";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     // Add parameter to command
-                    cmd.Parameters.Add("@title", SqlDbType.NVarChar).Value = name.ToLower();
+                    cmd.Parameters.Add("@title", SqlDbType.NVarChar).Value = searchTerm.ToLower();
 
                     if (con.State != ConnectionState.Open)
                         con.Open();
@@ -165,44 +183,45 @@ namespace Assembly.RecipeApp.Repository.Repos
                         {
                             int id = reader.GetInt32(0);
                             string title = reader.GetString(1);
-                            string instructions = reader.GetString(2);
+                            string description = reader.GetString(2);
                             string imageSource = reader.GetString(3);
                             int minutesToCook = reader.GetInt32(4);
                             bool isApproved = reader.GetBoolean(5);
-                            DateTime createdDate = reader.GetDateTime(19);
+                            DateTime createdDate = reader.GetDateTime(6);
 
                             // User
-                            User user = new User(reader.GetInt32(6),
-                                                 reader.GetString(7),
+                            User user = new User(reader.GetInt32(7),
                                                  reader.GetString(8),
                                                  reader.GetString(9),
                                                  reader.GetString(10),
                                                  reader.GetString(11),
                                                  reader.GetString(12),
                                                  reader.GetString(13),
-                                                 reader.GetBoolean(14),
+                                                 reader.GetString(14),
                                                  reader.GetBoolean(15),
-                                                 reader.GetDateTime(16));
+                                                 reader.GetBoolean(16),
+                                                 reader.GetDateTime(17));
                             // Difficulty
-                            Difficulty difficulty = new Difficulty(reader.GetInt32(17),
-                                                                   reader.GetString(18));
-                            // Ingredients
-                            List<Ingredient> ingredients = _ingredientRepository.GetRecipeIngredients(id);
+                            Difficulty difficulty = new Difficulty(reader.GetInt32(18),
+                                                                   reader.GetString(19),
+                                                                   reader.GetDateTime(20));
 
-                            //List<Comments> ingredients = ;
-                            //List<Ratings> ingredients = ;
-                            //List<Categories> ingredients = ;
+                            // Rating List
+                            List<Rating> ratings = _ratingRepository.GetByRecipeId(id);
 
-                            var recipe = new Recipe(id, title, instructions, imageSource, minutesToCook, isApproved, user, difficulty, createdDate, ingredients);
+                            // Category List
+                            List<Category> categories = _categoryRepository.GetByRecipeId(id);
+
+                            var recipe = new Recipe(id, title, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, user.Username, createdDate);
 
                             recipes.Add(recipe);
                         }
                     }
                 }
             }
-            return recipes;
 
-        }
+            return recipes;
+        } // Feito
 
         public Recipe Add(Recipe entity)
         {

@@ -46,14 +46,18 @@ namespace Assembly.RecipeApp.Repository.Repos
                         while (reader.Read())
                         {
                             int id = reader.GetInt32(0);
+
                             // Product
                             Product product = new Product(reader.GetString(1));
                             int amount = reader.GetInt32(2);
                             // Unit
                             Unit unit = new Unit(reader.GetInt32(3),
-                                                 reader.GetString(4));
+                                                 reader.GetString(4),
+                                                 reader.GetDateTime(5));
 
-                            var ingredient = new Ingredient(id, product, amount, unit);
+                            DateTime date = reader.GetDateTime(6);
+
+                            var ingredient = new Ingredient(id, product, amount, unit, date);
 
                             ingredients.Add(ingredient);
                         }

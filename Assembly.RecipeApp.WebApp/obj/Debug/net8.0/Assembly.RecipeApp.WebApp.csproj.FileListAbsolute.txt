@@ -1,0 +1,9 @@
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp\obj\Debug\net8.0\Assembly.RecipeApp.WebApp.csproj.AssemblyReference.cache
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp\obj\Debug\net8.0\Assembly.RecipeApp.WebApp.GeneratedMSBuildEditorConfig.editorconfig
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp\obj\Debug\net8.0\Assembly.RecipeApp.WebApp.AssemblyInfoInputs.cache
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp\obj\Debug\net8.0\Assembly.RecipeApp.WebApp.AssemblyInfo.cs
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp\obj\Debug\net8.0\Assembly.RecipeApp.WebApp.csproj.CoreCompileInputs.cache
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp\obj\Debug\net8.0\Assembly.RecipeApp.WebApp.MvcApplicationPartsAssemblyInfo.cache
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp\obj\Debug\net8.0\Assembly.RecipeApp.WebApp.RazorAssemblyInfo.cache
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp\obj\Debug\net8.0\Assembly.RecipeApp.WebApp.RazorAssemblyInfo.cs
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp\obj\Debug\net8.0\Assembly.RecipeApp.WebApp.sourcelink.json

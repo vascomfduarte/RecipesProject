@@ -16,13 +16,16 @@ namespace Assembly.RecipeApp.Domain.Model
             CreatedDate = DateTime.Now;
         }
 
-
-        public Category(int id, string name, List<Recipe> recipes, DateTime createdDate) 
+        public Category(int id, string name, DateTime createdDate)
         {
             Id = id;
             Name = name;
-            Recipes = recipes;
             CreatedDate = createdDate;
+        }
+
+        public Category(int id, string name, List<Recipe> recipes, DateTime createdDate) : this(id, name, createdDate)
+        {
+            Recipes = recipes;
         }
 
     }

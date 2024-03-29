@@ -11,6 +11,7 @@ namespace Assembly.RecipeApp.Repository.Interfaces
     {
         List<Category> GetAll();
         Category GetById(int id);
+        List<Category> GetByRecipeId(int id);
         bool Add(Category entity, User adminUser);
         bool Update(Category entity, User adminUser);
         bool Delete(int id, User adminUser);
