@@ -6,11 +6,11 @@ using System.Globalization;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    public class IngredientServices : IIngredientService
+    public class IngredientService : IIngredientService
     {
         private readonly IIngredientRepository _ingredientRepository;
 
-        public IngredientServices(IIngredientRepository ingredientRepository)
+        public IngredientService(IIngredientRepository ingredientRepository)
         {
             _ingredientRepository = ingredientRepository;
         }
@@ -28,21 +28,11 @@ namespace Assembly.RecipeApp.Application.Services
         public List<Ingredient> GetRecipeIngredients(int recipeId)
         {
             return _ingredientRepository.GetRecipeIngredients(recipeId);
-        }
+        } // Feito
 
         public bool Add(Ingredient ingredient, User currentUser)
         {
-            if (currentUser.IsAdmin)
-            {
-                // Validate if Ingredient with the same name already exists
-                if (GetAll().Any(i => i.Name == ingredient.Name))
-                    throw new ArgumentException("An ingredient with the same name already exists.", nameof(ingredient.Name));
-
-                _ingredientRepository.Add(ingredient);
-                return true;
-            }
-
-            return false;
+            throw new NotImplementedException();
         }
 
         public bool Update(Ingredient entity, User adminUser)

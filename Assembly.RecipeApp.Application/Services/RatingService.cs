@@ -5,26 +5,26 @@ using Assembly.RecipeApp.Repository.Repos;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    public class CommentServices : ICommentService
+    public class RatingService : IRatingService
     {
-        private readonly ICommentRepository _commentRepository;
+        private readonly IRatingRepository _ratingRepository;
 
-        public CommentServices(ICommentRepository ingredientRepository)
+        public RatingService(IRatingRepository ratingRepository)
         {
-            _commentRepository = ingredientRepository;
+            _ratingRepository = ratingRepository;
         }
 
-        public List<Comment> GetAll()
+        public List<Rating> GetAll()
         {
-            return _commentRepository.GetAll();
+            return _ratingRepository.GetAll();
         } // Feito 
 
-        public Comment GetById(int id)
+        public Rating GetById(int id)
         {
-            return _commentRepository.GetById(id);
-        } // Feito
+            return _ratingRepository.GetById(id);
+        } // Feito 
 
-        public bool Add(Comment entity)
+        public bool Add(Rating entity)
         {
             throw new NotImplementedException();
         }
@@ -34,7 +34,7 @@ namespace Assembly.RecipeApp.Application.Services
             throw new NotImplementedException();
         }
 
-        public bool Update(Comment entity, User user)
+        public bool Update(Rating entity, User user)
         {
             throw new NotImplementedException();
         }

@@ -10,24 +10,24 @@ using System.Threading.Tasks;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    public class PreparationMethodServices : IPreparationMethodService
+    public class PreparationMethodService : IPreparationMethodService
     {
         private readonly IPreparationMethodRepository _preparationMethodRepository;
 
-        public PreparationMethodServices(IPreparationMethodRepository preparationMethodRepository)
+        public PreparationMethodService(IPreparationMethodRepository preparationMethodRepository)
         {
             _preparationMethodRepository = preparationMethodRepository;
         }
 
         public List<PreparationMethod> GetAll()
         {
-            return _preparationMethodRepository.GetAll();
-        } // Feito 
+            throw new NotImplementedException();
+        }
 
         public PreparationMethod GetById(int id)
         {
-            return _preparationMethodRepository.GetById(id);
-        } // Feito 
+            throw new NotImplementedException();
+        }
 
         public bool Add(PreparationMethod entity)
         {

@@ -41,8 +41,7 @@ namespace Assembly.RecipeApp.Repository.Repos
 
                             var preparationStep = new PreparationStep(order, description);
 
-                            PreparationSteps.Add(preparationStep);
-                            
+                            PreparationSteps.Add(preparationStep);                            
                         }
                     }
                 }

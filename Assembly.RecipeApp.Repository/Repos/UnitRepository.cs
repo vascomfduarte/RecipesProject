@@ -32,8 +32,9 @@ namespace Assembly.RecipeApp.Repository.Repos
                         {
                             int id = reader.GetInt32(0);
                             string name = reader.GetString(1);
+                            DateTime createdDate = reader.GetDateTime(2);
 
-                            var unit = new Unit(id, name);
+                            var unit = new Unit(id, name, createdDate);
 
                             units.Add(unit);
                         }
@@ -65,8 +66,9 @@ namespace Assembly.RecipeApp.Repository.Repos
                         {
                             int unitId = reader.GetInt32(0);
                             string name = reader.GetString(1);
+                            DateTime createdDate = reader.GetDateTime(2);
 
-                            Unit = new Unit(unitId, name);
+                            Unit = new Unit(unitId, name, createdDate);
                         }
                     }
                 }

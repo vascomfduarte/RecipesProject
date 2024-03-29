@@ -68,7 +68,7 @@ namespace Assembly.RecipeApp.ConsoleApp
 
         public static void Create()
         {
-            UserServices _userServices = new UserServices();
+            UserService _userServices = new UserServices();
 
             bool run = true;
             while (run)
@@ -114,7 +114,7 @@ namespace Assembly.RecipeApp.ConsoleApp
         }
         public static void Read()
         {
-            UserServices _userServices = new UserServices();
+            UserService _userServices = new UserServices();
 
             bool run = true;
             while (run)
@@ -251,7 +251,7 @@ namespace Assembly.RecipeApp.ConsoleApp
         }
         public static void Update()
         {
-            UserServices _userServices = new UserServices();
+            UserService _userServices = new UserServices();
 
             bool run = true;
             while (run)

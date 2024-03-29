@@ -5,11 +5,11 @@ using Assembly.RecipeApp.Repository.Repos;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    internal class UnitServices : IUnitService
+    public class UnitService : IUnitService
     {
         private readonly IUnitRepository _unitRepository;
 
-        public UnitServices(IUnitRepository unitRepository)
+        public UnitService(IUnitRepository unitRepository)
         {
             _unitRepository = unitRepository;
         }

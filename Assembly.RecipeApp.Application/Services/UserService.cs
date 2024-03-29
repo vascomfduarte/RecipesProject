@@ -6,11 +6,11 @@ using System.Text.RegularExpressions;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    public class UserServices : IUserService
+    public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
 
-        public UserServices(IUserRepository userRepository) 
+        public UserService(IUserRepository userRepository) 
         { 
             _userRepository = userRepository;
         }
@@ -66,10 +66,13 @@ namespace Assembly.RecipeApp.Application.Services
             user.SetBlockedDefault(user);
 
             // Format the User object's properties into a string representation
-            string userString = $"{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}|{(user.IsAdmin ? "1" : "0")}|{(user.IsBlocked ? "1" : "0")}";
+            //string userString = $"{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}|{(user.IsAdmin ? "1" : "0")}|{(user.IsBlocked ? "1" : "0")}";
 
             // Call the UserRepository's Add method with the formatted string representation of the User
-            return _userRepository.Add(userString);
+            //return _userRepository.Add(userString);
+
+            throw new NotImplementedException();
+
         } // Para alterar
 
         public bool Update(User user)
@@ -109,9 +112,12 @@ namespace Assembly.RecipeApp.Application.Services
                 user.ContentBio = "Let others know who you are";
 
             // Format the User object's properties into a string representation
-            string userString = $"{user.Id}|{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}";
+            //string userString = $"{user.Id}|{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}";
 
-            return _userRepository.Update(userString);
+            //return _userRepository.Update(userString);
+
+            throw new NotImplementedException();
+
         } // Para alterar
 
         public bool UpdateBlockStatus(User user, User adminUser)

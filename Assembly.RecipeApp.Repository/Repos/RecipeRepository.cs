@@ -56,21 +56,21 @@ namespace Assembly.RecipeApp.Repository.Repos
                             DateTime createdDate = reader.GetDateTime(6);
 
                             // User
-                            User user = new User(reader.GetInt32(7),
-                                                 reader.GetString(8),
-                                                 reader.GetString(9),
+                            User user = new User(reader.GetInt32(9),
                                                  reader.GetString(10),
                                                  reader.GetString(11),
                                                  reader.GetString(12),
                                                  reader.GetString(13),
                                                  reader.GetString(14),
-                                                 reader.GetBoolean(15),
-                                                 reader.GetBoolean(16),
-                                                 reader.GetDateTime(17));
+                                                 reader.GetString(15),
+                                                 reader.GetString(16),
+                                                 reader.GetBoolean(17),
+                                                 reader.GetBoolean(18),
+                                                 reader.GetDateTime(19));
                             // Difficulty
-                            Difficulty difficulty = new Difficulty(reader.GetInt32(18),
-                                                                   reader.GetString(19),
-                                                                   reader.GetDateTime(20));
+                            Difficulty difficulty = new Difficulty(reader.GetInt32(20),
+                                                                   reader.GetString(21),
+                                                                   reader.GetDateTime(22));
 
                             // Rating List
                             List<Rating> ratings = _ratingRepository.GetByRecipeId(id);
@@ -121,21 +121,21 @@ namespace Assembly.RecipeApp.Repository.Repos
                             DateTime createdDate = reader.GetDateTime(6);
 
                             // User
-                            User user = new User(reader.GetInt32(7),
-                                                 reader.GetString(8),
-                                                 reader.GetString(9),
+                            User user = new User(reader.GetInt32(9),
                                                  reader.GetString(10),
                                                  reader.GetString(11),
                                                  reader.GetString(12),
                                                  reader.GetString(13),
                                                  reader.GetString(14),
-                                                 reader.GetBoolean(15),
-                                                 reader.GetBoolean(16),
-                                                 reader.GetDateTime(17));
+                                                 reader.GetString(15),
+                                                 reader.GetString(16),
+                                                 reader.GetBoolean(17),
+                                                 reader.GetBoolean(18),
+                                                 reader.GetDateTime(19));
                             // Difficulty
-                            Difficulty difficulty = new Difficulty(reader.GetInt32(18),
-                                                                   reader.GetString(19),
-                                                                   reader.GetDateTime(20));
+                            Difficulty difficulty = new Difficulty(reader.GetInt32(20),
+                                                                   reader.GetString(21),
+                                                                   reader.GetDateTime(22));
 
                             // Rating List
                             List<Rating> ratings = _ratingRepository.GetByRecipeId(id);

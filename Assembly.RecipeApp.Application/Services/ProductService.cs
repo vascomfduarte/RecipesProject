@@ -11,11 +11,11 @@ using Assembly.RecipeApp.Repository.Repos;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    public class ProductServices : IProductService
+    public class ProductService : IProductService
     {
         private readonly IProductRepository _productRepository;
 
-        public ProductServices(IProductRepository productRepository)
+        public ProductService(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
@@ -32,6 +32,16 @@ namespace Assembly.RecipeApp.Application.Services
 
         public bool Add(Product entity)
         {
+            //if (currentUser.IsAdmin)
+            //{
+            //    // Validate if Ingredient with the same name already exists
+            //    if (GetAll().Any(i => i.Name == ingredient.Name))
+            //        throw new ArgumentException("An ingredient with the same name already exists.", nameof(ingredient.Name));
+
+            //    _ingredientRepository.Add(ingredient);
+            //    return true;
+            //}
+
             throw new NotImplementedException();
         }
 

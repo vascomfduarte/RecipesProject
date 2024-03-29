@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Assembly.RecipeApp.WebApp.props" />
+</Project>

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Reflection;
 
 namespace Assembly.RecipeApp.Repository.Repos
 {
@@ -82,10 +83,47 @@ namespace Assembly.RecipeApp.Repository.Repos
             return Category;
         } // Feito
 
-        public List<Category> GetByRecipeId(int id)
+        public List<Category> GetByRecipeId(int recipeId)
         {
-            throw new NotImplementedException();
-        }
+            List<Category> categories = new List<Category>();
+
+            // Collect data from database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                //string query = "SELECT * FROM category;";
+
+                string query = "SELECT c.[id], c.[name], c.[created_date]" +
+                               "FROM [dbo].[recipe_categories] AS rc" +
+                               "INNER JOIN [dbo].[category] AS c ON rc.[category_id] = c.[id]" +
+                               "WHERE rc.[recipe_id] = @id;";
+
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameter to command
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = recipeId;
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string name = reader.GetString(1);
+                            DateTime createdDate = reader.GetDateTime(2);
+
+                            var category = new Category(id, name, createdDate);
+
+                            categories.Add(category);
+                        }
+                    }
+                }
+            }
+
+            return categories;
+        } // Feito
 
         public bool Add(Category entity, User adminUser)
         {

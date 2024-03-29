@@ -4,11 +4,11 @@ using Assembly.RecipeApp.Repository.Interfaces;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    public class CategoryServices : ICategoryService
+    public class CategoryService : ICategoryService
     {
         private readonly ICategoryRepository _categoryRepository;
 
-        public CategoryServices (ICategoryRepository categoryRepository) 
+        public CategoryService (ICategoryRepository categoryRepository) 
         {
             _categoryRepository = categoryRepository;
         }

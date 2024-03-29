@@ -1,6 +1,8 @@
 ﻿using Assembly.RecipeApp.Application.Services;
 using Assembly.RecipeApp.Domain.Model;
 using Assembly.RecipeApp.Repository;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
@@ -8,6 +10,15 @@ public class Program
 {
     public static void Main()
     {
+        IConfiguration configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", true, true)
+            .Build();
+
+        IServiceCollection services = new ServiceCollection();
+
+        //services.AddConsoleServices(configuration);
+
         New();
 
         bool run = true;
@@ -84,7 +95,7 @@ public class Program
 
     public static void New()
     {
-        RecipeServices _recipeService = new RecipeServices();
+        RecipeService _recipeService = new RecipeServices();
 
         Console.Write("Enter search term: ");
         string term = Console.ReadLine();

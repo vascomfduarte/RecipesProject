@@ -7,14 +7,14 @@ using System.Globalization;
 
 namespace Assembly.RecipeApp.Application.Services
 {
-    public class RecipeServices : IRecipeService
+    public class RecipeService : IRecipeService
     {
         private readonly IRecipeRepository _recipeRepository;
         private readonly IPreparationMethodRepository _preparationMethodRepository;
         private readonly ICommentRepository _commentRepository;
         private readonly IIngredientRepository _ingredientRepository;
 
-        public RecipeServices(IRecipeRepository recipeRepository, 
+        public RecipeService(IRecipeRepository recipeRepository, 
                               IPreparationMethodRepository preparationMethodRepository,
                               ICommentRepository commentRepository, 
                               IIngredientRepository ingredientRepository)
@@ -50,10 +50,13 @@ namespace Assembly.RecipeApp.Application.Services
             recipe.SetIsApproved(recipe, false);
 
             // Format the User object's properties into a string representation
-            string recipeString = $"{recipe.Title}|{recipe.Instructions}|{recipe.ImageSource}|{recipe.MinutesToCook}|{(recipe.IsApproved ? "1" : "0")}|{recipe.UserId}|{recipe.DifficultyId}|{recipe.CreatedAt:yyyy-MM-dd}";
+            //string recipeString = $"{recipe.Title}|{recipe.Instructions}|{recipe.ImageSource}|{recipe.MinutesToCook}|{(recipe.IsApproved ? "1" : "0")}|{recipe.UserId}|{recipe.DifficultyId}|{recipe.CreatedAt:yyyy-MM-dd}";
 
             // Call the UserRepository's Add method with the formatted string representation of the User
-            return _recipeRepository.Add(recipeString);
+            //return _recipeRepository.Add(recipeString);
+
+            throw new NotImplementedException();
+
         }  // Para eliminar
 
         public List<Recipe> GetAll()
@@ -64,11 +67,12 @@ namespace Assembly.RecipeApp.Application.Services
         public Recipe GetById(int recipeId)
         {
             Recipe r = _recipeRepository.GetById(recipeId);
-            PreparationMethod p = _preparationMethodRepository.GetByRecipeId(recipeId);
-            List<Ingredient> i = _ingredientRepository.GetByRecipeId(recipeId);
-            List<Comment> c = _commentRepository.GetByRecipeId(recipeId);
+            //PreparationMethod p = _preparationMethodRepository.GetByRecipeId(recipeId);
+            //List<Ingredient> i = _ingredientRepository.GetByRecipeId(recipeId);
+            //List<Comment> c = _commentRepository.GetByRecipeId(recipeId);
 
-            return new Recipe(r.Id, r.Title, r.Description, p, r.ImageSource, r.MinutesToCook, r.IsApproved, r.User, r.Difficulty, r.Ratings, r.Categories, i, c, r.CreatedBy, r.CreatedDate);
+            return r;
+            //return new Recipe(r.Id, r.Title, r.Description, p, r.ImageSource, r.MinutesToCook, r.IsApproved, r.User, r.Difficulty, r.Ratings, r.Categories, i, c, r.CreatedBy, r.CreatedDate);
         } // Feito 
 
         public List<Recipe> GetFilteredRecipes(string name)
