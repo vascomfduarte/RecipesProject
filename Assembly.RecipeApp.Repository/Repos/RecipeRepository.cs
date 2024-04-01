@@ -32,11 +32,18 @@ namespace Assembly.RecipeApp.Repository.Repos
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                //string query = "SELECT * FROM recipe";
-
-                string query = "SELECT * FROM [dbo].[recipe] AS r" +
-                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id]" +
+                string query = "SELECT * FROM [dbo].[recipe] AS r " +
+                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id] " +
                                "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id];";
+
+                //string query = "SELECT r.[id], r.[title], r.[description], r.[image_source], r.[minutes_to_cook], r.[is_approved], r.[created_date], " +
+                //               "u.[id] AS [user_id], u.[username], u.[password], u.[email], u.[first_name], u.[last_name], u.[content_bio], u.[image_source], " +
+                //               "u.[is_admin], u.[is_blocked], u.[created_date], " +
+                //               "d.[id] as [difficulty_id], d.[name], d.[created_date] " +
+                //               "FROM [dbo].[recipe] AS r " +
+                //               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id] " +
+                //               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id];";
+
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -52,8 +59,9 @@ namespace Assembly.RecipeApp.Repository.Repos
                             string description = reader.GetString(2);
                             string imageSource = reader.GetString(3);
                             int minutesToCook = reader.GetInt32(4);
-                            bool isApproved = reader.GetBoolean(5);
+                            bool isApproved = reader.GetInt32(5) == 1 ? true : false;
                             DateTime createdDate = reader.GetDateTime(6);
+
 
                             // User
                             User user = new User(reader.GetInt32(9),
@@ -64,8 +72,8 @@ namespace Assembly.RecipeApp.Repository.Repos
                                                  reader.GetString(14),
                                                  reader.GetString(15),
                                                  reader.GetString(16),
-                                                 reader.GetBoolean(17),
-                                                 reader.GetBoolean(18),
+                                                 reader.GetInt32(17) == 1 ? true : false,
+                                                 reader.GetInt32(18) == 1 ? true : false,
                                                  reader.GetDateTime(19));
                             // Difficulty
                             Difficulty difficulty = new Difficulty(reader.GetInt32(20),

@@ -8,6 +8,17 @@
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+.card-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 40px;
+    row-gap: 40px;
+}
+
+.card {
+    width : 300px;
+}
+
 .card-columns .card:hover .card-img {
     opacity: 1;
 }
@@ -19,7 +30,7 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card-columns .card-img {
-    height: 330px;
+    height: 300px;
     vertical-align: bottom;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -47,6 +58,15 @@ a.navbar-brand {
     font-size: xx-large;
     text-align: center;
     word-break: break-all;
+}
+
+.badge {
+    font-size: 14px; /* Adjust font size as needed */
+    margin-right: 5px; /* Add some space between badges */
+    padding: 8px 12px; /* Adjust padding for badges */
+    border-radius: 20px; /* Make badges pill-shaped */
+    background-color: #007bff; /* Set background color */
+    color: #fff; /* Set text color */
 }
 
 /* Provide sufficient contrast against white background */

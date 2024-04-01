@@ -92,9 +92,9 @@ namespace Assembly.RecipeApp.Repository.Repos
             {
                 //string query = "SELECT * FROM category;";
 
-                string query = "SELECT c.[id], c.[name], c.[created_date]" +
-                               "FROM [dbo].[recipe_categories] AS rc" +
-                               "INNER JOIN [dbo].[category] AS c ON rc.[category_id] = c.[id]" +
+                string query = "SELECT c.[id], c.[name], c.[created_date] " +
+                               "FROM [dbo].[recipe_categories] AS rc " +
+                               "INNER JOIN [dbo].[category] AS c ON rc.[category_id] = c.[id] " +
                                "WHERE rc.[recipe_id] = @id;";
 
 

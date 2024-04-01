@@ -9,13 +9,27 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
+
+
 <div class="card-columns">
     @foreach (var recipe in Model.Recipes)
     {
-        <div class="card">
-            <div class="card-img" style="background-image: url('@recipe.ImageSource');">
-                <div class="card-body">@recipe.Title</div>
+        <div class="card-columns">
+            <div class="card">
+                <div class="card-img" style="background-image: url('@recipe.ImageSource');"></div>
+                <div class="card-body" style="max-height: 100px; overflow: hidden;">
+                    <h5 class="card-title">@recipe.Title</h5>
+                    <p class="card-text">@recipe.Description</p>
+                </div>
+                <div class="card-body" style="max-height: 50px;">
+                    <span class="badge">@recipe.Difficulty.Name</span>
+                </div>
+                <div class="card-body" style="max-height: 50px;">                    
+                    <p class="card-text" style="font-size: 15px; color: #999;">By @recipe.CreatedBy</p>
+                </div>
             </div>
-        </div>   
+        </div>
     }
 </div>
+
+                

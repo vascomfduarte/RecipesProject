@@ -123,7 +123,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
 
             // Check if title contains any special characters
-            if (!Regex.IsMatch(value, @"^[a-zA-Z0-9\s]+$"))
+            if (!Regex.IsMatch(value, @"^[a-zA-Z0-9-\s]+$"))
             {
                 throw new DomainException("Recipe title can only contain letters, numbers, and spaces.");
             }
