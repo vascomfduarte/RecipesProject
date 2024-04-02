@@ -62,7 +62,6 @@ namespace Assembly.RecipeApp.Repository.Repos
                             bool isApproved = reader.GetInt32(5) == 1 ? true : false;
                             DateTime createdDate = reader.GetDateTime(6);
 
-
                             // User
                             User user = new User(reader.GetInt32(9),
                                                  reader.GetString(10),
@@ -75,6 +74,7 @@ namespace Assembly.RecipeApp.Repository.Repos
                                                  reader.GetInt32(17) == 1 ? true : false,
                                                  reader.GetInt32(18) == 1 ? true : false,
                                                  reader.GetDateTime(19));
+
                             // Difficulty
                             Difficulty difficulty = new Difficulty(reader.GetInt32(20),
                                                                    reader.GetString(21),
@@ -103,9 +103,9 @@ namespace Assembly.RecipeApp.Repository.Repos
             {
                 //string query = "SELECT * FROM recipe WHERE id = @id";
 
-                string query = "SELECT * FROM [dbo].[recipe] AS r" +
-                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id]" +
-                               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id]" +
+                string query = "SELECT * FROM [dbo].[recipe] AS r " +
+                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id] " +
+                               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id] " +
                                "WHERE r.[id] = @id;";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
@@ -125,7 +125,7 @@ namespace Assembly.RecipeApp.Repository.Repos
                             string description = reader.GetString(2);
                             string imageSource = reader.GetString(3);
                             int minutesToCook = reader.GetInt32(4);
-                            bool isApproved = reader.GetBoolean(5);
+                            bool isApproved = reader.GetInt32(5) == 1 ? true : false;
                             DateTime createdDate = reader.GetDateTime(6);
 
                             // User
@@ -137,9 +137,10 @@ namespace Assembly.RecipeApp.Repository.Repos
                                                  reader.GetString(14),
                                                  reader.GetString(15),
                                                  reader.GetString(16),
-                                                 reader.GetBoolean(17),
-                                                 reader.GetBoolean(18),
+                                                 reader.GetInt32(17) == 1 ? true : false,
+                                                 reader.GetInt32(18) == 1 ? true : false,
                                                  reader.GetDateTime(19));
+
                             // Difficulty
                             Difficulty difficulty = new Difficulty(reader.GetInt32(20),
                                                                    reader.GetString(21),
@@ -172,15 +173,15 @@ namespace Assembly.RecipeApp.Repository.Repos
             // Collect data from database
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM [dbo].[recipe] AS r" +
-                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id]" +
-                               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id]" +
+                string query = "SELECT * FROM [dbo].[recipe] AS r " +
+                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id] " +
+                               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id] " +
                                "WHERE r.[title] LIKE '%' + @searchTerm + '%';";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     // Add parameter to command
-                    cmd.Parameters.Add("@title", SqlDbType.NVarChar).Value = searchTerm.ToLower();
+                    cmd.Parameters.Add("@searchTerm", SqlDbType.NVarChar).Value = searchTerm.ToLower();
 
                     if (con.State != ConnectionState.Open)
                         con.Open();
@@ -194,25 +195,26 @@ namespace Assembly.RecipeApp.Repository.Repos
                             string description = reader.GetString(2);
                             string imageSource = reader.GetString(3);
                             int minutesToCook = reader.GetInt32(4);
-                            bool isApproved = reader.GetBoolean(5);
+                            bool isApproved = reader.GetInt32(5) == 1 ? true : false;
                             DateTime createdDate = reader.GetDateTime(6);
 
                             // User
-                            User user = new User(reader.GetInt32(7),
-                                                 reader.GetString(8),
-                                                 reader.GetString(9),
+                            User user = new User(reader.GetInt32(9),
                                                  reader.GetString(10),
                                                  reader.GetString(11),
                                                  reader.GetString(12),
                                                  reader.GetString(13),
                                                  reader.GetString(14),
-                                                 reader.GetBoolean(15),
-                                                 reader.GetBoolean(16),
-                                                 reader.GetDateTime(17));
+                                                 reader.GetString(15),
+                                                 reader.GetString(16),
+                                                 reader.GetInt32(17) == 1 ? true : false,
+                                                 reader.GetInt32(18) == 1 ? true : false,
+                                                 reader.GetDateTime(19));
+
                             // Difficulty
-                            Difficulty difficulty = new Difficulty(reader.GetInt32(18),
-                                                                   reader.GetString(19),
-                                                                   reader.GetDateTime(20));
+                            Difficulty difficulty = new Difficulty(reader.GetInt32(20),
+                                                                   reader.GetString(21),
+                                                                   reader.GetDateTime(22));
 
                             // Rating List
                             List<Rating> ratings = _ratingRepository.GetByRecipeId(id);

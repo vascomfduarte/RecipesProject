@@ -24,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.RecipeApp.WebApp",
 		{F37D0C1F-37E5-4CBD-8D23-9F493D75B14F} = {F37D0C1F-37E5-4CBD-8D23-9F493D75B14F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly.RecipeApp.Di", "Assembly.RecipeApp.Di\Assembly.RecipeApp.Di.csproj", "{74FF758F-88EE-43FD-BEED-D8877EE9796E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.RecipeApp.Di", "Assembly.RecipeApp.Di\Assembly.RecipeApp.Di.csproj", "{74FF758F-88EE-43FD-BEED-D8877EE9796E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,44 @@
+﻿@page
+@model Assembly.RecipeApp.WebApp.Pages.Recipes.ReadAllModel
+@{
+    ViewData["Title"] = "Recipes";
+
+    @if (Model.Recipes != null && Model.Recipes.Any())
+    {
+        @if (!@String.IsNullOrEmpty(@Model.SearchTerm))
+        {
+            <h5>Search Results for: @Model.SearchTerm</h5>
+        }
+
+        <h4>We found @Model.ResultsCounter Recipes</h4>
+
+        <div class="card-columns">
+            @foreach (var recipe in Model.Recipes)
+            {
+                <div class="card-columns">
+                    <div class="card">
+                        <div class="card-img" style="background-image: url('@recipe.ImageSource');"></div>
+                        <div class="card-body" style="max-height: 100px; overflow: hidden;">
+                            <h5 class="card-title">@recipe.Title</h5>
+                            <p class="card-text">@recipe.Description</p>
+                        </div>
+                        <div class="card-body" style="max-height: 50px;">
+                            <span class="badge">@recipe.Difficulty.Name</span>
+                        </div>
+                        <div class="card-body" style="max-height: 50px;">
+                            <p class="card-text" style="font-size: 15px; color: #999;">By @recipe.CreatedBy</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>No results found.</p>
+    }
+
+}
+
+
+

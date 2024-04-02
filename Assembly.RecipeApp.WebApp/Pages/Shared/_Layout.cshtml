@@ -9,10 +9,19 @@
     <link rel="stylesheet" href="~/Assembly.RecipeApp.WebApp.styles.css" asp-append-version="true" />
 </head>
 <body>
+
+    @{
+        bool isAuthenticated = User.Identity.IsAuthenticated;
+    }
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-navbar border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">CulinaryCompass</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <div class="logo-image">
+                        <img src="https://i.imgur.com/lVmYIKm.png" class="img-fluid" alt="CulinaryCompass Image">
+                    </div>                    
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -27,6 +36,34 @@
                         </li>
                     </ul>
                 </div>
+                <div class="row justify-content-around">
+                    <div class="col-md-10">
+                        <form method="GET" action="/ReadAll" class="">
+                            <div class="input-group">
+                                <input class="form-control mr-sm-2" size="75" type="search" name="query" placeholder="Find a recipe" aria-label="Search">
+                                <div class="button">
+                                    <button asp-page="/Recipes/ReadAll" class="button-2" type="submit" style="margin-right: 20px;">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>                
+                @if (!isAuthenticated)
+                {
+                    <div class="d-flex">
+                        <button class="button-1" type="button" style="margin-right: 5px;">Sign In</button>
+                        <button class="button-2" type="button">Sign Up</button>
+                    </div>
+                }
+                else
+                {
+                    <div class="d-flex align-items-center">
+                        <p class="me-3 mb-0">Welcome, @User.Identity.Name!</p>
+                        <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                            <button type="submit" class="button-2">Log Out</button>
+                        </form>
+                    </div>
+                }                
             </div>
         </nav>
     </header>
