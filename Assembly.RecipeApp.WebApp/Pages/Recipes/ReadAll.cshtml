@@ -7,10 +7,14 @@
     {
         @if (!@String.IsNullOrEmpty(@Model.SearchTerm))
         {
-            <h5>Search Results for: @Model.SearchTerm</h5>
+            <h5 class="font-1-strong">Search Results for "@Model.SearchTerm"</h5>
+        }
+        else
+        {
+            <h5 class="font-1-strong">Search Results</h5>
         }
 
-        <h4>We found @Model.ResultsCounter Recipes</h4>
+        <h4 class="font-1" style="font-size: 0.8rem;">@Model.ResultsCounter results</h4>
 
         <div class="card-columns">
             @foreach (var recipe in Model.Recipes)
@@ -19,14 +23,14 @@
                     <div class="card">
                         <div class="card-img" style="background-image: url('@recipe.ImageSource');"></div>
                         <div class="card-body" style="max-height: 100px; overflow: hidden;">
-                            <h5 class="card-title">@recipe.Title</h5>
-                            <p class="card-text">@recipe.Description</p>
+                            <h5 class="font-1-strong">@recipe.Title</h5>
+                            <p class="font-1">@recipe.Description</p>
                         </div>
                         <div class="card-body" style="max-height: 50px;">
                             <span class="badge">@recipe.Difficulty.Name</span>
                         </div>
                         <div class="card-body" style="max-height: 50px;">
-                            <p class="card-text" style="font-size: 15px; color: #999;">By @recipe.CreatedBy</p>
+                            <p class="font-1-light">By @recipe.CreatedBy</p>
                         </div>
                     </div>
                 </div>
@@ -35,7 +39,7 @@
     }
     else
     {
-        <p>No results found.</p>
+        <p class="font-1">No results found</p>
     }
 
 }
