@@ -20,7 +20,7 @@
             }
 
             <h4 class="font-1" style="font-size: 0.8rem;">@Model.recipesCounter results</h4>
-
+                        
             <div class="card-columns">
                 @foreach (var recipe in Model.Recipes)
                 {
@@ -43,7 +43,7 @@
                             </p>
                         </div>
                         <div class="card-body" style="max-height: 50px;">
-                            <p class="font-1-light">By @recipe.CreatedBy</p>
+                            <small class="text-muted">By @recipe.CreatedBy</small>
                         </div>
                     </div>
                 }
