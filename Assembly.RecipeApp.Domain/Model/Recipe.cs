@@ -190,5 +190,37 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new ArgumentNullException(nameof(recipe), "Recipe cannot be null.");
             }
         }
+
+        public double GetRecipeRating()
+        {
+            double rating = 0;
+            double ratingsCounter = 0;
+
+            foreach(Rating r in Ratings)
+            {
+                ratingsCounter++;
+                rating += r.Value;
+            }
+
+            rating /= ratingsCounter;
+
+            int rat = (int)rating;
+
+            return rat;
+        }
+
+        public double GetRecipeRatingCount()
+        {
+            double ratingsCounter = 0;
+
+            foreach(Rating r in Ratings)
+            {
+                ratingsCounter++;
+            }
+
+            return ratingsCounter;
+        }
+
+
     }
 }

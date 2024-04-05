@@ -150,10 +150,10 @@ ul {
 }
 /*Backgrounds*/
 .bg-navbar {
-    background: -webkit-linear-gradient(10deg, #fff 38%, #FCDB3F 38%);
-    background: -o-linear-gradient(110deg, #fff 38%, #FCDB3F 38%);
-    background: -moz-linear-gradient(110deg, #fff 38%, #FCDB3F 38%);
-    background: linear-gradient(110deg, #fff 38%, #FCDB3F 38%);
+    background: -webkit-linear-gradient(10deg, #fff 36%, #FCDB3F 36%);
+    background: -o-linear-gradient(110deg, #fff 36%, #FCDB3F 36%);
+    background: -moz-linear-gradient(110deg, #fff 36%, #FCDB3F 36%);
+    background: linear-gradient(110deg, #fff 36%, #FCDB3F 36%);
 }
 
 .bg-footer {
@@ -252,4 +252,6 @@ ul {
     font-family: nyt-franklin, Arial, Helvetica, sans-serif;
     font-weight: 500;
 }
+
+/*login*/
 

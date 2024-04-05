@@ -11,16 +11,20 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
     {
         private readonly ILogger<ReadAllModel> _logger;
         private readonly IRecipeService _recipeService;
+        private readonly IRatingService _ratingService;
 
         public IEnumerable<Recipe> Recipes { get; private set; }
         public string SearchTerm { get; set; }
 
-        public int ResultsCounter = 0;
+        public int recipesCounter = 0;
+        public int ratingsCounter = 0;
+        public double totalRating = 0;
 
-        public ReadAllModel(ILogger<ReadAllModel> logger, IRecipeService recipeServices)
+        public ReadAllModel(ILogger<ReadAllModel> logger, IRecipeService recipeServices, IRatingService ratingService)
         {
             _logger = logger;
             _recipeService = recipeServices;
+            _ratingService = ratingService;
         }
 
         public IActionResult OnGet(string query)
@@ -29,7 +33,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
             //Recipes = _recipeService.GetAll();
             Recipes = _recipeService.GetFilteredRecipes(query);
 
-            ResultsCounter = Recipes.Count();
+            recipesCounter = Recipes.Count();
 
             return Page();
         }
