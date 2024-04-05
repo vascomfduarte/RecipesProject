@@ -75,8 +75,8 @@ namespace Assembly.RecipeApp.Repository.Repos
                             string lastName = reader.GetString(5);
                             string contentBio = reader.GetString(6);
                             string imageSource = reader.GetString(7);
-                            bool isAdmin = reader.GetBoolean(8);
-                            bool isBlocked = reader.GetBoolean(9);
+                            bool isAdmin = reader.GetInt32(8) == 1 ? true : false;
+                            bool isBlocked = reader.GetInt32(9) == 1 ? true : false;
                             DateTime createdDate = reader.GetDateTime(10);
 
                             var user = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);
@@ -117,8 +117,8 @@ namespace Assembly.RecipeApp.Repository.Repos
                             string lastName = reader.GetString(5);
                             string contentBio = reader.GetString(6);
                             string imageSource = reader.GetString(7);
-                            bool isAdmin = reader.GetBoolean(8);
-                            bool isBlocked = reader.GetBoolean(9);
+                            bool isAdmin = reader.GetInt32(8) == 1 ? true : false;
+                            bool isBlocked = reader.GetInt32(9) == 1 ? true : false;
                             DateTime createdDate = reader.GetDateTime(10);
 
                             User = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);                            
@@ -155,8 +155,8 @@ namespace Assembly.RecipeApp.Repository.Repos
                             string lastName = reader.GetString(5);
                             string contentBio = reader.GetString(6);
                             string imageSource = reader.GetString(7);
-                            bool isAdmin = reader.GetBoolean(8);
-                            bool isBlocked = reader.GetBoolean(9);
+                            bool isAdmin = reader.GetInt32(8) == 1 ? true : false;
+                            bool isBlocked = reader.GetInt32(9) == 1 ? true : false;
                             DateTime createdDate = reader.GetDateTime(10);
 
                             var user = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);

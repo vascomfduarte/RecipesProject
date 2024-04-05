@@ -30,8 +30,8 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         public IActionResult OnGet(string query)
         {
             SearchTerm = query;
-            //Recipes = _recipeService.GetAll();
-            Recipes = _recipeService.GetFilteredRecipes(query);
+
+            Recipes = query is null ? _recipeService.GetAll() : _recipeService.GetFilteredRecipes(query);
 
             recipesCounter = Recipes.Count();
 
