@@ -30,8 +30,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Recipes/ReadAll.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlc1xSZWFkQWxsLmNzaHRtbA==
+[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Recipes/Get.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlc1xHZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Recipes/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlc1xHZXRBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]

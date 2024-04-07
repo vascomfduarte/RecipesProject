@@ -1,5 +1,5 @@
 ﻿@page
-@model Assembly.RecipeApp.WebApp.Pages.Recipes.ReadAllModel
+@model Assembly.RecipeApp.WebApp.Pages.Recipes.GetAllModel
 @{
     ViewData["Title"] = "Recipes";
 
@@ -28,11 +28,13 @@
                     double ratingCount = recipe.GetRecipeRatingCount();
 
                     <div class="card">
-                        <div class="card-img" style="background-image: url('@recipe.ImageSource');"></div>
-                        <div class="card-body" style="max-height: 100px; overflow: hidden;">
-                            <h5 class="font-1-strong">@recipe.Title</h5>
-                            <p class="font-1">@recipe.Description</p>
-                        </div>
+                        <a asp-page="/Recipes/Get" asp-route-id="@recipe.Id "style="color: inherit; text-decoration: none;">
+                            <div class="card-img" style="background-image: url('@recipe.ImageSource');"></div>
+                            <div class="card-body" style="max-height: 100px; overflow: hidden;">
+                                <h5 class="font-1-strong">@recipe.Title</h5>
+                                <p class="font-1">@recipe.Description</p>
+                            </div>
+                        </a>
                         <div class="card-body" style="max-height: 40px;">
                             <p class="font-1-light">
                                 @for (int i = 0; i < 5; i++)
