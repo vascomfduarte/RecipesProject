@@ -8,7 +8,7 @@ namespace Assembly.RecipeApp.Domain.Model
     {
         public int Id { get; private set; }
 
-        public double _value { get;  set; }
+        private double _value { get;  set; }
         public double Value
         {
             get { return _value; }

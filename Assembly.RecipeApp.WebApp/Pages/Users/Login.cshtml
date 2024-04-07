@@ -1,0 +1,46 @@
+﻿@page
+@model Assembly.RecipeApp.WebApp.Pages.Users.LoginModel
+@{
+
+    <div class="container h-100 mt-5 mb-5">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            
+            <div class="card" style="border-radius: 15px; width:max-content;">
+                <div class="card-body p-5">
+                    <h2 class="text-uppercase text-center mb-5">Login</h2>
+
+                    <form>
+                        <div class="form-outline mb-2">
+                            <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example3cg">Email</label>
+                        </div>
+
+                        <div class="form-outline mb-2">
+                            <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example4cg">Password</label>
+                        </div>
+
+                        <div class="form-check d-flex justify-content-center mb-5">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                            <label class="form-check-label" for="form2Example3g">
+                                I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                            </label>
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <button type="button" class="w-100 btn btn-primary btn-lg mb-4">Login</button>
+                        </div>
+
+                        <div class="text-center text-muted mt-4 mb-0">
+                            <p>Not a member? <a asp-page="/Users/Register">Register</a></p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+}
+
+

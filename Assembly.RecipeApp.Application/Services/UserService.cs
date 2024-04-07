@@ -75,6 +75,31 @@ namespace Assembly.RecipeApp.Application.Services
 
         } // Para alterar
 
+        public async Task<bool> AddAsync(User user)
+        {
+            // Validate if username already exist
+            if (GetAll().Any(u => u.Username == user.Username))
+                throw new ArgumentException("Username already exists.", nameof(user.Username));
+
+            // Validate if email already exist
+            if (GetAll().Any(u => u.Email == user.Email))
+                throw new ArgumentException("Email address already exists.", nameof(user.Email));
+
+            // Set isAdmin to false by default if not provided
+            user.SetAdminDefault(user);
+
+            // Set isBlocked to false by default if not provided
+            user.SetBlockedDefault(user);
+                       
+            if(_userRepository.Add(user))
+            {
+                return true;
+            }
+
+            return false;
+
+        } // Para alterar
+
         public bool Update(User user)
         {
             //Get UserByID? (como sei o ID?)

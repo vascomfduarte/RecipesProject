@@ -11,9 +11,36 @@ namespace Assembly.RecipeApp.Repository.Repos
 
         public User User;
 
-        public User Add(User entity)
+        public bool Add(User user)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"INSERT INTO [dbo].[user] (username, password, email, first_name, last_name, content_bio, image_source, is_admin, is_blocked, created_date)
+                             VALUES (@username, @password, @email, @firstName, @lastName, @contentBio, @imageSource, @isAdmin, @isBlocked, @createdDate)";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameter to command
+                    cmd.Parameters.AddWithValue("@username", user.Username);
+                    cmd.Parameters.AddWithValue("@password", user.Password);
+                    cmd.Parameters.AddWithValue("@email", user.Email);
+                    cmd.Parameters.AddWithValue("@firstName", user.FirstName);
+                    cmd.Parameters.AddWithValue("@lastName", user.LastName);
+                    cmd.Parameters.AddWithValue("@contentBio", user.ContentBio ?? ""); // Assuming contentBio can be null
+                    cmd.Parameters.AddWithValue("@imageSource", user.ImageSource ?? ""); // Assuming imageSource can be null
+                    cmd.Parameters.AddWithValue("@isAdmin", user.IsAdmin);
+                    cmd.Parameters.AddWithValue("@isBlocked", user.IsBlocked);
+                    cmd.Parameters.AddWithValue("@createdDate", DateTime.UtcNow);
+
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
         }        
         public bool Add(string userString)
         {
@@ -75,8 +102,8 @@ namespace Assembly.RecipeApp.Repository.Repos
                             string lastName = reader.GetString(5);
                             string contentBio = reader.GetString(6);
                             string imageSource = reader.GetString(7);
-                            bool isAdmin = reader.GetBoolean(8);
-                            bool isBlocked = reader.GetBoolean(9);
+                            bool isAdmin = reader.GetInt32(8) == 1 ? true : false;
+                            bool isBlocked = reader.GetInt32(9) == 1 ? true : false;
                             DateTime createdDate = reader.GetDateTime(10);
 
                             var user = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);
@@ -117,8 +144,8 @@ namespace Assembly.RecipeApp.Repository.Repos
                             string lastName = reader.GetString(5);
                             string contentBio = reader.GetString(6);
                             string imageSource = reader.GetString(7);
-                            bool isAdmin = reader.GetBoolean(8);
-                            bool isBlocked = reader.GetBoolean(9);
+                            bool isAdmin = reader.GetInt32(8) == 1 ? true : false;
+                            bool isBlocked = reader.GetInt32(9) == 1 ? true : false;
                             DateTime createdDate = reader.GetDateTime(10);
 
                             User = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);                            
@@ -155,8 +182,8 @@ namespace Assembly.RecipeApp.Repository.Repos
                             string lastName = reader.GetString(5);
                             string contentBio = reader.GetString(6);
                             string imageSource = reader.GetString(7);
-                            bool isAdmin = reader.GetBoolean(8);
-                            bool isBlocked = reader.GetBoolean(9);
+                            bool isAdmin = reader.GetInt32(8) == 1 ? true : false;
+                            bool isBlocked = reader.GetInt32(9) == 1 ? true : false;
                             DateTime createdDate = reader.GetDateTime(10);
 
                             var user = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);
