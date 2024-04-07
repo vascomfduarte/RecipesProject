@@ -233,7 +233,7 @@ namespace Assembly.RecipeApp.Repository.Repos
             return recipes;
         } // Feito
 
-        public Recipe Add(Recipe entity)
+        public bool Add(Recipe entity)
         {
             throw new NotImplementedException();
         }

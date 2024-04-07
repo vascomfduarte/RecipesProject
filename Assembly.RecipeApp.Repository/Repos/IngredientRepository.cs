@@ -68,7 +68,7 @@ namespace Assembly.RecipeApp.Repository.Repos
             return ingredients;
         }
 
-        public Ingredient Add(Ingredient entity)
+        public bool Add(Ingredient entity)
         {
             throw new NotImplementedException();
         }

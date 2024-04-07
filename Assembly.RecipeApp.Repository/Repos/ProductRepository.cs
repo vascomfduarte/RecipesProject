@@ -26,7 +26,7 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
-        public Product Add(Product entity)
+        public bool Add(Product entity)
         {
             throw new NotImplementedException();
         }

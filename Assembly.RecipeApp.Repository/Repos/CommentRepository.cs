@@ -26,7 +26,7 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
-        public Comment Add(Comment entity)
+        public bool Add(Comment entity)
         {
             throw new NotImplementedException();
         }
