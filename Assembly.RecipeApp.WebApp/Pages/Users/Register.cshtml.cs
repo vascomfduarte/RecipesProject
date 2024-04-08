@@ -28,18 +28,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                                 Request.Form["UserData.Email"],
                                 Request.Form["UserData.FirstName"],
                                 Request.Form["UserData.LastName"]);
-
-
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
-            //}carolina98
-
-            //// Call the UserService method to add the user
-            //await _userService.AddAsync(user);
-
-            //return RedirectToPage("/Index");
-
+                     
             try
             {
                 // Call the UserService method to add the user

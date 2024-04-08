@@ -28,8 +28,8 @@ namespace Assembly.RecipeApp.Repository.Repos
                     cmd.Parameters.AddWithValue("@lastName", user.LastName);
                     cmd.Parameters.AddWithValue("@contentBio", user.ContentBio ?? ""); // Assuming contentBio can be null
                     cmd.Parameters.AddWithValue("@imageSource", user.ImageSource ?? ""); // Assuming imageSource can be null
-                    cmd.Parameters.AddWithValue("@isAdmin", user.IsAdmin);
-                    cmd.Parameters.AddWithValue("@isBlocked", user.IsBlocked);
+                    cmd.Parameters.AddWithValue("@isAdmin", user.IsAdmin is true ? 1 : 0);
+                    cmd.Parameters.AddWithValue("@isBlocked", user.IsBlocked is true ? 1 : 0);
                     cmd.Parameters.AddWithValue("@createdDate", DateTime.UtcNow);
 
 
