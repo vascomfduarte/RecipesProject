@@ -9,14 +9,14 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
     public class AccountSettingsModel : PageModel
     {
-        private readonly ILogger<ReadAllModel> _logger;
+        private readonly ILogger<GetAllModel> _logger;
         private readonly IUserService _userService;
 
         public User User { get; private set; }
 
         public string userImage;
 
-        public AccountSettingsModel(ILogger<ReadAllModel> logger, IUserService userService)
+        public AccountSettingsModel(ILogger<GetAllModel> logger, IUserService userService)
         {
             _logger = logger;
             _userService = userService;

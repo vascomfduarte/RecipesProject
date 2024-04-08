@@ -1,0 +1,13 @@
+﻿@page
+@model Assembly.RecipeApp.WebApp.Pages.Recipes.GetModel
+@{
+    @if (Model.Recipe == null)
+    {
+        <p>Recipe is null</p>
+    }
+    else if (Model.Recipe != null)
+    {
+        <p>Recipe Page</p>
+    }
+    
+}

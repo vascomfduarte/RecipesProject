@@ -7,9 +7,9 @@ using System.Linq;
 
 namespace Assembly.RecipeApp.WebApp.Pages.Recipes
 {
-    public class ReadAllModel : PageModel
+    public class GetAllModel : PageModel
     {
-        private readonly ILogger<ReadAllModel> _logger;
+        private readonly ILogger<GetAllModel> _logger;
         private readonly IRecipeService _recipeService;
         private readonly IRatingService _ratingService;
 
@@ -20,7 +20,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         public int ratingsCounter = 0;
         public double totalRating = 0;
 
-        public ReadAllModel(ILogger<ReadAllModel> logger, IRecipeService recipeServices, IRatingService ratingService)
+        public GetAllModel(ILogger<GetAllModel> logger, IRecipeService recipeServices, IRatingService ratingService)
         {
             _logger = logger;
             _recipeService = recipeServices;
