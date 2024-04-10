@@ -17,8 +17,6 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         public string SearchTerm { get; set; }
 
         public int recipesCounter = 0;
-        public int ratingsCounter = 0;
-        public double totalRating = 0;
 
         public GetAllModel(ILogger<GetAllModel> logger, IRecipeService recipeServices, IRatingService ratingService)
         {

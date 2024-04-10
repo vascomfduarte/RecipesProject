@@ -13,7 +13,7 @@ namespace Assembly.RecipeApp.Repository.Interfaces
         List<T> GetAll();
         T GetById(int id);
         bool Add(T entity);
-        T Update(T entity);
+        bool Update(T entity);
         T Delete(T entity);
         T Delete(int id);
     }

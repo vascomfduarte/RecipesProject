@@ -171,5 +171,9 @@ namespace Assembly.RecipeApp.Application.Services
             throw new NotImplementedException();
         }
 
+        public Task<bool> UpdateAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

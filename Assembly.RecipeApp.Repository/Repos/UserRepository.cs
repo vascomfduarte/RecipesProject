@@ -42,39 +42,6 @@ namespace Assembly.RecipeApp.Repository.Repos
                 }
             }
         }        
-        public bool Add(string userString)
-        {
-            using (SqlConnection con = new SqlConnection(_connectionString))
-            {
-                string query = @"INSERT INTO [dbo].[user] (username, password, email, first_name, last_name, content_bio, image_source, is_admin, is_blocked, created_at)
-                             VALUES (@username, @password, @email, @firstName, @lastName, @contentBio, @imageSource, @isAdmin, @isBlocked, @created_at)";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    // Parse the userData string to extract individual properties
-                    string[] userData = userString.Split('|');
-
-                    // Add parameter to command
-                    cmd.Parameters.AddWithValue("@username", userData[0]);
-                    cmd.Parameters.AddWithValue("@password", userData[1]);
-                    cmd.Parameters.AddWithValue("@email", userData[2]);
-                    cmd.Parameters.AddWithValue("@firstName", userData[3]);
-                    cmd.Parameters.AddWithValue("@lastName", userData[4]);
-                    cmd.Parameters.AddWithValue("@contentBio", userData[5]);
-                    cmd.Parameters.AddWithValue("@imageSource", userData[6]);
-                    cmd.Parameters.AddWithValue("@isAdmin", userData[7]);
-                    cmd.Parameters.AddWithValue("@isBlocked", userData[8]);
-                    cmd.Parameters.AddWithValue("@created_at", DateTime.UtcNow);
-
-                    if (con.State != ConnectionState.Open)
-                        con.Open();
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    return rowsAffected > 0;
-                }
-            }
-        } // Para eliminar
 
         public List<User> GetAll()
         {
@@ -196,28 +163,33 @@ namespace Assembly.RecipeApp.Repository.Repos
 
             return users;
         } // Feito
-
-        public bool Update(string userString)
+        public bool Update(User entity)
         {
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                // Parse the userData string to extract individual properties
-                string[] userData = userString.Split('|');
-
-                string query = "UPDATE [dbo].[user] SET [username] = @username, [password] = @password, [email] = @email, [first_name] = @firstName, " +
-                               "[last_name] = @lastName, [content_bio] = @contentBio, [image_source] = @imageSource WHERE [ID] = @userId";
+                string query = @"UPDATE [dbo].[user] SET 
+                                    password = @password,
+                                    email = @email,
+                                    first_name = @firstName,
+                                    last_name = @lastName,
+                                    content_bio = @contentBio,
+                                    image_source = @imageSource,
+                                    is_admin = @isAdmin,
+                                    is_blocked = @isBlocked
+                                 WHERE username = @username";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    // Add parameter to command
-                    cmd.Parameters.AddWithValue("@userId", userData[0]);
-                    cmd.Parameters.AddWithValue("@username", userData[1]);
-                    cmd.Parameters.AddWithValue("@password", userData[2]);
-                    cmd.Parameters.AddWithValue("@email", userData[3]);
-                    cmd.Parameters.AddWithValue("@firstName", userData[4]);
-                    cmd.Parameters.AddWithValue("@lastName", userData[5]);
-                    cmd.Parameters.AddWithValue("@contentBio", userData[6]);
-                    cmd.Parameters.AddWithValue("@imageSource", userData[7]);
+                    // Add parameters to command
+                    cmd.Parameters.AddWithValue("@username", entity.Username);
+                    cmd.Parameters.AddWithValue("@password", entity.Password);
+                    cmd.Parameters.AddWithValue("@email", entity.Email);
+                    cmd.Parameters.AddWithValue("@firstName", entity.FirstName);
+                    cmd.Parameters.AddWithValue("@lastName", entity.LastName);
+                    cmd.Parameters.AddWithValue("@contentBio", entity.ContentBio ?? ""); // Assuming contentBio can be null
+                    cmd.Parameters.AddWithValue("@imageSource", entity.ImageSource ?? ""); // Assuming imageSource can be null
+                    cmd.Parameters.AddWithValue("@isAdmin", entity.IsAdmin ? 1 : 0);
+                    cmd.Parameters.AddWithValue("@isBlocked", entity.IsBlocked ? 1 : 0);
 
                     if (con.State != ConnectionState.Open)
                         con.Open();
@@ -227,10 +199,6 @@ namespace Assembly.RecipeApp.Repository.Repos
                     return rowsAffected > 0;
                 }
             }
-        } // Para eliminar
-        public User Update(User entity)
-        {
-            throw new NotImplementedException();
         }
         public bool UpdateBlockStatus(User user)
         {

@@ -45,5 +45,10 @@ namespace Assembly.RecipeApp.Repository.Repos
         {
             throw new NotImplementedException();
         }
+
+        bool IRepository<Product>.Update(Product entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

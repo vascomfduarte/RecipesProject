@@ -192,7 +192,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
-        public double GetRecipeRating()
+        public int GetRecipeRating()
         {
             double rating = 0;
             double ratingsCounter = 0;
@@ -210,9 +210,9 @@ namespace Assembly.RecipeApp.Domain.Model
             return rat;
         }
 
-        public double GetRecipeRatingCount()
+        public int GetRecipeRatingCount()
         {
-            double ratingsCounter = 0;
+            int ratingsCounter = 0;
 
             foreach(Rating r in Ratings)
             {

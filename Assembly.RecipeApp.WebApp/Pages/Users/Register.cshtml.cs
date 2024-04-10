@@ -23,11 +23,11 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
         public async Task<IActionResult> OnPostSubmitAsync()
         {
-            User user = new User(Request.Form["UserData.Username"],
-                                Request.Form["UserData.Password"],
-                                Request.Form["UserData.Email"],
-                                Request.Form["UserData.FirstName"],
-                                Request.Form["UserData.LastName"]);
+            User user = new User(username: Request.Form["UserData.Username"],
+                                 password: Request.Form["UserData.Password"],
+                                 email: Request.Form["UserData.Email"],
+                                 firstName: Request.Form["UserData.FirstName"],
+                                 lastName: Request.Form["UserData.LastName"]);
                      
             try
             {

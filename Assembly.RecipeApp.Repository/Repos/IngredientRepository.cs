@@ -87,5 +87,9 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
+        bool IRepository<Ingredient>.Update(Ingredient entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,9 +12,11 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         private readonly IRatingService _ratingService;
 
         public Recipe Recipe { get; private set; }
-     
-        public int ratingsCounter = 0;
-        public double totalRating = 0;
+
+        public int RatingsCounter { get; private set; }
+        public int Rating { get; private set; }
+        public int RatingCount { get; private set; }
+
 
         public GetModel(ILogger<GetModel> logger, IRecipeService recipeServices, IRatingService ratingService)
         {
@@ -26,6 +28,24 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         public IActionResult OnGet(int id)
         {           
             Recipe = _recipeService.GetById(id);
+
+            if (Recipe.GetRecipeRating() > 0)
+            {
+                Rating = Recipe.GetRecipeRating();
+                RatingCount = Recipe.GetRecipeRatingCount();
+            }
+            else
+            {
+                Rating = 0;
+                RatingCount = 0;
+            }
+
+
+            //Rating = Recipe.GetRecipeRating();
+            //RatingCount = Recipe.GetRecipeRatingCount();
+
+            //Rating = 3;
+            //RatingCount = 26765;
 
             return Page();
         }

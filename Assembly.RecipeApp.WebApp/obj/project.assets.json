@@ -620,19 +620,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vasco\\.nuget\\packages\\": {}
+    "C:\\Users\\Vasco Duarte\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj",
+      "projectUniqueName": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj",
       "projectName": "Assembly.RecipeApp.WebApp",
-      "projectPath": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj",
-      "packagesPath": "C:\\Users\\vasco\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\obj\\",
+      "projectPath": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj",
+      "packagesPath": "C:\\Users\\Vasco Duarte\\.nuget\\packages\\",
+      "outputPath": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vasco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vasco Duarte\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -646,11 +646,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj": {
-              "projectPath": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj"
+            "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj": {
+              "projectPath": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj"
             },
-            "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj": {
-              "projectPath": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj"
+            "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj": {
+              "projectPath": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj"
             }
           }
         }
@@ -659,6 +659,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -683,7 +688,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

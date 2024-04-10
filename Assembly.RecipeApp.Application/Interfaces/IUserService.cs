@@ -9,5 +9,6 @@ namespace Assembly.RecipeApp.Application.Interfaces
         bool UpdateBlockStatus(User user, User adminUser);
         bool UpdateAdminStatus(User user, User adminUser);
         Task<bool> AddAsync(User user);
+        Task<bool> UpdateAsync(User user);
     }
 }
