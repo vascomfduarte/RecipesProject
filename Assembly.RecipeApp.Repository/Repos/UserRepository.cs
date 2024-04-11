@@ -41,7 +41,7 @@ namespace Assembly.RecipeApp.Repository.Repos
                     return rowsAffected > 0;
                 }
             }
-        }        
+        }         // Feito 
 
         public List<User> GetAll()
         {
@@ -163,6 +163,7 @@ namespace Assembly.RecipeApp.Repository.Repos
 
             return users;
         } // Feito
+
         public bool Update(User entity)
         {
             using (SqlConnection con = new SqlConnection(_connectionString))
@@ -199,14 +200,6 @@ namespace Assembly.RecipeApp.Repository.Repos
                     return rowsAffected > 0;
                 }
             }
-        }
-        public bool UpdateBlockStatus(User user)
-        {
-            throw new NotImplementedException();
-        }
-        public bool UpdateAdminStatus(User user)
-        {
-            throw new NotImplementedException();
         }
 
         public User Delete(User entity)

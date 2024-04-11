@@ -40,51 +40,6 @@ namespace Assembly.RecipeApp.Application.Services
             if (GetAll().Any(u => u.Email == user.Email))
                 throw new ArgumentException("Email address already exists.", nameof(user.Email));
 
-            // Validate image source format
-            if (user.ImageSource is not null)
-            {
-                if (!Uri.TryCreate(user.ImageSource, UriKind.Absolute, out Uri uriResult) || uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps)
-                {
-                    user.ImageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg";
-                    //throw new ArgumentException("Invalid image URL.", nameof(user.ImageSource));
-                }
-            }
-            else if (user.ImageSource is null)
-            {
-                // Set a default to ImageSource
-                user.ImageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg";
-            }
-
-            // Set a default to contentBio
-            if (user.ContentBio is null)
-                user.ContentBio = "Let others know who you are";
-
-            // Set isAdmin to false by default if not provided
-            user.SetAdminDefault(user);
-
-            // Set isBlocked to false by default if not provided
-            user.SetBlockedDefault(user);
-
-            // Format the User object's properties into a string representation
-            //string userString = $"{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}|{(user.IsAdmin ? "1" : "0")}|{(user.IsBlocked ? "1" : "0")}";
-
-            // Call the UserRepository's Add method with the formatted string representation of the User
-            //return _userRepository.Add(userString);
-
-            throw new NotImplementedException();
-
-        } // Para alterar
-
-        public async Task<bool> AddAsync(User user)
-        {
-            // Validate if username already exist
-            if (GetAll().Any(u => u.Username == user.Username))
-                throw new ArgumentException("Username already exists.", nameof(user.Username));
-
-            // Validate if email already exist
-            if (GetAll().Any(u => u.Email == user.Email))
-                throw new ArgumentException("Email address already exists.", nameof(user.Email));
-
             // Set isAdmin to false by default if not provided
             user.SetAdminDefault(user);
 
@@ -98,52 +53,83 @@ namespace Assembly.RecipeApp.Application.Services
 
             return false;
 
-        } // Para alterar
+        } // Feito
 
         public bool Update(User user)
         {
-            //Get UserByID? (como sei o ID?)
+            return _userRepository.Update(user);
 
+        } // Feito
 
-            // Passei validação para repositorio
-
-            //if (user.Id == 0)
-            //{
-            //    List <User> oldUser = GetFilteredUsers(user.Username);
-
-            //    foreach (User u in oldUser)
-            //    {
-            //        user.Id = u.Id; // Não é possível pois ID é privado
-            //    }
-            //}
-
-            // Validate image source format
-            if (!String.IsNullOrEmpty(user.ImageSource))
+        public bool UpdateFromString(string newUserDataString, User previousUser)
+        {
+            try
             {
-                if (!Uri.TryCreate(user.ImageSource, UriKind.Absolute, out Uri uriResult) || uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps)
+                // Check if the newUserDataString is null or empty
+                if (string.IsNullOrEmpty(newUserDataString))
                 {
-                    user.ImageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg";
-                    //throw new ArgumentException("Invalid image URL.", nameof(user.ImageSource));
+                    // Return false indicating that the update failed due to invalid data
+                    return false;
                 }
+
+                // Split the newUserDataString into individual properties, preserving spaces
+                string[] userData = newUserDataString.Split(new[] { '|' }, StringSplitOptions.None);
+
+                // Extract individual properties from the userData array
+                string username = userData[0];
+                string password = userData[1];
+                string email = userData[2];
+                string firstName = userData[3];
+                string lastName = userData[4];
+                string contentBio = userData[5];
+                string imageSource = userData[6];
+
+                // Update only the properties that have changed and are not null or empty
+                if (!string.IsNullOrEmpty(username) && username != previousUser.Username)
+                {
+                    previousUser.Username = username;
+                }
+
+                if (!string.IsNullOrEmpty(password) && password != previousUser.Password)
+                {
+                    previousUser.Password = password;
+                }
+
+                if (!string.IsNullOrEmpty(email) && email != previousUser.Email)
+                {
+                    previousUser.Email = email;
+                }
+
+                if (!string.IsNullOrEmpty(firstName) && firstName != previousUser.FirstName)
+                {
+                    previousUser.FirstName = firstName;
+                }
+
+                if (!string.IsNullOrEmpty(lastName) && lastName != previousUser.LastName)
+                {
+                    previousUser.LastName = lastName;
+                }
+
+                if (!string.IsNullOrEmpty(contentBio) && contentBio != previousUser.ContentBio)
+                {
+                    previousUser.ContentBio = contentBio;
+                }
+
+                if (!string.IsNullOrEmpty(imageSource) && imageSource != previousUser.ImageSource)
+                {
+                    previousUser.ImageSource = imageSource;
+                }
+
+                // Call the repository method to update the user
+                return _userRepository.Update(previousUser);
             }
-            else if (String.IsNullOrEmpty(user.ImageSource))
+            catch (Exception ex)
             {
-                // Set a default to ImageSource
-                user.ImageSource = "https://i.ibb.co/ZKV9y5r/da7ed7b0-5f66-4f97-a610-51100d3b9fd2.jpg";
+                // Handle exceptions
+                // Log the exception or return false indicating the update failed
+                return false;
             }
-
-            // Set a default to contentBio
-            if (String.IsNullOrEmpty(user.ContentBio))
-                user.ContentBio = "Let others know who you are";
-
-            // Format the User object's properties into a string representation
-            //string userString = $"{user.Id}|{user.Username}|{user.Password}|{user.Email}|{user.FirstName}|{user.LastName}|{user.ContentBio}|{user.ImageSource}";
-
-            //return _userRepository.Update(userString);
-
-            throw new NotImplementedException();
-
-        } // Para alterar
+        }
 
         public bool UpdateBlockStatus(User user, User adminUser)
         {
@@ -171,9 +157,5 @@ namespace Assembly.RecipeApp.Application.Services
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdateAsync(User user)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

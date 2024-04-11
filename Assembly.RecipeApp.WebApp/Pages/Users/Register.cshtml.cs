@@ -21,7 +21,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         {
         }
 
-        public async Task<IActionResult> OnPostSubmitAsync()
+        public IActionResult OnPostSubmit()
         {
             User user = new User(username: Request.Form["UserData.Username"],
                                  password: Request.Form["UserData.Password"],
@@ -32,7 +32,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             try
             {
                 // Call the UserService method to add the user
-                await _userService.AddAsync(user);
+                _userService.Add(user);
 
                 // Redirect to the desired page upon successful registration
                 return RedirectToPage("/Index");

@@ -8,7 +8,6 @@ namespace Assembly.RecipeApp.Application.Interfaces
         User Login(string username, string password);
         bool UpdateBlockStatus(User user, User adminUser);
         bool UpdateAdminStatus(User user, User adminUser);
-        Task<bool> AddAsync(User user);
-        Task<bool> UpdateAsync(User user);
+        bool UpdateFromString(string userDataString, User previousUser);
     }
 }

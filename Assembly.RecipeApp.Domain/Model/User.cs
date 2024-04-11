@@ -185,6 +185,16 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
+        public void SetId(int id)
+        {
+            // Check if Id has already been set
+            if (Id != 0)
+            {
+                throw new InvalidOperationException("Id can only be set once.");
+            }
+
+            Id = id;
+        }
         public void SetAdminDefault(User currentUser)
         {            
             if (currentUser != null)

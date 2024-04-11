@@ -10,7 +10,5 @@ namespace Assembly.RecipeApp.Repository.Interfaces
     public interface IUserRepository : IRepository<User>
     {
         List<User> GetFilteredUsers(string name);
-        bool UpdateBlockStatus(User user);
-        bool UpdateAdminStatus(User user);
     }
 }
