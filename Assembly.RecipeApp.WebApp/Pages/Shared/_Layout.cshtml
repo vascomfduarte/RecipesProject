@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CulinaryCompass </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Assembly.RecipeApp.WebApp.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    @{
+        bool isAuthenticated = User.Identity.IsAuthenticated;
+    }
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom bg-light box-shadow mb-3">
+            <div class="container container-md">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <div class="logo-image">
+                        <img src="https://i.imgur.com/BlJV7py.png" class="img" alt="HeavenlyRecipes Image">
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <div class="col-md-6 col-sm-4">
+                        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Recipes
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                                    <li><a class="dropdown-item" href="#">Easy</a></li>
+                                    <li><a class="dropdown-item" href="#">Fast</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">Link</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="col-md-4 col-sm-4 my-2 my-lg-0" method="GET" action="/ReadAll" style="margin-right: 15px;">
+                        <div class="input-group">
+                            <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search recipes" aria-label="Search">
+                            <button asp-page="/Recipes/GetAll" class="btn btn-outline-secondary" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>                    
+                    <div class="col-md-2 col-sm-1 my-2">
+                        @if (false)
+                        {                              
+                            <div class="row">
+                                <div class="col-4">
+                                    <form asp-page="/Users/Login" method="post">
+                                        <button type="submit" class="btn btn-outline-success">Login</button>
+                                    </form>
+                                </div>
+                                <div class="col-4">
+                                    <form asp-page="/Users/Register" method="post">
+                                        <button type="submit" class="btn btn-outline-primary">Register</button>
+                                    </form>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            
+                            <div class="col-4">
+                                <ul class="navbar-nav">
+                                    <li class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                            </svg>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                                            <li><a asp-page="/Users/AccountSettings" class="dropdown-item">Account Settings</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="#">My Recipes</a></li>
+                                            <li><a class="dropdown-item" href="#">Create Recipe</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="#">Comments</a></li>
+                                            <li><a class="dropdown-item" href="#">Saved Recipes</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <a asp-area="" asp-controller="Account" asp-action="Logout" method="post" class="btn btn-outline-danger" style="margin: auto 15px; ">
+                                                    Logout
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        }
+                    </div>                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - HeavenlyRecipes - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

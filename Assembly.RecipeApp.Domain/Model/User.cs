@@ -1,15 +1,14 @@
 ﻿using Assembly.RecipeApp.Domain.Exceptions;
-using System.Linq;
+using Assembly.RecipeApp.Domain.Interfaces;
 using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 namespace Assembly.RecipeApp.Domain.Model
 {
-    public class User
+    public class User : AuditableEntity, IEntity
     {      
         public int Id { get; private set; }
-        
-        public string _username { get; private set; }
+
+        private string _username { get; set; }
         public string Username
         {
             get { return _username; }
@@ -19,8 +18,8 @@ namespace Assembly.RecipeApp.Domain.Model
                 _username = value;
             }
         }
-        
-        public string _password { get; private set; }
+
+        private string _password { get; set; }
         public string Password
         {
             get { return _password; }
@@ -30,8 +29,8 @@ namespace Assembly.RecipeApp.Domain.Model
                 _password = value;
             }
         }
-        
-        public string _email { get; private set; }
+
+        private string _email { get; set; }
         public string Email
         {
             get { return _email; }
@@ -41,8 +40,8 @@ namespace Assembly.RecipeApp.Domain.Model
                 _email = value;
             }
         }
-        
-        public string _firstName { get; private set; }
+
+        private string _firstName { get; set; }
         public string FirstName
         {
             get { return _firstName; }
@@ -53,7 +52,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
-        public string _lastName { get; private set; }
+        private string _lastName { get; set; }
         public string LastName
         {
             get { return _lastName; }
@@ -78,15 +77,16 @@ namespace Assembly.RecipeApp.Domain.Model
             Username = username;
             Password = password;
             Email = email;
-            IsAdmin = false; // Default to non-admin
-            IsBlocked = false; // Default to not blocked
+            CreatedDate = DateTime.Now.Date;
         }
 
-        public User(string username, string password, string email, string firstName, string lastName) 
+        public User(string username, string password, string email, string firstName, string lastName)
             : this(username, password, email)
         {
             FirstName = firstName;
             LastName = lastName;
+            IsAdmin = false;
+            IsBlocked = false;
         }
 
         public User(string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource)
@@ -96,23 +96,28 @@ namespace Assembly.RecipeApp.Domain.Model
             ImageSource = imageSource;
         }
 
-        public User(int id, string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource) 
+        public User(int id, string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource)
             : this(username, password, email, firstName, lastName, contentBio, imageSource)
-        { 
+        {
             Id = id;
         }
 
-        public User(int id, string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource, bool isAdmin, bool isBlocked)
-            : this(id, username, password, email, firstName, lastName, contentBio, imageSource)
+        public User(int id, string username, string password, string email, string firstName, string lastName, string contentBio, string imageSource, bool isAdmin, bool isBlocked, DateTime createdDate)     
         {
+            Id = id;
+            Username = username;
+            Password = password;
+            Email = email;
+            FirstName = firstName;
+            LastName = lastName;
+            ContentBio = contentBio;
+            ImageSource = imageSource;
             IsAdmin = isAdmin;
             IsBlocked = isBlocked;
+            CreatedDate = createdDate;
         }
 
-        // Construtores para definir estado inicial do objeto
-        // A class é que se conhece a si mesma. Validações de parâmetros feitas aqui. 
-
-        private void ValidateUsername(string username)
+        private static void ValidateUsername(string username)
         {
             // Check if username is null or empty
             if (string.IsNullOrEmpty(username))
@@ -120,7 +125,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new DomainException("Username cannot be null or empty.");
             }
         }
-        private void ValidatePassword(string password)
+        private static void ValidatePassword(string password)
         {
             // Check if password is null or empty
             if (string.IsNullOrEmpty(password) || password.Length < 8 || !password.Any(char.IsLetter) || !password.Any(char.IsDigit))
@@ -128,7 +133,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new DomainException("Invalid password. Password must be at least 8 characters long and contain at least one letter and one digit.");
             }
         }
-        private void ValidateEmail(string email)
+        private static void ValidateEmail(string email)
         {
             // Check if email is null or empty
             if (string.IsNullOrEmpty(email))
@@ -180,28 +185,36 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
-        public void SetIsAdmin(User currentUser, bool isAdmin)
+        public void SetId(int id)
         {
-            // Check if the current user is an admin
-            if (currentUser != null && currentUser.IsAdmin)
+            // Check if Id has already been set
+            if (Id != 0)
             {
-                IsAdmin = isAdmin;
+                throw new InvalidOperationException("Id can only be set once.");
+            }
+
+            Id = id;
+        }
+        public void SetAdminDefault(User currentUser)
+        {            
+            if (currentUser != null)
+            {
+                IsAdmin = false;
             }
             else
             {
-                throw new DomainException("Only admin users can change the IsAdmin status.");
+                throw new DomainException("Unable to change IsAdmin status.");
             }
         }
-        public void SetIsBlocked(User currentUser, bool isBlocked)
+        public void SetBlockedDefault(User currentUser)
         {
-            // Check if the current user is an admin
-            if (currentUser != null && currentUser.IsAdmin)
+            if (currentUser != null)
             {
-                IsBlocked = isBlocked;
+                IsBlocked = false;
             }
             else
             {
-                throw new DomainException("Only admin users can change the IsBlocked status.");
+                throw new DomainException("Unable to change IsBlocked status.");
             }
         }
 
@@ -211,7 +224,7 @@ namespace Assembly.RecipeApp.Domain.Model
         /// </summary>
         /// <param name="currentUser"></param>
         /// <exception cref="InvalidOperationException"></exception>
-        public void ChangeIsAdminStatus(User currentUser, User userToModify)
+        public void SwitchAdminStatus(User currentUser, User userToModify)
         {
             if (currentUser == null || !currentUser.IsAdmin)
             {
@@ -233,7 +246,7 @@ namespace Assembly.RecipeApp.Domain.Model
         /// </summary>
         /// <param name="currentUser"></param>
         /// <exception cref="InvalidOperationException"></exception>
-        public void ChangeIsBlockedStatus(User currentUser, User userToModify)
+        public void SwitchBlockStatus(User currentUser, User userToModify)
         {
             if (currentUser == null || !currentUser.IsAdmin)
             {

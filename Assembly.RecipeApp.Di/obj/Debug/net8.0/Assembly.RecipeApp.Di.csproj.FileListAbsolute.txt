@@ -1,0 +1,6 @@
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Di\obj\Debug\net8.0\Assembly.RecipeApp.Di.csproj.AssemblyReference.cache
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Di\obj\Debug\net8.0\Assembly.RecipeApp.Di.GeneratedMSBuildEditorConfig.editorconfig
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Di\obj\Debug\net8.0\Assembly.RecipeApp.Di.AssemblyInfoInputs.cache
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Di\obj\Debug\net8.0\Assembly.RecipeApp.Di.AssemblyInfo.cs
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Di\obj\Debug\net8.0\Assembly.RecipeApp.Di.csproj.CoreCompileInputs.cache
+A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Di\obj\Debug\net8.0\Assembly.RecipeApp.Di.sourcelink.json

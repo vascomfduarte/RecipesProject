@@ -1,0 +1,263 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Di\\Assembly.RecipeApp.Di.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj",
+        "projectName": "Assembly.RecipeApp.Application",
+        "projectPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj",
+        "packagesPath": "C:\\Users\\vasco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vasco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj"
+              },
+              "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj": {
+                "projectPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Di\\Assembly.RecipeApp.Di.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Di\\Assembly.RecipeApp.Di.csproj",
+        "projectName": "Assembly.RecipeApp.Di",
+        "projectPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Di\\Assembly.RecipeApp.Di.csproj",
+        "packagesPath": "C:\\Users\\vasco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Di\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vasco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj": {
+                "projectPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj",
+        "projectName": "Assembly.RecipeApp.Domain",
+        "projectPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj",
+        "packagesPath": "C:\\Users\\vasco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vasco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj",
+        "projectName": "Assembly.RecipeApp.Repository",
+        "projectPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj",
+        "packagesPath": "C:\\Users\\vasco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vasco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Domain\\Assembly.RecipeApp.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

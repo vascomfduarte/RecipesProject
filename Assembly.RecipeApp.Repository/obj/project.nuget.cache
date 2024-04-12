@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "LZK1ePu0GQVgZTkc/AYuiR+6EmKFMO0VUZQItSAQqmJQYEzghs2M/RfnKi6k3DxFgR9ol2yY+/emQkMlS/3Cow==",
+  "dgSpecHash": "HPeUp0twW2CZrjBPWKORr8viIXu/xxdNCkxP1KRsDDLlz9Ci7x/5xEm/tHHeEGPGO6Q9Va5Ai3jKCSZWl4tSiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\vasco\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\vasco\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\vasco\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\vasco\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\vasco\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
