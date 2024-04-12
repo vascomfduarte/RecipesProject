@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "dgSpecHash": "yvgx4wCI/gEyPzf6Fh4EPkdgtKi8De1npJnKvjv+FNAB4zakjrHA6wEjzHK8izQ8yNRjtxkA0yZRIyT1e0SD/Q==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Não é possível encontrar o projeto 'C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Services\\Assembly.Recipe.Application.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
+      "libraryId": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Services\\Assembly.Recipe.Application.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Não é possível encontrar o projeto 'C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.Recipe.Application\\Assembly.RecipeApp.Application.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
+      "libraryId": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.Recipe.Application\\Assembly.RecipeApp.Application.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Não é possível encontrar o projeto 'C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Model\\Assembly.Recipe.Domain.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
+      "libraryId": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Model\\Assembly.Recipe.Domain.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Não é possível encontrar o projeto 'C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.Recipe.Domain\\Assembly.RecipeApp.Domain.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
+      "libraryId": "C:\\Users\\vasco\\Source\\Repos\\vascomfduarte\\RecipesProject\\side_branch\\Assembly.Recipe.Domain\\Assembly.RecipeApp.Domain.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
