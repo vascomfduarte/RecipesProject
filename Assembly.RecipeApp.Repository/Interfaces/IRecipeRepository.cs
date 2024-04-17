@@ -10,5 +10,7 @@ namespace Assembly.RecipeApp.Repository.Interfaces
     public interface IRecipeRepository : IRepository<Recipe>
     {
         List<Recipe> GetFilteredRecipes(string name);
+        List<Recipe> GetTopRatedRecipes(int count);
+        
     }
 }

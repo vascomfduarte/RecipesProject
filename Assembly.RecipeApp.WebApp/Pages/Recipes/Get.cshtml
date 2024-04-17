@@ -6,13 +6,13 @@
         <div class="row justify-content-center">
 
             <div class="col-md-6">
-                <hr class="my-4">
-                <h1 class="mt-5">@Model.Recipe.Title</h1>
+                <hr class="my-4 m-0 rounded" style="background-color:#B2B377; height: 7px">
+                <h2 class="mt-5">@Model.Recipe.Title</h2>
                 <p>By <strong>@Model.Recipe.User.Username</strong></p>
-                <p class="text-muted">Published @Model.Recipe.CreatedDate.ToString("MMMM dd, yyyy")</p>
+                <p class="text-muted">Published @Model.Recipe.CreatedDate.ToString("dd MMMM, yyyy")</p>
 
                 <br />
-                <hr class="my-4">
+                <hr class="my-4 m-0 rounded" style="background-color:#B2B377; height: 7px">
                 <br />
 
                 <div class="row">
@@ -58,11 +58,11 @@
 
                 <br />
                 <br />
-                <hr class="my-4">
+                <hr class="my-4 m-0 rounded" style="background-color:#B2B377; height: 7px">
             </div>
 
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="card p-2" style="width: 650px; height: 520px;">
+                <div class="card p-2" style="width: 650px; height: 520px; background-color:#E5E483;">
                     <img src="@Model.Recipe.ImageSource" class="card-img" style="object-fit: cover; width: 100%; height: 100%;" alt="Recipe Image">
                 </div>
             </div>

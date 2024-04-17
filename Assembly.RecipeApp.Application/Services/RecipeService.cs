@@ -4,6 +4,7 @@ using Assembly.RecipeApp.Repository.Interfaces;
 using Assembly.RecipeApp.Repository.Repos;
 using System.ComponentModel;
 using System.Globalization;
+using System.Xml.Linq;
 
 namespace Assembly.RecipeApp.Application.Services
 {
@@ -78,7 +79,14 @@ namespace Assembly.RecipeApp.Application.Services
         public List<Recipe> GetFilteredRecipes(string name)
         { 
             return _recipeRepository.GetFilteredRecipes(name);
-        } // Feito 
+        }
+
+        public List<Recipe> GetTopRatedRecipes(int count)
+        {
+            return _recipeRepository.GetTopRatedRecipes(count);
+
+            //throw new NotImplementedException();
+        }
 
         public bool Update(Recipe entity)
         {

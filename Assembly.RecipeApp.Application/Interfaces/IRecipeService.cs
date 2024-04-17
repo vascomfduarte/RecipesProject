@@ -5,6 +5,7 @@ namespace Assembly.RecipeApp.Application.Interfaces
     public interface IRecipeService : IService<Recipe>
     {
         List<Recipe> GetFilteredRecipes(string name);
+        List<Recipe> GetTopRatedRecipes(int count);
     }
 
 }

@@ -1,11 +1,8 @@
 ﻿@page
 @model Assembly.RecipeApp.WebApp.Pages.Users.AccountSettingsModel
 @{
-	ViewData["Title"] = "User Dashboard";
+	ViewData["Title"] = "User Settings";
 
-	<head>
-
-	</head>
 	<body>
         <div class="container rounded bg-white mt-2 mb-5">
 
@@ -55,7 +52,7 @@
                             <div class="row mt-2">
                                 <div class="col-md-12 mt-2">
                                     <label class="labels">Biography</label>
-                                    <input asp-for="User.ContentBio" type="text" class="form-control" placeholder="write something about you" value="">
+                                    <textarea asp-for="User.ContentBio" type="text" class="form-control" placeholder="write something about you" value=""></textarea>
                                 </div>
                             </div>
                             <div class="mt-5 text-center">

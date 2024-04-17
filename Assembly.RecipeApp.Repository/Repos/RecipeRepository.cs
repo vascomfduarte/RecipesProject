@@ -36,15 +36,6 @@ namespace Assembly.RecipeApp.Repository.Repos
                                "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id] " +
                                "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id];";
 
-                //string query = "SELECT r.[id], r.[title], r.[description], r.[image_source], r.[minutes_to_cook], r.[is_approved], r.[created_date], " +
-                //               "u.[id] AS [user_id], u.[username], u.[password], u.[email], u.[first_name], u.[last_name], u.[content_bio], u.[image_source], " +
-                //               "u.[is_admin], u.[is_blocked], u.[created_date], " +
-                //               "d.[id] as [difficulty_id], d.[name], d.[created_date] " +
-                //               "FROM [dbo].[recipe] AS r " +
-                //               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id] " +
-                //               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id];";
-
-
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     if (con.State != ConnectionState.Open)
@@ -233,6 +224,86 @@ namespace Assembly.RecipeApp.Repository.Repos
             return recipes;
         } // Feito
 
+        public List<Recipe> GetTopRatedRecipes(int count)
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"
+                                SELECT TOP (@Count) r.id, r.title, r.description, r.image_source, r.minutes_to_cook, r.is_approved, r.created_date, 
+                                       u.id AS user_id, u.username, u.password, u.email, u.first_name, u.last_name, u.content_bio, 
+                                       u.image_source AS user_image_source, u.is_admin, u.is_blocked, u.created_date AS user_created_date, 
+                                       d.id AS difficulty_id, d.name AS difficulty_name, d.created_date AS difficulty_created_date,
+                                       AVG(rt.value) AS average_rating,
+                                       c.id AS category_id, c.name AS category_name, c.created_date AS category_created_date
+                                FROM [dbo].[recipe] AS r
+                                INNER JOIN [dbo].[user] AS u ON r.user_id = u.id
+                                INNER JOIN [dbo].[difficulty] AS d ON r.difficulty_id = d.id
+                                LEFT JOIN [dbo].[rating] AS rt ON r.id = rt.recipe_id
+                                LEFT JOIN [dbo].[recipe_categories] AS rc ON r.id = rc.recipe_id
+                                LEFT JOIN [dbo].[category] AS c ON rc.category_id = c.id
+                                GROUP BY r.id, r.title, r.description, r.image_source, r.minutes_to_cook, r.is_approved, r.created_date, 
+                                         u.id, u.username, u.password, u.email, u.first_name, u.last_name, u.content_bio, 
+                                         u.image_source, u.is_admin, u.is_blocked, u.created_date, 
+                                         d.id, d.name, d.created_date,
+                                         c.id, c.name, c.created_date
+                                ORDER BY average_rating DESC, r.created_date DESC";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Count", count);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string title = reader.GetString(1);
+                            string description = reader.GetString(2);
+                            string imageSource = reader.GetString(3);
+                            int minutesToCook = reader.GetInt32(4);
+                            bool isApproved = reader.GetInt32(5) == 1 ? true : false;
+                            DateTime createdDate = reader.GetDateTime(6);
+
+                            // User
+                            User user = new User(reader.GetInt32(7),
+                                                 reader.GetString(8),
+                                                 reader.GetString(9),
+                                                 reader.GetString(10),
+                                                 reader.GetString(11),
+                                                 reader.GetString(12),
+                                                 reader.GetString(13),
+                                                 reader.GetString(14),
+                                                 reader.GetInt32(15) == 1 ? true : false,
+                                                 reader.GetInt32(16) == 1 ? true : false,
+                                                 reader.GetDateTime(17));
+
+                            // Difficulty
+                            Difficulty difficulty = new Difficulty(reader.GetInt32(18),
+                                                                   reader.GetString(19),
+                                                                   reader.GetDateTime(20));
+
+                            // Rating List
+                            List<Rating> ratings = _ratingRepository.GetByRecipeId(id);
+
+                            // Category List
+                            List<Category> categories = _categoryRepository.GetByRecipeId(id);
+
+                            var recipe = new Recipe(id, title, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, user.Username, createdDate);
+
+                            recipes.Add(recipe);
+                        }
+                    }
+                }
+            }
+
+            return recipes;
+        }
+
         public bool Add(Recipe entity)
         {
             throw new NotImplementedException();
@@ -257,5 +328,7 @@ namespace Assembly.RecipeApp.Repository.Repos
         {
             throw new NotImplementedException();
         }
+
+
     }
 }
