@@ -154,7 +154,7 @@ namespace Assembly.RecipeApp.Application.Services
 
         public User Login(string username, string password)
         {
-            throw new NotImplementedException();
+            return _userRepository.Login(username, password);
         }
 
     }

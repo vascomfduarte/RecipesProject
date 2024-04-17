@@ -41,7 +41,7 @@ namespace Assembly.RecipeApp.Repository.Repos
                     return rowsAffected > 0;
                 }
             }
-        }         // Feito 
+        } // Feito 
 
         public List<User> GetAll()
         {
@@ -211,5 +211,45 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
+        public User Login(string inputUsername, string inputPassword)
+        {
+            User user = null;
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM [dbo].[user] WHERE [username] = @Username AND [password] = @Password;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Username", inputUsername);
+                    cmd.Parameters.AddWithValue("@Password", inputPassword);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string username = reader.GetString(1);
+                            string password = reader.GetString(2);
+                            string email = reader.GetString(3);
+                            string firstName = reader.GetString(4);
+                            string lastName = reader.GetString(5);
+                            string contentBio = reader.GetString(6);
+                            string imageSource = reader.GetString(7);
+                            bool isAdmin = reader.GetInt32(8) == 1 ? true : false;
+                            bool isBlocked = reader.GetInt32(9) == 1 ? true : false;
+                            DateTime createdDate = reader.GetDateTime(10);
+
+                            user = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);
+                        }
+                    }
+                }
+            }
+
+            return user;
+        }
     }
 }

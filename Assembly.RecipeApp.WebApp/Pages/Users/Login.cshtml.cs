@@ -2,6 +2,7 @@ using Assembly.RecipeApp.Application.Interfaces;
 using Assembly.RecipeApp.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
 namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
@@ -10,8 +11,12 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         private readonly ILogger<LoginModel> _logger;
         private readonly IUserService _userService;
 
-        public IEnumerable<User> Users { get; private set; }
-        public User User { get; private set; }
+        [BindProperty]
+        [Required(ErrorMessage = "Username is required.")]
+        public string Username { get; set; }
+        [BindProperty]
+        [Required(ErrorMessage = "Password is required.")]
+        public string Password { get; set; }
 
         public LoginModel(ILogger<LoginModel> logger, IUserService userServices)
         {
@@ -19,11 +24,34 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             _userService = userServices;
         }
 
-        public IActionResult OnGet(string username, string password)
+        public void OnGet()
         {
-            //User = _userService.Login(username, password);
+            
+        }
 
-            return Page();
+        public IActionResult OnPost() 
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            User user = _userService.Login(Username, Password);
+
+            if (user != null)
+            {
+                HttpContext.Session.SetString("Username", user.Username);
+                HttpContext.Session.SetInt32("Id", user.Id);
+                return RedirectToPage("/Index");
+            }
+
+            return Page(); 
+        }
+
+        public IActionResult OnPostLogout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToPage("/Index"); 
         }
 
     }

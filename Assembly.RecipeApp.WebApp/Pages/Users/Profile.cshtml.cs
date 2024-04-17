@@ -11,10 +11,10 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         private readonly ILogger<GetAllModel> _logger;
         private readonly IUserService _userService;
 
+        [BindProperty]
         public User User { get; private set; }
-        public int UserId { get; private set; }
-
-        public string userImage;
+        [BindProperty]
+        public string UserImage { get; set; }
 
         public ProfileModel(ILogger<GetAllModel> logger, IUserService userService)
         {
@@ -24,22 +24,27 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
         public IActionResult OnGet(int id)
         {
-            id = 1;
+            // Retrieve UserId from session
+            var userId = HttpContext.Session.GetInt32("Id");
 
-            UserId = id;
+            if (userId is null)
+            {
+                // Handle case where user is not logged in
+                return RedirectToPage("/Users/Login");
+            }
 
             // Fetch the user by id
-            User = _userService.GetById(id);
+            User = _userService.GetById(userId.Value);
 
             // If the user is null, you might want to handle this case
             if (User == null)
             {
                 // Handle case where user is not found
-                return NotFound();
+                return RedirectToPage("/Index");
             }
 
             // Set userImage property
-            userImage = User.ImageSource is null ? "https://n9.cl/yuh9ik" : User.ImageSource.ToString();
+            UserImage = string.IsNullOrEmpty(User.ImageSource) ? "https://i.imgur.com/qlEw2Rz.jpeg" : User.ImageSource.ToString();
 
             return Page();
         }

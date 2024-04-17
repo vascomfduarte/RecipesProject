@@ -4,21 +4,23 @@
 
     <div class="container h-100 mt-5">
         <div class="row d-flex justify-content-center align-items-center h-100">
-            
+
             <div class="card mt-5" style="border-radius: 15px; width:auto;">
                 <div class="card-body p-3">
 
                     <h4 class="text-uppercase text-center mb-4">Login</h4>
 
-                    <form method="GET">
+                    <form method="POST">
                         <div class="form-outline mb-2">
-                            <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example3cg">Email</label>
+                            <label class="form-label" for="Username">Username</label>
+                            <input type="text" id="Username" asp-for="Username" class="form-control form-control-lg" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
                         </div>
 
                         <div class="form-outline mb-2">
-                            <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example4cg">Password</label>
+                            <label class="form-label" for="Password">Password</label>
+                            <input type="password" id="Password" asp-for="Password" class="form-control form-control-lg" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
 
                         <div class="form-check d-flex justify-content-center mb-5">
@@ -29,7 +31,7 @@
                         </div>
 
                         <div class="d-flex justify-content-center">
-                            <button type="button" class="w-100 btn btn-primary btn-lg mb-4">Login</button>
+                            <button type="submit" class="w-100 btn btn-primary btn-lg mb-4">Login</button>
                         </div>
 
                         <div class="text-center text-muted mt-4 mb-0">
@@ -39,7 +41,7 @@
 
                 </div>
             </div>
-            
+
         </div>
     </div>
 }

@@ -10,5 +10,6 @@ namespace Assembly.RecipeApp.Repository.Interfaces
     public interface IUserRepository : IRepository<User>
     {
         List<User> GetFilteredUsers(string name);
+        User Login(string username, string password);
     }
 }

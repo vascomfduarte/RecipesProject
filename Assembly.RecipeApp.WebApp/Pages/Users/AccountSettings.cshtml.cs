@@ -9,46 +9,60 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
     public class AccountSettingsModel : PageModel
     {
-        private readonly ILogger<GetAllModel> _logger;
+        private readonly ILogger<AccountSettingsModel> _logger;
         private readonly IUserService _userService;
 
+        [BindProperty]
         public User User { get; private set; }
+        [BindProperty]
+        public string UserImage { get; set; }
 
-        public int UserId { get; private set; }
-
-        public string userImage;
-
-        public AccountSettingsModel(ILogger<GetAllModel> logger, IUserService userService)
+        public AccountSettingsModel(ILogger<AccountSettingsModel> logger, IUserService userService)
         {
             _logger = logger;
             _userService = userService;            
         }
 
-        public IActionResult OnGet(int id)
+        public IActionResult OnGet()
         {
-            id = 1;
+            // Retrieve UserId from session
+            var userId = HttpContext.Session.GetInt32("Id");
 
-            UserId = id;
+            if (userId is null)
+            {
+                // Handle case where user is not logged in
+                return RedirectToPage("/Users/Login");
+            }
 
             // Fetch the user by id
-            User = _userService.GetById(id);
+            User = _userService.GetById(userId.Value);
 
             // If the user is null, you might want to handle this case
             if (User == null)
             {
                 // Handle case where user is not found
-                return NotFound();
+                return RedirectToPage("/Index");
             }
 
             // Set userImage property
-            userImage = User.ImageSource is null ? "https://n9.cl/yuh9ik" : User.ImageSource.ToString();
+            UserImage = string.IsNullOrEmpty(User.ImageSource) ? "https://i.imgur.com/qlEw2Rz.jpeg" : User.ImageSource.ToString();
 
             return Page();
         }
 
         public IActionResult OnPostUpdate()
         {
-            User = _userService.GetById(UserId);
+            // Retrieve UserId from session
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                // Handle case where user is not logged in
+                return RedirectToPage("/Users/Login");
+            }
+
+            // Fetch the user by id
+            User = _userService.GetById(userId.Value);
 
             if (User == null)
             {
@@ -57,11 +71,17 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
             try
             {
-                // Construct a string representation of the user object
-                string newUserDataString = $"{Request.Form["User.Username"]}|{Request.Form["User.Password"]}|{Request.Form["User.Email"]}|{Request.Form["User.FirstName"]}|{Request.Form["User.LastName"]}|{Request.Form["User.ContentBio"]}|{Request.Form["User.ImageSource"]}";
+                // Update user properties
+                // For brevity, you may consider using a ViewModel instead of directly accessing Request.Form
+                User.FirstName = Request.Form["User.FirstName"];
+                User.LastName = Request.Form["User.LastName"];
+                User.Email = Request.Form["User.Email"];
+                User.Password = Request.Form["User.Password"];
+                User.ContentBio = Request.Form["User.ContentBio"];
+                User.ImageSource = Request.Form["User.ImageSource"];
 
                 // Call the UserService method to update the user
-                _userService.UpdateFromString(newUserDataString, User);
+                _userService.Update(User);
 
                 // Redirect to the desired page upon successful update
                 return RedirectToPage("/Index");
@@ -69,6 +89,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             catch (Exception ex)
             {
                 // Handle exceptions
+                _logger.LogError(ex, "Error updating user profile");
                 ModelState.AddModelError(string.Empty, "An error occurred while processing your request.");
                 return Page();
             }

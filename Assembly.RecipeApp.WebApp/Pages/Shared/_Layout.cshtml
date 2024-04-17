@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="~/Assembly.RecipeApp.WebApp.styles.css" asp-append-version="true" />
 </head>
 <body>
-    
-    @{
-        bool isAuthenticated;
-    }
-
+ 
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color:#E5E483;">
             <div class="container container-md">
@@ -47,7 +43,7 @@
                         </ul>
                     </div>        
                     
-                    @if (false)
+                    @if (Context.Session.GetString("Username") == null)
                     {
 
                         <form class="col-md-4 col-sm-4 my-2 my-lg-0 d-flex justify-content-center align-items-center" method="GET" action="/ReadAll" style="margin-right: 15px;">
@@ -64,14 +60,10 @@
                         <div class="col-md-2 col-sm-1 my-2">
                             <div class="row">
                                 <div class="col-4">
-                                    <form asp-page="/Users/Login" method="post">
-                                        <button type="submit" class="btn btn-outline-success">Login</button>
-                                    </form>
+                                    <a asp-page="/Users/Login" class="btn btn-outline-success">Login</a>
                                 </div>
                                 <div class="col-4">
-                                    <form asp-page="/Users/Register" method="post">
-                                        <button type="submit" class="btn btn-outline-primary">Register</button>
-                                    </form>
+                                    <a asp-page="/Users/Register" class="btn btn-outline-primary">Register</a>
                                 </div>
                             </div>
                         </div>
@@ -109,9 +101,11 @@
                                     <li><a class="dropdown-item" href="#">Saved Recipes</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li>
-                                        <a asp-area="" asp-controller="Account" asp-action="Logout" method="post" class="btn btn-outline-danger" style="margin: auto 15px; ">
-                                            Logout
-                                        </a>
+                                        <form method="post" asp-page-handler="Logout" asp-page="/Users/Login">
+                                            <button type="submit" class="btn btn-outline-danger" style="margin: auto 15px;">
+                                                Logout
+                                            </button>
+                                        </form>
                                     </li>
                                 </ul>
                             </div>

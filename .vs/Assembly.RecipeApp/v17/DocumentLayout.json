@@ -1,30 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\",
+  "WorkspaceRootPath": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.webapp\\pages\\users\\accountsettings.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipes\\recipesproject\\assembly.recipeapp.webapp\\pages\\users\\profile.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|solutionrelative:assembly.recipeapp.webapp\\pages\\users\\profile.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipes\\recipesproject\\assembly.recipeapp.webapp\\pages\\users\\accountsettings.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|solutionrelative:assembly.recipeapp.webapp\\pages\\users\\accountsettings.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.webapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|solutionrelative:assembly.recipeapp.webapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.webapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|solutionrelative:assembly.recipeapp.webapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.webapp\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|solutionrelative:assembly.recipeapp.webapp\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.webapp\\pages\\users\\accountsettings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipes\\recipesproject\\assembly.recipeapp.webapp\\pages\\users\\accountsettings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|solutionrelative:assembly.recipeapp.webapp\\pages\\users\\accountsettings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipesproject\\assembly.recipeapp.webapp\\pages\\recipes\\get.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|solutionrelative:assembly.recipeapp.webapp\\pages\\recipes\\get.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3B4795C7-A936-4991-8063-D7D1E74AF81A}|Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipes\\recipesproject\\assembly.recipeapp.repository\\repos\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B4795C7-A936-4991-8063-D7D1E74AF81A}|Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj|solutionrelative:assembly.recipeapp.repository\\repos\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipes\\recipesproject\\assembly.recipeapp.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB431F9C-AB8A-4731-975C-5A7CD07B0C9D}|Assembly.RecipeApp.Application\\Assembly.RecipeApp.Application.csproj|solutionrelative:assembly.recipeapp.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipes\\recipesproject\\assembly.recipeapp.webapp\\pages\\users\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|solutionrelative:assembly.recipeapp.webapp\\pages\\users\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipes\\recipesproject\\assembly.recipeapp.webapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|solutionrelative:assembly.recipeapp.webapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B4795C7-A936-4991-8063-D7D1E74AF81A}|Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipes\\recipesproject\\assembly.recipeapp.repository\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B4795C7-A936-4991-8063-D7D1E74AF81A}|Assembly.RecipeApp.Repository\\Assembly.RecipeApp.Repository.csproj|solutionrelative:assembly.recipeapp.repository\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|a:\\work, projects\\programa\u00E7\u00E3o\\projetofinal\\side_branch\\recipes\\recipesproject\\assembly.recipeapp.webapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{776E4FB5-1B50-4C09-90E7-950810F31B66}|Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj|solutionrelative:assembly.recipeapp.webapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,89 +45,124 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 502,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 196,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AccountSettings.cshtml.cs",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml.cs",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml.cs",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml.cs",
-              "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAwAAAA",
+              "Title": "Profile.cshtml.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\Profile.cshtml.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Users\\Profile.cshtml.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\Profile.cshtml.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Users\\Profile.cshtml.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCAAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T15:18:00.718Z",
+              "WhenOpened": "2024-04-17T23:45:55.526Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AccountSettings.cshtml",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml",
-              "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAbAAAA",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml",
+              "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACMAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-16T14:41:55.542Z",
+              "WhenOpened": "2024-04-17T23:15:36.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Get.cshtml",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Recipes\\Get.cshtml",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Recipes\\Get.cshtml",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Recipes\\Get.cshtml",
-              "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Recipes\\Get.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-16T14:44:39.63Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml.cs",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml.cs",
-              "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBsAAABCAAAA",
+              "DocumentIndex": 7,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.Repository\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Repository\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.Repository\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Repository\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T16:16:02.648Z",
+              "WhenOpened": "2024-04-17T22:57:00.44Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml",
-              "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml",
-              "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAkAAAA",
+              "Title": "AccountSettings.cshtml",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml",
+              "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAABUAAABgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-15T15:30:28.902Z",
+              "WhenOpened": "2024-04-17T21:53:39.861Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AccountSettings.cshtml.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Users\\AccountSettings.cshtml.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAIwDQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T21:53:35.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.Repository\\Repos\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Repository\\Repos\\UserRepository.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.Repository\\Repos\\UserRepository.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Repository\\Repos\\UserRepository.cs",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAUwOUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T21:38:49.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.Application\\Services\\UserService.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.Application\\Services\\UserService.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.Application\\Services\\UserService.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAcwJsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T21:36:41.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Users\\Login.cshtml.cs",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\Login.cshtml.cs",
+              "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Users\\Login.cshtml.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T21:27:34.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAAAAAA",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAAAG0AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-15T15:35:28.152Z",
+              "WhenOpened": "2024-04-17T20:45:02.84Z",
               "EditorCaption": ""
             }
           ]
