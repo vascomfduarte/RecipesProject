@@ -24,7 +24,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
         public IActionResult OnGet(int id)
         {
-            id = 104;
+            id = 1;
 
             UserId = id;
 

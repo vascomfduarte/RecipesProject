@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Users\Account.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Assembly.RecipeApp.Application\Assembly.RecipeApp.Application.csproj" />
     <ProjectReference Include="..\Assembly.RecipeApp.Domain\Assembly.RecipeApp.Domain.csproj" />
   </ItemGroup>

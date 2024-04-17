@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Assembly.RecipeApp.Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD:Assembly.RecipeApp.Repository/obj/Debug/net8.0/Assembly.RecipeApp.Repository.AssemblyInfo.cs
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a72bbabf7bceaeebba856ec7399b196d9b15f6b9")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a684daba9b6377e296268a38c1288381abe3f23")]
->>>>>>> 07f92f2dfd9d431e8a9a73470a6e70ce099341e5:Assembly.RecipeApp.Repository/obj/Release/net8.0/Assembly.RecipeApp.Repository.AssemblyInfo.cs
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b97a3b329245022750dc4a43e85bff817271cdf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Assembly.RecipeApp.Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Assembly.RecipeApp.Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

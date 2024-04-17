@@ -8,14 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Assembly.RecipeApp.Application
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\vasco\Source\Repos\vascomfduarte\RecipesProject\side_branch\Assembly.RecipeApp.Application\
-=======
-<<<<<<<< HEAD:Assembly.RecipeApp.Application/obj/Debug/net8.0/Assembly.RecipeApp.Application.GeneratedMSBuildEditorConfig.editorconfig
-build_property.ProjectDir = C:\Users\vasco\Source\Repos\vascomfduarte\RecipesProject\side_branch\Assembly.RecipeApp.Application\
-========
-build_property.ProjectDir = C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\RecipesProject\RecipesProject\Assembly.RecipeApp.Application\
->>>>>>>> 07f92f2dfd9d431e8a9a73470a6e70ce099341e5:Assembly.RecipeApp.Application/obj/Release/net8.0/Assembly.RecipeApp.Application.GeneratedMSBuildEditorConfig.editorconfig
->>>>>>> 07f92f2dfd9d431e8a9a73470a6e70ce099341e5
+build_property.ProjectDir = C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.Application\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

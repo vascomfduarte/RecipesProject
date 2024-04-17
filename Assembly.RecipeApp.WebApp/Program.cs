@@ -1,6 +1,5 @@
 using Assembly.RecipeApp.Application.Interfaces;
 using Assembly.RecipeApp.Application.Services;
-//using Assembly.RecipeApp.Di;
 using Assembly.RecipeApp.Domain.Model;
 using Assembly.RecipeApp.Repository.Interfaces;
 using Assembly.RecipeApp.Repository.Repos;
@@ -34,6 +33,13 @@ builder.Services.AddSingleton<IRecipeRepository, RecipeRepository>();
 builder.Services.AddSingleton<IUnitRepository, UnitRepository>();
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
 
+builder.Services.AddSession( option =>
+{ 
+    option.IdleTimeout = TimeSpan.FromMinutes(5);
+    option.Cookie.HttpOnly = true;
+    option.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -50,6 +56,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapRazorPages();
 

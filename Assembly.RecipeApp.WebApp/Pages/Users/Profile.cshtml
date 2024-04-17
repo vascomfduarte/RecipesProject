@@ -4,29 +4,84 @@
     ViewData["Title"] = "User Profile";
 
     
+    // <div class="container rounded bg-white p-2">
+
+    //     <div class="jumbotron jumbotron-fluid rounded" style="background-color:#F1F5A8;">
+
+    //         <div class="row">
+    //             <div class="col-lg-2 col-md-4 col-sm-6">
+    //                 <div class="d-flex flex-column align-items-start justify-content-center p-4">
+    //                     <img class="rounded-circle" width="170px" src="@Model.userImage" alt="User Image">
+    //                 </div>
+    //             </div>
+    //             <div class="col-lg-2 col-md-4 col-sm-6">
+    //                 <div class="d-flex flex-column align-items-start justify-content-center h-100 p-2">
+    //                     <h3 class="font-weight-bold">@Model.User.FirstName @Model.User.LastName</h3>
+    //                     <!-- Add more user information as needed -->
+    //                 </div>
+    //             </div>
+    //             <div class="col-lg-6 d-sm-none"></div>
+    //             <div class="col-lg-2 d-sm-none"></div>
+    //         </div>         
+
+    //     </div>        
+
+    //     <div class="row"></div>
+
+    // </div>
+
     <div class="container rounded bg-white p-2">
 
-        <div class="jumbotron jumbotron-fluid rounded" style="background-color:#F1F5A8;">
+        <div class="col-3">
 
-            <div class="row">
-                <div class="col-lg-2 col-md-4 col-sm-6">
-                    <div class="d-flex flex-column align-items-start justify-content-center p-4">
+            <div class="jumbotron jumbotron-fluid rounded" style="background-color:#F1F5A8;">
+
+                <div class="row">
+                    <div class="d-flex flex-column align-items-center justify-content-center p-4">
                         <img class="rounded-circle" width="170px" src="@Model.userImage" alt="User Image">
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6">
-                    <div class="d-flex flex-column align-items-start justify-content-center h-100 p-2">
+
+                <div class="row">
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100 p-2">
                         <h3 class="font-weight-bold">@Model.User.FirstName @Model.User.LastName</h3>
-                        <!-- Add more user information as needed -->
                     </div>
                 </div>
-                <div class="col-lg-6 d-sm-none"></div>
-                <div class="col-lg-2 d-sm-none"></div>
-            </div>         
 
-        </div>        
+                <hr class="my-2 m-2 rounded" style="background-color:#B2B377; height: 7px;">
 
-        <div class="row"></div>
+                <div class="row mb-3 mx-1 d-flex align-items-center justify-content-center">
+
+                    <div class="col-5 d-flex flex-column align-items-start justify-content-end">
+                        <p>User Info</p>
+                    </div>
+                    <div class="col-5 d-flex flex-column align-items-end">
+                        <button asp-page="/Recipes/GetAll" class="btn btn-outline-secondary" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                            </svg>
+                        </button>
+                    </div>                    
+
+                    <div class="card mb-2">
+
+                        <div class="card-text">                            
+
+                            <p>Username</p>
+                            <p>Email</p>
+                            <p>First Name</p>
+                            <p>Last Name</p>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
     
