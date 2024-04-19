@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KhkbHT1JbZFV33UgdpVtZ2AWidtU+DIlreKE0CJSNYriv3//ydz0s+AR0K7VIN/vex1KZCUgRCCPVdSibo+f9A==",
+  "dgSpecHash": "sEAHqM8Adjj22jk4I/kncx/PWJkve0LFu3Xr/X0g6XQHM36JDGmCQEsUl6mii7lHKgFFj+QD7fLGb/MaaxglTA==",
   "success": true,
-  "projectFilePath": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.Di\\Assembly.RecipeApp.Di.csproj",
+  "projectFilePath": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.Di\\Assembly.RecipeApp.Di.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vasco Duarte\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Vasco Duarte\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",

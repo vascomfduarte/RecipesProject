@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vFLIr0fRCwA0ZABg0uCtJPGn0t2iQr3c5NaFb4Z2Z6R2aVwK7GpKOxWxFxl9eQPGxyc/pKdtBXIZRFX9msrOkQ==",
+  "dgSpecHash": "q2zIvIbcEOp5nWcy9rhjgWRlTCbR+z2UZKqwYvLdZmpUGbSZKjjjJu4oVt7GlesoGUsgtBRnhZUlEB0HuebUhQ==",
   "success": true,
-  "projectFilePath": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\Recipes\\RecipesProject\\Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj",
+  "projectFilePath": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Assembly.RecipeApp.WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vasco Duarte\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Vasco Duarte\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",

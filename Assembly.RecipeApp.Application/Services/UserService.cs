@@ -25,6 +25,11 @@ namespace Assembly.RecipeApp.Application.Services
             return _userRepository.GetById(id);
         } // Feito 
 
+        public User GetByUsername(string username)
+        {
+            return _userRepository.GetByUsername(username);
+        } // Feito 
+
         public List<User> GetFilteredUsers(string name)
         {
             return _userRepository.GetFilteredUsers(name.ToLower());

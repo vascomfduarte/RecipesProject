@@ -1,61 +1,289 @@
 ﻿@page
 @model Assembly.RecipeApp.WebApp.Pages.Users.ProfileModel
 @{
-    ViewData["Title"] = "User Profile";
+    ViewData["Title"] = "Dashboard";
 
-    <div class="container rounded bg-white p-2">
+    // <div class="container rounded bg-white p-2">
 
-        <div class="col-3">
+    //     <div class="row mb-3">
+    //         <div class="col-3 ">
 
-            <div class="jumbotron jumbotron-fluid rounded" style="background-color:#F1F5A8;">
+    //             <div class="jumbotron jumbotron-fluid rounded h-70" style="background-color:#F1F5A8;">
 
-                <div class="row">
-                    <div class="d-flex flex-column align-items-center justify-content-center p-4">
-                        <img class="rounded-circle" width="170px" src="@Model.UserImage" alt="User Image">
-                    </div>
-                </div>
+    //                 <div class="row">
+    //                     <div class="d-flex flex-column align-items-center justify-content-center p-4">
+    //                         <img class="rounded-circle img-fluid" width="170px" src="@Model.UserImage" alt="User Image">
+    //                     </div>
+    //                 </div>
 
-                <div class="row">
-                    <div class="d-flex flex-column align-items-center justify-content-center h-100 p-2">
-                        <h3 class="font-weight-bold">@Model.User.FirstName @Model.User.LastName</h3>
-                    </div>
-                </div>
+    //                 <div class="col-md-12 d-flex flex-column align-items-center justify-content-center">
+    //                     <h3 class="font-weight-bold text-center">@Model.User.FirstName @Model.User.LastName</h3>
+    //                 </div>
 
-                <hr class="my-2 m-2 rounded" style="background-color:#B2B377; height: 7px;">
+                  
 
-                <div class="row mb-3 mx-1 d-flex align-items-center justify-content-center">
+    //             </div>
 
-                    <div class="col-5 d-flex flex-column align-items-start justify-content-end">
-                        <p>User Info</p>
-                    </div>
-                    <div class="col-5 d-flex flex-column align-items-end">
-                        <button asp-page="/Recipes/GetAll" class="btn btn-outline-secondary" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-                            </svg>
-                        </button>
-                    </div>                    
+    //         </div>
 
-                    <div class="card mb-2">
+    //         <div class="col-4">
 
-                        <div class="card-text">                            
+    //             <div class="jumbotron jumbotron-fluid rounded h-70" style="background-color:#F1F5A8;">
 
-                            <p>Username</p>
-                            <p>Email</p>
-                            <p>First Name</p>
-                            <p>Last Name</p>
-                        
+    //                 <div class="row">
+    //                     <div class="d-flex flex-column align-items-center justify-content-center h-100 p-2">
+    //                         <h2 class="font-weight-bold py-2 mt-3"> Security </h2>
+    //                     </div>
+    //                 </div>
+
+    //                 <div class="row flex-column align-items-center justify-content-center">
+
+    //                     <form asp-asp-page-handler="Security" class="col-md-10 border-right" method="POST">
+    //                         <div class="p-3 py-2 ">
+    //                             <div class="row mt-2">
+    //                                 <div class="col-md-6">
+    //                                     <label class="labels">Password</label>
+    //                                     <input asp-for="Password" type="password" class="form-control" placeholder="Enter your password">
+    //                                     <span asp-validation-for="Password" class="text-danger"></span>
+    //                                 </div>
+    //                                 <div class="col-md-6">
+    //                                     <label class="labels">Confirm Password</label>
+    //                                     <input asp-for="RepeatPassword" type="password" class="form-control" placeholder="Enter your password again">
+    //                                     <span asp-validation-for="RepeatPassword" class="text-danger"></span>
+    //                                 </div>
+    //                             </div>
+    //                             <div class="mt-4 mb-4 text-center">
+    //                                 <button type="submit" value="Submit" class="btn btn-primary profile-button">Save Changes</button>
+    //                             </div>
+    //                         </div>
+    //                     </form>
+
+    //                 </div>
+
+    //             </div>
+
+    //         </div>
+
+    //         <div class="col-5">
+
+                // <div class="jumbotron jumbotron-fluid rounded h-100" style="background-color:#F1F5A8;">
+
+                //     <div class="row">
+                //         <div class="d-flex flex-column align-items-center justify-content-center h-100 p-2">
+                //             <h2 class="font-weight-bold py-2 mt-3"> User Info </h2>
+                //         </div>
+                //     </div>
+
+                //     <div class="row flex-column align-items-center justify-content-center">
+
+                //         <form class="col-md-10 border-right" method="POST">
+                //             <div class="p-3 py-2 ">
+                //                 <div class="row mt-2">
+                //                     <div class="col-md-6">
+                //                         <label class="labels">First Name</label>
+                //                         <input asp-for="FirstName" type="text" class="form-control" placeholder="Enter your first name" value="@Model.User.FirstName">
+                //                     </div>
+                //                     <div class="col-md-6">
+                //                         <label class="labels">Last Name</label>
+                //                         <input asp-for="LastName" type="text" class="form-control" placeholder="Enter your last name" value="@Model.User.LastName">
+                //                     </div>
+                //                 </div>
+                //                 <div class="row mt-2">
+                //                     <div class="col-md-12">
+                //                         <label class="labels">Email</label>
+                //                         <input asp-for="Email" type="email" class="form-control" placeholder="Enter your email adress" value="@Model.User.Email">
+                //                     </div>
+                //                 </div>                               
+                //                 <div class="row mt-2">
+                //                     <div class="col-md-12 mt-2">
+                //                         <label class="labels">Biography</label>
+                //                         <textarea asp-for="ContentBio" type="text" class="form-control" placeholder="Write something about you" value=""></textarea>
+                //                     </div>
+                //                 </div>
+                //                 <div class="mt-4 mb-4 text-center">
+                //                     <button type="submit" value="Submit" class="btn btn-primary profile-button">Save Changes</button>
+                //                 </div>
+                //             </div>
+                //         </form>
+                    
+                //     </div>
+
+                // </div>
+            
+    //         </div>
+
+    //     </div>
+
+
+
+    // </div>
+
+
+    <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
+        <div class="row flex-grow-sm-1 flex-grow-0">
+
+            <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
+                <div class="card border rounded-3 p-1 h-100 sticky-top" style="background-color:#F1F5A8;">
+
+                    <div class="card-header jumbotron jumbotron-fluid rounded h-70 mb-3" style="background-color:#F1F5A8;">
+
+                        <div class="row">
+                            <div class="d-flex flex-column align-items-center justify-content-center p-4">
+                                <img class="rounded-circle img-fluid" width="170px" src="@Model.UserImage" alt="User Image">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 d-flex flex-column align-items-center justify-content-center">
+                            <h3 class="font-weight-bold text-center">@Model.User.FirstName @Model.User.LastName</h3>
                         </div>
 
                     </div>
 
+                    <div class="card-body">
+
+                        <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                            <li class="nav-item">
+                                <a href="#dashboard" class="nav-link px-2 text-truncate">
+                                    <i class="bi bi-speedometer fs-5"></i>
+                                    <span class="d-none d-sm-inline">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>                                
+                                <a href="#personalInfo" class="nav-link px-2 text-truncate">
+                                    <i class="bi bi-house fs-5"></i>
+                                    <span class="d-none d-sm-inline">Personal Info</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#orders" class="nav-link px-2 text-truncate">
+                                    <i class="bi bi-card-text fs-5"></i>
+                                    <span class="d-none d-sm-inline">Orders</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#products" class="nav-link px-2 text-truncate">
+                                    <i class="bi bi-bricks fs-5"></i>
+                                    <span class="d-none d-sm-inline">Products</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#customers" class="nav-link px-2 text-truncate">
+                                    <i class="bi bi-people fs-5"></i>
+                                    <span class="d-none d-sm-inline">Customers</span>
+                                </a>
+                            </li>
+                        </ul>
+                    
+                    </div>  
+                    
+
+                </div>
+            </aside>
+
+            <main class="col overflow-auto h-100">               
+
+                <div id="dashboard" class="bg-light border rounded-3 p-3 mb-2">
+
+                    
+
                 </div>
 
-            </div>
+                <div id="personalInfo" class="card border rounded-3 mb-2 w-100" style="background-color:#F1F5A8;">
+
+                    <div class="card-header">
+                        <h2>Personal Info</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row flex-column align-items-center justify-content-center">
+
+                            <form class="col-md-10 border-right" method="POST">
+                                <div class="p-3 py-2 ">
+                                    <div class="row mt-2">
+                                        <div class="col-md-6">
+                                            <label class="labels">First Name</label>
+                                            <input asp-for="FirstName" type="text" class="form-control" placeholder="Enter your first name" value="@Model.User.FirstName">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="labels">Last Name</label>
+                                            <input asp-for="LastName" type="text" class="form-control" placeholder="Enter your last name" value="@Model.User.LastName">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-12">
+                                            <label class="labels">Email</label>
+                                            <input asp-for="Email" type="email" class="form-control" placeholder="Enter your email adress" value="@Model.User.Email">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-12 mt-2">
+                                            <label class="labels">Biography</label>
+                                            <textarea asp-for="ContentBio" type="text" class="form-control" placeholder="Write something about you" value=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 mb-4 text-end">
+                                        <button type="submit" value="Submit" class="btn btn-primary profile-button">Save Changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div id="orders" class="bg-light border rounded-3 p-3 mb-2">
+                    <h2>Orders</h2>
+                    <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
+                    <!-- Content for Orders section -->
+                </div>
+
+                <div id="products" class="bg-light border rounded-3 p-3 mb-2">
+                    <h2>Products</h2>
+                    <!-- Content for Products section -->
+                </div>
+
+                <div id="customers" class="bg-light border rounded-3 p-3 mb-2">
+                    <h2>Personal Info</h2>
+
+                    <div class="row flex-column align-items-center justify-content-center">
+
+                        <form class="col-md-10 border-right" method="POST">
+                            <div class="p-3 py-2 ">
+                                <div class="row mt-2">
+                                    <div class="col-md-6">
+                                        <label class="labels">First Name</label>
+                                        <input asp-for="FirstName" type="text" class="form-control" placeholder="Enter your first name" value="@Model.User.FirstName">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="labels">Last Name</label>
+                                        <input asp-for="LastName" type="text" class="form-control" placeholder="Enter your last name" value="@Model.User.LastName">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12">
+                                        <label class="labels">Email</label>
+                                        <input asp-for="Email" type="email" class="form-control" placeholder="Enter your email adress" value="@Model.User.Email">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12 mt-2">
+                                        <label class="labels">Biography</label>
+                                        <textarea asp-for="ContentBio" type="text" class="form-control" placeholder="Write something about you" value=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="mt-4 mb-4 text-center">
+                                    <button type="submit" value="Submit" class="btn btn-primary profile-button">Save Changes</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </main>
+
 
         </div>
-
     </div>
     
 }

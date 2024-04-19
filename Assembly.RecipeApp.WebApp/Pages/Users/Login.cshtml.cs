@@ -12,10 +12,11 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         private readonly IUserService _userService;
 
         [BindProperty]
-        [Required(ErrorMessage = "Username is required.")]
+        [Required(ErrorMessage = "Please enter your username.")]
         public string Username { get; set; }
+
         [BindProperty]
-        [Required(ErrorMessage = "Password is required.")]
+        [Required(ErrorMessage = "Please enter your password.")]
         public string Password { get; set; }
 
         public LoginModel(ILogger<LoginModel> logger, IUserService userServices)

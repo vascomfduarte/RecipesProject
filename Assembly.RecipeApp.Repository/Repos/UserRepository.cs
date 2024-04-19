@@ -123,6 +123,47 @@ namespace Assembly.RecipeApp.Repository.Repos
 
             return User;
         } // Feito
+        public User GetByUsername(string username)
+        {
+            User user = null;
+
+            // Collect data from database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM [dbo].[user] WHERE username = @username";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameter to command
+                    cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string fetchedUsername = reader.GetString(1);
+                            string password = reader.GetString(2);
+                            string email = reader.GetString(3);
+                            string firstName = reader.GetString(4);
+                            string lastName = reader.GetString(5);
+                            string contentBio = reader.GetString(6);
+                            string imageSource = reader.GetString(7);
+                            bool isAdmin = reader.GetInt32(8) == 1;
+                            bool isBlocked = reader.GetInt32(9) == 1;
+                            DateTime createdDate = reader.GetDateTime(10);
+
+                            user = new User(id, fetchedUsername, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);
+                        }
+                    }
+                }
+            }
+
+            return user;
+        } // Feito
         public List<User> GetFilteredUsers(string input)
         {
             List<User> users = new List<User>();
@@ -251,5 +292,7 @@ namespace Assembly.RecipeApp.Repository.Repos
 
             return user;
         }
+
+
     }
 }

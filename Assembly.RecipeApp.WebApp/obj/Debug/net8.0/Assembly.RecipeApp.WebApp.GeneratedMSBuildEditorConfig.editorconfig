@@ -9,63 +9,63 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Assembly.RecipeApp.WebApp
 build_property.RootNamespace = Assembly.RecipeApp.WebApp
-build_property.ProjectDir = A:\Work, Projects\Programação\ProjetoFinal\side_branch\Recipes\RecipesProject\Assembly.RecipeApp.WebApp\
+build_property.ProjectDir = A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = A:\Work, Projects\Programação\ProjetoFinal\side_branch\Recipes\RecipesProject\Assembly.RecipeApp.WebApp
+build_property.MSBuildProjectDirectory = A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Error.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Index.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Privacy.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Recipes/Get.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Recipes/Get.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlc1xHZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Recipes/GetAll.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Recipes/GetAll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlc1xHZXRBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/AccountSettings.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/AccountSettings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQWNjb3VudFNldHRpbmdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Login.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Profile.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Register.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/_ViewImports.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/_ViewStart.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/Recipes/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Shared/_Layout.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-kcmpxyoi24
