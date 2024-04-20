@@ -1,0 +1,102 @@
+﻿@page
+@model Assembly.RecipeApp.WebApp.Pages.Users.InfoModel
+@{
+    ViewData["Title"] = "Account";
+
+    <div class="container-fluid pb-3">
+        <div class="d-flex flex-wrap">
+
+            <aside class="flex-grow-3">
+                <div class="card border rounded-3 p-1 h-30">
+
+                    <div class="card-header jumbotron jumbotron-fluid border rounded-3 h-70 mb-3">
+
+                        <div class="row">
+                            <div class="d-flex flex-column align-items-center justify-content-center p-4">
+                                <img class="rounded-circle img-fluid" width="170px" src="@Model.UserImage" alt="User Image">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 d-flex flex-column align-items-center justify-content-center">
+                            <h3 class="font-weight-bold text-center">@Model.User.FirstName @Model.User.LastName</h3>
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate ">
+                            <li class="mb-1">
+                                <a asp-page="/Users/Account" class="list-group-item list-group-item-action rounded">Account</a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="list-group-item list-group-item-secondary list-group-item-action rounded">Personal Info</a>
+                            </li>
+                            <li>
+                                <a asp-page="/Users/Security" class="list-group-item list-group-item-action rounded">Security</a>
+                            </li>                            
+                        </ul>
+
+                    </div>
+
+                </div>
+            </aside>
+
+            <main class="flex-grow-1 ms-4">
+
+                <div class="card border rounded-3 p-1 mb-2 w-100">
+
+                    <div class="card-header border rounded-3">
+                        <h2>Account Settings</h2>
+                    </div>
+
+                </div>
+
+                <div class="card border rounded-3 p-1 mb-2 w-100">
+
+                    <div class="card-header border rounded-3">
+                        <h3>Personal Info</h3>
+                    </div>
+
+                    <div class="card-body flex-column align-items-center justify-content-center">
+
+                        <form class="border-right" method="POST">
+                            <div class="p-3 py-2 ">
+                                <div class="row mt-2">
+                                    <div class="col-md-6">
+                                        <label class="labels">First Name</label>
+                                        <input asp-for="FirstName" type="text" class="form-control" placeholder="Enter your first name" value="@Model.User.FirstName">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="labels">Last Name</label>
+                                        <input asp-for="LastName" type="text" class="form-control" placeholder="Enter your last name" value="@Model.User.LastName">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12">
+                                        <label class="labels">Email</label>
+                                        <input asp-for="Email" type="email" class="form-control" placeholder="Enter your email address" value="@Model.User.Email">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12 mt-2">
+                                        <label class="labels">Biography</label>
+                                        <textarea asp-for="ContentBio" type="text" class="form-control rows-5" placeholder="Write something about you" value="@Model.User.ContentBio" style=" height: 100px;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mt-4 text-end">
+                                    <button type="submit" value="Submit" class="btn btn-secondary profile-button">Save Changes</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+                
+            </main>
+
+        </div>
+    </div>
+    
+}

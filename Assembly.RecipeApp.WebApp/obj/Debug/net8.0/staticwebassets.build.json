@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pyt/YFlISEnOv9r5CL7v89KCKS1oL7t47vXtdq8WQ5E=",
+  "Hash": "E5hQSJe8jTIQixl3jSrQPHdwioVR+oaxy7ADD8Vo70c=",
   "Source": "Assembly.RecipeApp.WebApp",
   "BasePath": "_content/Assembly.RecipeApp.WebApp",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\img\\default-image.jpg",
+      "SourceId": "Assembly.RecipeApp.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "BasePath": "_content/Assembly.RecipeApp.WebApp",
+      "RelativePath": "img/default-image.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\default-image.jpg"
     },
     {
       "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\js\\site.js",

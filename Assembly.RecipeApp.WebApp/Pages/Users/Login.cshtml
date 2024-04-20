@@ -10,6 +10,17 @@
 
                     <h4 class="text-uppercase text-center mb-4">Login</h4>
 
+                    <!-- Display property-level errors -->
+                    @if (!string.IsNullOrEmpty(Model.UsernameErrorMessage))
+                    {
+                        <div class="alert alert-danger">@Model.UsernameErrorMessage</div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.PasswordErrorMessage))
+                    {
+                        <div class="alert alert-danger">@Model.PasswordErrorMessage</div>
+                    }
+
                     <form method="POST">
                         <div class="form-outline mb-2">
                             <label class="form-label" for="Username">Username</label>

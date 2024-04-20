@@ -19,6 +19,12 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         [Required(ErrorMessage = "Please enter your password.")]
         public string Password { get; set; }
 
+        [TempData]
+        public string UsernameErrorMessage { get; set; }
+
+        [TempData]
+        public string PasswordErrorMessage { get; set; }
+
         public LoginModel(ILogger<LoginModel> logger, IUserService userServices)
         {
             _logger = logger;
@@ -27,17 +33,37 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
         public void OnGet()
         {
-            
+            UsernameErrorMessage = null;
         }
 
         public IActionResult OnPost() 
         {
-            if (!ModelState.IsValid)
+            // Check if the username is provided
+            if (string.IsNullOrEmpty(Username))
             {
+                UsernameErrorMessage = "Please enter your username.";
                 return Page();
             }
 
-            User user = _userService.Login(Username, Password);
+            // Check if the password is provided
+            if (string.IsNullOrEmpty(Password))
+            {
+                PasswordErrorMessage = "Please enter your password.";
+                return Page();
+            }
+
+            // Check if the user with the provided username exists
+            User user = _userService.GetByUsername(Username);
+
+            if (user == null)
+            {
+                // User with the provided username does not exist
+                UsernameErrorMessage = "Invalid username or password.";
+                return Page();
+            }
+
+            // User exists, now attempt to log in
+            user = _userService.Login(Username, Password);
 
             if (user != null)
             {
@@ -45,8 +71,13 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                 HttpContext.Session.SetInt32("Id", user.Id);
                 return RedirectToPage("/Index");
             }
+            else
+            {
+                // Password is incorrect
+                PasswordErrorMessage = "Invalid username or password.";
+                return Page();
+            }
 
-            return Page(); 
         }
 
         public IActionResult OnPostLogout()
