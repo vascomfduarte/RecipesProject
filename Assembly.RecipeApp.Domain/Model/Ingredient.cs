@@ -48,7 +48,5 @@ namespace Assembly.RecipeApp.Domain.Model
             }
         }
 
-
-
     }
 }

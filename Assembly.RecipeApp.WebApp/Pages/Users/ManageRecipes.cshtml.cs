@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
-    public class AccountModel : PageModel
+    public class ManageRecipesModel : PageModel
     {
         private readonly IUserService _userService;
 
@@ -14,7 +14,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         [BindProperty]
         public string UserImage { get; set; }
 
-        public AccountModel(IUserService userService)
+        public ManageRecipesModel(IUserService userService)
         {
             _userService = userService;
         }
@@ -29,8 +29,13 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
             // Handle case where user is not logged in
             if (User is null)
-            {                
+            {
                 return RedirectToPage("/Users/Login");
+            }
+
+            if (User.IsAdmin is false)
+            {
+                return RedirectToPage("/Index");
             }
 
             // Set userImage property

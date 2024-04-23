@@ -5,16 +5,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
-    public class AccountModel : PageModel
+    public class DashboardModel : PageModel
     {
         private readonly IUserService _userService;
-
         public User User { get; private set; }
 
         [BindProperty]
         public string UserImage { get; set; }
 
-        public AccountModel(IUserService userService)
+        public DashboardModel(IUserService userService)
         {
             _userService = userService;
         }
@@ -29,7 +28,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
             // Handle case where user is not logged in
             if (User is null)
-            {                
+            {
                 return RedirectToPage("/Users/Login");
             }
 

@@ -18,7 +18,35 @@ namespace Assembly.RecipeApp.Repository.Repos
 
         public List<Product> GetAll()
         {
-            throw new NotImplementedException();
+            List<Product> products = new List<Product>();
+
+            // Collect data from database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM product;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string name = reader.GetString(1);
+                            DateTime createdDate = reader.GetDateTime(2);
+
+                            var product = new Product(id, name, createdDate);
+
+                            products.Add(product);
+                        }
+                    }
+                }
+            }
+
+            return products;
         }
 
         public Product GetById(int id)

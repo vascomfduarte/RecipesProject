@@ -8,7 +8,6 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
     public class SecurityModel : PageModel
     {
-        private readonly ILogger<SecurityModel> _logger;
         private readonly IUserService _userService;
 
         public User User { get; private set; }
@@ -39,9 +38,8 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         [BindProperty]
         public string UserImage { get; set; }
 
-        public SecurityModel(ILogger<SecurityModel> logger, IUserService userService)
+        public SecurityModel(IUserService userService)
         {
-            _logger = logger;
             _userService = userService;
         }
 
@@ -50,24 +48,17 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             // Retrieve UserId from session
             var userId = HttpContext.Session.GetInt32("Id");
 
-            if (userId is null)
-            {
-                // Handle case where user is not logged in
-                return RedirectToPage("/Users/Login");
-            }
-
             // Fetch the user by id
             User = _userService.GetById(userId.Value);
 
-            // If the user is null, you might want to handle this case
-            if (User == null)
+            // Handle case where user is not logged in
+            if (User is null)
             {
-                // Handle case where user is not found
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Users/Login");
             }
 
             // Set userImage property
-            UserImage = string.IsNullOrEmpty(User.ImageSource) ? "https://i.imgur.com/qlEw2Rz.jpeg" : User.ImageSource.ToString();
+            UserImage = string.IsNullOrEmpty(User.ImageSource) ? "https://i.imgur.com/UtPRmE0.png" : User.ImageSource.ToString();
 
             return Page();
         }

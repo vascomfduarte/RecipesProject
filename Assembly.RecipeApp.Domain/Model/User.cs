@@ -161,7 +161,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
 
             // Check if name format is valid
-            if (!Regex.IsMatch(firstName, @"^[a-zA-Z]+$"))
+            if (!Regex.IsMatch(firstName, @"^[a-zA-Z\s]+$"))
             {
                 throw new DomainException("First name can only contain letters.");
             }
@@ -179,7 +179,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
 
             // Check if name format is valid
-            if (!Regex.IsMatch(lastName, @"^[a-zA-Z]+$"))
+            if (!Regex.IsMatch(lastName, @"^[a-zA-Z\s]+$"))
             {
                 throw new DomainException("Last name can only contain letters.");
             }

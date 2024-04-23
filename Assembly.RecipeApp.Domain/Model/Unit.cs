@@ -47,7 +47,7 @@ namespace Assembly.RecipeApp.Domain.Model
             }
 
             // Check if Unit name format is valid
-            if (!Regex.IsMatch(name, @"^[a-zA-Z]+$"))
+            if (!Regex.IsMatch(name, @"^[a-zA-Z\s]+$"))
             {
                 throw new DomainException("Unit name can only contain letters.");
             }

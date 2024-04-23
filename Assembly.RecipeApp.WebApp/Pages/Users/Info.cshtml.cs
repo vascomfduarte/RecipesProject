@@ -45,24 +45,17 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             // Retrieve UserId from session
             var userId = HttpContext.Session.GetInt32("Id");
 
-            if (userId is null)
-            {
-                // Handle case where user is not logged in
-                return RedirectToPage("/Users/Login");
-            }
-
             // Fetch the user by id
             User = _userService.GetById(userId.Value);
 
-            // If the user is null, you might want to handle this case
-            if (User == null)
+            // Handle case where user is not logged in
+            if (User is null)
             {
-                // Handle case where user is not found
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Users/Login");
             }
 
             // Set userImage property
-            UserImage = string.IsNullOrEmpty(User.ImageSource) ? "https://i.imgur.com/qlEw2Rz.jpeg" : User.ImageSource.ToString();
+            UserImage = string.IsNullOrEmpty(User.ImageSource) ? "https://i.imgur.com/UtPRmE0.png" : User.ImageSource.ToString();
 
             return Page();
         }
@@ -72,19 +65,12 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             // Retrieve UserId from session
             var userId = HttpContext.Session.GetInt32("Id");
 
-            if (userId is null)
-            {
-                // Handle case where user is not logged in
-                return RedirectToPage("/Users/Login");
-            }
-
             // Fetch the user by id
             User = _userService.GetById(userId.Value);
 
-            // If the user is null, you might want to handle this case
-            if (User == null)
+            // Handle case where user is not logged in
+            if (User is null)
             {
-                // Handle case where user is not found
                 return RedirectToPage("/Users/Login");
             }
 
