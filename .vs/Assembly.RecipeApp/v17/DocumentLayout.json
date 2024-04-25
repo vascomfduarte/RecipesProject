@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 219,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "Assembly.RecipeApp.WebApp\\Pages\\Users\\CreateUserRecipes.cshtml.cs",
               "ToolTip": "A:\\Work, Projects\\Programa\u00E7\u00E3o\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\Pages\\Users\\CreateUserRecipes.cshtml.cs",
               "RelativeToolTip": "Assembly.RecipeApp.WebApp\\Pages\\Users\\CreateUserRecipes.cshtml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEMAAAAMAAAA",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAQwBkAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T22:28:39.94Z",
               "EditorCaption": ""
