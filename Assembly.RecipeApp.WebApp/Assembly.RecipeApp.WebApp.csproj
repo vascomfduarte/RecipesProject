@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Assembly.RecipeApp.Domain\Assembly.RecipeApp.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>

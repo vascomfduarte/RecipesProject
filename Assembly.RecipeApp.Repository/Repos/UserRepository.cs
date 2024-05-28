@@ -204,6 +204,59 @@ namespace Assembly.RecipeApp.Repository.Repos
 
             return users;
         } // Feito
+        public List<User> GetUsers(int currentPage, int pageSize)
+        {
+            List<User> users = new List<User>();
+
+            // Calculate the offset based on the current page and page size
+            int offset = (currentPage - 1) * pageSize;
+
+            // Collect data from the database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"
+                                SELECT * FROM (
+                                    SELECT *, ROW_NUMBER() OVER (ORDER BY [id]) AS RowNum
+                                    FROM [dbo].[user]
+                                ) AS Temp
+                                WHERE RowNum BETWEEN @Offset AND @EndRow";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Set the pagination parameters
+                    cmd.Parameters.AddWithValue("@Offset", offset + 1);
+                    cmd.Parameters.AddWithValue("@EndRow", offset + pageSize);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Read user data from the reader
+                            int id = reader.GetInt32(0);
+                            string username = reader.GetString(1);
+                            string password = reader.GetString(2);
+                            string email = reader.GetString(3);
+                            string firstName = reader.GetString(4);
+                            string lastName = reader.GetString(5);
+                            string contentBio = reader.GetString(6);
+                            string imageSource = reader.GetString(7);
+                            bool isAdmin = reader.GetInt32(8) == 1;
+                            bool isBlocked = reader.GetInt32(9) == 1;
+                            DateTime createdDate = reader.GetDateTime(10);
+
+                            // Create a User object and add it to the list
+                            var user = new User(id, username, password, email, firstName, lastName, contentBio, imageSource, isAdmin, isBlocked, createdDate);
+                            users.Add(user);
+                        }
+                    }
+                }
+            }
+
+            return users;
+        }
 
         public bool Update(User entity)
         {
@@ -243,13 +296,25 @@ namespace Assembly.RecipeApp.Repository.Repos
             }
         }
 
-        public User Delete(User entity)
+
+        public bool Delete(User entity)
         {
-            throw new NotImplementedException();
-        }
-        public User Delete(int id)
-        {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"DELETE FROM [dbo].[user] WHERE username = @username";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", entity.Username);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
         }
 
         public User Login(string inputUsername, string inputPassword)
@@ -293,6 +358,10 @@ namespace Assembly.RecipeApp.Repository.Repos
             return user;
         }
 
+        public User Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

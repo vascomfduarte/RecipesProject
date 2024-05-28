@@ -35,6 +35,11 @@ namespace Assembly.RecipeApp.Application.Services
             return _userRepository.GetFilteredUsers(name.ToLower());
         } // Feito 
 
+        public List<User> GetUsers(int currentPage, int pageSize)
+        {
+            return _userRepository.GetUsers(currentPage, pageSize);
+        } // Feito
+
         public bool Add(User user)
         {
             // Validate if username already exist
@@ -136,14 +141,6 @@ namespace Assembly.RecipeApp.Application.Services
             }
         }
 
-        public bool UpdateBlockStatus(User user, User adminUser)
-        {
-            // Validate if user is admin
-            // Send Build user and send you to database 
-
-            throw new NotImplementedException();
-        }
-
         public bool UpdateAdminStatus(User user, User adminUser)
         {
             // Validate if user is admin
@@ -152,15 +149,20 @@ namespace Assembly.RecipeApp.Application.Services
             throw new NotImplementedException();
         }
 
-        public bool Delete(int id)
+        public bool Delete(User user)
         {
-            throw new NotImplementedException();
-        }
+            if (_userRepository.Delete(user))
+            {
+                return true;
+            }
+
+            return false;
+        } // Feito
 
         public User Login(string username, string password)
         {
             return _userRepository.Login(username, password);
-        }
-
+        } // Feito
+         
     }
 }

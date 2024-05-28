@@ -73,12 +73,12 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
-        public Ingredient Update(Ingredient entity)
+        public bool Update(Ingredient entity)
         {
             throw new NotImplementedException();
         }
 
-        public Ingredient Delete(Ingredient entity)
+        public bool Delete(Ingredient entity)
         {
             throw new NotImplementedException();
         }
@@ -87,9 +87,5 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
-        bool IRepository<Ingredient>.Update(Ingredient entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

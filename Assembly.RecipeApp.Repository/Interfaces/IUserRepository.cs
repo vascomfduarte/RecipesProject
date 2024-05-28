@@ -12,5 +12,7 @@ namespace Assembly.RecipeApp.Repository.Interfaces
         List<User> GetFilteredUsers(string name);
         User Login(string username, string password);
         User GetByUsername(string username);
+
+        List<User> GetUsers(int currentPage, int pageSize);
     }
 }

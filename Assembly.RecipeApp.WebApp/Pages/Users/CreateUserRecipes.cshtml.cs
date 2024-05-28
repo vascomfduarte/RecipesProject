@@ -3,6 +3,7 @@ using Assembly.RecipeApp.Application.Services;
 using Assembly.RecipeApp.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Hosting.Internal;
 
 namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
@@ -13,6 +14,13 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         private readonly IDifficultyService _difficultyService;
         private readonly IUnitService _unitService;
         private readonly IProductService _productService;
+        private readonly IWebHostEnvironment _hostingEnvironment;
+
+        [BindProperty]
+        public IFormFile Photo { get; set; }
+
+        [BindProperty]
+        public string RecipeImage { get; set; }
 
         [BindProperty]
         public string Title { get; set; }
@@ -24,41 +32,49 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         public int MinutesToCook { get; set; }
 
         [BindProperty]
-        public string RecipeImage { get; set; }
+        public string DifficultyChoice { get; set; }
+
 
         [BindProperty]
-        public string DifficultyChoice { get; set; }  
+        public List<string> ProductNames { get; set; } = new List<string>();
 
         [BindProperty]
-        public string ProductName { get; set; }
+        public List<float> Amounts { get; set; } = new List<float>();
 
         [BindProperty]
-        public string UnitName { get; set; }
+        public List<string> UnitNames { get; set; } = new List<string>();
+
 
         [BindProperty]
         public PreparationMethod PreparationMethod { get; set; }
-        
+
+        [BindProperty]
         public List<PreparationStep> PreparationSteps { get; set; }
+
+        [BindProperty]
         public List<Ingredient> Ingredients { get; set; }        
+
+
         public Recipe Recipe { get; set; }
+        public User User { get; private set; }
+
 
         public List<Difficulty> Difficulties { get; set; }
         public List<Unit> Units { get; set; }
         public List<Product> Products { get; set; }
-
-        public User User { get; private set; }
         
 
         [BindProperty]
         public string UserImage { get; set; }
 
-        public CreateUserRecipesModel(IUserService userService, IRecipeService recipeService, IDifficultyService difficultyService, IUnitService unitService, IProductService productService)
+        public CreateUserRecipesModel(IUserService userService, IRecipeService recipeService, IDifficultyService difficultyService, IUnitService unitService, IProductService productService, IWebHostEnvironment hostingEnvironment)
         {
             _userService = userService;
             _recipeService = recipeService;
             _difficultyService = difficultyService;
             _unitService = unitService;
             _productService = productService;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         public IActionResult OnGet()
@@ -70,6 +86,12 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             // Retrieve UserId from session
             var userId = HttpContext.Session.GetInt32("Id");
 
+            // Handle case where user is not logged in
+            if (userId is null)
+            {
+                return RedirectToPage("/Users/Login");
+            }
+
             // Fetch the user by id
             User = _userService.GetById(userId.Value);
 
@@ -79,16 +101,38 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                 return RedirectToPage("/Users/Login");
             }
 
-            // Set userImage property
-            UserImage = string.IsNullOrEmpty(User.ImageSource) ? "https://i.imgur.com/UtPRmE0.png" : User.ImageSource.ToString();
+            // Set Image properties
+            UserImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png" : User.ImageSource.ToString();
+            RecipeImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png" : User.ImageSource.ToString();
 
             return Page();
         }
 
         public IActionResult OnPost()
         {
-            OnGet();          
-            
+            OnGet();
+
+            string recipeImagePath = User.ImageSource;
+            if (Photo != null && Photo.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + Photo.FileName;
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                // Ensure the uploads folder exists
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    Photo.CopyTo(fileStream);
+                }
+
+                recipeImagePath = "/images/" + uniqueFileName;
+            }
+
             // Example: Retrieving form data from the frontend
             var title = Request.Form["Title"];
             var description = Request.Form["Description"];

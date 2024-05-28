@@ -82,7 +82,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                 HttpContext.Session.SetInt32("Id", user.Id);
 
                 // Redirect to the desired page upon successful registration
-                return RedirectToPage("/Users/Profile");
+                return RedirectToPage("/Users/Account");
             }
             catch (ArgumentException ex)
             {

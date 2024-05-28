@@ -6,9 +6,9 @@ namespace Assembly.RecipeApp.Application.Interfaces
     {
         List<User> GetFilteredUsers(string name);
         User Login(string username, string password);
-        bool UpdateBlockStatus(User user, User adminUser);
         bool UpdateAdminStatus(User user, User adminUser);
         bool UpdateFromString(string userDataString, User previousUser);
         User GetByUsername(string username);
+        List<User> GetUsers(int currentPage, int pageSize);
     }
 }

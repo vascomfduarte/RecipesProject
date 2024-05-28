@@ -63,7 +63,7 @@
 
                     <div class="card-body flex-column align-items-center justify-content-center">
 
-                        <form class="border-right" method="POST">
+                        <form class="border-right" method="POST" enctype="multipart/form-data">
                             <div class="p-3 py-2 ">
                                 <div class="row mt-2">
                                     <div class="col-md-6">
@@ -82,9 +82,15 @@
                                     </div>
                                 </div>
                                 <div class="row mt-2">
-                                    <div class="col-md-12 mt-2">
-                                        <label class="labels">Biography</label>
-                                        <textarea asp-for="ContentBio" type="text" class="form-control rows-5" placeholder="Write something about you" value="@Model.User.ContentBio" style=" height: 100px;"></textarea>
+                                    <div class="col-md-9">
+                                        <label class="labels">Photo</label>
+                                        <input asp-for="Photo" type="file" class="form-control">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="labels">&nbsp;</label>
+                                        <form method="POST" class="d-inline">
+                                            <button asp-page-handler="DeletePhoto" type="submit" class="btn btn-danger form-control">Delete Current</button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="mt-4 text-end">

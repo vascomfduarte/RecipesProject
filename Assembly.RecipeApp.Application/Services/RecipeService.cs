@@ -93,10 +93,9 @@ namespace Assembly.RecipeApp.Application.Services
             throw new NotImplementedException();
         }
 
-        public bool Delete(int id)
+        public bool Delete(Recipe entity)
         {
             throw new NotImplementedException();
         }
-
     }
 }

@@ -64,17 +64,22 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
-        public Product Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Product Update(Product entity)
+        public bool Update(Product entity)
         {
             throw new NotImplementedException();
         }
 
-        bool IRepository<Product>.Update(Product entity)
+        bool IRepository<Product>.Delete(Product entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        Product IRepository<Product>.Delete(int id)
         {
             throw new NotImplementedException();
         }

@@ -31,7 +31,7 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
-        public Comment Delete(Comment entity)
+        public bool Delete(Comment entity)
         {
             throw new NotImplementedException();
         }
@@ -41,14 +41,10 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
-        public Comment Update(Comment entity)
+        public bool Update(Comment entity)
         {
             throw new NotImplementedException();
         }
 
-        bool IRepository<Comment>.Update(Comment entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

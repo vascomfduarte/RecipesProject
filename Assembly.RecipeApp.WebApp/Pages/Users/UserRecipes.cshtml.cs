@@ -24,6 +24,12 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             // Retrieve UserId from session
             var userId = HttpContext.Session.GetInt32("Id");
 
+            // Handle case where user is not logged in
+            if (userId is null)
+            {
+                return RedirectToPage("/Users/Login");
+            }
+
             // Fetch the user by id
             User = _userService.GetById(userId.Value);
 
@@ -34,7 +40,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             }
 
             // Set userImage property
-            UserImage = string.IsNullOrEmpty(User.ImageSource) ? "https://i.imgur.com/UtPRmE0.png" : User.ImageSource.ToString();
+            UserImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png" : User.ImageSource.ToString();
 
             return Page();
         }

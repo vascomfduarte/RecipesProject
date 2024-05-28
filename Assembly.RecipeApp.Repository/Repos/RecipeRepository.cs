@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Assembly.RecipeApp.Repository.Repos
 {
-    public class RecipeRepository : IRecipeRepository        
+    public class RecipeRepository : IRecipeRepository
     {    
         private static string _connectionString = ConnectionStringProvider.GetConnectionString();
 
@@ -309,12 +309,12 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
-        public Recipe Update(Recipe entity)
+        public bool Update(Recipe entity)
         {
             throw new NotImplementedException();
         }
 
-        public Recipe Delete(Recipe entity)
+        public bool Delete(Recipe entity)
         {
             throw new NotImplementedException();
         }
@@ -323,12 +323,6 @@ namespace Assembly.RecipeApp.Repository.Repos
         {
             throw new NotImplementedException();
         }
-
-        bool IRepository<Recipe>.Update(Recipe entity)
-        {
-            throw new NotImplementedException();
-        }
-
 
     }
 }

@@ -34,12 +34,12 @@ namespace Assembly.RecipeApp.Application.Services
             throw new NotImplementedException();
         }
 
-        public bool Delete(int id)
+        public bool Update(PreparationMethod entity)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(PreparationMethod entity)
+        public bool Delete(PreparationMethod entity)
         {
             throw new NotImplementedException();
         }

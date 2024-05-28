@@ -45,7 +45,7 @@ namespace Assembly.RecipeApp.Application.Services
             throw new NotImplementedException();
         }
 
-        public bool Delete(int id)
+        public bool Delete(Product entity)
         {
             throw new NotImplementedException();
         }
@@ -54,5 +54,7 @@ namespace Assembly.RecipeApp.Application.Services
         {
             throw new NotImplementedException();
         }
+
+
     }
 }

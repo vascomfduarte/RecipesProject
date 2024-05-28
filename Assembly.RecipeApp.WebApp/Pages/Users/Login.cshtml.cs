@@ -32,7 +32,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         }
 
         public void OnGet()
-        {
+        {            
             UsernameErrorMessage = null;
         }
 
@@ -59,6 +59,14 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             {
                 // User with the provided username does not exist
                 UsernameErrorMessage = "Invalid username or password.";
+                return Page();
+            }
+
+            // Check if the user is blocked
+            if (user.IsBlocked)
+            {
+                // User account is blocked
+                PasswordErrorMessage = "Your account has been blocked.";
                 return Page();
             }
 
