@@ -290,6 +290,211 @@ namespace Assembly.RecipeApp.Repository.Repos
             return recipes;
         } // Feito
 
+        public List<Recipe> GetFilteredRecipesPaged(string searchTerm, int currentPage, int pageSize)
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            // Calculate the offset based on the current page and page size
+            int offset = (currentPage - 1) * pageSize;
+
+            // Collect data from the database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"
+                SELECT * FROM (
+                    SELECT 
+                        r.id AS RecipeId,
+                        r.title,
+                        r.description,
+                        r.image_source,
+                        r.minutes_to_cook,
+                        r.is_approved,
+                        r.created_date AS RecipeCreatedDate,
+                        u.id AS UserId,
+                        u.username,
+                        u.password,
+                        u.email,
+                        u.first_name,
+                        u.last_name,
+                        u.content_bio,
+                        u.image_source AS UserImageSource,
+                        u.is_admin,
+                        u.is_blocked,
+                        u.created_date AS UserCreatedDate,
+                        d.id AS DifficultyId,
+                        d.name AS DifficultyName,
+                        d.created_date AS DifficultyCreatedDate,
+                        ROW_NUMBER() OVER (ORDER BY r.[id]) AS RowNum
+                    FROM [dbo].[recipe] AS r
+                    INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id]
+                    INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id]
+                    WHERE r.[title] LIKE '%' + @searchTerm + '%'
+                ) AS Temp
+                WHERE RowNum BETWEEN @Offset AND @EndRow";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Set the search term and pagination parameters
+                    cmd.Parameters.AddWithValue("@searchTerm", searchTerm.ToLower());
+                    cmd.Parameters.AddWithValue("@Offset", offset + 1);
+                    cmd.Parameters.AddWithValue("@EndRow", offset + pageSize);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(reader.GetOrdinal("RecipeId"));
+                            string title = reader.GetString(reader.GetOrdinal("title"));
+                            string description = reader.GetString(reader.GetOrdinal("description"));
+                            string imageSource = reader.GetString(reader.GetOrdinal("image_source"));
+                            int minutesToCook = reader.GetInt32(reader.GetOrdinal("minutes_to_cook"));
+                            bool isApproved = reader.GetInt32(reader.GetOrdinal("is_approved")) == 1;
+                            DateTime createdDate = reader.GetDateTime(reader.GetOrdinal("RecipeCreatedDate"));
+
+                            // User
+                            int userId = reader.GetInt32(reader.GetOrdinal("UserId"));
+                            string username = reader.GetString(reader.GetOrdinal("username"));
+                            string password = reader.GetString(reader.GetOrdinal("password"));
+                            string email = reader.GetString(reader.GetOrdinal("email"));
+                            string firstName = reader.GetString(reader.GetOrdinal("first_name"));
+                            string lastName = reader.GetString(reader.GetOrdinal("last_name"));
+                            string userContentBio = reader.GetString(reader.GetOrdinal("content_bio"));
+                            string userImageSource = reader.GetString(reader.GetOrdinal("UserImageSource"));
+                            bool isAdmin = reader.GetInt32(reader.GetOrdinal("is_admin")) == 1;
+                            bool isBlocked = reader.GetInt32(reader.GetOrdinal("is_blocked")) == 1;
+                            DateTime userCreatedDate = reader.GetDateTime(reader.GetOrdinal("UserCreatedDate"));
+
+                            User user = new User(userId, username, password, email, firstName, lastName, userContentBio, userImageSource, isAdmin, isBlocked, userCreatedDate);
+
+                            // Difficulty
+                            int difficultyId = reader.GetInt32(reader.GetOrdinal("DifficultyId"));
+                            string difficultyName = reader.GetString(reader.GetOrdinal("DifficultyName"));
+                            DateTime difficultyCreatedDate = reader.GetDateTime(reader.GetOrdinal("DifficultyCreatedDate"));
+
+                            Difficulty difficulty = new Difficulty(difficultyId, difficultyName, difficultyCreatedDate);
+
+                            // Rating List
+                            List<Rating> ratings = _ratingRepository.GetByRecipeId(id);
+
+                            // Category List
+                            List<Category> categories = _categoryRepository.GetByRecipeId(id);
+
+                            var recipe = new Recipe(id, title, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, user.Username, createdDate);
+
+                            recipes.Add(recipe);
+                        }
+                    }
+                }
+            }
+
+            return recipes;
+        } // Feito
+
+        public List<Recipe> GetApprovedPaged(int currentPage, int pageSize)
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            // Calculate the offset based on the current page and page size
+            int offset = (currentPage - 1) * pageSize;
+
+            // Collect data from the database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"
+                SELECT * FROM (
+                    SELECT 
+                        r.id AS RecipeId,
+                        r.title,
+                        r.description,
+                        r.image_source,
+                        r.minutes_to_cook,
+                        r.is_approved,
+                        r.created_date AS RecipeCreatedDate,
+                        u.id AS UserId,
+                        u.username,
+                        u.password,
+                        u.email,
+                        u.first_name,
+                        u.last_name,
+                        u.content_bio,
+                        u.image_source AS UserImageSource,
+                        u.is_admin,
+                        u.is_blocked,
+                        u.created_date AS UserCreatedDate,
+                        d.id AS DifficultyId,
+                        d.name AS DifficultyName,
+                        d.created_date AS DifficultyCreatedDate,
+                        ROW_NUMBER() OVER (ORDER BY r.[id]) AS RowNum
+                    FROM [dbo].[recipe] AS r
+                    INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id]
+                    INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id]
+                    WHERE r.[is_approved] = 1
+                ) AS Temp
+                WHERE RowNum BETWEEN @Offset AND @EndRow";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Set the pagination parameters
+                    cmd.Parameters.AddWithValue("@Offset", offset + 1);
+                    cmd.Parameters.AddWithValue("@EndRow", offset + pageSize);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(reader.GetOrdinal("RecipeId"));
+                            string title = reader.GetString(reader.GetOrdinal("title"));
+                            string description = reader.GetString(reader.GetOrdinal("description"));
+                            string imageSource = reader.GetString(reader.GetOrdinal("image_source"));
+                            int minutesToCook = reader.GetInt32(reader.GetOrdinal("minutes_to_cook"));
+                            bool isApproved = reader.GetInt32(reader.GetOrdinal("is_approved")) == 1;
+                            DateTime createdDate = reader.GetDateTime(reader.GetOrdinal("RecipeCreatedDate"));
+
+                            // User
+                            int userId = reader.GetInt32(reader.GetOrdinal("UserId"));
+                            string username = reader.GetString(reader.GetOrdinal("username"));
+                            string password = reader.GetString(reader.GetOrdinal("password"));
+                            string email = reader.GetString(reader.GetOrdinal("email"));
+                            string firstName = reader.GetString(reader.GetOrdinal("first_name"));
+                            string lastName = reader.GetString(reader.GetOrdinal("last_name"));
+                            string userContentBio = reader.GetString(reader.GetOrdinal("content_bio"));
+                            string userImageSource = reader.GetString(reader.GetOrdinal("UserImageSource"));
+                            bool isAdmin = reader.GetInt32(reader.GetOrdinal("is_admin")) == 1;
+                            bool isBlocked = reader.GetInt32(reader.GetOrdinal("is_blocked")) == 1;
+                            DateTime userCreatedDate = reader.GetDateTime(reader.GetOrdinal("UserCreatedDate"));
+
+                            User user = new User(userId, username, password, email, firstName, lastName, userContentBio, userImageSource, isAdmin, isBlocked, userCreatedDate);
+
+                            // Difficulty
+                            int difficultyId = reader.GetInt32(reader.GetOrdinal("DifficultyId"));
+                            string difficultyName = reader.GetString(reader.GetOrdinal("DifficultyName"));
+                            DateTime difficultyCreatedDate = reader.GetDateTime(reader.GetOrdinal("DifficultyCreatedDate"));
+
+                            Difficulty difficulty = new Difficulty(difficultyId, difficultyName, difficultyCreatedDate);
+
+                            // Rating List
+                            List<Rating> ratings = _ratingRepository.GetByRecipeId(id);
+
+                            // Category List
+                            List<Category> categories = _categoryRepository.GetByRecipeId(id);
+
+                            var recipe = new Recipe(id, title, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, user.Username, createdDate);
+
+                            recipes.Add(recipe);
+                        }
+                    }
+                }
+            }
+
+            return recipes;
+        } // Feito
+
         public List<Recipe> GetTopRatedRecipes(int count)
         {
             List<Recipe> recipes = new List<Recipe>();

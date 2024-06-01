@@ -11,5 +11,6 @@ namespace Assembly.RecipeApp.Repository.Interfaces
     {
         List<Comment> GetByRecipeId(int id);
         List<Comment> GetByUserId(int id);
+        bool DeleteByRecipeId(int recipeId);
     }
 }

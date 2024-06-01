@@ -11,7 +11,9 @@ namespace Assembly.RecipeApp.Repository.Interfaces
     {
         List<Recipe> GetByUserId(int userId);
         List<Recipe> GetFilteredRecipes(string name);
+        List<Recipe> GetFilteredRecipesPaged(string searchTerm, int currentPage, int pageSize);
         List<Recipe> GetTopRatedRecipes(int count);
-        
+        List<Recipe> GetApprovedPaged(int currentPage, int pageSize);
+
     }
 }

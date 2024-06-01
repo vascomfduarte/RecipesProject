@@ -77,6 +77,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             {
                 HttpContext.Session.SetString("Username", user.Username);
                 HttpContext.Session.SetInt32("Id", user.Id);
+                HttpContext.Session.SetString("IsAdmin", user.IsAdmin ? "true" : "false");
                 return RedirectToPage("/Index");
             }
             else

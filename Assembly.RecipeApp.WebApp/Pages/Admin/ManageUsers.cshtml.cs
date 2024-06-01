@@ -20,10 +20,9 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
             _userService = userService;
         }
 
-        private const int PageSize = 8; // Number of users per page
         public List<User> Users { get; set; }
 
-
+        private const int PageSize = 8; // Number of users per page
         public int CurrentPage { get; set; }
         public int TotalPages { get; set; }
         public int PreviousPage => CurrentPage > 1 ? CurrentPage - 1 : 1;

@@ -149,13 +149,17 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                 }
 
                 User user = new User(
+                    id: User.Id,
                     username: User.Username,
                     password: User.Password,
                     email: string.IsNullOrEmpty(Email) ? User.Email : Email,
                     firstName: string.IsNullOrEmpty(FirstName) ? User.FirstName : FirstName,
                     lastName: string.IsNullOrEmpty(LastName) ? User.LastName : LastName,
                     contentBio: string.IsNullOrEmpty(ContentBio) ? User.ContentBio : ContentBio,
-                    imageSource: null
+                    imageSource: null,
+                    isAdmin: User.IsAdmin,
+                    isBlocked: User.IsBlocked,
+                    createdDate: User.CreatedDate
                 );
 
                 // Call the user service to update the user

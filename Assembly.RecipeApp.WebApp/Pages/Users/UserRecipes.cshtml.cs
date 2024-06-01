@@ -50,6 +50,9 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                 return RedirectToPage("/Users/Login");
             }
 
+            // Check if User is Admin
+            HttpContext.Session.SetString("IsAdmin", User.IsAdmin ? "true" : "false");
+
             // Set userImage property
             UserImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png" : User.ImageSource.ToString();
 

@@ -73,7 +73,7 @@
 
                     }
                     else
-                    {
+                    {                        
                         <form class="col-md-5 col-sm-4 my-2 my-lg-0 d-flex justify-content-center align-items-center" method="GET" action="/ReadAll" style="margin-right: 15px;">
                             <div class="input-group">
                                 <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search recipes" aria-label="Search">
@@ -95,6 +95,10 @@
                                 </button>
                                 <ul class="dropdown-menu p-1">                                    
                                     <li><a asp-page="/Users/Dashboard" class="dropdown-item">Dashboard</a></li>
+                                    @if (Context.Session.GetString("IsAdmin") == "true")
+                                    {
+                                        <li><a asp-page="/Admin/ManageUsers" class="dropdown-item">Admin</a></li>
+                                    }
                                     <li><a asp-page="/Users/UserRecipes" class="dropdown-item">My Area</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a asp-page="/Users/Account" class="dropdown-item">Account</a></li>

@@ -18,5 +18,6 @@ namespace Assembly.RecipeApp.Repository.Interfaces
         bool Update(Rating entity, User adminUser);
         bool Update(Rating entity, int recipeId, int userId);
         bool Delete(int id, User adminUser);
+        bool DeleteByRecipeId(int recipeId);
     }
 }

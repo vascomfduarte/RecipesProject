@@ -17,6 +17,28 @@ namespace Assembly.RecipeApp.Repository.Repos
 
         List<PreparationStep> PreparationSteps;
 
+        public bool DeleteByRecipeId(int recipeId)
+        {
+            // Collect data from database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "DELETE FROM preparation_step WHERE recipe_id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameter to command
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = recipeId;
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
+
         public PreparationMethod GetByRecipeId(int recipeId)
         {
             // Collect data from database
@@ -48,6 +70,7 @@ namespace Assembly.RecipeApp.Repository.Repos
             }
 
             return new PreparationMethod(PreparationSteps);
-        }
+        } // Feito
+
     }
 }

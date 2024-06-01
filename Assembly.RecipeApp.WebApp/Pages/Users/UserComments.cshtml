@@ -70,13 +70,14 @@
                     </div>
 
                     <div class="card-body flex-column align-items-center justify-content-center">
-                        <a asp-page="/Users/UserComments" class="btn btn btn-secondary ms-2">My Comments</a>
+                        <a asp-page="/Users/UserComments" class="btn btn btn-secondary">My Comments</a>
                     </div>
 
                     <div class="card-body flex-column align-items-center justify-content-center">
 
                         <div class="row" style="">
                             <div class="col-12">
+
                                 <table class="table table-striped">
 
                                     <thead>
@@ -94,7 +95,7 @@
                                             <tr>
                                                 <th style="width: 70px;" scope="row">@comment.Id</th>
                                                 <td style="width: 200px;">@comment.Recipe.Title</td>
-                                                <td style="width: 400px;">
+                                                <td style="width: 395px;">
                                                     <div class="comment-preview">
                                                         <div class="d-inline-flex">
                                                             <span class="short-comment">@comment.Body.Substring(0, Math.Min(40, comment.Body.Length))@(comment.Body.Length > 40 ? "" : "")</span>

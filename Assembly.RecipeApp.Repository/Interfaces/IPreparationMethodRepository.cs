@@ -6,5 +6,6 @@ namespace Assembly.RecipeApp.Repository.Interfaces
     public interface IPreparationMethodRepository
     {
         PreparationMethod GetByRecipeId(int id);
+        bool DeleteByRecipeId(int recipeId);
     }
 }

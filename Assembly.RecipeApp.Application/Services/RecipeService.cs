@@ -14,16 +14,19 @@ namespace Assembly.RecipeApp.Application.Services
         private readonly IPreparationMethodRepository _preparationMethodRepository;
         private readonly ICommentRepository _commentRepository;
         private readonly IIngredientRepository _ingredientRepository;
+        private readonly IRatingRepository _ratingRepository;
 
         public RecipeService(IRecipeRepository recipeRepository, 
                               IPreparationMethodRepository preparationMethodRepository,
                               ICommentRepository commentRepository, 
-                              IIngredientRepository ingredientRepository)
+                              IIngredientRepository ingredientRepository,
+                              IRatingRepository ratingRepository)
         {
             _recipeRepository = recipeRepository;
             _preparationMethodRepository = preparationMethodRepository;
             _ingredientRepository = ingredientRepository;
             _commentRepository = commentRepository;
+            _ratingRepository = ratingRepository;
         }
 
         public bool Add(Recipe recipe)
@@ -74,6 +77,21 @@ namespace Assembly.RecipeApp.Application.Services
             return recipes;
         } // Feito 
 
+        public List<Recipe> GetApprovedPaged(int currentPage, int pageSize)
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            foreach (Recipe recipe in _recipeRepository.GetApprovedPaged(currentPage, pageSize))
+            {
+                if (recipe.IsApproved is true)
+                {
+                    recipes.Add(recipe);
+                }
+            }
+
+            return recipes;
+        } // Feito
+
         public Recipe GetById(int recipeId)
         {
             Recipe r = _recipeRepository.GetById(recipeId);
@@ -105,6 +123,21 @@ namespace Assembly.RecipeApp.Application.Services
             return recipes;
         } // Feito
 
+        public List<Recipe> GetFilteredRecipesPaged(string searchTerm, int currentPage, int pageSize)
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            foreach (Recipe recipe in _recipeRepository.GetFilteredRecipesPaged(searchTerm, currentPage, pageSize))
+            {
+                if (recipe.IsApproved is true)
+                {
+                    recipes.Add(recipe);
+                }
+            }
+
+            return recipes;
+        } // Feito
+
         public List<Recipe> GetTopRatedRecipes(int count)
         {
             List<Recipe> recipes = new List<Recipe>();
@@ -127,6 +160,25 @@ namespace Assembly.RecipeApp.Application.Services
 
         public bool Delete(Recipe recipe)
         {
+            // Delete Recipe associated comments
+            if (_commentRepository.GetByRecipeId(recipe.Id).Any())
+            {
+                _commentRepository.DeleteByRecipeId(recipe.Id);
+            }
+
+            // Delete Recipe associated ratings
+            if (_ratingRepository.GetByRecipeId(recipe.Id).Any())
+            {
+                _ratingRepository.DeleteByRecipeId(recipe.Id);
+            }
+
+            // Delete Recipe's preparation method
+            var preparationMethod = _preparationMethodRepository.GetByRecipeId(recipe.Id);
+            if (preparationMethod != null && preparationMethod.Steps != null && preparationMethod.Steps.Any())
+            {
+                _preparationMethodRepository.DeleteByRecipeId(recipe.Id);
+            }
+
             return _recipeRepository.Delete(recipe);
         } // Feito
 

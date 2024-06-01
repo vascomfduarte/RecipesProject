@@ -51,6 +51,28 @@ namespace Assembly.RecipeApp.Repository.Repos
             throw new NotImplementedException();
         }
 
+        public bool DeleteByRecipeId(int recipeId)
+        {
+            // Collect data from database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "DELETE FROM [dbo].[rating] WHERE recipe_id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameter to command
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = recipeId;
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
+
         public List<Rating> GetAll()
         {
             throw new NotImplementedException();

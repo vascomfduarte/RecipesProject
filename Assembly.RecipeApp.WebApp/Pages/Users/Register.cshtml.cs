@@ -80,6 +80,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                 // Set session variables for the newly registered user
                 HttpContext.Session.SetString("Username", user.Username);
                 HttpContext.Session.SetInt32("Id", user.Id);
+                HttpContext.Session.SetString("IsAdmin", user.IsAdmin ? "true" : "false");
 
                 // Redirect to the desired page upon successful registration
                 return RedirectToPage("/Users/Account");

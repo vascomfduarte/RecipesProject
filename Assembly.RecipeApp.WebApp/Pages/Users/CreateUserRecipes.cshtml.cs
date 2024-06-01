@@ -135,7 +135,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                 _recipeService.Add(recipe);
 
                 // Redirect to the user's account page after successfully creating the recipe
-                return RedirectToPage("/Users/CreateUserRecipes");
+                return RedirectToPage("/Users/CreateUserRecipesPage2");
             }
             catch (ArgumentException ex)
             {
