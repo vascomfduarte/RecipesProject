@@ -29,7 +29,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         public int PreviousPage => CurrentPage > 1 ? CurrentPage - 1 : 1;
         public int NextPage => CurrentPage < TotalPages ? CurrentPage + 1 : TotalPages;
 
-        public IActionResult OnGet(int? page)
+        public IActionResult OnGet(int? selectedPage)
         {
             // Retrieve UserId from session
             var userId = HttpContext.Session.GetInt32("Id");
@@ -63,12 +63,42 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
             // Pagination
             TotalPages = (int)Math.Ceiling((double)allRecipes.Count / PageSize);
-            CurrentPage = page ?? 1;
+            CurrentPage = selectedPage ?? 1;
 
             // Get recipes for the current page
             Recipes = allRecipes.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
 
             return Page();
         }
+
+        public IActionResult OnPostToggleApprove(int recipeId, int currentPage)
+        {
+            OnGet(CurrentPage);
+
+            Recipe recipe = _recipeService.GetById(recipeId);
+            if (recipe != null)
+            {
+                recipe.ChangeIsApproved(User, recipe);
+                _recipeService.Update(recipe);
+            }
+
+            // Redirect to the same page after deletion
+            return RedirectToPage(new { selectedPage = currentPage });
+        }
+
+        public IActionResult OnPostDelete(int recipeId, int currentPage)
+        {
+            OnGet(CurrentPage);
+
+            Recipe recipe = _recipeService.GetById(recipeId);
+            if (recipe != null)
+            {
+                _recipeService.Delete(recipe);
+            }
+
+            // Redirect to the same page after deletion
+            return RedirectToPage(new { selectedPage = currentPage });
+        }
+
     }
 }

@@ -9,6 +9,8 @@ namespace Assembly.RecipeApp.Application.Interfaces
         bool UpdateAdminStatus(User user, User adminUser);
         bool UpdateFromString(string userDataString, User previousUser);
         User GetByUsername(string username);
+        List<User> GetBlockedUsers(int currentPage, int pageSize);
+        List<User> GetAllBlocked();
         List<User> GetUsers(int currentPage, int pageSize);
     }
 }

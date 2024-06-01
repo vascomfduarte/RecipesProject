@@ -6,6 +6,11 @@ namespace Assembly.RecipeApp.Domain.Model
     {
         public List<PreparationStep> Steps { get; set; }
 
+        public PreparationMethod() // Parameterless constructor
+        {
+            Steps = new List<PreparationStep>();
+        }
+
         public PreparationMethod(List<PreparationStep> steps) 
         {
             Steps = steps;

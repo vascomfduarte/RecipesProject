@@ -11,8 +11,9 @@ namespace Assembly.RecipeApp.Repository.Interfaces
     {
         List<Difficulty> GetAll();
         Difficulty GetById(int id);
-        bool Add(Difficulty entity, User adminUser);
-        bool Update(Difficulty entity, User adminUser);
-        bool Delete(int id, User adminUser);
+        Difficulty GetByName(string name);
+        bool Add(Difficulty entity);
+        bool Update(Difficulty entity);
+        bool Delete(Difficulty entity);
     }
 }

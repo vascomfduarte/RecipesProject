@@ -47,22 +47,82 @@ namespace Assembly.RecipeApp.Repository.Repos
             }
 
             return products;
-        }
+        } // Feito 
 
-        public Product GetById(int id)
+        public Product GetById(int productId)
         {
-            throw new NotImplementedException();
-        }
+            Product product = null;
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM product WHERE id = @id;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", productId);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string name = reader.GetString(1);
+                            DateTime createdDate = reader.GetDateTime(2);
+
+                            product = new Product(id, name, createdDate);
+                        }
+                    }
+                }
+            }
+
+            return product;
+        } // Feito
 
         public bool Add(Product entity)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"INSERT INTO [dbo].[product] (name, created_date)
+                         VALUES (@name, @createdDate)";
 
-        public Product Delete(Product entity)
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to the command
+                    cmd.Parameters.AddWithValue("@name", entity.Name);
+                    cmd.Parameters.AddWithValue("@createdDate", DateTime.UtcNow);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
+
+        public bool Delete(Product entity)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"DELETE FROM [dbo].[product] WHERE id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", entity.Id);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
 
         public bool Delete(int id)
         {
@@ -70,11 +130,6 @@ namespace Assembly.RecipeApp.Repository.Repos
         }
 
         public bool Update(Product entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool IRepository<Product>.Delete(Product entity)
         {
             throw new NotImplementedException();
         }

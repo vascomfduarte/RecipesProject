@@ -2,84 +2,281 @@
 @model Assembly.RecipeApp.WebApp.Pages.Recipes.GetModel
 @{
 
-    <div class="container mt-lg-5">
-        <div class="row justify-content-center">
-
-            <div class="col-md-6">
-
-                <hr class="my-4 m-0 rounded" style="background-color:#B2B377; height: 7px">
-                <h2 class="mt-5">@Model.Recipe.Title</h2>
-                <p>By <strong>@Model.Recipe.User.Username</strong></p>
-                <p class="text-muted">Published @Model.Recipe.CreatedDate.ToString("dd MMMM, yyyy")</p>
-
-                <br />
-                <hr class="my-4 m-0 rounded" style="background-color:#B2B377; height: 7px">
-                <br />
-
-                <div class="row">
-                    <div class="col-md-3">
-                        <p><strong>Preparation Time</strong></p>
-                    </div>
-                    <div class="col-md-3">
-                        <p>@Model.Recipe.MinutesToCook min</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <p><strong>Difficulty</strong></p>
-                    </div>
-                    <div class="col-md-3">
-                        <p>@Model.Recipe.Difficulty.Name</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <p><strong>Rating</strong></p>
-                    </div>
-                    <div class="col-md-6">                        
-                        <p class="text d-inline">
-                            @(Model.Rating == null || Model.Rating == 0 ? "No Rating" : Model.Rating.ToString())
-
-
-                            <span class="text-muted" style="margin-right: 2px; margin-left: 8px;">
-                            @for (int i = 0; i < 5; i++)
-                            {
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star @(i < (Model.Rating == null ? 0 : Model.Rating) ? "checked" : "")" viewBox="0 0 16 16" style="margin-bottom: 4px;">
-                                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                    </svg>
-                            }
-                            </span>
-                            <span class="text-muted">
-                            @(Model.RatingCount)
-                            </span>
-
-                        </p>
-                    </div>
-                </div>
-
-                <br />
-                <br />
-                <hr class="my-4 m-0 rounded" style="background-color:#B2B377; height: 7px">
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="card p-2" style="width: 650px; height: 520px; background-color:#E5E483;">
-                    <img src="@Model.Recipe.ImageSource" class="card-img" style="object-fit: cover; width: 100%; height: 100%;" alt="Recipe Image">
-                </div>
-            </div>
-
-        </div>
+    <div class="container pb-3">
         <div class="row">
 
-            <div class="col-md-6">
-                
+            <div class="col-md-8">
+
+                <script>
+                    function setDefaultImage() {
+                        document.getElementById('recipeImage').src = "/images/default_recipe.png";
+                    }
+                </script>
+
+                <div class="card p-2 w-100">
+
+                    <div class="card-body d-flex justify-content-center align-items-center">
+                        <img id="recipeImage" src="@Model.Recipe.ImageSource" class="card-img-top rounded" style="object-fit: cover; width: 800px; height: 450px;" alt="Recipe Image" onerror="setDefaultImage()" />
+                    </div>
+
+                    <div class="card-body">
+                        <h2 class="mt-2">@Model.Recipe.Title</h2>
+                        <p>By <strong>@Model.Recipe.User.Username</strong></p>
+                        <p class="text-muted">Published @Model.Recipe.CreatedDate.ToString("dd MMMM, yyyy")</p>
+                        <hr class="my-4">
+                        <p>@Model.Recipe.Description</p>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="col-md-6 mt-3">
-                <p>@Model.Recipe.Description </p>
+            <div class="col-md-4">
+
+                <div class="card p-2 w-100">
+                    <div class="card-body">
+                        <div class="row mb-1">
+                            <div class="col-6">
+                                <p><strong>Preparation Time</strong></p>
+                            </div>
+                            <div class="col-6">
+                                <p>@Model.Recipe.MinutesToCook min</p>
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col-6">
+                                <p><strong>Difficulty</strong></p>
+                            </div>
+                            <div class="col-6">
+                                <p>@Model.Recipe.Difficulty.Name</p>
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col-6">
+                                <p><strong>Rating</strong></p>
+                            </div>
+                            <div class="col-6">
+                                <p class="text d-inline">
+                                    <span class="text-muted">
+                                        @for (int i = 0; i < 5; i++)
+                                        {
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star @(i < (Model.Rating == null ? 0 : Model.Rating) ? "checked" : "")" viewBox="0 0 16 16" style="margin-bottom: 4px;">
+                                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg>
+                                        }
+                                    </span>
+                                    <span class="text-muted">
+                                        @(Model.RatingCount)
+                                    </span>
+                                </p>
+                            </div>
+                        </div>                                               
+
+                    </div>
+                </div>
+
+                @if (HttpContext.Session.GetString("Username") is not null)
+                {
+                    <div class="card mt-4 p-3 w-100">
+                                            
+                        <form id="rateForm" method="post" asp-page-handler="Rate" class="d-flex align-items-center justify-content-between">
+                            <input type="hidden" id="recipeId" name="recipeId" value="@Model.Recipe.Id" />
+                            <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="stars 5">&#9733;</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="stars 4">&#9733;</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="stars 3">&#9733;</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="stars 2">&#9733;</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="star 1">&#9733;</label>
+                            </div>
+                            <button type="submit" name="handler" value="Rate" class="btn btn-outline-dark">Rate</button>
+                        </form>
+
+                        <style>
+                            .rate input {
+                                display: none;                                
+                            }
+
+                            .rate label {
+                                font-size: 25px;
+                                color: #ccc;
+                                cursor: pointer;
+                            }
+
+                            .rate label:hover,
+                            .rate label:hover ~ label {
+                                color: orange;
+                            }
+
+                            .rate input:checked ~ label {
+                                color: orange;
+                            }
+
+                            .rate {
+                                direction: rtl;
+                                border: 1px solid #ccc; /* Add border to the rating stars */
+                                padding: 1px 10px;
+                                border-radius: 5px; /* Optional: Add rounded corners */
+                                display: inline-block; /* Ensure it doesn't stretch */
+                            }
+                        </style>
+
+                        <script>
+                            function submitForm() {
+                                // Get the selected rating
+                                var selectedRating = document.querySelector('input[name="rate"]:checked');
+
+                                // Check if a rating is selected
+                                if (selectedRating) {
+                                    // Set the value of the hidden input to the selected rating
+                                    document.getElementById('selectedRating').value = selectedRating.value;
+
+                                    // Submit the form
+                                    document.getElementById('rateForm').submit();
+                                } else {
+                                    // If no rating is selected, alert the user
+                                    alert('Please select a rating.');
+                                }
+                            }
+                        </script>
+
+                    </div>
+                }                
+
+                <div class="card mt-4 p-4 w-100">
+
+                    <div id="commentSection" class="card-body" style="height: 500px; overflow-y: auto;">
+                        <h3>Comments</h3>
+                        <hr class="my-4">
+                        @if (Model.Comments != null && Model.Comments.Any())
+                        {
+                            foreach (var comment in Model.Comments)
+                            {
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="mb-1"><small>@comment.User.Username</small></h5>
+                                        <small class="text-muted"><small>@FormatDate(comment.CreatedDate)</small></small>
+                                    </div>
+                                    <p class="mb-0"><small>@comment.Body</small></p>
+                                    @if (HttpContext.Session.GetString("Username") == comment.User.Username)
+                                    {
+                                        <div class="d-flex justify-content-end mt-1">
+                                            <button id="editButton-@comment.Id" type="button" class="btn btn-secondary btn-sm mr-2" onclick="toggleEditForm(@comment.Id, true)">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                                </svg>
+                                            </button>
+                                            <form method="post" asp-page-handler="DeleteComment" asp-route-commentId="@comment.Id" asp-route-recipeId="@Model.Recipe.Id">
+                                                <button id="deleteButton-@comment.Id" type="submit" class="btn btn-danger btn-sm ms-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div id="editForm-@comment.Id" style="display:none;" class="mt-2">
+                                            <form method="post" asp-page-handler="EditComment" asp-route-commentId="@comment.Id" asp-route-recipeId="@Model.Recipe.Id">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" name="commentBody" rows="3">@comment.Body</textarea>
+                                                </div>
+                                                <div class="form-group row justify-content-end">
+                                                    <div class="col-auto">
+                                                        <button type="submit" class="btn btn-secondary btn-sm ms-2 mt-2">Submit</button>
+                                                        <button type="button" class="btn btn-danger btn-sm mt-2" onclick="toggleEditForm(@comment.Id, false)">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    }
+                                    <hr class="my-3">
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p>No comments yet. Be the first to comment!</p>
+                        }
+
+                        @if (HttpContext.Session.GetString("Username") is not null)
+                        {
+                            <form method="post" asp-page-handler="CreateComment" asp-route-recipeId="@Model.Recipe.Id">
+                                <div class="form-group">
+                                    <label for="commentBody">Add a comment:</label>
+                                    <textarea class="form-control" id="commentBody" name="commentBody" rows="3"></textarea>
+                                </div>
+                                <div class="form-group row justify-content-end">
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn btn-secondary mt-2">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        }
+                    </div>
+
+                </div>
+
+                @functions {
+                    public string FormatDate(DateTime date)
+                    {
+                        date = date.AddHours(+1);
+                        var timeElapsed = DateTime.Now - date;
+
+                        if (timeElapsed.TotalMinutes < 1)
+                        {
+                            return $"{(int)timeElapsed.TotalSeconds} seconds ago";
+                        }
+                        else if (timeElapsed.TotalHours < 1)
+                        {
+                            return $"{(int)timeElapsed.TotalMinutes} minutes ago";
+                        }
+                        else if (timeElapsed.TotalDays < 1)
+                        {
+                            return $"{(int)timeElapsed.TotalHours} hours ago";
+                        }
+                        else
+                        {
+                            return date.ToString("dd MMMM, yyyy HH:mm");
+                        }
+                    }
+                }
+
+                <script>
+                    // Scroll to the bottom of the comment section on page load
+                    window.onload = function () {
+                        var commentSection = document.getElementById('commentSection');
+                        commentSection.scrollTop = commentSection.scrollHeight;
+                    };
+
+                    function toggleEditForm(commentId, show) {
+                        // Get the edit form element for the specific comment
+                        var editForm = document.getElementById('editForm-' + commentId);
+                        var commentBody = document.getElementById('commentBody-' + commentId);
+                        var editButton = document.getElementById('editButton-' + commentId);
+                        var deleteButton = document.getElementById('deleteButton-' + commentId);
+
+                        // Show or hide the form based on the 'show' parameter
+                        if (show) {
+                            editForm.style.display = 'block';
+                            commentBody.style.display = 'none';
+                            editButton.style.display = 'none';
+                            deleteButton.style.display = 'none';
+                        } else {
+                            editForm.style.display = 'none';
+                            commentBody.style.display = 'block';
+                            editButton.style.display = 'inline-block';
+                            deleteButton.style.display = 'inline-block';
+                        }
+                    }
+                </script>
+
             </div>
+
 
         </div>
     </div>
-    
+
 }

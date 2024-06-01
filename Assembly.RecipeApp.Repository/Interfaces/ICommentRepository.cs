@@ -9,5 +9,7 @@ namespace Assembly.RecipeApp.Repository.Interfaces
 {
     public interface ICommentRepository : IRepository<Comment>
     {
+        List<Comment> GetByRecipeId(int id);
+        List<Comment> GetByUserId(int id);
     }
 }

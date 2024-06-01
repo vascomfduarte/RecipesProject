@@ -46,9 +46,9 @@ namespace Assembly.RecipeApp.Domain.Model
             }
 
             // Check if Ingredient name format is valid
-            if (!Regex.IsMatch(name, @"^[a-zA-Z]+$"))
+            if (!Regex.IsMatch(name, @"^[a-zA-Z0-9\s]+$"))
             {
-                throw new DomainException("Product name can only contain letters.");
+                throw new DomainException("Product name can only contain letters and spaces.");
             }
         }
 

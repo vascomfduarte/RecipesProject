@@ -12,8 +12,11 @@ namespace Assembly.RecipeApp.Repository.Interfaces
         List<Rating> GetAll();
         Rating GetById(int id);
         List<Rating> GetByRecipeId(int id);
+        Rating GetByUserRecipeId(int recipeId, int userId);
         bool Add(Rating entity, User adminUser);
+        bool Add(Rating entity, int recipeId, int userId);
         bool Update(Rating entity, User adminUser);
+        bool Update(Rating entity, int recipeId, int userId);
         bool Delete(int id, User adminUser);
     }
 }

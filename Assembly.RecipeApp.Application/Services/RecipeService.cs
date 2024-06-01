@@ -29,40 +29,49 @@ namespace Assembly.RecipeApp.Application.Services
         public bool Add(Recipe recipe)
         {
             // Validate if Title is already in use
-            if (GetAll().Any(r => r.Title == recipe.Title))
+            if (_recipeRepository.GetAll().Any(r => r.Title == recipe.Title))
                 throw new ArgumentException("Title is already in use.", nameof(recipe.Title));
 
-            // Validate image source format
-            if (recipe.ImageSource is not null)
-            {
-                if (!Uri.TryCreate(recipe.ImageSource, UriKind.Absolute, out Uri uriResult) || uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps)
-                {
-                    recipe.ImageSource = "https://iili.io/JGnl0eS.png";
-                    //throw new ArgumentException("Invalid image URL.", nameof(user.ImageSource));
-                }
-            }
-            else if (recipe.ImageSource is null)
-            {
-                // Set a default to ImageSource
-                recipe.ImageSource = "https://iili.io/JGnl0eS.png";
-            }
-
-            // Set isBlocked to false by default if not provided
+            // Set isApproved to false by default if not provided
             recipe.SetIsApproved(recipe, false);
 
-            // Format the User object's properties into a string representation
-            //string recipeString = $"{recipe.Title}|{recipe.Instructions}|{recipe.ImageSource}|{recipe.MinutesToCook}|{(recipe.IsApproved ? "1" : "0")}|{recipe.UserId}|{recipe.DifficultyId}|{recipe.CreatedAt:yyyy-MM-dd}";
-
-            // Call the UserRepository's Add method with the formatted string representation of the User
-            //return _recipeRepository.Add(recipeString);
-
-            throw new NotImplementedException();
-
-        }  // Para eliminar
+            // Call the RecipeRepository's Add method
+            return _recipeRepository.Add(recipe);
+        } // Feito 
 
         public List<Recipe> GetAll()
         {
             return _recipeRepository.GetAll();
+        } // Feito 
+
+        public List<Recipe> GetAllBlocked()
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            foreach (Recipe recipe in _recipeRepository.GetAll())
+            {
+                if (recipe.IsApproved is false)
+                {
+                    recipes.Add(recipe);
+                }
+            }
+
+            return recipes;
+        } // Feito 
+
+        public List<Recipe> GetAllApproved()
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            foreach (Recipe recipe in _recipeRepository.GetAll())
+            {
+                if (recipe.IsApproved is true)
+                {
+                    recipes.Add(recipe);
+                }
+            }
+
+            return recipes;
         } // Feito 
 
         public Recipe GetById(int recipeId)
@@ -76,26 +85,50 @@ namespace Assembly.RecipeApp.Application.Services
             //return new Recipe(r.Id, r.Title, r.Description, p, r.ImageSource, r.MinutesToCook, r.IsApproved, r.User, r.Difficulty, r.Ratings, r.Categories, i, c, r.CreatedBy, r.CreatedDate);
         } // Feito 
 
+        public List<Recipe> GetByUserId(int userId)
+        {
+            return _recipeRepository.GetByUserId(userId);
+        } // Feito 
+
         public List<Recipe> GetFilteredRecipes(string name)
-        { 
-            return _recipeRepository.GetFilteredRecipes(name);
-        }
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            foreach (Recipe recipe in _recipeRepository.GetFilteredRecipes(name))
+            {
+                if (recipe.IsApproved == true)
+                {
+                    recipes.Add(recipe);
+                }
+            }
+
+            return recipes;
+        } // Feito
 
         public List<Recipe> GetTopRatedRecipes(int count)
         {
-            return _recipeRepository.GetTopRatedRecipes(count);
+            List<Recipe> recipes = new List<Recipe>();
 
-            //throw new NotImplementedException();
-        }
+            foreach (Recipe recipe in _recipeRepository.GetTopRatedRecipes(count))
+            {
+                if (recipe.IsApproved == true)
+                {
+                    recipes.Add(recipe);
+                }
+            }
+
+            return recipes;
+        } // Feito
 
         public bool Update(Recipe entity)
         {
-            throw new NotImplementedException();
-        }
+            return _recipeRepository.Update(entity);
+        } // Feito
 
-        public bool Delete(Recipe entity)
+        public bool Delete(Recipe recipe)
         {
-            throw new NotImplementedException();
-        }
+            return _recipeRepository.Delete(recipe);
+        } // Feito
+
     }
 }

@@ -18,16 +18,44 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\Assembly.RecipeApp.WebApp
 build_property._RazorSourceGeneratorDebug = 
 
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/CreateDifficulty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ3JlYXRlRGlmZmljdWx0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/CreateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ3JlYXRlUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/CreateUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ3JlYXRlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageDifficulties.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlRGlmZmljdWx0aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlUHJvZHVjdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageRecipes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlUmVjaXBlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageRecipesBlocked.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlUmVjaXBlc0Jsb2NrZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageUnits.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlVW5pdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageUsersBlocked.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlVXNlcnNCbG9ja2VkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Error.cshtml]

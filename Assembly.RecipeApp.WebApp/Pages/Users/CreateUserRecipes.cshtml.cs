@@ -4,6 +4,7 @@ using Assembly.RecipeApp.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Hosting.Internal;
+using System.Text.Json;
 
 namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
@@ -12,8 +13,6 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         private readonly IUserService _userService;
         private readonly IRecipeService _recipeService;
         private readonly IDifficultyService _difficultyService;
-        private readonly IUnitService _unitService;
-        private readonly IProductService _productService;
         private readonly IWebHostEnvironment _hostingEnvironment;
 
         [BindProperty]
@@ -35,53 +34,27 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         public string DifficultyChoice { get; set; }
 
 
-        [BindProperty]
-        public List<string> ProductNames { get; set; } = new List<string>();
-
-        [BindProperty]
-        public List<float> Amounts { get; set; } = new List<float>();
-
-        [BindProperty]
-        public List<string> UnitNames { get; set; } = new List<string>();
-
-
-        [BindProperty]
-        public PreparationMethod PreparationMethod { get; set; }
-
-        [BindProperty]
-        public List<PreparationStep> PreparationSteps { get; set; }
-
-        [BindProperty]
-        public List<Ingredient> Ingredients { get; set; }        
-
-
         public Recipe Recipe { get; set; }
         public User User { get; private set; }
 
 
         public List<Difficulty> Difficulties { get; set; }
-        public List<Unit> Units { get; set; }
-        public List<Product> Products { get; set; }
-        
+
 
         [BindProperty]
         public string UserImage { get; set; }
 
-        public CreateUserRecipesModel(IUserService userService, IRecipeService recipeService, IDifficultyService difficultyService, IUnitService unitService, IProductService productService, IWebHostEnvironment hostingEnvironment)
+        public CreateUserRecipesModel(IUserService userService, IRecipeService recipeService, IDifficultyService difficultyService, IWebHostEnvironment hostingEnvironment)
         {
             _userService = userService;
             _recipeService = recipeService;
             _difficultyService = difficultyService;
-            _unitService = unitService;
-            _productService = productService;
             _hostingEnvironment = hostingEnvironment;
         }
 
         public IActionResult OnGet()
         {
             Difficulties = _difficultyService.GetAll();
-            Units = _unitService.GetAll();
-            Products = _productService.GetAll();
 
             // Retrieve UserId from session
             var userId = HttpContext.Session.GetInt32("Id");
@@ -103,7 +76,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
             // Set Image properties
             UserImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png" : User.ImageSource.ToString();
-            RecipeImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png" : User.ImageSource.ToString();
+            RecipeImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/default_recipe.png" : User.ImageSource.ToString();
 
             return Page();
         }
@@ -112,7 +85,8 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         {
             OnGet();
 
-            string recipeImagePath = User.ImageSource;
+            // Photo
+            string recipeImagePath = RecipeImage;
             if (Photo != null && Photo.Length > 0)
             {
                 var uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
@@ -132,21 +106,43 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
                 recipeImagePath = "/images/" + uniqueFileName;
             }
+            else
+            {
 
-            // Example: Retrieving form data from the frontend
-            var title = Request.Form["Title"];
-            var description = Request.Form["Description"];
-            var preparationMethod = Request.Form["PreparationMethod"];
-            var minutesToCook = int.Parse(Request.Form["MinutesToCook"]);
+            }
 
-            // Example: Creating a new recipe object
-            //Recipe recipe = new Recipe(title, description, preparationMethod, minutesToCook, User, ...);
+            // Difficulty
+            Difficulty dif = _difficultyService.GetByName(DifficultyChoice);
+            if (dif == null)
+            {
+                ModelState.AddModelError("DifficultyChoice", "Selected difficulty is invalid.");
+                return Page();
+            }
 
-            // Example: Save the recipe to the database using your service layer
-            //_recipeService.Create(recipe);
+            // Create the recipe
+            Recipe recipe = new Recipe(
+                title: Title,
+                description: Description,
+                imageSource: recipeImagePath,
+                minutesToCook: MinutesToCook,
+                user: User,
+                difficulty: dif
+            );
 
-            // Redirect to the user's account page after successfully creating the recipe
-            return RedirectToPage("/Users/Account");
+            try
+            {
+                // Save the recipe to the database using service layer
+                _recipeService.Add(recipe);
+
+                // Redirect to the user's account page after successfully creating the recipe
+                return RedirectToPage("/Users/CreateUserRecipes");
+            }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                return Page();
+            }
+
         }
 
     }

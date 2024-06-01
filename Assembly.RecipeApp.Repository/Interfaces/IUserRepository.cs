@@ -14,5 +14,6 @@ namespace Assembly.RecipeApp.Repository.Interfaces
         User GetByUsername(string username);
 
         List<User> GetUsers(int currentPage, int pageSize);
+        List<User> GetBlockedUsers(int currentPage, int pageSize);
     }
 }

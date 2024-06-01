@@ -24,19 +24,41 @@ namespace Assembly.RecipeApp.Application.Services
             return _commentRepository.GetById(id);
         } // Feito
 
+        public List<Comment> GetByRecipeId(int id)
+        {
+            return _commentRepository.GetByRecipeId(id);
+        } // Feito
+
+        public List<Comment> GetByUserId(int id)
+        {
+            return _commentRepository.GetByUserId(id);
+        } // Feito
+
         public bool Add(Comment entity)
         {
-            throw new NotImplementedException();
+            return _commentRepository.Add(entity);
         }
 
         public bool Delete(int id, User user)
         {
-            throw new NotImplementedException();
+            Comment c = _commentRepository.GetById(id);
+
+            if (user.IsAdmin || user.Id == c.User.Id) 
+            {
+               return _commentRepository.Delete(c);
+            }
+
+            return false;
         }
 
         public bool Update(Comment entity, User user)
         {
-            throw new NotImplementedException();
+            if (user.IsAdmin || user.Id == entity.User.Id)
+            {
+                return _commentRepository.Update(entity);
+            }
+
+            return false;
         }
     }
 }

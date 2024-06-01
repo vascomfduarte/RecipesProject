@@ -29,7 +29,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         {
             SearchTerm = query;
 
-            Recipes = query is null ? _recipeService.GetAll() : _recipeService.GetFilteredRecipes(query);
+            Recipes = query is null ? _recipeService.GetAllApproved() : _recipeService.GetFilteredRecipes(query);
 
             recipesCounter = Recipes.Count();
 

@@ -20,6 +20,21 @@ namespace Assembly.RecipeApp.Application.Services
             return _userRepository.GetAll();
         } // Feito 
 
+        public List<User> GetAllBlocked()
+        {
+            List<User> filteredUsers = new List<User>();
+
+            foreach (User u in _userRepository.GetAll())
+            {
+                if (u.IsBlocked is true)
+                {
+                    filteredUsers.Add(u);
+                }
+            }
+
+            return filteredUsers;
+        } // Feito 
+
         public User GetById(int id)
         {
             return _userRepository.GetById(id);
@@ -38,6 +53,11 @@ namespace Assembly.RecipeApp.Application.Services
         public List<User> GetUsers(int currentPage, int pageSize)
         {
             return _userRepository.GetUsers(currentPage, pageSize);
+        } // Feito
+
+        public List<User> GetBlockedUsers(int currentPage, int pageSize)
+        {
+            return _userRepository.GetBlockedUsers(currentPage, pageSize);
         } // Feito
 
         public bool Add(User user)
@@ -151,12 +171,7 @@ namespace Assembly.RecipeApp.Application.Services
 
         public bool Delete(User user)
         {
-            if (_userRepository.Delete(user))
-            {
-                return true;
-            }
-
-            return false;
+            return _userRepository.Delete(user);
         } // Feito
 
         public User Login(string username, string password)

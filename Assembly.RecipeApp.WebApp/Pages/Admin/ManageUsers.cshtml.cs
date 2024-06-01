@@ -60,12 +60,9 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
 
             // Get the total number of users
             List<User> users = _userService.GetAll();
-            int totalUsers = users.Count;
 
-            // Calculate the total number of pages
-            TotalPages = (int)Math.Ceiling((double)totalUsers / PageSize);
-
-            // Ensure page is within valid range and set CurrentPage
+            // Pagination
+            TotalPages = (int)Math.Ceiling((double)users.Count / PageSize);
             CurrentPage = Math.Max(1, Math.Min(selectedPage ?? 1, TotalPages));
 
             // Fetch users for the current page
@@ -74,12 +71,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
             return Page();
         }
 
-        public IActionResult OnGetSearch(int? selectedPage, string searchInput)
-        {
-            return Page();
-        }
-
-        public IActionResult OnPostToggleBlock(int userId)
+        public IActionResult OnPostToggleBlock(int userId, int currentPage)
         {
             OnGet(CurrentPage);
 
@@ -90,10 +82,11 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
                 _userService.Update(user);
             }
 
-            return RedirectToPage();
+            // Redirect to the same page after deletion
+            return RedirectToPage(new { selectedPage = currentPage });
         }
 
-        public IActionResult OnPostDeleteUser(int userId)
+        public IActionResult OnPostDeleteUser(int userId, int currentPage)
         {
             OnGet(CurrentPage);
 
@@ -103,12 +96,8 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
                 _userService.Delete(user);
             }
 
-            return RedirectToPage();
-        }
-
-        public IActionResult OnPostViewDetails(int userId)
-        {
-            return RedirectToPage("/UserDetails", new { id = userId });
+            // Redirect to the same page after deletion
+            return RedirectToPage(new { selectedPage = currentPage });
         }
 
     }

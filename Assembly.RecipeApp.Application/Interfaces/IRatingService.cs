@@ -11,8 +11,11 @@ namespace Assembly.RecipeApp.Application.Interfaces
     {
         List<Rating> GetAll();
         Rating GetById(int id);
+        Rating GetByUserRecipeId(int recipeId, int userId);
         bool Add(Rating entity);
+        bool Add(Rating entity, int recipeId, int userId);
         bool Update(Rating entity, User user);
+        bool Update(Rating entity, int recipeId, int userId);
         bool Delete(int id, User user);
     }
 }

@@ -152,6 +152,72 @@ namespace Assembly.RecipeApp.Repository.Repos
             return Recipe;
         } // Feito
 
+        public List<Recipe> GetByUserId(int userId)
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            // Collect data from database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM [dbo].[recipe] AS r " +
+                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id] " +
+                               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id] " +
+                               "WHERE r.[user_id] = @userId;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameter to command
+                    cmd.Parameters.AddWithValue("@userId", userId);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string title = reader.GetString(1);
+                            string description = reader.GetString(2);
+                            string imageSource = reader.GetString(3);
+                            int minutesToCook = reader.GetInt32(4);
+                            bool isApproved = reader.GetInt32(5) == 1 ? true : false;
+                            DateTime createdDate = reader.GetDateTime(6);
+
+                            // User
+                            User user = new User(reader.GetInt32(9),
+                                                 reader.GetString(10),
+                                                 reader.GetString(11),
+                                                 reader.GetString(12),
+                                                 reader.GetString(13),
+                                                 reader.GetString(14),
+                                                 reader.GetString(15),
+                                                 reader.GetString(16),
+                                                 reader.GetInt32(17) == 1 ? true : false,
+                                                 reader.GetInt32(18) == 1 ? true : false,
+                                                 reader.GetDateTime(19));
+
+                            // Difficulty
+                            Difficulty difficulty = new Difficulty(reader.GetInt32(20),
+                                                                   reader.GetString(21),
+                                                                   reader.GetDateTime(22));
+
+                            // Rating List
+                            List<Rating> ratings = _ratingRepository.GetByRecipeId(id);
+
+                            // Category List
+                            List<Category> categories = _categoryRepository.GetByRecipeId(id);
+
+                            var recipe = new Recipe(id, title, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, user.Username, createdDate);
+
+                            recipes.Add(recipe);
+                        }
+                    }
+                }
+            }
+            return recipes;
+        } // Feito
+
         /// <summary>
         /// Method that searches for a given name
         /// </summary>
@@ -302,22 +368,93 @@ namespace Assembly.RecipeApp.Repository.Repos
             }
 
             return recipes;
-        }
+        }  // Feito
 
-        public bool Add(Recipe entity)
+        public bool Add(Recipe recipe)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"INSERT INTO [dbo].[recipe] (title, description, image_source, minutes_to_cook, is_approved, created_date, user_id, difficulty_id)
+                         VALUES (@title, @description, @imageSource, @minutesToCook, @isApproved, @createdDate, @userId, @difficultyId)";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to command
+                    cmd.Parameters.AddWithValue("@title", recipe.Title);
+                    cmd.Parameters.AddWithValue("@description", recipe.Description);
+                    cmd.Parameters.AddWithValue("@imageSource", recipe.ImageSource ?? "");
+                    cmd.Parameters.AddWithValue("@minutesToCook", recipe.MinutesToCook);
+                    cmd.Parameters.AddWithValue("@isApproved", recipe.IsApproved is true ? 1 : 0);
+                    cmd.Parameters.AddWithValue("@createdDate", DateTime.UtcNow);
+                    cmd.Parameters.AddWithValue("@userId", recipe.User.Id);
+                    cmd.Parameters.AddWithValue("@difficultyId", recipe.Difficulty.Id);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
 
         public bool Update(Recipe entity)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"UPDATE [dbo].[recipe] SET 
+                                    title = @title,
+                                    description = @description,
+                                    image_source = @imageSource,
+                                    minutes_to_cook = @minutesToCook,
+                                    is_approved = @isApproved,
+                                    user_id = @userId,
+                                    difficulty_id = @difficultyId
+                                 WHERE id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to command
+                    cmd.Parameters.AddWithValue("@id", entity.Id);
+                    cmd.Parameters.AddWithValue("@title", entity.Title);
+                    cmd.Parameters.AddWithValue("@description", entity.Description);
+                    cmd.Parameters.AddWithValue("@imageSource", entity.ImageSource ?? "");  // Can be null
+                    cmd.Parameters.AddWithValue("@minutesToCook", entity.MinutesToCook);
+                    cmd.Parameters.AddWithValue("@isApproved", entity.IsApproved ? 1 : 0);
+                    cmd.Parameters.AddWithValue("@userId", entity.User.Id);                 // Assuming User.Id is the foreign key
+                    cmd.Parameters.AddWithValue("@difficultyId", entity.Difficulty.Id);     // Assuming Difficulty.Id is the foreign key
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
 
         public bool Delete(Recipe entity)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "DELETE FROM [dbo].[recipe] WHERE id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameter to command
+                    cmd.Parameters.AddWithValue("@id", entity.Id); // Assuming entity.Id exists
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
 
         public Recipe Delete(int id)
         {

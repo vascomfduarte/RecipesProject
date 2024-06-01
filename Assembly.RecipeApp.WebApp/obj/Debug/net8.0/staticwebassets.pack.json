@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\8c74da4b-8ef2-4967-a8f8-5940114347c0_default_recipe.png",
+      "PackagePath": "staticwebassets\\images\\8c74da4b-8ef2-4967-a8f8-5940114347c0_default_recipe.png"
+    },
+    {
       "Id": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\96a48074-a7b4-40b8-812e-0084b40afec7_65ad79c80f0ba50013abedf0_688646114.jpg",
       "PackagePath": "staticwebassets\\images\\96a48074-a7b4-40b8-812e-0084b40afec7_65ad79c80f0ba50013abedf0_688646114.jpg"
     },
@@ -23,6 +27,14 @@
     {
       "Id": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png",
       "PackagePath": "staticwebassets\\images\\d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png"
+    },
+    {
+      "Id": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\default_recipe.png",
+      "PackagePath": "staticwebassets\\images\\default_recipe.png"
+    },
+    {
+      "Id": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\fb116fea-c410-419b-b3f6-1efc1fc031a3_default_recipe.png",
+      "PackagePath": "staticwebassets\\images\\fb116fea-c410-419b-b3f6-1efc1fc031a3_default_recipe.png"
     },
     {
       "Id": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\fdeb8b91-7b64-4c29-a2bb-5f6bdd906007_65ad79c80f0ba50013abedf0_688646114.jpg",

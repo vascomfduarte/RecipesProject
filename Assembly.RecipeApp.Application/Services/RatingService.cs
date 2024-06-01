@@ -24,10 +24,20 @@ namespace Assembly.RecipeApp.Application.Services
             return _ratingRepository.GetById(id);
         } // Feito 
 
+        public Rating GetByUserRecipeId(int recipeId, int userId)
+        {
+            return _ratingRepository.GetByUserRecipeId(recipeId, userId);
+        } // Feito         
+
         public bool Add(Rating entity)
         {
             throw new NotImplementedException();
         }
+
+        public bool Add(Rating entity, int recipeId, int userId)
+        {
+            return _ratingRepository.Add(entity, recipeId, userId);
+        } // Feito 
 
         public bool Delete(int id, User user)
         {
@@ -38,5 +48,11 @@ namespace Assembly.RecipeApp.Application.Services
         {
             throw new NotImplementedException();
         }
+
+        public bool Update(Rating entity, int recipeId, int userId)
+        {
+            return _ratingRepository.Update(entity, recipeId, userId);
+        } // Feito 
+
     }
 }

@@ -40,6 +40,15 @@
                                 <li class="mb-1 ms-4">
                                     <a asp-page="/Admin/ManageRecipes" class="list-group-item list-group-item-action rounded">Manage Recipes</a>
                                 </li>
+                                <li class="mb-1 ms-4">
+                                    <a asp-page="/Admin/ManageProducts" class="list-group-item list-group-item list-group-item-action rounded">Manage Products</a>
+                                </li>
+                                <li class="mb-1 ms-4">
+                                    <a asp-page="/Admin/ManageDifficulties" class="list-group-item list-group-item list-group-item-action rounded">Manage Difficulties</a>
+                                </li>
+                                <li class="mb-1 ms-4">
+                                    <a asp-page="/Admin/ManageUnits" class="list-group-item list-group-item list-group-item-action rounded">Manage Units</a>
+                                </li>
                             }
 
                             <li class="mb-1">
@@ -81,6 +90,8 @@
 
                         <a asp-page="/Admin/ManageUsers" class="btn btn btn-secondary ms-2">All Users</a>
 
+                        <a asp-page="/Admin/ManageUsersBlocked" class="btn btn btn-outline-secondary ms-2">Blocked Users</a>
+
                     </div>
 
                     <div class="card-body flex-column align-items-center justify-content-center">
@@ -103,19 +114,22 @@
                                             <tr>
                                                 <th style="width: 70px;" scope="row">@user.Id</th>
                                                 <td style="width: 150px;">@user.Username</td>
-                                                <td style="width: 280px;">@user.Email</td>
-                                                <td style="width: 100px;">@(user.IsBlocked ? "Blocked" : "Active")</td>
+                                                <td style="width: 400px;">@user.Email</td>
+                                                <td style="width: 100px;">
+                                                    <span class="@(user.IsBlocked ? "text-danger" : "text-success")">
+                                                        @(user.IsBlocked ? "Blocked" : "Active")
+                                                    </span>
+                                                </td>
                                                 <td>
                                                     <form method="post" asp-page-handler="ToggleBlock" asp-route-userId="@user.Id" class="d-inline">
-                                                        <button type="submit" class="btn btn-sm @(user.IsBlocked ? "btn-success" : "btn-danger")" style="width: 60px;">
+                                                        <input type="hidden" name="currentPage" value="@Model.CurrentPage" />
+                                                        <button type="submit" class="btn btn-sm btn-secondary" style="width: 70px;">
                                                             @(user.IsBlocked ? "Unblock" : "Block")
                                                         </button>
                                                     </form>
-                                                    <form method="post" asp-page-handler="ViewDetails" asp-route-userId="@user.Id" class="d-inline">
-                                                        <button type="submit" class="btn btn-sm btn-secondary">Activity</button>
-                                                    </form>
                                                     <form method="post" asp-page-handler="DeleteUser" asp-route-userId="@user.Id" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this user account?');">
-                                                        <button type="submit" class="btn btn-sm btn-danger" style="width: 60px;">Delete</button>
+                                                        <input type="hidden" name="currentPage" value="@Model.CurrentPage" />
+                                                        <button type="submit" class="btn btn-sm btn-danger" style="width: 70px;">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>

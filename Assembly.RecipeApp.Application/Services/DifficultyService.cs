@@ -1,6 +1,7 @@
 ﻿using Assembly.RecipeApp.Application.Interfaces;
 using Assembly.RecipeApp.Domain.Model;
 using Assembly.RecipeApp.Repository.Interfaces;
+using Assembly.RecipeApp.Repository.Repos;
 
 namespace Assembly.RecipeApp.Application.Services
 {
@@ -23,19 +24,40 @@ namespace Assembly.RecipeApp.Application.Services
             return _difficultyRepository.GetById(id);
         } // Feito
 
-        public bool Add(Difficulty entity, User adminUser)
+        public Difficulty GetByName(string name)
+        {
+            return _difficultyRepository.GetByName(name);
+        } // Feito
+
+        public bool Add(Difficulty entity, User currentUser)
+        {
+            if (currentUser.IsAdmin)
+            {
+                // Validate if Ingredient with the same name already exists
+                if (GetAll().Any(i => i.Name == entity.Name))
+                    throw new ArgumentException("A difficulty with the same name already exists.", nameof(entity.Name));
+
+                _difficultyRepository.Add(entity);
+                return true;
+            }
+
+            return false;
+        } // Feito 
+
+        public bool Update(Difficulty entity, User currentUser)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Difficulty entity, User adminUser)
+        public bool Delete(Difficulty entity, User currentUser)
         {
-            throw new NotImplementedException();
-        }
+            if (currentUser.IsAdmin)
+            {
+                _difficultyRepository.Delete(entity);
+                return true;
+            }
 
-        public bool Delete(int id, User adminUser)
-        {
-            throw new NotImplementedException();
-        }
+            return false;
+        } // Feito 
     }
 }

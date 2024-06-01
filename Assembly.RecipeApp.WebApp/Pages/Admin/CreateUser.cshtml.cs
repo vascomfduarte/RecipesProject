@@ -100,7 +100,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
 
             _userService.Add(user);
 
-            return RedirectToPage("/Users/ManageUsers");
+            return RedirectToPage("/Admin/ManageUsers");
 
         }
     }

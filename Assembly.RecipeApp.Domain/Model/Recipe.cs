@@ -57,23 +57,29 @@ namespace Assembly.RecipeApp.Domain.Model
         public List<Comment> Comments { get; set; }
         public List<Ingredient> Ingredients { get; set; }
 
-        public Recipe(string title, string description, PreparationMethod preparationMethod, int minutesToCook, User user, Difficulty difficulty, List<Ingredient> ingredients)
+        public Recipe(string title, string description, string imageSource, int minutesToCook, User user, Difficulty difficulty)
         {
             Title = title;
             Description = description;
-            PreparationMethod = preparationMethod;
+            ImageSource = imageSource;
             MinutesToCook = minutesToCook;
             Difficulty = difficulty;
             User = user;
-            Ingredients = ingredients;
             CreatedBy = user.Username;
-            CreatedDate = DateTime.Now.Date;
+            CreatedDate = DateTime.Now;
+        }    
+
+        public Recipe(string title, string description, string imageSource, PreparationMethod preparationMethod, int minutesToCook, User user, Difficulty difficulty, List<Ingredient> ingredients)
+            : this(title, description, imageSource, minutesToCook, user, difficulty)
+        {
+            PreparationMethod = preparationMethod;
+            Ingredients = ingredients;
         }
 
         public Recipe(string title, string description, PreparationMethod preparationMethod, string imageSource, int minutesToCook, User user, Difficulty difficulty, List<Ingredient> ingredients)
-            : this(title, description, preparationMethod, minutesToCook, user, difficulty, ingredients)
+            : this(title, description, imageSource, preparationMethod, minutesToCook, user, difficulty, ingredients)
         {
-            ImageSource = imageSource;
+            
             IsApproved = false;
         }
 
