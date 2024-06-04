@@ -11,5 +11,7 @@ namespace Assembly.RecipeApp.Repository.Interfaces
     public interface IIngredientRepository : IRepository<Ingredient>
     {
         List<Ingredient> GetRecipeIngredients(int recipeId);
+        bool Add(Ingredient ingredient, int recipeId);
+        bool DeleteByRecipeId(int recipeId);
     }
 }

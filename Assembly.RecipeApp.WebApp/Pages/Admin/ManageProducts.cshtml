@@ -25,10 +25,6 @@
 
                         <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate ">
 
-                            <li class="mb-1">
-                                <a asp-page="/Users/Dashboard" class="list-group-item list-group-item-action rounded">Dashboard</a>
-                            </li>
-
                             @if (Model.User.IsAdmin is true)
                             {
                                 <li class="mb-1">
@@ -109,12 +105,33 @@
                                         {
                                             <tr>
                                                 <th style="width: 70px;" scope="row">@product.Id</th>
-                                                <td style="width: 650px;">@product.Name</td>
+                                                <td style="width: 650px;">
+                                                    @if (Model.EditingProductId == product.Id)
+                                                    {
+                                                        <form method="post" asp-page-handler="UpdateProduct" asp-route-productId="@product.Id" asp-route-newName="newName" class="d-inline">
+                                                            <input type="text" name="newName" value="@product.Name" class="form-control d-inline" style="width: auto;" placeholder="New Product Name" />
+                                                            <button type="submit" class="btn btn-sm btn-success">Save</button>
+                                                        </form>
+
+                                                        <form method="post" asp-page-handler="CancelEdit" class="d-inline">
+                                                            <input type="hidden" name="currentPage" value="@Model.CurrentPage" />
+                                                            <button type="submit" class="btn btn-sm btn-secondary">Cancel</button>
+                                                        </form>
+                                                    }
+                                                    else
+                                                    {
+                                                        @product.Name
+                                                    }
+                                                </td>
 
                                                 <td>
-                                                    <form method="post" asp-page-handler="EditProduct" asp-route-productId="@product.Id" class="d-inline">
-                                                        <button type="submit" class="btn btn-sm btn-secondary" style="width: 70px;">Edit</button>
-                                                    </form>
+                                                    @if (Model.EditingProductId != product.Id)
+                                                    {
+                                                        <form method="post" asp-page-handler="EditProduct" asp-route-productId="@product.Id" class="d-inline">
+                                                            <input type="hidden" name="currentPage" value="@Model.CurrentPage" />
+                                                            <button type="submit" class="btn btn-sm btn-secondary" style="width: 70px;">Edit</button>
+                                                        </form>
+                                                    }
                                                     <form method="post" asp-page-handler="DeleteProduct" asp-route-productId="@product.Id" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this recipe?');">
                                                         <input type="hidden" name="currentPage" value="@Model.CurrentPage" />
                                                         <button type="submit" class="btn btn-sm btn-danger" style="width: 70px;">Delete</button>

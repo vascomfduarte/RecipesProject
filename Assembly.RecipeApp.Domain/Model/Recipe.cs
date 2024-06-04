@@ -52,10 +52,11 @@ namespace Assembly.RecipeApp.Domain.Model
         public User User { get; set; } // Obrigatório
 
         public PreparationMethod PreparationMethod { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
+
         public List<Category> Categories { get; set; }
         public List<Rating> Ratings { get; set; }
         public List<Comment> Comments { get; set; }
-        public List<Ingredient> Ingredients { get; set; }
 
         public Recipe(string title, string description, string imageSource, int minutesToCook, User user, Difficulty difficulty)
         {

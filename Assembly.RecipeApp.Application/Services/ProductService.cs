@@ -68,7 +68,7 @@ namespace Assembly.RecipeApp.Application.Services
 
         public bool Update(Product entity)
         {
-            throw new NotImplementedException();
+            return _productRepository.Update(entity);
         }
 
 

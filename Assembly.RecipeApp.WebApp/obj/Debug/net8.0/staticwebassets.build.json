@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gnRVFUD/FerUPfWtlRb6jPohNexsIn5KuKcp0jiwtMA=",
+  "Hash": "ROmThQMFdwp5jiLZKXTHQhnRhsXH7CoedE6az4v6E98=",
   "Source": "Assembly.RecipeApp.WebApp",
   "BasePath": "_content/Assembly.RecipeApp.WebApp",
   "Mode": "Default",
@@ -205,6 +205,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\5bf2dcff-5aa9-431f-ac9e-2f86bf73e3f1_default_recipe.png"
+    },
+    {
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\7296661b-fd1b-4314-9f4e-1ad93d87d927_default_recipe.png",
+      "SourceId": "Assembly.RecipeApp.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "BasePath": "_content/Assembly.RecipeApp.WebApp",
+      "RelativePath": "images/7296661b-fd1b-4314-9f4e-1ad93d87d927_default_recipe.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\7296661b-fd1b-4314-9f4e-1ad93d87d927_default_recipe.png"
     },
     {
       "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\8b7fe566-52c1-4355-8a5c-b257ec55a1f9_default_recipe.png",

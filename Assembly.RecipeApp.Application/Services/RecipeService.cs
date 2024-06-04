@@ -103,6 +103,17 @@ namespace Assembly.RecipeApp.Application.Services
             //return new Recipe(r.Id, r.Title, r.Description, p, r.ImageSource, r.MinutesToCook, r.IsApproved, r.User, r.Difficulty, r.Ratings, r.Categories, i, c, r.CreatedBy, r.CreatedDate);
         } // Feito 
 
+        public Recipe GetByTitle(string title)
+        {
+            Recipe r = _recipeRepository.GetByTitle(title);
+            //PreparationMethod p = _preparationMethodRepository.GetByRecipeId(recipeId);
+            //List<Ingredient> i = _ingredientRepository.GetByRecipeId(recipeId);
+            //List<Comment> c = _commentRepository.GetByRecipeId(recipeId);
+
+            return r;
+            //return new Recipe(r.Id, r.Title, r.Description, p, r.ImageSource, r.MinutesToCook, r.IsApproved, r.User, r.Difficulty, r.Ratings, r.Categories, i, c, r.CreatedBy, r.CreatedDate);
+        } // Feito 
+
         public List<Recipe> GetByUserId(int userId)
         {
             return _recipeRepository.GetByUserId(userId);
@@ -170,6 +181,13 @@ namespace Assembly.RecipeApp.Application.Services
             if (_ratingRepository.GetByRecipeId(recipe.Id).Any())
             {
                 _ratingRepository.DeleteByRecipeId(recipe.Id);
+            }
+
+
+            // Delete Recipe ingredients
+            if (_ingredientRepository.GetRecipeIngredients(recipe.Id).Any())
+            {
+                _ingredientRepository.DeleteByRecipeId(recipe.Id);
             }
 
             // Delete Recipe's preparation method

@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Data;
 using Assembly.RecipeApp.Repository.Interfaces;
 using Assembly.RecipeApp.Domain.Model;
+using Assembly.RecipeApp.Domain.Interfaces;
 
 namespace Assembly.RecipeApp.Repository.Repos
 {
@@ -79,18 +80,69 @@ namespace Assembly.RecipeApp.Repository.Repos
 
         public bool Add(Unit entity, User adminUser)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"INSERT INTO [dbo].[unit] (name, created_date)
+                         VALUES (@name, @createdDate)";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to the command
+                    cmd.Parameters.AddWithValue("@name", entity.Name);
+                    cmd.Parameters.AddWithValue("@createdDate", DateTime.UtcNow);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
 
         public bool Update(Unit entity, User adminUser)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"UPDATE [dbo].[unit] SET name = @name WHERE id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to the command
+                    cmd.Parameters.AddWithValue("@id", entity.Id);
+                    cmd.Parameters.AddWithValue("@name", entity.Name);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
 
         public bool Delete(int id, User adminUser)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"DELETE [dbo].[unit] WHERE id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to the command
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
 
     }
 }

@@ -29,9 +29,9 @@ namespace Assembly.RecipeApp.Application.Services
             return _difficultyRepository.GetByName(name);
         } // Feito
 
-        public bool Add(Difficulty entity, User currentUser)
+        public bool Add(Difficulty entity, User user)
         {
-            if (currentUser.IsAdmin)
+            if (user.IsAdmin)
             {
                 // Validate if Ingredient with the same name already exists
                 if (GetAll().Any(i => i.Name == entity.Name))
@@ -44,14 +44,20 @@ namespace Assembly.RecipeApp.Application.Services
             return false;
         } // Feito 
 
-        public bool Update(Difficulty entity, User currentUser)
+        public bool Update(Difficulty entity, User user)
         {
-            throw new NotImplementedException();
-        }
+            if (user.IsAdmin)
+            {
+                _difficultyRepository.Update(entity);
+                return true;
+            }
 
-        public bool Delete(Difficulty entity, User currentUser)
+            return false;
+        } // Feito 
+
+        public bool Delete(Difficulty entity, User user)
         {
-            if (currentUser.IsAdmin)
+            if (user.IsAdmin)
             {
                 _difficultyRepository.Delete(entity);
                 return true;

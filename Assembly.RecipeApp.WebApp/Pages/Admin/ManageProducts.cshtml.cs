@@ -29,6 +29,9 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
         public int PreviousPage => CurrentPage > 1 ? CurrentPage - 1 : 1;
         public int NextPage => CurrentPage < TotalPages ? CurrentPage + 1 : TotalPages;
 
+        [BindProperty]
+        public int? EditingProductId { get; set; }
+
         public IActionResult OnGet(int? selectedPage)
         {
             // Retrieve UserId from session
@@ -83,5 +86,33 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
             // Redirect to the same page after deletion
             return RedirectToPage(new { selectedPage = currentPage });
         }
+
+        public IActionResult OnPostEditProduct(int productId, int currentPage)
+        {
+            EditingProductId = productId;
+            return OnGet(currentPage);
+        }
+
+        public IActionResult OnPostUpdateProduct(int productId, string newName)
+        {
+            var product = _productService.GetById(productId);
+            if (product != null)
+            {
+                product.Name = newName;
+                _productService.Update(product);
+            }
+
+            EditingProductId = null;
+            return RedirectToPage(new { selectedPage = CurrentPage });
+        }
+
+        public IActionResult OnPostCancelEdit(int currentPage)
+        {
+            EditingProductId = null;
+            OnGet(currentPage); // Reload the page to reflect the cancellation of edit mode
+            return Page();
+        }
+
+
     }
 }

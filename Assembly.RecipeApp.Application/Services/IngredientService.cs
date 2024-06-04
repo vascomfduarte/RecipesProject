@@ -30,10 +30,20 @@ namespace Assembly.RecipeApp.Application.Services
             return _ingredientRepository.GetRecipeIngredients(recipeId);
         } // Feito
 
-        public bool Add(Ingredient ingredient, User currentUser)
+        public bool Add(Ingredient ingredient, int recipeId)
+        {
+            return _ingredientRepository.Add(ingredient, recipeId);
+        } // Feito
+
+        public bool Update(Ingredient entity)
         {
             throw new NotImplementedException();
         }
+
+        public bool Delete(Ingredient entity)
+        {
+            return _ingredientRepository.Delete(entity);
+        } // Feito
 
         public bool Update(Ingredient entity, User adminUser)
         {
@@ -44,6 +54,5 @@ namespace Assembly.RecipeApp.Application.Services
         {
             throw new NotImplementedException();
         }
-
     }
 }

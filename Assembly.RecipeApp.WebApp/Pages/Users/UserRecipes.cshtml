@@ -25,10 +25,6 @@
 
                         <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate ">
 
-                            <li class="mb-1">
-                                <a asp-page="/Users/Dashboard" class="list-group-item list-group-item-action rounded">Dashboard</a>
-                            </li>
-
                             @if (Model.User.IsAdmin is true)
                             {
                                 <li class="mb-1">
@@ -103,7 +99,9 @@
                                         {
                                             <tr>
                                                 <th style="width: 70px;" scope="row">@recipe.Id</th>
-                                                <td style="width: 505px;">@recipe.Title</td>
+                                                <td style="width: 505px;">
+                                                    <a asp-page="/Recipes/Get" asp-route-id="@recipe.Id" style="text-decoration: none; color:black">@recipe.Title</a>
+                                                </td>
                                                 <td style="width: 50px;">
                                                     <span class="@(recipe.IsApproved ? "text-success" : "text-danger")">
                                                         @(recipe.IsApproved ? "Active" : "Pending")

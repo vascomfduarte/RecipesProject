@@ -133,8 +133,25 @@ namespace Assembly.RecipeApp.Repository.Repos
 
         public bool Update(Difficulty entity)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"UPDATE [dbo].[difficulty] SET name = @name WHERE id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to the command
+                    cmd.Parameters.AddWithValue("@id", entity.Id);
+                    cmd.Parameters.AddWithValue("@name", entity.Name);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
 
         public bool Delete(Difficulty entity)
         {

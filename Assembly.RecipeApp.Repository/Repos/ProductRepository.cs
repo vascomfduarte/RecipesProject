@@ -131,8 +131,27 @@ namespace Assembly.RecipeApp.Repository.Repos
 
         public bool Update(Product entity)
         {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"UPDATE [dbo].[product]
+                               SET name = @name
+                               WHERE id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to the command
+                    cmd.Parameters.AddWithValue("@name", entity.Name);
+                    cmd.Parameters.AddWithValue("@id", entity.Id);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
 
         Product IRepository<Product>.Delete(int id)
         {

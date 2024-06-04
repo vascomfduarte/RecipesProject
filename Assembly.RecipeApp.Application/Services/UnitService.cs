@@ -1,4 +1,5 @@
 ﻿using Assembly.RecipeApp.Application.Interfaces;
+using Assembly.RecipeApp.Domain.Interfaces;
 using Assembly.RecipeApp.Domain.Model;
 using Assembly.RecipeApp.Repository.Interfaces;
 using Assembly.RecipeApp.Repository.Repos;
@@ -24,20 +25,30 @@ namespace Assembly.RecipeApp.Application.Services
             return _unitRepository.GetById(unitId);
         } // Feito
 
-        public bool Add(Unit entity, User adminUser)
+        public bool Add(Unit entity, User user)
         {
-            throw new NotImplementedException();
-        }
+            if (user.IsAdmin)
+            {
+                // Validate if Ingredient with the same name already exists
+                if (GetAll().Any(i => i.Name == entity.Name))
+                    throw new ArgumentException("A Unit with the same name already exists.", nameof(entity.Name));
 
-        public bool Update(Unit entity, User adminUser)
-        {
-            throw new NotImplementedException();
-        }
+                _unitRepository.Add(entity, user);
+                return true;
+            }
 
-        public bool Delete(int id, User adminUser)
+            return false;
+        } // Feito 
+
+        public bool Update(Unit entity, User user)
         {
-            throw new NotImplementedException();
-        }
+            return _unitRepository.Update(entity, user);
+        } // Feito
+
+        public bool Delete(int id, User user)
+        {
+            return _unitRepository.Delete(id, user);
+        } // Feito
 
     }
 }

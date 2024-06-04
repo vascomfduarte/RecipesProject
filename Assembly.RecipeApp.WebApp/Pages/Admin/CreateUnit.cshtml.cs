@@ -3,19 +3,29 @@ using Assembly.RecipeApp.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Assembly.RecipeApp.WebApp.Pages.Users
+namespace Assembly.RecipeApp.WebApp.Pages.Admin
 {
-    public class DashboardModel : PageModel
+    public class CreateUnitModel : PageModel
     {
         private readonly IUserService _userService;
+        private readonly IUnitService _unitService;
+
         public User User { get; private set; }
 
         [BindProperty]
         public string UserImage { get; set; }
 
-        public DashboardModel(IUserService userService)
+
+        public Unit Unit { get; set; }
+
+        [BindProperty]
+        public string Name { get; set; }
+
+
+        public CreateUnitModel(IUserService userService, IUnitService unitService)
         {
             _userService = userService;
+            _unitService = unitService;
         }
 
         public IActionResult OnGet()
@@ -38,10 +48,27 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                 return RedirectToPage("/Users/Login");
             }
 
+            if (User.IsAdmin is false)
+            {
+                return RedirectToPage("/Index");
+            }
+
             // Set userImage property
             UserImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png" : User.ImageSource.ToString();
 
             return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            OnGet();
+
+            Unit unit = new Unit(name: Name);
+
+            _unitService.Add(unit, User);
+
+            return RedirectToPage("/Admin/ManageUnits");
+
         }
     }
 }

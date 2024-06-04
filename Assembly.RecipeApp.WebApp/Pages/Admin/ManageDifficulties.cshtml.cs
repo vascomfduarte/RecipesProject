@@ -30,6 +30,9 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
         public int PreviousPage => CurrentPage > 1 ? CurrentPage - 1 : 1;
         public int NextPage => CurrentPage < TotalPages ? CurrentPage + 1 : TotalPages;
 
+        [BindProperty]
+        public int? EditingDifficultyId { get; set; }
+
         public IActionResult OnGet(int? selectedPage)
         {
             // Retrieve UserId from session
@@ -84,5 +87,35 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
             // Redirect to the same page after deletion
             return RedirectToPage(new { selectedPage = currentPage });
         }
+
+        public IActionResult OnPostEditDifficulty(int difficultyId, int currentPage)
+        {
+            EditingDifficultyId = difficultyId;
+            return OnGet(currentPage);
+        }
+
+        public IActionResult OnPostUpdateDifficulty(int difficultyId, string newName)
+        {
+            OnGet(CurrentPage);
+
+            var difficulty = _difficultyService.GetById(difficultyId);
+            if (difficulty != null)
+            {
+                difficulty.Name = newName;
+                _difficultyService.Update(difficulty, User);
+            }
+
+            EditingDifficultyId = null;
+            return RedirectToPage(new { selectedPage = CurrentPage });
+        }
+
+        public IActionResult OnPostCancelEdit(int currentPage)
+        {
+            EditingDifficultyId = null;
+            OnGet(currentPage); // Reload the page to reflect the cancellation of edit mode
+            return Page();
+        }
+
+
     }
 }

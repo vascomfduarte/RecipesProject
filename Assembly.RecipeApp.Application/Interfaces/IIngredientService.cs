@@ -6,10 +6,9 @@ namespace Assembly.RecipeApp.Application.Interfaces
     {
         List<Ingredient> GetAll();
         Ingredient GetById(int id);
-        bool Add(Ingredient entity, User adminUser);
+        bool Add(Ingredient ingredient, int recipeId);
         bool Update(Ingredient entity, User adminUser);
-        bool Delete(int id, User adminUser);
-
+        bool Delete(Ingredient entity);
         List<Ingredient> GetRecipeIngredients(int recipeId);
     }
 

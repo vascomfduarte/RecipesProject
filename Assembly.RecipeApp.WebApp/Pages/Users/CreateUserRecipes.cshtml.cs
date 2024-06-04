@@ -134,8 +134,10 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                 // Save the recipe to the database using service layer
                 _recipeService.Add(recipe);
 
+                Recipe = _recipeService.GetByTitle(Title);
+
                 // Redirect to the user's account page after successfully creating the recipe
-                return RedirectToPage("/Users/CreateUserRecipesPage2");
+                return RedirectToPage("/Users/CreateUserRecipesPage2", new { recipeId = Recipe.Id });
             }
             catch (ArgumentException ex)
             {

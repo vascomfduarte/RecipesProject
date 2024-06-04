@@ -152,6 +152,71 @@ namespace Assembly.RecipeApp.Repository.Repos
             return Recipe;
         } // Feito
 
+        public Recipe GetByTitle(string title)
+        {
+            // Collect data from database
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                //string query = "SELECT * FROM recipe WHERE id = @id";
+
+                string query = "SELECT * FROM [dbo].[recipe] AS r " +
+                               "INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id] " +
+                               "INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id] " +
+                               "WHERE r.[title] = @title;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameter to command
+                    cmd.Parameters.Add("@title", SqlDbType.NVarChar).Value = title;
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string name = reader.GetString(1);
+                            string description = reader.GetString(2);
+                            string imageSource = reader.GetString(3);
+                            int minutesToCook = reader.GetInt32(4);
+                            bool isApproved = reader.GetInt32(5) == 1 ? true : false;
+                            DateTime createdDate = reader.GetDateTime(6);
+
+                            // User
+                            User user = new User(reader.GetInt32(9),
+                                                 reader.GetString(10),
+                                                 reader.GetString(11),
+                                                 reader.GetString(12),
+                                                 reader.GetString(13),
+                                                 reader.GetString(14),
+                                                 reader.GetString(15),
+                                                 reader.GetString(16),
+                                                 reader.GetInt32(17) == 1 ? true : false,
+                                                 reader.GetInt32(18) == 1 ? true : false,
+                                                 reader.GetDateTime(19));
+
+                            // Difficulty
+                            Difficulty difficulty = new Difficulty(reader.GetInt32(20),
+                                                                   reader.GetString(21),
+                                                                   reader.GetDateTime(22));
+
+                            // Rating List
+                            List<Rating> ratings = _ratingRepository.GetByRecipeId(id);
+
+                            // Category List
+                            List<Category> categories = _categoryRepository.GetByRecipeId(id);
+
+                            Recipe = new Recipe(id, name, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, user.Username, createdDate);
+                        }
+                    }
+                }
+            }
+
+            return Recipe;
+        } // Feito
+
         public List<Recipe> GetByUserId(int userId)
         {
             List<Recipe> recipes = new List<Recipe>();
