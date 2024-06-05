@@ -14,6 +14,8 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         private readonly IRatingService _ratingService;
         private readonly ICommentService _commentService;
         private readonly IUserService _userService;
+        private readonly IIngredientService _ingredientService;
+        private readonly IPreparationMethodService _preparationMethodService;
 
         [BindProperty]
         public string UserImage { get; set; }
@@ -27,24 +29,40 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         public Comment Comment { get; private set; }
 
 
+        public PreparationMethod PreparationMethod { get; set; }
+        public List<Ingredient> RecipeIngredients { get; set; }
+        public List<PreparationStep> PreparationSteps { get; set; }
+
+
         public int RatingsCounter { get; private set; }
         public int Rating { get; private set; }
         public int RatingCount { get; private set; }
 
 
-        public GetModel(ILogger<GetModel> logger, IRecipeService recipeServices, IRatingService ratingService, ICommentService commentService, IUserService userService)
+        public GetModel(ILogger<GetModel> logger, 
+                        IRecipeService recipeServices, 
+                        IRatingService ratingService, 
+                        ICommentService commentService, 
+                        IUserService userService, 
+                        IIngredientService ingredientService,
+                        IPreparationMethodService preparationMethodService)
         {
             _logger = logger;
             _recipeService = recipeServices;
             _ratingService = ratingService;
             _commentService = commentService;
             _userService = userService;
+            _ingredientService = ingredientService;
+            _preparationMethodService = preparationMethodService;
         }
 
         public IActionResult OnGet(int id)
         {           
             Recipe = _recipeService.GetById(id);
             Comments = _commentService.GetByRecipeId(id);
+            RecipeIngredients = _ingredientService.GetRecipeIngredients(id);
+            PreparationMethod = _preparationMethodService.GetByRecipeId(id);
+            PreparationSteps = _preparationMethodService.GetStepsByRecipeId(id);
 
             if (Recipe.GetRecipeRating() > 0)
             {

@@ -7,27 +7,80 @@
 
             <div class="col-md-8">
 
-                <script>
-                    function setDefaultImage() {
-                        document.getElementById('recipeImage').src = "/images/default_recipe.png";
-                    }
-                </script>
-
-                <div class="card p-2 w-100">
+                <div class="card p-4 w-100 shadow-sm">
 
                     <div class="card-body d-flex justify-content-center align-items-center">
-                        <img id="recipeImage" src="@Model.Recipe.ImageSource" class="card-img-top rounded" style="object-fit: cover; width: 800px; height: 450px;" alt="Recipe Image" onerror="setDefaultImage()" />
+                        <img id="recipeImage" src="@Model.Recipe.ImageSource" class="card-img-top rounded" style="object-fit: cover; width: 100%; max-width: 800px; height: 450px;" alt="Recipe Image" onerror="setDefaultImage()" />
                     </div>
 
                     <div class="card-body">
-                        <h2 class="mt-2">@Model.Recipe.Title</h2>
+                        <h2 class="mt-3">@Model.Recipe.Title</h2>
                         <p>By <strong>@Model.Recipe.User.Username</strong></p>
                         <p class="text-muted">Published @Model.Recipe.CreatedDate.ToString("dd MMMM, yyyy")</p>
                         <hr class="my-4">
                         <p>@Model.Recipe.Description</p>
-                    </div>
 
+                        <div class="row">
+
+                            
+                            <div class="col-md-8">
+
+                                @if (Model.PreparationSteps != null && Model.PreparationSteps.Any())
+                                {
+                                    <h4>Preparation Steps</h4>
+                                    <div class="container" style="max-height: 300px; overflow-y: auto;">
+                                        <ul class="list-group">
+                                            @foreach (var step in Model.PreparationSteps)
+                                            {
+                                                <li class="list-group-item">
+                                                    <div class="d-flex">
+                                                        <span class="badge bg-secondary me-2">@step.Order</span>
+                                                        <span>@step.Description</span>
+                                                    </div>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                }
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                @if (Model.RecipeIngredients != null && Model.RecipeIngredients.Any())
+                                {
+                                    <h4>Ingredients</h4>
+                                    <div class="container" style="max-height: 200px; overflow-y: auto;">
+                                        <ul class="list-group">
+                                            @foreach (var ingredient in Model.RecipeIngredients)
+                                            {
+                                                <li class="list-group-item">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>@ingredient.Product.Name</div>
+                                                        <div>@ingredient.Amount @ingredient.Unit.Name</div>
+                                                    </div>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                }
+                                
+                            </div>
+
+                            
+                        </div>
+
+                    </div>
                 </div>
+
+                @section Scripts {
+                    <script>
+                        function setDefaultImage() {
+                            document.getElementById('recipeImage').src = '/images/default_recipe.png';
+                        }
+                    </script>
+                }
+
             </div>
 
             <div class="col-md-4">

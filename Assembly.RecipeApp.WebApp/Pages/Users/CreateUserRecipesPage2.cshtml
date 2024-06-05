@@ -81,40 +81,15 @@
 
                     <div class="card-body">
 
-                        <!-- Display current ingredients -->
-                        @foreach (var ingredient in Model.RecipeIngredients)
-                        {                            
-                            <div class="p-3 py-0">
-                                <div class="row mt-2">
-                                    <div class="col-md-4">
-                                        <input type="text" class="form-control" value="@ingredient.Product.Name" readonly />
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="text" class="form-control" value="@ingredient.Amount" readonly />
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="text" class="form-control" value="@ingredient.Unit.Name" readonly />
-                                    </div>
-                                    <div class="col-md-2">
-                                        <!-- Form for deleting the ingredient -->
-                                        <form method="post" asp-page-handler="DeleteIngredient">
-                                            <input type="hidden" name="ingredientId" value="@ingredient.Id">
-                                            <input type="hidden" name="recipeId" value="@Model.Recipe.Id">
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>                            
-                        }
-
                         <!-- Form for managing ingredients -->
                         <form method="post" asp-page-handler="AddIngredient">
-                            <div class="p-3 py-0">
+                            <div class="p-3 mb-2 py-0">
                                 <div class="col-md-12">
-                                    <label class="labels">Ingredients</label>
-                                    <div id="ingredient">                                        
+
+                                    <label class="labels">New Ingredient</label>
+                                    <div id="ingredient">
                                         <!-- Form for adding a new ingredient -->
-                                        <div class="row mt-2">
+                                        <div class="row mt-1">
                                             <div class="col-md-4">
                                                 <select asp-for="SelectedProduct" class="form-select" required>
                                                     <option value="" disabled selected>Select product</option>
@@ -142,50 +117,125 @@
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </form>
 
-                        <!-- Form for setting preparation method -->
-                        <form method="post" asp-page-handler="SetPreparationMethod">
-                            <div class="p-3 py-0">
+                        <!-- Display current ingredients -->
+                        @if (Model.RecipeIngredients.Any())
+                        {
+                            <p class="px-3">Ingredient List</p>
 
+                            <div class="container" style="max-height: 138px; overflow-y: auto;">                                
+
+                                @foreach (var ingredient in Model.RecipeIngredients)
+                                {
+                                    <div class="px-3 py-0">
+                                        <div class="row mb-2">
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" value="@ingredient.Product.Name" readonly />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="text" class="form-control" value="@ingredient.Amount" readonly />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="text" class="form-control" value="@ingredient.Unit.Name" readonly />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <!-- Form for deleting the ingredient -->
+                                                <form method="post" asp-page-handler="DeleteIngredient">
+                                                    <input type="hidden" name="ingredientId" value="@ingredient.Id">
+                                                    <input type="hidden" name="recipeId" value="@Model.Recipe.Id">
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                            
+                        }
+
+                        <!-- Form for setting preparation steps -->
+                        <form method="post" asp-page-handler="AddPreparationStep">
+                            <div class="p-3 py-0 mt-4 mb-2">
+                                
                                 <div class="row mt-3">
-                                    <div class="col-md-12">
-                                        <label class="labels">Minutes to Cook</label>
-                                        <input asp-for="PreparationMethod" class="form-control" placeholder="Enter minutes to cook" value="" required>
+
+                                    <label class="labels mb-1">New Preparation Step</label>
+                                    <div class="col-md-1">
+                                        <span class="badge bg-secondary">@Model.PreparationStepCounter</span>
                                     </div>
-                                </div>
-                                <div class="row mt-4 text-end">
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-outline-secondary profile-button">
-                                            Save Preparation Method
-                                        </button>
+                                    <div class="col-md-9">
+                                        <input asp-for="StepDescription" type="text" class="form-control" placeholder="Enter step description" style="height: 90px;" value="" required>
                                     </div>
-                                </div>
-                            
-                            </div>                            
+                                    <div class="col-md-1 text-end">
+                                        <input type="hidden" name="recipeId" value="@Model.Recipe.Id">
+                                        <button type="submit" class="btn btn-success profile-button">Add</button>
+                                    </div>
+                                
+                                </div>                                
+
+                            </div>
                         </form>
 
-                        <!-- Form for submitting the recipe -->
-                        <form method="post" asp-page-handler="SubmitRecipe">
-                            <div class="p-3 py-0">
+                        <!-- Display current steps -->
+                        @if (Model.PreparationMethod != null && Model.PreparationSteps != null && Model.PreparationSteps.Any())
+                        {
+                            <p class="px-3 mt-2">Preparation Steps</p>
 
-                                <div class="row mt-4 text-end">
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary profile-button">
-                                            Submit Recipe
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
-                                            </svg>
-                                        </button>
+                            <div class="container" style="max-height: 190px; overflow-y: auto;">
+
+                                @foreach (var step in Model.PreparationSteps)
+                                {
+                                    <div class="px-3 py-0">
+                                        <div class="row mb-2">
+                                            <div class="col-md-1">
+                                                <span class="badge bg-secondary">@step.Order</span>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" value="@step.Description" style="height: 90px;" readonly />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <!-- Form for deleting the ingredient -->
+                                                <form method="post" asp-page-handler="DeletePreparationStep">
+                                                    <input type="hidden" name="stepId" value="@step.Id">
+                                                    <input type="hidden" name="recipeId" value="@Model.Recipe.Id">
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            
-                            </div>                            
-                        </form>
+                                }
 
-                    <div/>
+                            </div>
+                        }
+
+                        <!-- Submit Recipe or go back -->
+                        <div class="row mt-4">
+
+                            <!-- Column for the back button on the left -->
+                            <div class="col-md-6 text-start">
+                                <a asp-page="/Users/EditUserRecipes" asp-route-recipeId="@Model.Recipe.Id" class="btn btn-outline-secondary profile-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                    </svg>
+                                    Back
+                                </a>
+                            </div>
+
+                            <!-- Column for the submit button on the right -->
+                            <div class="col-md-6 text-end">                                
+                                <a asp-page="/Recipes/Get" asp-route-id="@Model.Recipe.Id" class="btn btn-outline-secondary profile-button">                                    
+                                    Submit Recipe
+                                </a>
+                            </div>
+                        </div>
+                        
+
+                    </div>
 
                 </div>
 

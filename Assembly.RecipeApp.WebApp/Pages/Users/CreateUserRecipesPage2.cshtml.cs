@@ -15,13 +15,12 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         private readonly IProductService _productService;
         private readonly IUnitService _unitService;
         private readonly IIngredientService _ingredientService;
+        private readonly IPreparationMethodService _preparationMethodService;
         private readonly IWebHostEnvironment _hostingEnvironment;
                       
 
         public Recipe Recipe { get; set; }
         public User User { get; private set; }
-
-
         public List<Difficulty> Difficulties { get; set; }
 
 
@@ -37,24 +36,29 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
         [BindProperty]
         public int SelectedProduct { get; set; }
-
         [BindProperty]
         public int IngredientAmount { get; set; }
-
         [BindProperty]
         public int SelectedUnit { get; set; }
-
+        [BindProperty]
+        public string UserImage { get; set; }
 
 
         [BindProperty]
-        public string UserImage { get; set; }
+        public int PreparationStepCounter { get; set; }
+        [BindProperty]
+        public string StepDescription { get; set; }
+        [BindProperty]
+        public List<PreparationStep> PreparationSteps { get; set; }
+
 
         public CreateUserRecipesPage2Model(IUserService userService, 
                                            IRecipeService recipeService, 
                                            IDifficultyService difficultyService, 
                                            IProductService productService, 
                                            IUnitService unitService, 
-                                           IIngredientService ingredientService, 
+                                           IIngredientService ingredientService,
+                                           IPreparationMethodService preparationMethodService,                                           
                                            IWebHostEnvironment hostingEnvironment)
         {
             _userService = userService;
@@ -62,7 +66,8 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             _difficultyService = difficultyService;
             _productService = productService;
             _unitService = unitService;
-            _ingredientService = ingredientService;            
+            _ingredientService = ingredientService;
+            _preparationMethodService = preparationMethodService;
             _hostingEnvironment = hostingEnvironment;
         }
 
@@ -72,10 +77,14 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             Products = _productService.GetAll();
             Units = _unitService.GetAll();
             RecipeIngredients = _ingredientService.GetRecipeIngredients(recipeId);
+            RecipeIngredients.Reverse();          
             Recipe = _recipeService.GetById(recipeId);
+            PreparationMethod = _preparationMethodService.GetByRecipeId(recipeId);
+            PreparationSteps = _preparationMethodService.GetStepsByRecipeId(recipeId);
+            PreparationSteps.Reverse();
 
-            // Initialize IngredientAmount
-            //IngredientAmount = ingredientAmount ?? 1; // Default to 1 if ingredientAmount is null
+            // Initialize the counter safely
+            PreparationStepCounter = (PreparationMethod.Steps?.Count ?? 0) + 1;
 
             // Retrieve UserId from session
             var userId = HttpContext.Session.GetInt32("Id");
@@ -132,9 +141,39 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             return Page();
         }
 
-        public IActionResult OnPostSetPreparationMethod()
+        public IActionResult OnPostAddPreparationStep(int recipeId)
         {
-            // Save preparation method logic
+            int preparationStepCounter = 1;
+            PreparationMethod = _preparationMethodService.GetByRecipeId(recipeId);
+
+            foreach(PreparationStep step in PreparationMethod.Steps)
+            {
+                preparationStepCounter++;
+            }
+
+            PreparationStep preparationStep = new PreparationStep(
+                                                    order: preparationStepCounter,
+                                                    description: StepDescription);
+
+            _preparationMethodService.AddStep(preparationStep, recipeId);
+
+
+            // Refresh the preparation method and steps
+            PreparationMethod = _preparationMethodService.GetByRecipeId(recipeId);
+
+            OnGet(recipeId);
+
+            return Page();
+        }
+
+        public IActionResult OnPostDeletePreparationStep(int stepId, int recipeId)
+        {
+            PreparationStep preparationStep = _preparationMethodService.GetStepById(stepId);
+
+            _preparationMethodService.DeleteStep(preparationStep);
+
+            OnGet(recipeId);
+
             return Page();
         }
 

@@ -29,10 +29,35 @@ namespace Assembly.RecipeApp.Application.Services
             throw new NotImplementedException();
         }
 
+        public PreparationMethod GetByRecipeId(int recipeId)
+        {
+            return _preparationMethodRepository.GetByRecipeId(recipeId);
+        } // Feito
+
+        public List<PreparationStep> GetStepsByRecipeId(int recipeId)
+        {
+            return _preparationMethodRepository.GetStepsByRecipeId(recipeId);
+        } // Feito        
+
+        public PreparationStep GetStepById(int stepId)
+        {
+            return _preparationMethodRepository.GetStepById(stepId);
+        } // Feito      
+
         public bool Add(PreparationMethod entity)
         {
             throw new NotImplementedException();
         }
+
+        public bool AddStep(PreparationStep entity, int recipeId)
+        {
+            return _preparationMethodRepository.AddStep(entity, recipeId);
+        } // Feito
+
+        public bool Add(PreparationMethod entity, int recipeId)
+        {
+            return _preparationMethodRepository.Add(entity, recipeId);
+        } // Feito
 
         public bool Update(PreparationMethod entity)
         {
@@ -43,5 +68,11 @@ namespace Assembly.RecipeApp.Application.Services
         {
             throw new NotImplementedException();
         }
+
+        public bool DeleteStep(PreparationStep entity)
+        {
+            return _preparationMethodRepository.DeleteStep(entity);
+        } // Feito
+
     }
 }

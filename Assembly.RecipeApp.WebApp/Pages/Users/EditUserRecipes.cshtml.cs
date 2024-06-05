@@ -1,14 +1,11 @@
 using Assembly.RecipeApp.Application.Interfaces;
-using Assembly.RecipeApp.Application.Services;
 using Assembly.RecipeApp.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Hosting.Internal;
-using System.Text.Json;
 
 namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
-    public class CreateUserRecipesModel : PageModel
+    public class EditUserRecipesModel : PageModel
     {
         private readonly IUserService _userService;
         private readonly IRecipeService _recipeService;
@@ -26,6 +23,8 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
         [BindProperty]
         public string Description { get; set; }
+        [BindProperty]
+        public string RecipeDescription { get; set; }
 
         [BindProperty]
         public int MinutesToCook { get; set; }
@@ -44,7 +43,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         [BindProperty]
         public string UserImage { get; set; }
 
-        public CreateUserRecipesModel(IUserService userService, IRecipeService recipeService, IDifficultyService difficultyService, IWebHostEnvironment hostingEnvironment)
+        public EditUserRecipesModel(IUserService userService, IRecipeService recipeService, IDifficultyService difficultyService, IWebHostEnvironment hostingEnvironment)
         {
             _userService = userService;
             _recipeService = recipeService;
@@ -52,9 +51,21 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             _hostingEnvironment = hostingEnvironment;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int? recipeId)
         {
             Difficulties = _difficultyService.GetAll();
+
+            // Handle case where recipeId is null
+            if (recipeId.HasValue)
+            {
+                Recipe = _recipeService.GetById(recipeId.Value);
+                Description = RecipeDescription;
+                RecipeDescription = Recipe.Description;
+            }
+            else
+            {
+                Recipe = null;
+            }
 
             // Retrieve UserId from session
             var userId = HttpContext.Session.GetInt32("Id");
@@ -76,17 +87,18 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
             // Set Image properties
             UserImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png" : User.ImageSource.ToString();
+            RecipeImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/default_recipe.png" : User.ImageSource.ToString();
 
             return Page();
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(int? recipeId)
         {
-            OnGet();
+            OnGet(recipeId);
 
             // Photo
             string recipeImagePath = null;
-            if (Photo != null)
+            if (Photo != null && Photo.Length > 0)
             {
                 var uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
                 var uniqueFileName = Guid.NewGuid().ToString() + "_" + Photo.FileName;
@@ -105,17 +117,18 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
                 recipeImagePath = "/images/" + uniqueFileName;
             }
-            else
-            {
 
-            }
+            Difficulty dif = null;
 
-            // Difficulty
-            Difficulty dif = _difficultyService.GetByName(DifficultyChoice);
-            if (dif == null)
+            // Difficulty            
+            if (DifficultyChoice == null)
             {
                 ModelState.AddModelError("DifficultyChoice", "Selected difficulty is invalid.");
                 return Page();
+            }
+            else
+            {
+               dif = _difficultyService.GetByName(DifficultyChoice);
             }
 
             // Create the recipe
@@ -130,8 +143,38 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
             try
             {
-                // Save the recipe to the database using service layer
-                _recipeService.Add(recipe);
+                if (recipeId == null || recipeId == 0)
+                {
+                    // Save the recipe to the database using service layer
+                    _recipeService.Add(recipe);
+                }
+                else
+                {
+                    Recipe updateRecipe = _recipeService.GetById(recipeId.Value);
+
+                    if (updateRecipe == null)
+                    {
+                        ModelState.AddModelError(string.Empty, "Recipe not found.");
+                        return Page();
+                    }
+
+                    Recipe recipe2 = new Recipe(
+                        id: updateRecipe.Id,
+                        title: Title,
+                        description: Description,
+                        imageSource: recipeImagePath,
+                        minutesToCook: MinutesToCook,
+                        isApproved: updateRecipe.IsApproved,
+                        createdBy: updateRecipe.CreatedBy,
+                        createdDate: updateRecipe.CreatedDate,
+                        difficulty: dif,
+                        user: User,
+                        ratings: updateRecipe.Ratings,
+                        categories: updateRecipe.Categories
+                     );
+
+                    _recipeService.Update(recipe2);
+                }
 
                 Recipe = _recipeService.GetByTitle(Title);
 
@@ -143,8 +186,6 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                 ModelState.AddModelError(string.Empty, ex.Message);
                 return Page();
             }
-
         }
-
     }
 }
