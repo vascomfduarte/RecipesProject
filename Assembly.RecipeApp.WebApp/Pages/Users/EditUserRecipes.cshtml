@@ -81,37 +81,68 @@
 
                     <div class="card-body">
 
-                        <form class="border-right" method="post" enctype="multipart/form-data">
-                            <div class="px-3 py-0">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label class="labels">Photo</label>
-                                        <input asp-for="Photo" type="file" class="form-control">
-                                    </div>
+                        <div class="row rounded border m-3">
+                            <div class="col-md-12">
+                                <div class="d-flex flex-column align-items-center justify-content-center p-3">
+                                    <img id="recipeImage" class="img-fluid rounded" width="400px" src="@Model.Recipe.ImageSource" alt="Recipe Image" onerror="setDefaultImage()">
                                 </div>
+                            </div>
+
+                            <script>
+                                function setDefaultImage() {
+                                    document.getElementById('recipeImage').src = '/images/default_recipe.png';
+                                }
+                            </script>                            
+                        </div>
+
+                        <div class="row px-3">
+
+                            <div class="d-flex flex-column align-items-end">
+                                <form asp-page="/Users/EditUserRecipes" asp-page-handler="DeletePhoto" method="post">
+                                    <input type="hidden" name="recipeId" value="@Model.Recipe.Id" />
+                                    <button type="submit" class="btn btn-outline-danger profile-button">
+                                        Delete Photo
+                                    </button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <form class="border-right" method="post" asp-page-handler="Recipe" enctype="multipart/form-data">
+                            <input type="hidden" name="recipeId" value="@Model.Recipe.Id" />
+                            <div class="px-3 py-0">
+
+                                <div class="col-md-12">
+                                    <label class="labels">Photo</label>
+                                    <input asp-for="Photo" type="file" class="form-control">
+                                </div>
+
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <label class="labels">Title</label>
                                         <input asp-for="Title" type="text" class="form-control" placeholder="Enter recipe title" value="@Model.Recipe.Title" required>
                                     </div>
                                 </div>
+
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <label class="labels">Description</label>
                                         <textarea asp-for="RecipeDescription" class="form-control" placeholder="Enter recipe description" style="height: 100px;" required>RecipeDescription</textarea>
                                     </div>
                                 </div>
+
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <label class="labels">Minutes to Cook</label>
                                         <input asp-for="MinutesToCook" type="number" class="form-control" placeholder="Enter minutes to cook" value="@Model.Recipe.MinutesToCook" required>
                                     </div>
                                 </div>
+
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <label class="labels">Difficulty</label>
-                                        <select asp-for="DifficultyChoice" class="form-select" required>
-                                            <option value="" disabled selected>Select difficulty</option>
+                                        <select asp-for="DifficultyChoice" class="form-select">
+                                            <option value="" disabled selected>@Model.Recipe.Difficulty.Name</option>
                                             @foreach (var dif in Model.Difficulties)
                                             {
                                                 <option value="@dif.Name">@dif.Name</option>
@@ -137,9 +168,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
-
-                        
+                        </form>                        
 
                     </div>
 

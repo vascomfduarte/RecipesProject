@@ -92,9 +92,11 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             return Page();
         }
 
-        public IActionResult OnPost(int? recipeId)
+        public IActionResult OnPostRecipe(int? recipeId)
         {
             OnGet(recipeId);
+
+            Recipe = _recipeService.GetById(recipeId.Value);
 
             // Photo
             string recipeImagePath = null;
@@ -117,14 +119,18 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
 
                 recipeImagePath = "/images/" + uniqueFileName;
             }
+            else if (Photo == null)
+            {
+                Recipe.ImageSource = "/images/default_recipe.png";
+                recipeImagePath = Recipe.ImageSource;
+            }
 
             Difficulty dif = null;
 
             // Difficulty            
             if (DifficultyChoice == null)
             {
-                ModelState.AddModelError("DifficultyChoice", "Selected difficulty is invalid.");
-                return Page();
+               dif = Recipe.Difficulty;
             }
             else
             {
@@ -185,7 +191,24 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
                 return Page();
-            }
+            }           
         }
+
+        public IActionResult OnPostDeletePhoto(int? recipeId)
+        {
+            OnGet(recipeId);
+
+            Recipe = _recipeService.GetById(recipeId.Value);
+
+            Recipe.ImageSource = null;
+
+            _recipeService.Update(Recipe);
+
+            
+            OnGet(recipeId);
+
+            return Page();
+        }
+
     }
 }
