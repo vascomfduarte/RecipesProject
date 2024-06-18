@@ -86,7 +86,16 @@
                         </form>
                         <div class="mt-4 p-3 py-2 col-12 d-flex justify-content-between">
                             <form method="POST" onsubmit="return confirm('Are you sure you want to delete your account?');">
-                                <button type="submit" class="btn btn-danger profile-button text-start">Delete Account</button>
+                                @if (Model.User.IsAdmin is false)
+                                {
+                                    <button type="submit" class="btn btn-danger profile-button text-start">Delete Account</button>
+                                }
+                                else
+                                {
+                                    <button class="btn btn-warning profile-button text-start" disabled>
+                                        Admin Account
+                                    </button>
+                                }
                             </form>
                             <form>
                                 <button asp-page="/Users/Info" class="btn btn-secondary profile-button text-end">

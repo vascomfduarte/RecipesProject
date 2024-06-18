@@ -92,7 +92,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
                 if (string.IsNullOrEmpty(commentBody))
                 {
                     // Handle empty comment submission
-                    return RedirectToPage("/Error");
+                    return OnGet(recipeId);
                 }
 
                 // Fetch the user by id

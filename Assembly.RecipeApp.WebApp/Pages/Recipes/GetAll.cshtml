@@ -35,22 +35,21 @@
                                 <p class="font-1">@recipe.Description</p>
                             </div>
                         </a>
-                        <div class="card-body" style="max-height: 40px;">
-                            <p class="text-muted">
-                                @if (rating > 0)
+
+                        <div class="card-body" style="max-height: 40px;">                            
+                            <span class="text-muted">
+                                @for (int i = 0; i < 5; i++)
                                 {
-                                    for (int i = 0; i < 5; i++)
-                                    {
-                                        <span class="fa fa-star @(i < rating ? "checked" : "")"></span>
-                                    }
-                                    @ratingCount
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star @(i < (rating == null ? 0 : rating) ? "checked" : "")" viewBox="0 0 16 16" style="margin-bottom: 2px;">
+                                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
                                 }
-                                else
-                                {
-                                    <span>No ratings yet</span>
-                                }
-                            </p>
+                            </span>
+                            <span class="text-muted">
+                                (@(ratingCount))
+                            </span>
                         </div>
+
                         <div class="card-body d-flex justify-content-between align-items-center" style="max-height: 50px;">
                             <small class="text-muted">By @recipe.CreatedBy</small>
                         </div>

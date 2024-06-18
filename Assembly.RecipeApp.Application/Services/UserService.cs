@@ -9,15 +9,29 @@ namespace Assembly.RecipeApp.Application.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IRecipeRepository _recipeRepository;
+        private readonly ICommentRepository _commentRepository;
 
-        public UserService(IUserRepository userRepository) 
+        public UserService(IUserRepository userRepository, IRecipeRepository recipeRepository, ICommentRepository commentRepository) 
         { 
             _userRepository = userRepository;
+            _recipeRepository = recipeRepository;
+            _commentRepository = commentRepository;
         }
 
         public List<User> GetAll()
         {
-            return _userRepository.GetAll();
+            List <User> usersList = new List<User>();
+
+            foreach (User u in _userRepository.GetAll())
+            {
+                if (u.Username != "Deleted user")
+                {
+                    usersList.Add(u);
+                }
+            }
+
+            return usersList;
         } // Feito 
 
         public List<User> GetAllBlocked()
@@ -29,6 +43,11 @@ namespace Assembly.RecipeApp.Application.Services
                 if (u.IsBlocked is true)
                 {
                     filteredUsers.Add(u);
+                }
+
+                if (u.Username == "Deleted User")
+                {
+                    filteredUsers.Remove(u);
                 }
             }
 
@@ -52,12 +71,32 @@ namespace Assembly.RecipeApp.Application.Services
 
         public List<User> GetUsers(int currentPage, int pageSize)
         {
-            return _userRepository.GetUsers(currentPage, pageSize);
+            List<User> usersList = new List<User>();
+
+            foreach (User u in _userRepository.GetUsers(currentPage, pageSize))
+            {
+                if (u.Username != "Deleted User")
+                {
+                    usersList.Add(u);
+                }
+            }
+
+            return usersList;
         } // Feito
 
         public List<User> GetBlockedUsers(int currentPage, int pageSize)
         {
-            return _userRepository.GetBlockedUsers(currentPage, pageSize);
+            List<User> usersList = new List<User>();
+
+            foreach (User u in _userRepository.GetBlockedUsers(currentPage, pageSize))
+            {
+                if (u.Username != "Deleted User")
+                {
+                    usersList.Add(u);
+                }
+            }
+
+            return usersList;
         } // Feito
 
         public bool Add(User user)
@@ -171,7 +210,21 @@ namespace Assembly.RecipeApp.Application.Services
 
         public bool Delete(User user)
         {
-            return _userRepository.Delete(user);
+            bool result = true;
+            User updatedUser = new User(user.Id, "Deleted User", "NoPassword1", "deleteduser@mail.com", "Deleted", "User", null, null, false, true, DateTime.Now);
+
+            List<Recipe> userRecipes = _recipeRepository.GetByUserId(user.Id);
+            List<Comment> userComments = _commentRepository.GetByUserId(user.Id);
+
+            if ((userRecipes == null || !userRecipes.Any()) && (userComments == null || !userComments.Any()))
+                result = _userRepository.Delete(user);
+
+            if(userRecipes != null || userComments != null)
+            {
+                result = _userRepository.UpdateById(updatedUser);
+            }
+
+            return result;
         } // Feito
 
         public User Login(string username, string password)

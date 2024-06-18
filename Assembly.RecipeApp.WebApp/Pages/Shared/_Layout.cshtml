@@ -27,6 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <div class="col-md-6 col-sm-4 ">
                         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                            <!--
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Recipes
@@ -37,9 +38,7 @@
                                     <li><a class="dropdown-item" href="#">Fast</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" aria-disabled="true">Link</a>
-                            </li>
+                            -->
                         </ul>
                     </div>        
                     
@@ -93,7 +92,13 @@
                                         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                                     </svg>
                                 </button>
-                                <ul class="dropdown-menu p-1"> 
+                                <ul class="dropdown-menu p-1">
+                                    <li>
+                                        <button type="submit" class="btn btn-outline-secondary w-100" disabled>
+                                            @Context.Session.GetString("Username")
+                                        </button>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
                                     @if (Context.Session.GetString("IsAdmin") == "true")
                                     {
                                         <li><a asp-page="/Admin/ManageUsers" class="dropdown-item">Admin</a></li>

@@ -350,6 +350,46 @@ namespace Assembly.RecipeApp.Repository.Repos
             }
         } // Feito
 
+        public bool UpdateById(User entity)
+        {
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"UPDATE [dbo].[user] SET 
+                            username = @username,
+                            password = @password,
+                            email = @email,
+                            first_name = @firstName,
+                            last_name = @lastName,
+                            content_bio = @contentBio,
+                            image_source = @imageSource,
+                            is_admin = @isAdmin,
+                            is_blocked = @isBlocked
+                         WHERE id = @id";  // Update based on ID
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to command
+                    cmd.Parameters.AddWithValue("@id", entity.Id);  // Add ID parameter
+                    cmd.Parameters.AddWithValue("@username", entity.Username);  // Update username
+                    cmd.Parameters.AddWithValue("@password", entity.Password);
+                    cmd.Parameters.AddWithValue("@email", entity.Email);
+                    cmd.Parameters.AddWithValue("@firstName", entity.FirstName);
+                    cmd.Parameters.AddWithValue("@lastName", entity.LastName);
+                    cmd.Parameters.AddWithValue("@contentBio", entity.ContentBio ?? ""); // Can be null
+                    cmd.Parameters.AddWithValue("@imageSource", entity.ImageSource ?? ""); // Can be null
+                    cmd.Parameters.AddWithValue("@isAdmin", entity.IsAdmin ? 1 : 0);
+                    cmd.Parameters.AddWithValue("@isBlocked", entity.IsBlocked ? 1 : 0);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
+
         public bool Delete(User entity)
         {
             using (SqlConnection con = new SqlConnection(_connectionString))

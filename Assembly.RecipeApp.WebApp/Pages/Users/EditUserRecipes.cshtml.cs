@@ -121,7 +121,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             }
             else if (Photo == null)
             {
-                Recipe.ImageSource = "/images/default_recipe.png";
+                Recipe = _recipeService.GetById(recipeId.Value);
                 recipeImagePath = Recipe.ImageSource;
             }
 

@@ -12,6 +12,7 @@ namespace Assembly.RecipeApp.Repository.Interfaces
         List<User> GetFilteredUsers(string name);
         User Login(string username, string password);
         User GetByUsername(string username);
+        bool UpdateById(User entity);
 
         List<User> GetUsers(int currentPage, int pageSize);
         List<User> GetBlockedUsers(int currentPage, int pageSize);

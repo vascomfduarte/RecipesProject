@@ -57,3 +57,15 @@ A:\Work, Projects\Programação\ProjetoFinal\side_branch\Recipes\RecipesProject\
 A:\Work, Projects\Programação\ProjetoFinal\side_branch\Recipes\RecipesProject\Assembly.RecipeApp.Domain\obj\Debug\net8.0\refint\Assembly.RecipeApp.Domain.dll
 A:\Work, Projects\Programação\ProjetoFinal\side_branch\Recipes\RecipesProject\Assembly.RecipeApp.Domain\obj\Debug\net8.0\Assembly.RecipeApp.Domain.pdb
 A:\Work, Projects\Programação\ProjetoFinal\side_branch\Recipes\RecipesProject\Assembly.RecipeApp.Domain\obj\Debug\net8.0\ref\Assembly.RecipeApp.Domain.dll
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\bin\Debug\net8.0\Assembly.RecipeApp.Domain.deps.json
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\bin\Debug\net8.0\Assembly.RecipeApp.Domain.dll
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\bin\Debug\net8.0\Assembly.RecipeApp.Domain.pdb
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\obj\Debug\net8.0\Assembly.RecipeApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\obj\Debug\net8.0\Assembly.RecipeApp.Domain.AssemblyInfoInputs.cache
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\obj\Debug\net8.0\Assembly.RecipeApp.Domain.AssemblyInfo.cs
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\obj\Debug\net8.0\Assembly.RecipeApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\obj\Debug\net8.0\Assembly.RecipeApp.Domain.sourcelink.json
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\obj\Debug\net8.0\Assembly.RecipeApp.Domain.dll
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\obj\Debug\net8.0\refint\Assembly.RecipeApp.Domain.dll
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\obj\Debug\net8.0\Assembly.RecipeApp.Domain.pdb
+C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.Domain\obj\Debug\net8.0\ref\Assembly.RecipeApp.Domain.dll

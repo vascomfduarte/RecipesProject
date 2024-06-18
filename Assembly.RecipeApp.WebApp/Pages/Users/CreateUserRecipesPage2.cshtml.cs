@@ -37,7 +37,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         [BindProperty]
         public int SelectedProduct { get; set; }
         [BindProperty]
-        public int IngredientAmount { get; set; }
+        public double IngredientAmount { get; set; }
         [BindProperty]
         public int SelectedUnit { get; set; }
         [BindProperty]

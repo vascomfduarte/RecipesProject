@@ -14,21 +14,47 @@
                     </div>
 
                     <div class="card-body">
-                        <h2 class="mt-3">@Model.Recipe.Title</h2>
-                        <p>By <strong>@Model.Recipe.User.Username</strong></p>
-                        <p class="text-muted">Published @Model.Recipe.CreatedDate.ToString("dd MMMM, yyyy")</p>
-                        <hr class="my-4">
+                        <h2 class="mt-1">@Model.Recipe.Title</h2>
+                        <p>By <strong>@Model.Recipe.User.Username</strong></p>                                              
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div class="d-flex align-items-center">
+                                @if (@Model.Recipe.IsApproved is false)
+                                {
+                                    <button class="btn btn-sm btn-danger" disabled>Pending</button>
+                                }
+                                else
+                                {
+                                    <p class="text-muted mb-1">Published @Model.Recipe.CreatedDate.ToString("dd MMMM, yyyy")</p>
+                                }
+                            </div>
+
+                            @if (HttpContext.Session.GetString("Username") == Model.Recipe.User.Username)
+                            {
+                                <a asp-page="/Users/EditUserRecipes" asp-route-recipeId="@Model.Recipe.Id" class="btn btn-sm btn-outline-secondary mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                    </svg>
+                                    Edit
+                                </a>
+                            }
+
+                        </div>
+                       
+                        <hr class="my-2">
                         <p>@Model.Recipe.Description</p>
-
+                                                
+                        <!-- Preparation Steps Section -->
                         <div class="row">
-
-                            
-                            <div class="col-md-8">
+                                                    
+                            <div class="col-md-12 mt-2">
 
                                 @if (Model.PreparationSteps != null && Model.PreparationSteps.Any())
                                 {
                                     <h4>Preparation</h4>
-                                    <ul class="list-group" style="max-height: 300px; overflow-y: auto;">
+                                    <ul class="list-group">
                                         @foreach (var step in Model.PreparationSteps)
                                         {
                                             <li class="list-group-item">
@@ -42,27 +68,7 @@
                                 }
 
                             </div>
-
-                            <div class="col-md-4">
-
-                                @if (Model.RecipeIngredients != null && Model.RecipeIngredients.Any())
-                                {
-                                    <h4>Ingredients</h4>
-                                    <ul class="list-group" style="max-height: 200px; overflow-y: auto;">
-                                        @foreach (var ingredient in Model.RecipeIngredients)
-                                        {
-                                            <li class="list-group-item">
-                                                <div class="d-flex justify-content-between">
-                                                    <div>@ingredient.Product.Name</div>
-                                                    <div>@ingredient.Amount @ingredient.Unit.Name</div>
-                                                </div>
-                                            </li>
-                                        }
-                                    </ul>
-                                }
-                                
-                            </div>
-
+                                                      
                             
                         </div>
 
@@ -80,193 +86,238 @@
             </div>
 
             <div class="col-md-4">
-
+                
+                <!-- Recipe Info Section -->
                 <div class="card p-2 w-100 shadow-sm">
+                    
+                    <!-- Recipe Info -->
                     <div class="card-body">
-                        <div class="row mb-1">
-                            <div class="col-6">
-                                <p><strong>Preparation Time</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p>@Model.Recipe.MinutesToCook min</p>
-                            </div>
-                        </div>
-                        <div class="row mb-1">
-                            <div class="col-6">
-                                <p><strong>Difficulty</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p>@Model.Recipe.Difficulty.Name</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <p><strong>Rating</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p class="text d-inline">
-                                    <span class="text-muted">
-                                        @for (int i = 0; i < 5; i++)
-                                        {
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star @(i < (Model.Rating == null ? 0 : Model.Rating) ? "checked" : "")" viewBox="0 0 16 16" style="margin-bottom: 4px;">
-                                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                        }
-                                    </span>
-                                    <span class="text-muted">
-                                        @(Model.RatingCount)
-                                    </span>
-                                </p>
-                            </div>
-                        </div>                                               
 
-                    </div>
+                        <ul class="list-group" >
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alarm" style="margin-right: 6px;" viewBox="0 0 16 16">
+                                            <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9z" />
+                                            <path d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1zm1.038 3.018a6 6 0 0 1 .924 0 6 6 0 1 1-.924 0M0 3.5c0 .753.333 1.429.86 1.887A8.04 8.04 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5M13.5 1c-.753 0-1.429.333-1.887.86a8.04 8.04 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1" />
+                                        </svg>
+                                        <strong>Preparation Time</strong>
+                                    </div>
+                                    <p class="mb-0">@Model.Recipe.MinutesToCook min</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" style="margin-right: 6px;" viewBox="0 0 16 16">
+                                            <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z" />
+                                            <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3" />
+                                        </svg>
+                                        <strong>Difficulty</strong>                                        
+                                    </div>
+                                    <p class="mb-0">@Model.Recipe.Difficulty.Name</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" style="margin-right: 6px;" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                        </svg>
+                                        <strong>Rating</strong>
+                                    </div>
+                                    <p class="text d-inline mb-0">
+                                        <span class="text-muted">
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star @(i < (Model.Rating == null ? 0 : Model.Rating) ? "checked" : "")" viewBox="0 0 16 16" style="margin-bottom: 2px;">
+                                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg>
+                                            }
+                                        </span>
+                                        <span class="text-muted">
+                                            (@(Model.RatingCount))
+                                        </span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>                                              
+
+                        <!-- Ingredients -->
+                        @if (Model.RecipeIngredients != null && Model.RecipeIngredients.Any())
+                        {
+                            <h4 class="mt-3">Ingredients</h4>
+                            <ul class="list-group" style="max-height: 412px; overflow-y: auto;">
+                                @foreach (var ingredient in Model.RecipeIngredients)
+                                {
+                                    <li class="list-group-item">
+                                        <div class="d-flex justify-content-between">
+                                            <div>@ingredient.Product.Name</div>
+                                            <div>@ingredient.Amount @ingredient.Unit.Name</div>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        }
+
+                    </div>                    
                 </div>
 
-                @if (HttpContext.Session.GetString("Username") is not null)
+                @if (@Model.Recipe.IsApproved is true)
                 {
-                    <div class="card mt-4 p-3 w-100 shadow-sm">
-                                            
-                        <form id="rateForm" method="post" asp-page-handler="Rate" class="d-flex align-items-center justify-content-between">
-                            <input type="hidden" id="recipeId" name="recipeId" value="@Model.Recipe.Id" />
-                            <div class="rate">
-                                <input type="radio" id="star5" name="rate" value="5" />
-                                <label for="star5" title="stars 5">&#9733;</label>
-                                <input type="radio" id="star4" name="rate" value="4" />
-                                <label for="star4" title="stars 4">&#9733;</label>
-                                <input type="radio" id="star3" name="rate" value="3" />
-                                <label for="star3" title="stars 3">&#9733;</label>
-                                <input type="radio" id="star2" name="rate" value="2" />
-                                <label for="star2" title="stars 2">&#9733;</label>
-                                <input type="radio" id="star1" name="rate" value="1" />
-                                <label for="star1" title="star 1">&#9733;</label>
-                            </div>
-                            <button type="submit" name="handler" value="Rate" class="btn btn-outline-dark">Rate</button>
-                        </form>
 
-                        <style>
-                            .rate input {
-                                display: none;                                
-                            }
+                    <!-- Rating Section -->
+                    @if (HttpContext.Session.GetString("Username") is not null)
+                    {
+                        <div class="card mt-4 p-3 w-100 shadow-sm">
 
-                            .rate label {
-                                font-size: 25px;
-                                color: #ccc;
-                                cursor: pointer;
-                            }
+                            <form id="rateForm" method="post" asp-page-handler="Rate" class="d-flex align-items-center justify-content-between">
+                                <input type="hidden" id="recipeId" name="recipeId" value="@Model.Recipe.Id" />
+                                <div class="rate">
+                                    <input type="radio" id="star5" name="rate" value="5" />
+                                    <label for="star5" title="stars 5">&#9733;</label>
+                                    <input type="radio" id="star4" name="rate" value="4" />
+                                    <label for="star4" title="stars 4">&#9733;</label>
+                                    <input type="radio" id="star3" name="rate" value="3" />
+                                    <label for="star3" title="stars 3">&#9733;</label>
+                                    <input type="radio" id="star2" name="rate" value="2" />
+                                    <label for="star2" title="stars 2">&#9733;</label>
+                                    <input type="radio" id="star1" name="rate" value="1" />
+                                    <label for="star1" title="star 1">&#9733;</label>
+                                </div>
+                                <button type="submit" name="handler" value="Rate" class="btn btn-outline-dark">Rate</button>
+                            </form>
 
-                            .rate label:hover,
-                            .rate label:hover ~ label {
-                                color: orange;
-                            }
+                            <style>
+                                .rate input {
+                                    display: none;
+                                }
 
-                            .rate input:checked ~ label {
-                                color: orange;
-                            }
+                                .rate label {
+                                    font-size: 25px;
+                                    color: #ccc;
+                                    cursor: pointer;
+                                }
 
-                            .rate {
-                                direction: rtl;
-                                border: 1px solid #ccc; /* Add border to the rating stars */
-                                padding: 1px 10px;
-                                border-radius: 5px; /* Optional: Add rounded corners */
-                                display: inline-block; /* Ensure it doesn't stretch */
-                            }
-                        </style>
+                                    .rate label:hover,
+                                    .rate label:hover ~ label {
+                                        color: orange;
+                                    }
 
-                        <script>
-                            function submitForm() {
-                                // Get the selected rating
-                                var selectedRating = document.querySelector('input[name="rate"]:checked');
+                                .rate input:checked ~ label {
+                                    color: orange;
+                                }
 
-                                // Check if a rating is selected
-                                if (selectedRating) {
-                                    // Set the value of the hidden input to the selected rating
-                                    document.getElementById('selectedRating').value = selectedRating.value;
+                                .rate {
+                                    direction: rtl;
+                                    border: 1px solid #ccc; /* Add border to the rating stars */
+                                    padding: 1px 10px;
+                                    border-radius: 5px; /* Optional: Add rounded corners */
+                                    display: inline-block; /* Ensure it doesn't stretch */
+                                }
+                            </style>
 
-                                    // Submit the form
-                                    document.getElementById('rateForm').submit();
-                                } else {
-                                    // If no rating is selected, alert the user
-                                    alert('Please select a rating.');
+                            <script>
+                                function submitForm() {
+                                    // Get the selected rating
+                                    var selectedRating = document.querySelector('input[name="rate"]:checked');
+
+                                    // Check if a rating is selected
+                                    if (selectedRating) {
+                                        // Set the value of the hidden input to the selected rating
+                                        document.getElementById('selectedRating').value = selectedRating.value;
+
+                                        // Submit the form
+                                        document.getElementById('rateForm').submit();
+                                    } else {
+                                        // If no rating is selected, alert the user
+                                        alert('Please select a rating.');
+                                    }
+                                }
+                            </script>
+
+                        </div>
+                    }
+
+                    <!-- Comment Section -->
+                    <div class="card mt-4 p-4 w-100 shadow-sm">
+
+                        <div id="commentSection" class="card-body" style="max-height: 500px; overflow-y: auto;">
+                            <h3>Comments</h3>
+                            <hr class="my-4">
+                            @if (Model.Comments != null && Model.Comments.Any())
+                            {
+                                foreach (var comment in Model.Comments)
+                                {
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5 class="mb-1"><small>@comment.User.Username</small></h5>
+                                            <small class="text-muted"><small>@FormatDate(comment.CreatedDate)</small></small>
+                                        </div>
+                                        <p class="mb-0"><small>@comment.Body</small></p>
+                                        @if (HttpContext.Session.GetString("Username") == comment.User.Username || HttpContext.Session.GetString("IsAdmin") == "true")
+                                        {
+                                            <div class="d-flex justify-content-end mt-1">
+
+                                                @if (HttpContext.Session.GetString("Username") == comment.User.Username)
+                                                {
+                                                    <button id="editButton-@comment.Id" type="button" class="btn btn-secondary btn-sm mr-2" onclick="toggleEditForm(@comment.Id, true)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                                        </svg>
+                                                    </button>
+                                                }
+                                                <form method="post" asp-page-handler="DeleteComment" asp-route-commentId="@comment.Id" asp-route-recipeId="@Model.Recipe.Id">
+                                                    <button id="deleteButton-@comment.Id" type="submit" class="btn btn-danger btn-sm ms-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <div id="editForm-@comment.Id" style="display:none;" class="mt-2">
+                                                <form method="post" asp-page-handler="EditComment" asp-route-commentId="@comment.Id" asp-route-recipeId="@Model.Recipe.Id">
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" name="commentBody" rows="3">@comment.Body</textarea>
+                                                    </div>
+                                                    <div class="form-group row justify-content-end">
+                                                        <div class="col-auto">
+                                                            <button type="submit" class="btn btn-secondary btn-sm ms-2 mt-2">Submit</button>
+                                                            <button type="button" class="btn btn-danger btn-sm mt-2" onclick="toggleEditForm(@comment.Id, false)">Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        }
+                                        <hr class="my-3">
+                                    </div>
                                 }
                             }
-                        </script>
-
-                    </div>
-                }
-                
-                <div class="card mt-4 p-4 w-100 shadow-sm">
-
-                    <div id="commentSection" class="card-body" style="height: 500px; overflow-y: auto;">
-                        <h3>Comments</h3>
-                        <hr class="my-4">
-                        @if (Model.Comments != null && Model.Comments.Any())
-                        {
-                            foreach (var comment in Model.Comments)
+                            else
                             {
-                                <div class="mb-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <h5 class="mb-1"><small>@comment.User.Username</small></h5>
-                                        <small class="text-muted"><small>@FormatDate(comment.CreatedDate)</small></small>
-                                    </div>
-                                    <p class="mb-0"><small>@comment.Body</small></p>
-                                    @if (HttpContext.Session.GetString("Username") == comment.User.Username)
-                                    {
-                                        <div class="d-flex justify-content-end mt-1">
-                                            <button id="editButton-@comment.Id" type="button" class="btn btn-secondary btn-sm mr-2" onclick="toggleEditForm(@comment.Id, true)">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-                                                </svg>
-                                            </button>
-                                            <form method="post" asp-page-handler="DeleteComment" asp-route-commentId="@comment.Id" asp-route-recipeId="@Model.Recipe.Id">
-                                                <button id="deleteButton-@comment.Id" type="submit" class="btn btn-danger btn-sm ms-2">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
-                                                    </svg>
-                                                </button>
-                                            </form>
-                                        </div>
-                                        <div id="editForm-@comment.Id" style="display:none;" class="mt-2">
-                                            <form method="post" asp-page-handler="EditComment" asp-route-commentId="@comment.Id" asp-route-recipeId="@Model.Recipe.Id">
-                                                <div class="form-group">
-                                                    <textarea class="form-control" name="commentBody" rows="3">@comment.Body</textarea>
-                                                </div>
-                                                <div class="form-group row justify-content-end">
-                                                    <div class="col-auto">
-                                                        <button type="submit" class="btn btn-secondary btn-sm ms-2 mt-2">Submit</button>
-                                                        <button type="button" class="btn btn-danger btn-sm mt-2" onclick="toggleEditForm(@comment.Id, false)">Cancel</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    }
-                                    <hr class="my-3">
-                                </div>
+                                <p>No comments yet. Be the first to comment!</p>
                             }
-                        }
-                        else
-                        {
-                            <p>No comments yet. Be the first to comment!</p>
-                        }
 
-                        @if (HttpContext.Session.GetString("Username") is not null)
-                        {
-                            <form method="post" asp-page-handler="CreateComment" asp-route-recipeId="@Model.Recipe.Id">
-                                <div class="form-group">
-                                    <label for="commentBody">Add a comment:</label>
-                                    <textarea class="form-control" id="commentBody" name="commentBody" rows="3"></textarea>
-                                </div>
-                                <div class="form-group row justify-content-end">
-                                    <div class="col-auto">
-                                        <button type="submit" class="btn btn-secondary mt-2">Submit</button>
+                            @if (HttpContext.Session.GetString("Username") is not null)
+                            {
+                                <form method="post" asp-page-handler="CreateComment" asp-route-recipeId="@Model.Recipe.Id">
+                                    <div class="form-group">
+                                        <label for="commentBody">Add a comment:</label>
+                                        <textarea class="form-control" id="commentBody" name="commentBody" rows="3"></textarea>
                                     </div>
-                                </div>
-                            </form>
-                        }
-                    </div>
+                                    <div class="form-group row justify-content-end">
+                                        <div class="col-auto">
+                                            <button type="submit" class="btn btn-secondary mt-2">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            }
+                        </div>
 
-                </div>
+                    </div>
+                    
+                }                
 
                 @functions {
                     public string FormatDate(DateTime date)
