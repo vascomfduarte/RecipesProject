@@ -96,6 +96,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\188f0856-3c0a-4758-bcd2-9aeef878f297_default_recipe.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\1df2e242-3a82-4d74-ae23-b248d2749ba7_Capturar2.PNG))">
+      <SourceType>Package</SourceType>
+      <SourceId>Assembly.RecipeApp.WebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Assembly.RecipeApp.WebApp</BasePath>
+      <RelativePath>images/1df2e242-3a82-4d74-ae23-b248d2749ba7_Capturar2.PNG</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\1df2e242-3a82-4d74-ae23-b248d2749ba7_Capturar2.PNG))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\327405f3-5736-424d-9733-437a3781b5b4_1715268256 (3).jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>Assembly.RecipeApp.WebApp</SourceId>
@@ -192,6 +208,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\54c9e088-7757-451e-8f65-ffc98618493f_default_recipe.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\5d7aaf90-a302-40e4-b203-f9a6b3b06355_imagem_2024-06-18_230130547.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Assembly.RecipeApp.WebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Assembly.RecipeApp.WebApp</BasePath>
+      <RelativePath>images/5d7aaf90-a302-40e4-b203-f9a6b3b06355_imagem_2024-06-18_230130547.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\5d7aaf90-a302-40e4-b203-f9a6b3b06355_imagem_2024-06-18_230130547.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\5f5238e3-8668-424d-9578-b4f5dd1a74a8_polvo-a-lagareiro.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Assembly.RecipeApp.WebApp</SourceId>
@@ -207,6 +239,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\5f5238e3-8668-424d-9578-b4f5dd1a74a8_polvo-a-lagareiro.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\61a48c13-a1db-4c30-9764-efdd803f01d6_Capturar8.PNG))">
+      <SourceType>Package</SourceType>
+      <SourceId>Assembly.RecipeApp.WebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Assembly.RecipeApp.WebApp</BasePath>
+      <RelativePath>images/61a48c13-a1db-4c30-9764-efdd803f01d6_Capturar8.PNG</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\61a48c13-a1db-4c30-9764-efdd803f01d6_Capturar8.PNG))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\686950d3-f506-41e5-862d-2f8e0164f508_frango-panado-com-queijo-parmesao.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Assembly.RecipeApp.WebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Assembly.RecipeApp.WebApp</BasePath>
+      <RelativePath>images/686950d3-f506-41e5-862d-2f8e0164f508_frango-panado-com-queijo-parmesao.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\686950d3-f506-41e5-862d-2f8e0164f508_frango-panado-com-queijo-parmesao.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\7296661b-fd1b-4314-9f4e-1ad93d87d927_default_recipe.png))">
       <SourceType>Package</SourceType>
@@ -479,6 +543,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\db2587b9-07b1-441a-8c96-c5f47856e86b_esparguete-a-carbonara.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Assembly.RecipeApp.WebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Assembly.RecipeApp.WebApp</BasePath>
+      <RelativePath>images/db2587b9-07b1-441a-8c96-c5f47856e86b_esparguete-a-carbonara.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\db2587b9-07b1-441a-8c96-c5f47856e86b_esparguete-a-carbonara.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\default_recipe.png))">
       <SourceType>Package</SourceType>

@@ -2,6 +2,7 @@ using Assembly.RecipeApp.Application.Interfaces;
 using Assembly.RecipeApp.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
 namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
@@ -19,17 +20,25 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         public string RecipeImage { get; set; }
 
         [BindProperty]
-        public string Title { get; set; }
-
-        [BindProperty]
-        public string Description { get; set; }
-        [BindProperty]
+        [Required(ErrorMessage = "Please enter the description.")]
+        [StringLength(1000, ErrorMessage = "Description cannot exceed 1000 characters.")]
         public string RecipeDescription { get; set; }
 
         [BindProperty]
+        [Required(ErrorMessage = "Please enter the title.")]
+        [StringLength(100, ErrorMessage = "Title cannot exceed 100 characters.")]
+        public string Title { get; set; }
+
+
+        public string Description { get; set; }
+
+        [BindProperty]
+        [Required(ErrorMessage = "Please enter the minutes to cook.")]
+        [Range(1, 1440, ErrorMessage = "Minutes to cook must be between 1 and 1440.")]
         public int MinutesToCook { get; set; }
 
         [BindProperty]
+        [Required(ErrorMessage = "Please select a difficulty level.")]
         public string DifficultyChoice { get; set; }
 
 

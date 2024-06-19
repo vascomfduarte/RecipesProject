@@ -12,34 +12,56 @@
         </div>
     </div>
 
-    
+
 
     <div class="container">
         <div class="row">
 
+            <!-- Featured Recipe section -->
             <div class="col-8">
                 <div class="jumbotron jumbotron-fluid p-2 m-1 border rounded shadow-sm" style="overflow:hidden;">
-                    <div class="jumbotron jumbotron-fluid p-2 m-1 border rounded" style="background-color: white; overflow:hidden;">
-                        <div style="height: 497px; overflow-y: auto;">
+                    <div class="jumbotron jumbotron-fluid m-1 border rounded" style="background-color: white; overflow:hidden;">
+                        <div style="height: 513px; overflow-y: auto;">
+                            <!-- Featured Recipe Content -->
+                            @if (Model.FeaturedRecipe != null)
+                            {
+                                <div class="position-relative h-100 d-block text-decoration-none text-white">
+                                    <a asp-page="/Recipes/Get" asp-route-id="@Model.FeaturedRecipe.Id" class="d-block w-100 h-100 text-decoration-none text-white">
+                                        <div class="w-100 h-100 position-absolute" style="background: url(@Model.FeaturedRecipe.ImageSource) no-repeat center center; background-size: cover; filter: brightness(0.9);" onerror="this.onerror=null; this.style.backgroundImage='url(/images/default_recipe.png)';"></div>
+                                        <div class="position-absolute top-0 start-0 p-4">
+                                            <div class="bg-dark rounded p-2 opacity-75">
+                                                <h4 class="font-weight-bold mb-0">Recipe of the day</h4>
+                                            </div>
+                                        </div>
+                                        <div class="position-absolute bottom-0 start-0 p-4">
+                                            <div class="bg-dark rounded p-2 opacity-75">
+                                                <h1 class="font-weight-bold">@Model.FeaturedRecipe.Title</h1>
+                                                <p class="lead" style="max-height: 90px; overflow: hidden;">@Model.FeaturedRecipe.Description</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                            else
+                            {
+                                <p class="text-center">No featured recipe available.</p>
+                            }
                         </div>
                     </div>
                 </div>
             </div>
 
+           
+            <!-- Top Rated Recipes section -->
             <div class="col-4">
                 <div class="jumbotron jumbotron-fluid px-1 py-4 m-1 border rounded shadow-sm">
-
                     <div class="container">
-
                         <h2 class="font-weight-bold mt-1 mb-4 text-center">Top Rated Recipes</h2>
-
                         <div class="container" style="height: 425px; overflow-y: auto;">
                             @foreach (var recipe in Model.TopRatedRecipes)
                             {
                                 <a asp-page="/Recipes/Get" asp-route-id="@recipe.Id" style="color: inherit; text-decoration: none;">
-
-                                    <div class="row my-2 p-2 rounded d-flex justify-content-center border" >
-
+                                    <div class="row my-2 p-2 rounded d-flex justify-content-center border">
                                         <div class="col-md-4 col-xs-6">
                                             <div class="d-flex align-items-center rounded-1" style="height: 80px; overflow:hidden;">
                                                 <img src="@recipe.ImageSource" alt="@recipe.Title" class="img-fluid" onerror="this.onerror=null; this.src='/images/default_recipe.png';">
@@ -50,16 +72,12 @@
                                                 <p class="font-weight-normal">@recipe.Title</p>
                                             </div>
                                         </div>
-
                                     </div>
-
                                 </a>
                             }
-                        </div>                        
-
-                    </div>   
-                    
-                </div>                
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

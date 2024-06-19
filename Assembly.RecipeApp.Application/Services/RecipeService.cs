@@ -164,6 +164,27 @@ namespace Assembly.RecipeApp.Application.Services
             return recipes;
         } // Feito
 
+        public Recipe GetFeaturedRecipe()
+        {
+            var approvedRecipes = GetAllApproved();
+
+            if (!approvedRecipes.Any())
+            {
+                return null;
+            }
+
+            int totalRecipes = approvedRecipes.Count;
+            int dayOfYear = DateTime.Now.DayOfYear;
+
+            // Compute a hash value based on the day of the year and total recipes
+            int hash = (dayOfYear * 397) ^ totalRecipes;
+
+            // Use the hash value to get the index in the list
+            int index = Math.Abs(hash) % totalRecipes;
+
+            return approvedRecipes[index];
+        } // Feito
+
         public bool Update(Recipe entity)
         {
             return _recipeRepository.Update(entity);

@@ -12,6 +12,7 @@ namespace Assembly.RecipeApp.Application.Interfaces
         List<Recipe> GetAllApproved();
         List<Recipe> GetApprovedPaged(int currentPage, int pageSize);
         List<Recipe> GetAllBlocked();
+        Recipe GetFeaturedRecipe();
     }
 
 }

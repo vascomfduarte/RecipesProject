@@ -4,9 +4,11 @@
     <div class="container-fluid pb-3">
         <div class="d-flex flex-wrap">
 
+            <!-- User Side Menu -->
             <aside class="flex-grow-3">
                 <div class="card border rounded-3 p-1 h-30">
 
+                    <!-- User Info -->
                     <div class="card-header jumbotron jumbotron-fluid border rounded-3 h-70 mb-3">
 
                         <div class="row">
@@ -21,6 +23,7 @@
 
                     </div>
 
+                    <!-- User Menu -->
                     <div class="card-body">
 
                         <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate ">
@@ -121,13 +124,15 @@
                                     <div class="col-md-12">
                                         <label class="labels">Title</label>
                                         <input asp-for="Title" type="text" class="form-control" placeholder="Enter recipe title" value="@Model.Recipe.Title" required>
+                                        <span asp-validation-for="Title" class="text-danger"></span>
                                     </div>
                                 </div>
 
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <label class="labels">Description</label>
-                                        <textarea asp-for="RecipeDescription" class="form-control" placeholder="Enter recipe description" style="height: 100px;" required>RecipeDescription</textarea>
+                                        <textarea asp-for="RecipeDescription" class="form-control" placeholder="Enter recipe description" value="@Model.RecipeDescription" style="height: 100px;" required>RecipeDescription</textarea>
+                                        <span asp-validation-for="RecipeDescription" class="text-danger"></span>
                                     </div>
                                 </div>
 
@@ -135,6 +140,7 @@
                                     <div class="col-md-12">
                                         <label class="labels">Minutes to Cook</label>
                                         <input asp-for="MinutesToCook" type="number" class="form-control" placeholder="Enter minutes to cook" value="@Model.Recipe.MinutesToCook" required>
+                                        <span asp-validation-for="MinutesToCook" class="text-danger"></span>
                                     </div>
                                 </div>
 
@@ -148,6 +154,7 @@
                                                 <option value="@dif.Name">@dif.Name</option>
                                             }
                                         </select>
+                                        <span asp-validation-for="DifficultyChoice" class="text-danger"></span>
                                     </div>
                                 </div>
 
@@ -168,7 +175,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>                        
+                        </form>
+                                                
 
                     </div>
 
@@ -179,5 +187,6 @@
         </div>
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
 }

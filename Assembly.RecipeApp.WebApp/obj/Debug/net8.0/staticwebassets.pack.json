@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\images\\188f0856-3c0a-4758-bcd2-9aeef878f297_default_recipe.png"
     },
     {
+      "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\1df2e242-3a82-4d74-ae23-b248d2749ba7_Capturar2.PNG",
+      "PackagePath": "staticwebassets\\images\\1df2e242-3a82-4d74-ae23-b248d2749ba7_Capturar2.PNG"
+    },
+    {
       "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\327405f3-5736-424d-9733-437a3781b5b4_1715268256 (3).jpeg",
       "PackagePath": "staticwebassets\\images\\327405f3-5736-424d-9733-437a3781b5b4_1715268256 (3).jpeg"
     },
@@ -49,8 +53,20 @@
       "PackagePath": "staticwebassets\\images\\54c9e088-7757-451e-8f65-ffc98618493f_default_recipe.png"
     },
     {
+      "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\5d7aaf90-a302-40e4-b203-f9a6b3b06355_imagem_2024-06-18_230130547.png",
+      "PackagePath": "staticwebassets\\images\\5d7aaf90-a302-40e4-b203-f9a6b3b06355_imagem_2024-06-18_230130547.png"
+    },
+    {
       "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\5f5238e3-8668-424d-9578-b4f5dd1a74a8_polvo-a-lagareiro.jpg",
       "PackagePath": "staticwebassets\\images\\5f5238e3-8668-424d-9578-b4f5dd1a74a8_polvo-a-lagareiro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\61a48c13-a1db-4c30-9764-efdd803f01d6_Capturar8.PNG",
+      "PackagePath": "staticwebassets\\images\\61a48c13-a1db-4c30-9764-efdd803f01d6_Capturar8.PNG"
+    },
+    {
+      "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\686950d3-f506-41e5-862d-2f8e0164f508_frango-panado-com-queijo-parmesao.jpg",
+      "PackagePath": "staticwebassets\\images\\686950d3-f506-41e5-862d-2f8e0164f508_frango-panado-com-queijo-parmesao.jpg"
     },
     {
       "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\7296661b-fd1b-4314-9f4e-1ad93d87d927_default_recipe.png",
@@ -119,6 +135,10 @@
     {
       "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png",
       "PackagePath": "staticwebassets\\images\\d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png"
+    },
+    {
+      "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\db2587b9-07b1-441a-8c96-c5f47856e86b_esparguete-a-carbonara.jpg",
+      "PackagePath": "staticwebassets\\images\\db2587b9-07b1-441a-8c96-c5f47856e86b_esparguete-a-carbonara.jpg"
     },
     {
       "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\default_recipe.png",

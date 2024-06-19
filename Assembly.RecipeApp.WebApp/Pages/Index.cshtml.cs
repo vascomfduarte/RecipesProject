@@ -14,21 +14,21 @@ namespace Assembly.RecipeApp.WebApp.Pages
 
         public IEnumerable<Recipe> Recipes { get; private set; }
         public IEnumerable<Recipe> TopRatedRecipes { get; private set; }
+        public Recipe FeaturedRecipe { get; private set; }
 
-        public IndexModel(IRecipeService recipeServices, IRatingService ratingService)
+        public IndexModel(IRecipeService recipeService, IRatingService ratingService)
         {
-            _recipeService = recipeServices;
+            _recipeService = recipeService;
             _ratingService = ratingService;
         }
 
         public IActionResult OnGet()
         {
             Recipes = _recipeService.GetAll();
-            
             TopRatedRecipes = _recipeService.GetTopRatedRecipes(10);
+            FeaturedRecipe = _recipeService.GetFeaturedRecipe();
 
             return Page();
         }
-
     }
 }
