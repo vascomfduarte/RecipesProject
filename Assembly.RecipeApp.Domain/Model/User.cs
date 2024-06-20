@@ -69,6 +69,7 @@ namespace Assembly.RecipeApp.Domain.Model
         public bool IsBlocked { get; private set; }
 
         public List<Comment> Comments { get; set; }
+        public List<Note> Notes { get; set; }
         public List<Recipe> Recipes { get; set; }
         public List<Recipe> UserFavoriteRecipes { get; set; }
 
@@ -125,6 +126,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new DomainException("Username cannot be null or empty.");
             }
         }
+
         private static void ValidatePassword(string password)
         {
             // Check if password is null or empty
@@ -133,6 +135,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new DomainException("Invalid password. Password must be at least 8 characters long and contain at least one letter and one digit.");
             }
         }
+
         private static void ValidateEmail(string email)
         {
             // Check if email is null or empty
@@ -147,6 +150,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new DomainException("Invalid email format.");
             }
         }
+
         private void ValidateFirstName(string firstName)
         {
             // Check if First Name is null or empty
@@ -166,6 +170,7 @@ namespace Assembly.RecipeApp.Domain.Model
                 throw new DomainException("First name can only contain letters.");
             }
         }
+
         private void ValidateLastName(string lastName)
         {
             if (string.IsNullOrWhiteSpace(lastName))
@@ -195,6 +200,7 @@ namespace Assembly.RecipeApp.Domain.Model
 
             Id = id;
         }
+
         public void SetAdminDefault(User currentUser)
         {            
             if (currentUser != null)

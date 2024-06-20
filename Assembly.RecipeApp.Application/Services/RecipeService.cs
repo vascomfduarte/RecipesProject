@@ -94,24 +94,12 @@ namespace Assembly.RecipeApp.Application.Services
 
         public Recipe GetById(int recipeId)
         {
-            Recipe r = _recipeRepository.GetById(recipeId);
-            //PreparationMethod p = _preparationMethodRepository.GetByRecipeId(recipeId);
-            //List<Ingredient> i = _ingredientRepository.GetByRecipeId(recipeId);
-            //List<Comment> c = _commentRepository.GetByRecipeId(recipeId);
-
-            return r;
-            //return new Recipe(r.Id, r.Title, r.Description, p, r.ImageSource, r.MinutesToCook, r.IsApproved, r.User, r.Difficulty, r.Ratings, r.Categories, i, c, r.CreatedBy, r.CreatedDate);
+            return _recipeRepository.GetById(recipeId);
         } // Feito 
 
         public Recipe GetByTitle(string title)
         {
-            Recipe r = _recipeRepository.GetByTitle(title);
-            //PreparationMethod p = _preparationMethodRepository.GetByRecipeId(recipeId);
-            //List<Ingredient> i = _ingredientRepository.GetByRecipeId(recipeId);
-            //List<Comment> c = _commentRepository.GetByRecipeId(recipeId);
-
-            return r;
-            //return new Recipe(r.Id, r.Title, r.Description, p, r.ImageSource, r.MinutesToCook, r.IsApproved, r.User, r.Difficulty, r.Ratings, r.Categories, i, c, r.CreatedBy, r.CreatedDate);
+            return _recipeRepository.GetByTitle(title);
         } // Feito 
 
         public List<Recipe> GetByUserId(int userId)

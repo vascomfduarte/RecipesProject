@@ -13,6 +13,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         private readonly IRecipeService _recipeService;
         private readonly IRatingService _ratingService;
         private readonly ICommentService _commentService;
+        private readonly INoteService _noteService;
         private readonly IUserService _userService;
         private readonly IIngredientService _ingredientService;
         private readonly IPreparationMethodService _preparationMethodService;
@@ -27,6 +28,9 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         public Recipe Recipe { get; private set; }
         public List<Comment> Comments { get; private set; }
         public Comment Comment { get; private set; }
+        public List<Note> Notes { get; private set; }
+        public Note Note { get; private set; }
+
 
 
         public PreparationMethod PreparationMethod { get; set; }
@@ -42,7 +46,8 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         public GetModel(ILogger<GetModel> logger, 
                         IRecipeService recipeServices, 
                         IRatingService ratingService, 
-                        ICommentService commentService, 
+                        ICommentService commentService,
+                        INoteService noteService,
                         IUserService userService, 
                         IIngredientService ingredientService,
                         IPreparationMethodService preparationMethodService)
@@ -51,6 +56,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
             _recipeService = recipeServices;
             _ratingService = ratingService;
             _commentService = commentService;
+            _noteService = noteService;
             _userService = userService;
             _ingredientService = ingredientService;
             _preparationMethodService = preparationMethodService;
@@ -60,6 +66,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         {           
             Recipe = _recipeService.GetById(id);
             Comments = _commentService.GetByRecipeId(id);
+            Notes = _noteService.GetByRecipeId(id);
             RecipeIngredients = _ingredientService.GetRecipeIngredients(id);
             PreparationMethod = _preparationMethodService.GetByRecipeId(id);
             PreparationSteps = _preparationMethodService.GetStepsByRecipeId(id);
@@ -223,6 +230,134 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
 
             // Redirect back to the page with the updated comments
             return OnGet(recipeId);
+        }
+
+        public IActionResult OnPostCreateNote(int recipeId, string noteBody)
+        {
+            // Handle case where user is not logged in
+            var userId = HttpContext.Session.GetInt32("Id");
+            if (userId is not null)
+            {
+                if (string.IsNullOrEmpty(noteBody))
+                {
+                    // Handle empty note submission
+                    return OnGet(recipeId);
+                }
+
+                // Fetch the user by id
+                User = _userService.GetById(userId.Value);
+
+                // Fetch the recipe by id using RecipeId property
+                Recipe = _recipeService.GetById(recipeId);
+
+                if (Recipe == null || User == null)
+                {
+                    // Handle invalid recipe or user
+                    return RedirectToPage("/Error");
+                }
+
+                var note = new Note(noteBody, Recipe, User);
+
+                // Add the Note
+                _noteService.Add(note);
+
+                // Update the Recipe
+                _recipeService.Update(Recipe);
+            }
+
+            // Redirect back to the page with the updated notes
+            return OnGet(recipeId);
+        }
+
+        public IActionResult OnPostEditNote(int noteId, int recipeId, string noteBody)
+        {
+            // Handle case where user is not logged in
+            var userId = HttpContext.Session.GetInt32("Id");
+            if (userId is not null)
+            {
+                if (string.IsNullOrEmpty(noteBody))
+                {
+                    // Handle empty note submission
+                    return RedirectToPage("/Error");
+                }
+
+                // Fetch the user by id
+                User = _userService.GetById(userId.Value);
+
+                // Fetch the recipe by id using RecipeId property
+                Recipe = _recipeService.GetById(recipeId);
+
+                // Fetch the note by id
+                Note = _noteService.GetById(noteId);
+
+                if (Recipe == null || User == null || Note == null)
+                {
+                    // Handle invalid recipe, user, or note
+                    return RedirectToPage("/Error");
+                }
+
+                var note = new Note(noteId, noteBody, Recipe, User, Recipe.CreatedDate);
+
+                // Update the Note and Recipe
+                _noteService.Update(note, User);
+                _recipeService.Update(Recipe);
+            }
+
+            // Redirect back to the page with the updated notes
+            return OnGet(recipeId);
+        }
+
+        public IActionResult OnPostDeleteNote(int recipeId, int noteId)
+        {
+            // Handle case where user is not logged in
+            var userId = HttpContext.Session.GetInt32("Id");
+            if (userId is not null)
+            {
+                // Fetch the user by id
+                User = _userService.GetById(userId.Value);
+
+                // Fetch the recipe by id using RecipeId property
+                Recipe = _recipeService.GetById(recipeId);
+
+                _noteService.Delete(noteId, User);
+
+                // Update the recipe
+                _recipeService.Update(Recipe);
+            }
+
+            // Redirect back to the page with the updated notes
+            return OnGet(recipeId);
+        }
+
+        public IActionResult OnPostToggleApprove(int recipeId)
+        {
+            OnGet(recipeId);
+
+            // Retrieve UserId from session
+            var userId = HttpContext.Session.GetInt32("Id");
+
+            // Handle case where user is not logged in
+            if (userId is null)
+            {
+                return RedirectToPage("/Users/Login");
+            }
+
+            // Fetch the user by id
+            User = _userService.GetById(userId.Value);
+
+            Recipe recipe = _recipeService.GetById(recipeId);
+            if (recipe != null)
+            {
+                recipe.ChangeIsApproved(User, recipe);
+                _recipeService.Update(recipe);
+            }
+
+            _noteService.DeleteByRecipeId(recipeId);
+
+            OnGet(recipeId);
+
+            // Redirect to the same page after deletion
+            return Page();
         }
 
     }

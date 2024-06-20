@@ -448,6 +448,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\9beaabae-195a-4038-a9cb-31b338678ff9_default_recipe.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\9fd2eede-4eb7-4e66-9deb-4b1af42dd111_salmao-com-espargos-e-batata-doce.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Assembly.RecipeApp.WebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Assembly.RecipeApp.WebApp</BasePath>
+      <RelativePath>images/9fd2eede-4eb7-4e66-9deb-4b1af42dd111_salmao-com-espargos-e-batata-doce.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\9fd2eede-4eb7-4e66-9deb-4b1af42dd111_salmao-com-espargos-e-batata-doce.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\a41b5ed3-e864-4c2f-9b63-9636237bf6bc_default_recipe.png))">
       <SourceType>Package</SourceType>
       <SourceId>Assembly.RecipeApp.WebApp</SourceId>
@@ -495,6 +511,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\c20b73f4-3d6a-4c6c-adb2-abf90737f5f1_Capturar4.PNG))">
+      <SourceType>Package</SourceType>
+      <SourceId>Assembly.RecipeApp.WebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Assembly.RecipeApp.WebApp</BasePath>
+      <RelativePath>images/c20b73f4-3d6a-4c6c-adb2-abf90737f5f1_Capturar4.PNG</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\c20b73f4-3d6a-4c6c-adb2-abf90737f5f1_Capturar4.PNG))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\c287c234-fdda-4981-89eb-b5f1cc67d0bc_salmao-com-espargos-e-batata-doce.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Assembly.RecipeApp.WebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Assembly.RecipeApp.WebApp</BasePath>
+      <RelativePath>images/c287c234-fdda-4981-89eb-b5f1cc67d0bc_salmao-com-espargos-e-batata-doce.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\c287c234-fdda-4981-89eb-b5f1cc67d0bc_salmao-com-espargos-e-batata-doce.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\c9376024-f276-464b-b682-34042a12bd39_1715268256 (3).jpeg))">
       <SourceType>Package</SourceType>

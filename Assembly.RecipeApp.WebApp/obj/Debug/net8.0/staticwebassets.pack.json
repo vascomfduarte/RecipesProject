@@ -113,6 +113,10 @@
       "PackagePath": "staticwebassets\\images\\9beaabae-195a-4038-a9cb-31b338678ff9_default_recipe.png"
     },
     {
+      "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\9fd2eede-4eb7-4e66-9deb-4b1af42dd111_salmao-com-espargos-e-batata-doce.jpg",
+      "PackagePath": "staticwebassets\\images\\9fd2eede-4eb7-4e66-9deb-4b1af42dd111_salmao-com-espargos-e-batata-doce.jpg"
+    },
+    {
       "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\a41b5ed3-e864-4c2f-9b63-9636237bf6bc_default_recipe.png",
       "PackagePath": "staticwebassets\\images\\a41b5ed3-e864-4c2f-9b63-9636237bf6bc_default_recipe.png"
     },
@@ -123,6 +127,14 @@
     {
       "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png",
       "PackagePath": "staticwebassets\\images\\b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png"
+    },
+    {
+      "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\c20b73f4-3d6a-4c6c-adb2-abf90737f5f1_Capturar4.PNG",
+      "PackagePath": "staticwebassets\\images\\c20b73f4-3d6a-4c6c-adb2-abf90737f5f1_Capturar4.PNG"
+    },
+    {
+      "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\c287c234-fdda-4981-89eb-b5f1cc67d0bc_salmao-com-espargos-e-batata-doce.jpg",
+      "PackagePath": "staticwebassets\\images\\c287c234-fdda-4981-89eb-b5f1cc67d0bc_salmao-com-espargos-e-batata-doce.jpg"
     },
     {
       "Id": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\c9376024-f276-464b-b682-34042a12bd39_1715268256 (3).jpeg",

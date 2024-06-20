@@ -15,14 +15,14 @@
 
                     <div class="card-body">
                         <h2 class="mt-1">@Model.Recipe.Title</h2>
-                        <p>By <strong>@Model.Recipe.User.Username</strong></p>                                              
+                        <p>By <strong>@Model.Recipe.User.Username</strong></p>
 
                         <div class="d-flex justify-content-between align-items-center">
 
                             <div class="d-flex align-items-center">
                                 @if (@Model.Recipe.IsApproved is false)
                                 {
-                                    <button class="btn btn-sm btn-danger" disabled>Pending</button>
+                                    <button class="btn btn-sm btn-danger mr-2" disabled>Pending</button>
                                 }
                                 else
                                 {
@@ -30,16 +30,32 @@
                                 }
                             </div>
 
-                            @if (HttpContext.Session.GetString("Username") == Model.Recipe.User.Username)
-                            {
-                                <a asp-page="/Users/EditUserRecipes" asp-route-recipeId="@Model.Recipe.Id" class="btn btn-sm btn-outline-secondary mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-                                    </svg>
-                                    Edit
-                                </a>
+                            @{
+                                var isLoggedInUserRecipeCreator = HttpContext.Session.GetString("Username") == Model.Recipe.User.Username;
+                                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
                             }
+
+                            <div class="d-flex justify-content-end">
+                                @if (isLoggedInUserRecipeCreator)
+                                {
+                                    <a asp-page="/Users/EditUserRecipes" asp-route-recipeId="@Model.Recipe.Id" class="btn btn-sm btn-outline-secondary mb-2 mx-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                        </svg>
+                                        Edit
+                                    </a>
+                                }
+
+                                @if (isAdmin)
+                                {
+                                    <form method="post" asp-page-handler="ToggleApprove" asp-route-recipeId="@Model.Recipe.Id" class="d-inline mb-2">
+                                        <button type="submit" class="btn btn-sm btn-secondary" style="width: 75px;">
+                                            @(@Model.Recipe.IsApproved ? "Block" : "Approve")
+                                        </button>
+                                    </form>
+                                }
+                            </div>
 
                         </div>
                        
@@ -245,6 +261,7 @@
                         <div id="commentSection" class="card-body" style="max-height: 500px; overflow-y: auto;">
                             <h3>Comments</h3>
                             <hr class="my-4">
+
                             @if (Model.Comments != null && Model.Comments.Any())
                             {
                                 foreach (var comment in Model.Comments)
@@ -255,6 +272,8 @@
                                             <small class="text-muted"><small>@FormatDate(comment.CreatedDate)</small></small>
                                         </div>
                                         <p class="mb-0"><small>@comment.Body</small></p>
+
+                                        <!-- Comment Editing and Deleting -->
                                         @if (HttpContext.Session.GetString("Username") == comment.User.Username || HttpContext.Session.GetString("IsAdmin") == "true")
                                         {
                                             <div class="d-flex justify-content-end mt-1">
@@ -268,6 +287,7 @@
                                                         </svg>
                                                     </button>
                                                 }
+
                                                 <form method="post" asp-page-handler="DeleteComment" asp-route-commentId="@comment.Id" asp-route-recipeId="@Model.Recipe.Id">
                                                     <button id="deleteButton-@comment.Id" type="submit" class="btn btn-danger btn-sm ms-2">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -275,7 +295,9 @@
                                                         </svg>
                                                     </button>
                                                 </form>
+
                                             </div>
+
                                             <div id="editForm-@comment.Id" style="display:none;" class="mt-2">
                                                 <form method="post" asp-page-handler="EditComment" asp-route-commentId="@comment.Id" asp-route-recipeId="@Model.Recipe.Id">
                                                     <div class="form-group">
@@ -290,6 +312,7 @@
                                                 </form>
                                             </div>
                                         }
+
                                         <hr class="my-3">
                                     </div>
                                 }
@@ -299,6 +322,7 @@
                                 <p>No comments yet. Be the first to comment!</p>
                             }
 
+                            <!-- Comment creation, only if logged user -->
                             @if (HttpContext.Session.GetString("Username") is not null)
                             {
                                 <form method="post" asp-page-handler="CreateComment" asp-route-recipeId="@Model.Recipe.Id">
@@ -313,11 +337,105 @@
                                     </div>
                                 </form>
                             }
+
                         </div>
 
                     </div>
+
+                }
+                else
+                {
+                    <!-- Admin and Author Notes -->
+                    @if (HttpContext.Session.GetString("Username") == @Model.Recipe.User.Username || HttpContext.Session.GetString("IsAdmin") == "true")
+                    {
+                        <div class="card mt-4 p-4 w-100 shadow-sm">
+                            <div id="notesSection" class="card-body" style="max-height: 500px; overflow-y: auto;">
+                                <h3>Admin Notes</h3>
+                                <hr class="my-4">
+
+                                @if (Model.Notes != null && Model.Notes.Any())
+                                {
+                                    foreach (var note in Model.Notes)
+                                    {
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between align-items-center">
+
+                                                @if (note.User.IsAdmin)
+                                                {
+                                                    <h5 class="mb-1"><small>Admin</small></h5>
+                                                }
+                                                else
+                                                {
+                                                    <h5 class="mb-1"><small>@note.User.Username</small></h5>
+                                                }
+
+                                                <small class="text-muted"><small>@FormatDate(note.CreatedDate)</small></small>
+                                            </div>
+                                            <p class="mb-0"><small>@note.Body</small></p>
+
+                                            <!-- Note Editing and Deleting -->
+                                            @if (HttpContext.Session.GetString("Username") == note.User.Username || HttpContext.Session.GetString("IsAdmin") == "true")
+                                            {
+                                                <div class="d-flex justify-content-end mt-1">
+                                                    @if (HttpContext.Session.GetString("Username") == note.User.Username)
+                                                    {
+                                                        <button id="editButton-@note.Id" type="button" class="btn btn-secondary btn-sm mr-2" onclick="toggleEditForm(@note.Id, true)">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                                            </svg>
+                                                        </button>
+                                                    }
+
+                                                    <form method="post" asp-page-handler="DeleteNote" asp-route-noteId="@note.Id" asp-route-recipeId="@Model.Recipe.Id">
+                                                        <button id="deleteButton-@note.Id" type="submit" class="btn btn-danger btn-sm ms-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
+                                                            </svg>
+                                                        </button>
+                                                    </form>
+                                                </div>
+
+                                                <div id="editForm-@note.Id" style="display:none;" class="mt-2">
+                                                    <form method="post" asp-page-handler="EditNote" asp-route-noteId="@note.Id" asp-route-recipeId="@Model.Recipe.Id">
+                                                        <div class="form-group">
+                                                            <textarea class="form-control" name="noteBody" rows="3">@note.Body</textarea>
+                                                        </div>
+                                                        <div class="form-group row justify-content-end">
+                                                            <div class="col-auto">
+                                                                <button type="submit" class="btn btn-secondary btn-sm ms-2 mt-2">Submit</button>
+                                                                <button type="button" class="btn btn-danger btn-sm mt-2" onclick="toggleEditForm(@note.Id, false)">Cancel</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            }
+                                            <hr class="my-3">
+                                        </div>
+                                    }
+                                }
+
+                                <!-- Note creation, only if logged user -->
+                                @if (HttpContext.Session.GetString("Username") is not null)
+                                {
+                                    <form method="post" asp-page-handler="CreateNote" asp-route-recipeId="@Model.Recipe.Id">
+                                        <div class="form-group">
+                                            <label for="noteBody">Add a note:</label>
+                                            <textarea class="form-control" id="noteBody" name="noteBody" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group row justify-content-end">
+                                            <div class="col-auto">
+                                                <button type="submit" class="btn btn-secondary mt-2">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                }
                     
-                }                
 
                 @functions {
                     public string FormatDate(DateTime date)
@@ -367,6 +485,33 @@
                         } else {
                             editForm.style.display = 'none';
                             commentBody.style.display = 'block';
+                            editButton.style.display = 'inline-block';
+                            deleteButton.style.display = 'inline-block';
+                        }
+                    }
+
+                    // Scroll to the bottom of the notes section on page load
+                    window.onload = function () {
+                        var notesSection = document.getElementById('notesSection');
+                        notesSection.scrollTop = notesSection.scrollHeight;
+                    };
+
+                    function toggleEditForm(noteId, show) {
+                        // Get the edit form element for the specific note
+                        var editForm = document.getElementById('editForm-' + noteId);
+                        var noteBody = document.getElementById('noteBody-' + noteId);
+                        var editButton = document.getElementById('editButton-' + noteId);
+                        var deleteButton = document.getElementById('deleteButton-' + noteId);
+
+                        // Show or hide the form based on the 'show' parameter
+                        if (show) {
+                            editForm.style.display = 'block';
+                            noteBody.style.display = 'none';
+                            editButton.style.display = 'none';
+                            deleteButton.style.display = 'none';
+                        } else {
+                            editForm.style.display = 'none';
+                            noteBody.style.display = 'block';
                             editButton.style.display = 'inline-block';
                             deleteButton.style.display = 'inline-block';
                         }

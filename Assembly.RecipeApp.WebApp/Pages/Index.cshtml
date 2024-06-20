@@ -30,13 +30,13 @@
                                         <div class="w-100 h-100 position-absolute" style="background: url(@Model.FeaturedRecipe.ImageSource) no-repeat center center; background-size: cover; filter: brightness(0.9);" onerror="this.onerror=null; this.style.backgroundImage='url(/images/default_recipe.png)';"></div>
                                         <div class="position-absolute top-0 start-0 p-4">
                                             <div class="bg-dark rounded p-2 opacity-75">
-                                                <h4 class="font-weight-bold mb-0">Recipe of the day</h4>
+                                                <h5 class="font-weight-bold mb-0">Recipe of the day</h5>
                                             </div>
                                         </div>
                                         <div class="position-absolute bottom-0 start-0 p-4">
                                             <div class="bg-dark rounded p-2 opacity-75">
-                                                <h1 class="font-weight-bold">@Model.FeaturedRecipe.Title</h1>
-                                                <p class="lead" style="max-height: 90px; overflow: hidden;">@Model.FeaturedRecipe.Description</p>
+                                                <h3 class="font-weight-bold">@Model.FeaturedRecipe.Title</h3>
+                                                <small class="lead" style="max-height: 90px; overflow: hidden;">@Model.FeaturedRecipe.Description</small>
                                             </div>
                                         </div>
                                     </a>

@@ -57,6 +57,7 @@ namespace Assembly.RecipeApp.Domain.Model
         public List<Category> Categories { get; set; }
         public List<Rating> Ratings { get; set; }
         public List<Comment> Comments { get; set; }
+        public List<Note> Notes { get; set; }
 
         public Recipe(string title, string description, string imageSource, int minutesToCook, User user, Difficulty difficulty)
         {
@@ -101,16 +102,17 @@ namespace Assembly.RecipeApp.Domain.Model
             Categories = categories;
         }
 
-        public Recipe(int id, string title, string description, PreparationMethod preparationMethod, string imageSource, int minutesToCook, bool isApproved, User user, Difficulty difficulty, List<Rating> ratings, List<Category> categories, List<Ingredient> ingredients, List<Comment> comments, string createdBy, DateTime createdDate)
+        public Recipe(int id, string title, string description, PreparationMethod preparationMethod, string imageSource, int minutesToCook, bool isApproved, User user, Difficulty difficulty, List<Rating> ratings, List<Category> categories, List<Ingredient> ingredients, List<Comment> comments, List<Note> notes, string createdBy, DateTime createdDate)
                : this(id, title, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, createdBy, createdDate)
         {
             PreparationMethod = preparationMethod;            
             Ingredients = ingredients;
             Comments = comments;
+            Notes = notes;
         }
 
-        public Recipe(int id, string title, string description, PreparationMethod preparationMethod, string imageSource, int minutesToCook, bool isApproved, User user, Difficulty difficulty, List<Rating> ratings, List<Category> categories, List<Ingredient> ingredients, List<Comment> comments, string createdBy, DateTime createdDate, string updatedBy, DateTime updatedDate) 
-               : this(id, title, description, preparationMethod, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, ingredients, comments, createdBy, createdDate)
+        public Recipe(int id, string title, string description, PreparationMethod preparationMethod, string imageSource, int minutesToCook, bool isApproved, User user, Difficulty difficulty, List<Rating> ratings, List<Category> categories, List<Ingredient> ingredients, List<Comment> comments, List<Note> notes, string createdBy, DateTime createdDate, string updatedBy, DateTime updatedDate) 
+               : this(id, title, description, preparationMethod, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, ingredients, comments, notes, createdBy, createdDate)
         { 
             UpdatedBy = updatedBy;
             UpdatedDate = updatedDate;
