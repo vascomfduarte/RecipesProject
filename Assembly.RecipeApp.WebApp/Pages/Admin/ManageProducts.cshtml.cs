@@ -63,12 +63,15 @@ namespace Assembly.RecipeApp.WebApp.Pages.Admin
             // Get all recipes from the service
             var allProducts = _productService.GetAll();
 
+            // Order the products alphabetically by their Name property
+            var orderedProducts = allProducts.OrderBy(product => product.Name).ToList();
+
             // Pagination
-            TotalPages = (int)Math.Ceiling((double)allProducts.Count / PageSize);
+            TotalPages = (int)Math.Ceiling((double)orderedProducts.Count / PageSize);
             CurrentPage = selectedPage ?? 1;
 
             // Get recipes for the current page
-            Products = allProducts.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();                       
+            Products = orderedProducts.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();                       
 
             return Page();
         }

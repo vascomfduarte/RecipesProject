@@ -1,5 +1,5 @@
 ﻿@page
-@model Assembly.RecipeApp.WebApp.Pages.Admin.ManageRecipesBlockedModel
+@model Assembly.RecipeApp.WebApp.Pages.Users.UserFavoriteRecipesModel
 @{
     <div class="container-fluid pb-3">
         <div class="d-flex flex-wrap">
@@ -28,27 +28,21 @@
                             @if (Model.User.IsAdmin is true)
                             {
                                 <li class="mb-1">
-                                    <a class="list-group-item list-group-item-action rounded disabled">Admin</a>
-                                </li>
-                                <li class="mb-1 ms-4">
-                                    <a asp-page="/Admin/ManageUsers" class="list-group-item list-group-item-action rounded">Manage Users</a>
-                                </li>
-                                <li class="mb-1 ms-4">
-                                    <a class="list-group-item list-group-item-secondary list-group-item-action rounded">Manage Recipes</a>
-                                </li>
-                                <li class="mb-1 ms-4">
-                                    <a asp-page="/Admin/ManageProducts" class="list-group-item list-group-item list-group-item-action rounded">Manage Products</a>
-                                </li>
-                                <li class="mb-1 ms-4">
-                                    <a asp-page="/Admin/ManageDifficulties" class="list-group-item list-group-item list-group-item-action rounded">Manage Difficulties</a>
-                                </li>
-                                <li class="mb-1 ms-4">
-                                    <a asp-page="/Admin/ManageUnits" class="list-group-item list-group-item list-group-item-action rounded">Manage Units</a>
+                                    <a asp-page="/Admin/ManageUsers" class="list-group-item list-group-item-action rounded">Admin</a>
                                 </li>
                             }
 
                             <li class="mb-1">
-                                <a asp-page="/Users/UserRecipes" class="list-group-item list-group-item-action rounded">My Area</a>
+                                <a class="list-group-item list-group-item-action rounded disabled">My Area</a>
+                            </li>
+                            <li class="mb-1 ms-4">
+                                <a asp-page="/Users/UserRecipes" class="list-group-item list-group-item-action rounded">Recipes</a>
+                            </li>
+                            <li class="mb-1 ms-4">
+                                <a asp-page="/Users/UserComments" class="list-group-item list-group-item-action rounded">Comments</a>
+                            </li>
+                            <li class="mb-1 ms-4">
+                                <a class="list-group-item list-group-item-secondary list-group-item-action rounded">Favorite Recipes</a>
                             </li>
 
                         </ul>
@@ -63,7 +57,7 @@
                 <div class="card border rounded-3 p-1 mb-2 w-100">
 
                     <div class="card-header border rounded-3">
-                        <h2>Admin</h2>
+                        <h2>My Area</h2>
                     </div>
 
                 </div>
@@ -71,59 +65,34 @@
                 <div class="card border rounded-3 p-1 mb-2 w-100">
 
                     <div class="card-header border rounded-3">
-                        <h3>Manage Recipes</h3>
-                    </div>
-
-                    <div class="card-body flex-column align-items-center justify-content-center">
-
-                        <a asp-page="/Admin/ManageRecipes" class="btn btn btn-outline-secondary ms-2">All Recipes</a>
-
-                        <a asp-page="/Admin/ManageRecipesBlocked" class="btn btn btn-secondary ms-2">Pending Recipes</a>
-
+                        <h3>Favorite Recipes</h3>
                     </div>
 
                     <div class="card-body flex-column align-items-center justify-content-center">
 
                         <div class="row" style="">
                             <div class="col-12">
+
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Recipe Name</th>
-                                            <th scope="col">Author</th>
-                                            <th scope="col">Approved</th>
-                                            <th scope="col">Published Date</th>
                                             <th scope="col">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach (var recipe in Model.Recipes)
+                                        @foreach (var recipe in Model.FavoriteRecipes)
                                         {
                                             <tr>
                                                 <th style="width: 70px;" scope="row">@recipe.Id</th>
-                                                <td style="width: 330px;">
+                                                <td style="width: 700px;">
                                                     <a asp-page="/Recipes/Get" asp-route-id="@recipe.Id" style="text-decoration: none; color:black">@recipe.Title</a>
                                                 </td>
-                                                <td style="width: 100px;">@recipe.CreatedBy</td>
-
-                                                <td style="width: 50px;">
-                                                    <span class="@(recipe.IsApproved ? "text-success" : "text-danger")">
-                                                        @(recipe.IsApproved ? "Active" : "Blocked")
-                                                    </span>
-                                                </td>
-
-                                                <td style="width: 150px;">@recipe.CreatedDate.ToString("dd MMM yyyy, HH:mm")</td>
-
                                                 <td>
-                                                    <form method="post" asp-page-handler="ToggleApprove" asp-route-recipeId="@recipe.Id" class="d-inline">
-                                                        <button type="submit" class="btn btn-sm btn-secondary" style="width: 75px;">
-                                                            @(recipe.IsApproved ? "Block" : "Approve")
-                                                        </button>
-                                                    </form>
-                                                    <form method="post" asp-page-handler="Delete" asp-route-recipeId="@recipe.Id" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this recipe?');">
+                                                    <form method="post" asp-page-handler="Unfavorite" asp-route-recipeId="@recipe.Id" asp-route-userId="@Model.User.Id" class="d-inline" onsubmit="return confirm('Are you sure you want to unfavorite this recipe?');">
                                                         <input type="hidden" name="currentPage" value="@Model.CurrentPage" />
-                                                        <button type="submit" class="btn btn-sm btn-danger" style="width: 70px;">Delete</button>
+                                                        <button type="submit" class="btn btn-sm btn-danger" style="width: 100px;">Unfavorite</button>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -135,16 +104,16 @@
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
-                                            <a class="page-link" asp-page="/Admin/ManageRecipes" asp-route-selectedPage="@Model.PreviousPage">Previous</a>
+                                            <a class="page-link" asp-page="/Users/UserFavoriteRecipes" asp-route-selectedPage="@Model.PreviousPage">Previous</a>
                                         </li>
                                         @for (int i = 1; i <= Model.TotalPages; i++)
                                         {
                                             <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
-                                                <a class="page-link" asp-page="/Admin/ManageRecipes" asp-route-selectedPage="@i">@i</a>
+                                                <a class="page-link" asp-page="/Users/UserFavoriteRecipes" asp-route-selectedPage="@i">@i</a>
                                             </li>
                                         }
                                         <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
-                                            <a class="page-link" asp-page="/Admin/ManageRecipes" asp-route-selectedPage="@Model.NextPage">Next</a>
+                                            <a class="page-link" asp-page="/Users/UserFavoriteRecipes" asp-route-selectedPage="@Model.NextPage">Next</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -154,7 +123,7 @@
 
                     </div>
 
-                
+                </div>
 
             </main>
 

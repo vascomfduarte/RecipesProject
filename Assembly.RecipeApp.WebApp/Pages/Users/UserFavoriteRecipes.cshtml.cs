@@ -1,13 +1,11 @@
 using Assembly.RecipeApp.Application.Interfaces;
-using Assembly.RecipeApp.Application.Services;
 using Assembly.RecipeApp.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Xml.Linq;
 
 namespace Assembly.RecipeApp.WebApp.Pages.Users
 {
-    public class UserRecipesModel : PageModel
+    public class UserFavoriteRecipesModel : PageModel
     {
         private readonly IUserService _userService;
         private readonly IRecipeService _recipeService;
@@ -17,13 +15,13 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         [BindProperty]
         public string UserImage { get; set; }
 
-        public UserRecipesModel(IUserService userService, IRecipeService recipeService)
+        public UserFavoriteRecipesModel(IUserService userService, IRecipeService recipeService)
         {
             _userService = userService;
             _recipeService = recipeService;
         }
 
-        public List<Recipe> Recipes { get; set; }
+        public List<Recipe> FavoriteRecipes { get; set; }
         public int CurrentPage { get; set; }
         public int TotalPages { get; set; }
         public int PageSize { get; } = 8; // Adjust as needed
@@ -57,30 +55,30 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             UserImage = string.IsNullOrEmpty(User.ImageSource) ? "/images/b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png" : User.ImageSource.ToString();
 
             // Get all Recipes from the service
-            var userRecipes = _recipeService.GetByUserId(User.Id);
+            var userFavoriteRecipes = _recipeService.GetUserFavoriteRecipes(User.Id);
+            User.UserFavoriteRecipes = userFavoriteRecipes; 
 
             // Pagination
-            TotalPages = (int)Math.Ceiling((double)userRecipes.Count / PageSize);
+            TotalPages = (int)Math.Ceiling((double)userFavoriteRecipes.Count / PageSize);
             CurrentPage = selectedPage ?? 1;
 
             // Get Recipes for the current page
-            Recipes = userRecipes.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+            FavoriteRecipes = userFavoriteRecipes.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
 
             return Page();
         }
 
-        public IActionResult OnPostDelete(int recipeId, int currentPage)
+        public IActionResult OnPostUnfavorite(int recipeId, int userId, int currentPage)
         {
-            OnGet(CurrentPage);
+            OnGet(recipeId);
 
-            Recipe recipe = _recipeService.GetById(recipeId);
-            if (recipe != null)
-            {
-                _recipeService.Delete(recipe);
-            }
+            _recipeService.RemoveFavorite(recipeId, userId);
+
+            OnGet(recipeId);
 
             // Redirect to the same page after deletion
             return RedirectToPage(new { selectedPage = currentPage });
         }
+
     }
 }

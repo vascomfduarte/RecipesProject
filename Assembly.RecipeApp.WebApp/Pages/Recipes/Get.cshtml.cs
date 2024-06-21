@@ -30,8 +30,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         public Comment Comment { get; private set; }
         public List<Note> Notes { get; private set; }
         public Note Note { get; private set; }
-
-
+        public List<Recipe> FavoriteRecipes { get; private set; }
 
         public PreparationMethod PreparationMethod { get; set; }
         public List<Ingredient> RecipeIngredients { get; set; }
@@ -63,7 +62,23 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
         }
 
         public IActionResult OnGet(int id)
-        {           
+        {
+            // Retrieve UserId from session
+            var userId = HttpContext.Session.GetInt32("Id");
+            if (userId is not null)
+            {
+                // Fetch the user by id
+                User = _userService.GetById(userId.Value);
+
+                // Check if User is Admin
+                HttpContext.Session.SetString("IsAdmin", User.IsAdmin ? "true" : "false");
+
+                // Get all Recipes from the service
+                var userFavoriteRecipes = _recipeService.GetUserFavoriteRecipes(User.Id);
+                User.UserFavoriteRecipes = userFavoriteRecipes;
+                FavoriteRecipes = userFavoriteRecipes;
+            }                       
+
             Recipe = _recipeService.GetById(id);
             Comments = _commentService.GetByRecipeId(id);
             Notes = _noteService.GetByRecipeId(id);
@@ -353,6 +368,30 @@ namespace Assembly.RecipeApp.WebApp.Pages.Recipes
             }
 
             _noteService.DeleteByRecipeId(recipeId);
+
+            OnGet(recipeId);
+
+            // Redirect to the same page after deletion
+            return Page();
+        }
+
+        public IActionResult OnPostFavorite(int recipeId, int userId)
+        {
+            OnGet(recipeId);
+
+            _recipeService.AddFavorite(recipeId, userId);                       
+
+            OnGet(recipeId);
+
+            // Redirect to the same page after deletion
+            return Page();
+        }
+
+        public IActionResult OnPostUnfavorite(int recipeId, int userId)
+        {
+            OnGet(recipeId);
+
+            _recipeService.RemoveFavorite(recipeId, userId);
 
             OnGet(recipeId);
 

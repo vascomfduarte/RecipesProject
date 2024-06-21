@@ -179,7 +179,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                         description: Description,
                         imageSource: recipeImagePath,
                         minutesToCook: MinutesToCook,
-                        isApproved: updateRecipe.IsApproved,
+                        isApproved: false,
                         createdBy: updateRecipe.CreatedBy,
                         createdDate: updateRecipe.CreatedDate,
                         difficulty: dif,

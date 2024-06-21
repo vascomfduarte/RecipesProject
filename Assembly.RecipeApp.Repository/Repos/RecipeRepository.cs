@@ -283,6 +283,72 @@ namespace Assembly.RecipeApp.Repository.Repos
             return recipes;
         } // Feito
 
+        public List<Recipe> GetUserFavoriteRecipes(int userId)
+        {
+            List<Recipe> favoriteRecipes = new List<Recipe>();
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT r.*, u.*, d.*
+                         FROM [dbo].[user_favorite_recipes] AS ufr
+                         INNER JOIN [dbo].[recipe] AS r ON ufr.[recipe_id] = r.[id]
+                         INNER JOIN [dbo].[user] AS u ON r.[user_id] = u.[id]
+                         INNER JOIN [dbo].[difficulty] AS d ON r.[difficulty_id] = d.[id]
+                         WHERE ufr.[user_id] = @userId;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.Add("@userId", SqlDbType.Int).Value = userId;
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string title = reader.GetString(1);
+                            string description = reader.GetString(2);
+                            string imageSource = reader.GetString(3);
+                            int minutesToCook = reader.GetInt32(4);
+                            bool isApproved = reader.GetInt32(5) == 1 ? true : false;
+                            DateTime createdDate = reader.GetDateTime(6);
+
+                            // User
+                            User user = new User(reader.GetInt32(9),
+                                                 reader.GetString(10),
+                                                 reader.GetString(11),
+                                                 reader.GetString(12),
+                                                 reader.GetString(13),
+                                                 reader.GetString(14),
+                                                 reader.GetString(15),
+                                                 reader.GetString(16),
+                                                 reader.GetInt32(17) == 1 ? true : false,
+                                                 reader.GetInt32(18) == 1 ? true : false,
+                                                 reader.GetDateTime(19));
+
+                            // Difficulty
+                            Difficulty difficulty = new Difficulty(reader.GetInt32(20),
+                                                                   reader.GetString(21),
+                                                                   reader.GetDateTime(22));
+
+                            // Rating List
+                            List<Rating> ratings = _ratingRepository.GetByRecipeId(id);
+
+                            // Category List
+                            List<Category> categories = _categoryRepository.GetByRecipeId(id);
+
+                            Recipe recipe = new Recipe(id, title, description, imageSource, minutesToCook, isApproved, user, difficulty, ratings, categories, user.Username, createdDate);
+                            favoriteRecipes.Add(recipe);
+                        }
+                    }
+                }
+            }
+
+            return favoriteRecipes;
+        } // Feito
+
         /// <summary>
         /// Method that searches for a given name
         /// </summary>
@@ -658,6 +724,51 @@ namespace Assembly.RecipeApp.Repository.Repos
                     cmd.Parameters.AddWithValue("@createdDate", DateTime.UtcNow);
                     cmd.Parameters.AddWithValue("@userId", recipe.User.Id);
                     cmd.Parameters.AddWithValue("@difficultyId", recipe.Difficulty.Id);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
+
+        public bool AddFavorite(int recipeId, int userId)
+        {
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"INSERT INTO [dbo].[user_favorite_recipes] (recipe_id, user_id)
+                         VALUES (@recipeId, @userId)";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to command
+                    cmd.Parameters.AddWithValue("@recipeId", recipeId);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
+
+        public bool RemoveFavorite(int recipeId, int userId)
+        {
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = "DELETE FROM [dbo].[user_favorite_recipes] WHERE recipe_id = @recipeId AND user_id = @userId";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to command
+                    cmd.Parameters.AddWithValue("@recipeId", recipeId);
+                    cmd.Parameters.AddWithValue("@userId", userId);
 
                     if (con.State != ConnectionState.Open)
                         con.Open();

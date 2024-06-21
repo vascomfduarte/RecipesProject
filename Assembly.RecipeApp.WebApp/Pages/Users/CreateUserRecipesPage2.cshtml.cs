@@ -74,7 +74,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         public IActionResult OnGet(int recipeId)
         {
             Difficulties = _difficultyService.GetAll();
-            Products = _productService.GetAll();
+            Products = _productService.GetAll().OrderBy(product => product.Name).ToList();
             Units = _unitService.GetAll();
             RecipeIngredients = _ingredientService.GetRecipeIngredients(recipeId);
             RecipeIngredients.Reverse();          

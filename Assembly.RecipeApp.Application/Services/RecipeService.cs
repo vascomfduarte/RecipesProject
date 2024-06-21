@@ -42,6 +42,32 @@ namespace Assembly.RecipeApp.Application.Services
             return _recipeRepository.Add(recipe);
         } // Feito 
 
+        public bool AddFavorite(int recipeId, int userId)
+        {
+            List<Recipe> favorite = GetUserFavoriteRecipes(userId);
+
+            // Check if the recipe is in the favorite list by comparing the IDs
+            if (favorite.Any(r => r.Id == recipeId))
+            {
+                return false;
+            }
+
+            return _recipeRepository.AddFavorite(recipeId, userId);
+        } // Feito 
+
+        public bool RemoveFavorite(int recipeId, int userId)
+        {
+            List<Recipe> favorite = GetUserFavoriteRecipes(userId);
+
+            // Check if the recipe is in the favorite list by comparing the IDs
+            if (!favorite.Any(r => r.Id == recipeId))
+            {
+                return false;
+            }
+
+            return _recipeRepository.RemoveFavorite(recipeId, userId);
+        } // Feito 
+
         public List<Recipe> GetAll()
         {
             return _recipeRepository.GetAll();
@@ -105,6 +131,21 @@ namespace Assembly.RecipeApp.Application.Services
         public List<Recipe> GetByUserId(int userId)
         {
             return _recipeRepository.GetByUserId(userId);
+        } // Feito 
+
+        public List<Recipe> GetUserFavoriteRecipes(int userId)
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            foreach (Recipe recipe in _recipeRepository.GetUserFavoriteRecipes(userId))
+            {
+                if (recipe.IsApproved == true)
+                {
+                    recipes.Add(recipe);
+                }
+            }
+
+            return recipes;
         } // Feito 
 
         public List<Recipe> GetFilteredRecipes(string name)
