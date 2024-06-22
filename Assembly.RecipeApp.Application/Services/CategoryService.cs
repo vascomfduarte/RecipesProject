@@ -28,6 +28,16 @@ namespace Assembly.RecipeApp.Application.Services
             throw new NotImplementedException();
         }
 
+        public bool AddRecipe(int categoryId, int recipeId)
+        {
+            return _categoryRepository.AddRecipe(categoryId, recipeId);
+        }
+
+        public bool RemoveRecipe(int categoryId, int recipeId)
+        {
+            return _categoryRepository.RemoveRecipe(categoryId, recipeId);
+        }
+
         public bool Update(Category entity, User adminUser)
         {
             throw new NotImplementedException();

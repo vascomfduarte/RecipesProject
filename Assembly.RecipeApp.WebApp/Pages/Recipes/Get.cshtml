@@ -348,7 +348,14 @@
                             }
                             else
                             {
-                                <p>No comments yet. Be the first to comment!</p>
+                                if (HttpContext.Session.GetString("Username") is null)
+                                {
+                                    <a asp-page="/Users/Login" style="text-decoration: none; color: inherit;">No comments yet. Be the first to comment.</a>
+                                }
+                                else
+                                {
+                                    <p class="mb-2">No comments yet. Be the first to comment.</p>
+                                }
                             }
 
                             <!-- Comment creation, only if logged user -->

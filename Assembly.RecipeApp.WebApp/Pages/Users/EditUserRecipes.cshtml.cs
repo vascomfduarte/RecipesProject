@@ -1,4 +1,5 @@
 using Assembly.RecipeApp.Application.Interfaces;
+using Assembly.RecipeApp.Application.Services;
 using Assembly.RecipeApp.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -41,16 +42,13 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         [Required(ErrorMessage = "Please select a difficulty level.")]
         public string DifficultyChoice { get; set; }
 
+        [BindProperty]
+        public string UserImage { get; set; }
 
         public Recipe Recipe { get; set; }
         public User User { get; private set; }
-
-
         public List<Difficulty> Difficulties { get; set; }
 
-
-        [BindProperty]
-        public string UserImage { get; set; }
 
         public EditUserRecipesModel(IUserService userService, IRecipeService recipeService, IDifficultyService difficultyService, IWebHostEnvironment hostingEnvironment)
         {

@@ -129,6 +129,53 @@ namespace Assembly.RecipeApp.Repository.Repos
         {
             throw new NotImplementedException();
         }
+
+        public bool AddRecipe(int categoryId, int recipeId)
+        {
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"INSERT INTO [dbo].[recipe_categories] (category_id, recipe_id)
+                         VALUES (@categoryId, @recipeId)";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to the command
+                    cmd.Parameters.AddWithValue("@categoryId", categoryId);
+                    cmd.Parameters.AddWithValue("@recipeId", recipeId);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
+
+        public bool RemoveRecipe(int categoryId, int recipeId)
+        {
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                string query = @"DELETE FROM [dbo].[recipe_categories]
+                         WHERE category_id = @categoryId AND recipe_id = @recipeId";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameters to the command
+                    cmd.Parameters.AddWithValue("@categoryId", categoryId);
+                    cmd.Parameters.AddWithValue("@recipeId", recipeId);
+
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        } // Feito
+
         public bool Update(Category entity, User adminUser)
         {
             throw new NotImplementedException();

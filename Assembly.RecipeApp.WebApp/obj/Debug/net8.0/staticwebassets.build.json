@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IXPexquHC0xkXKkZ3qW0+DRMNsdtUBV9jou6SJR1tqQ=",
+  "Hash": "Oj38rsDqUUMlmztupOch0/16DZjWAPcacfQpsZ+w3Ek=",
   "Source": "Assembly.RecipeApp.WebApp",
   "BasePath": "_content/Assembly.RecipeApp.WebApp",
   "Mode": "Default",
@@ -870,6 +870,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\d048c0b8-91a3-4088-884e-9a178b685a08_recipe-book_5228355.png"
+    },
+    {
+      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\d05a9edd-80e1-4a1e-be00-5a2d426360a7_pastel-de-nata.jpeg",
+      "SourceId": "Assembly.RecipeApp.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "BasePath": "_content/Assembly.RecipeApp.WebApp",
+      "RelativePath": "images/d05a9edd-80e1-4a1e-be00-5a2d426360a7_pastel-de-nata.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\d05a9edd-80e1-4a1e-be00-5a2d426360a7_pastel-de-nata.jpeg"
     },
     {
       "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png",

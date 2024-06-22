@@ -13,6 +13,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         private readonly IUserService _userService;
         private readonly IRecipeService _recipeService;
         private readonly IDifficultyService _difficultyService;
+        private readonly ICategoryService _categoryService;
         private readonly IWebHostEnvironment _hostingEnvironment;
 
         [BindProperty]
@@ -33,28 +34,31 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         [BindProperty]
         public string DifficultyChoice { get; set; }
 
-
-        public Recipe Recipe { get; set; }
-        public User User { get; private set; }
-
+        [BindProperty]
+        public List<Category> Categories { get; set; }
 
         public List<Difficulty> Difficulties { get; set; }
-
 
         [BindProperty]
         public string UserImage { get; set; }
 
-        public CreateUserRecipesModel(IUserService userService, IRecipeService recipeService, IDifficultyService difficultyService, IWebHostEnvironment hostingEnvironment)
+
+        public Recipe Recipe { get; set; }
+        public User User { get; private set; }
+
+        public CreateUserRecipesModel(IUserService userService, IRecipeService recipeService, IDifficultyService difficultyService, ICategoryService categoryService, IWebHostEnvironment hostingEnvironment)
         {
             _userService = userService;
             _recipeService = recipeService;
             _difficultyService = difficultyService;
+            _categoryService = categoryService;
             _hostingEnvironment = hostingEnvironment;
         }
 
         public IActionResult OnGet()
         {
             Difficulties = _difficultyService.GetAll();
+            Categories = _categoryService.GetAll();
 
             // Retrieve UserId from session
             var userId = HttpContext.Session.GetInt32("Id");

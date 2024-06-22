@@ -15,6 +15,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         private readonly IProductService _productService;
         private readonly IUnitService _unitService;
         private readonly IIngredientService _ingredientService;
+        private readonly ICategoryService _categoryService;
         private readonly IPreparationMethodService _preparationMethodService;
         private readonly IWebHostEnvironment _hostingEnvironment;
                       
@@ -32,6 +33,8 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         public List<Unit> Units { get; set; }
         [BindProperty]
         public List<Product> Products { get; set; }
+        [BindProperty]
+        public List<Category> Categories { get; set; }
 
 
         [BindProperty]
@@ -42,6 +45,8 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
         public int SelectedUnit { get; set; }
         [BindProperty]
         public string UserImage { get; set; }
+        [BindProperty]
+        public int SelectedCategory { get; set; }
 
 
         [BindProperty]
@@ -58,6 +63,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
                                            IProductService productService, 
                                            IUnitService unitService, 
                                            IIngredientService ingredientService,
+                                           ICategoryService categoryService,
                                            IPreparationMethodService preparationMethodService,                                           
                                            IWebHostEnvironment hostingEnvironment)
         {
@@ -67,6 +73,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             _productService = productService;
             _unitService = unitService;
             _ingredientService = ingredientService;
+            _categoryService = categoryService;
             _preparationMethodService = preparationMethodService;
             _hostingEnvironment = hostingEnvironment;
         }
@@ -76,6 +83,7 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             Difficulties = _difficultyService.GetAll();
             Products = _productService.GetAll().OrderBy(product => product.Name).ToList();
             Units = _unitService.GetAll();
+            Categories = _categoryService.GetAll().OrderBy(category => category.Name).ToList();
             RecipeIngredients = _ingredientService.GetRecipeIngredients(recipeId);
             RecipeIngredients.Reverse();          
             Recipe = _recipeService.GetById(recipeId);
@@ -171,6 +179,24 @@ namespace Assembly.RecipeApp.WebApp.Pages.Users
             PreparationStep preparationStep = _preparationMethodService.GetStepById(stepId);
 
             _preparationMethodService.DeleteStep(preparationStep);
+
+            OnGet(recipeId);
+
+            return Page();
+        }
+
+        public IActionResult OnPostAddCategory(int recipeId, int categoryId)
+        {
+            _categoryService.AddRecipe(categoryId, recipeId);
+
+            OnGet(recipeId);
+
+            return Page();
+        }
+
+        public IActionResult OnPostRemoveCategory(int recipeId, int categoryId)
+        {
+            _categoryService.AddRecipe(categoryId, recipeId);
 
             OnGet(recipeId);
 
