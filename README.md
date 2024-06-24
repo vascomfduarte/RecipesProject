@@ -53,7 +53,13 @@ A web application built with the ASP.NET framework, featuring functionalities fo
    
 2. Install MS SQL Server.
 
-3. Run RecipesProject/DB/RecipesProject.sql query for database installation.
+3. Run RecipesProject/DB/RecipesProject.sql query for database installation. On the code below make sure so change path "A:\Programas\MSSQL16.MSSQLSERVER\MSSQL\DATA" to you local DATA folder.
+``` SQL QUERY
+( NAME = N'JD_FC_VD_RecipesProject', FILENAME = N'A:\Programas\MSSQL16.MSSQLSERVER\MSSQL\DATA\JD_FC_VD_RecipesProject.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON
+( NAME = N'JD_FC_VD_RecipesProject_log', FILENAME = N'A:\Programas\MSSQL16.MSSQLSERVER\MSSQL\DATA\JD_FC_VD_RecipesProject_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+```
 
 4. Run the code.
 
