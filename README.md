@@ -51,7 +51,7 @@ A web application built with the ASP.NET framework, featuring functionalities fo
 
 1. Clone the repository https://github.com/vascomfduarte/RecipesProject.git. I recomend to clone it directly from Visual Studio.
    
-2. Install MS SQL Server.
+2. Install MS SQL Server Management Studio.
 
 3. Run RecipesProject/DB/RecipesProject.sql query for database installation. On the code below make sure so change path "A:\Programas\MSSQL16.MSSQLSERVER\MSSQL\DATA" to you local DATA folder.
 ``` SQL QUERY
