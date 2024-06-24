@@ -9,19 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container. (DI Framework)
 builder.Services.AddRazorPages();
-//builder.Services.AddRazorServices(builder.Configuration);
-
-//builder.Services.AddSingleton<ICategoryService, CategoryService>();
-//builder.Services.AddSingleton<ICommentService, CommentService>();
-//builder.Services.AddSingleton<INoteService, NoteService>();
-//builder.Services.AddSingleton<IDifficultyService, DifficultyService>();
-//builder.Services.AddSingleton<IIngredientService, IngredientService>();
-//builder.Services.AddSingleton<IPreparationMethodService, PreparationMethodService>();
-//builder.Services.AddSingleton<IProductService, ProductService>();
-//builder.Services.AddSingleton<IRatingService, RatingService>();
-//builder.Services.AddSingleton<IRecipeService, RecipeService>();
-//builder.Services.AddSingleton<IUnitService, UnitService>();
-//builder.Services.AddSingleton<IUserService, UserService>();
 
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
@@ -34,18 +21,6 @@ builder.Services.AddScoped<IRatingService, RatingService>();
 builder.Services.AddScoped<IRecipeService, RecipeService>();
 builder.Services.AddScoped<IUnitService, UnitService>();
 builder.Services.AddScoped<IUserService, UserService>();
-
-//builder.Services.AddSingleton<ICategoryRepository, CategoryRepository>();
-//builder.Services.AddSingleton<ICommentRepository, CommentRepository>();
-//builder.Services.AddSingleton<INoteRepository, NoteRepository>();
-//builder.Services.AddSingleton<IDifficultyRepository, DifficultyRepository>();
-//builder.Services.AddSingleton<IIngredientRepository, IngredientRepository>();
-//builder.Services.AddSingleton<IPreparationMethodRepository, PreparationMethodRepository>();
-//builder.Services.AddSingleton<IProductRepository, ProductRepository>();
-//builder.Services.AddSingleton<IRatingRepository, RatingRepository>();
-//builder.Services.AddSingleton<IRecipeRepository, RecipeRepository>();
-//builder.Services.AddSingleton<IUnitRepository, UnitRepository>();
-//builder.Services.AddSingleton<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
