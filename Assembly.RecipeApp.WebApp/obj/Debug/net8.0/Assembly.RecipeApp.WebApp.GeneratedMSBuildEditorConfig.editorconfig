@@ -9,135 +9,135 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Assembly.RecipeApp.WebApp
 build_property.RootNamespace = Assembly.RecipeApp.WebApp
-build_property.ProjectDir = C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.WebApp\
+build_property.ProjectDir = A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\RecipesProject\Assembly.RecipeApp.WebApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\vasco\Desktop\Programação\ProjetoFinal\side_branch\Assembly.RecipeApp.WebApp
+build_property.MSBuildProjectDirectory = A:\Work, Projects\Programação\ProjetoFinal\side_branch\RecipesProject\RecipesProject\Assembly.RecipeApp.WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/CreateDifficulty.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/CreateDifficulty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ3JlYXRlRGlmZmljdWx0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/CreateProduct.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ3JlYXRlUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/CreateUnit.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/CreateUnit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ3JlYXRlVW5pdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/CreateUser.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/CreateUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ3JlYXRlVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/ManageDifficulties.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageDifficulties.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlRGlmZmljdWx0aWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/ManageProducts.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageProducts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlUHJvZHVjdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/ManageRecipes.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageRecipes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlUmVjaXBlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/ManageRecipesBlocked.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageRecipesBlocked.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlUmVjaXBlc0Jsb2NrZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/ManageUnits.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageUnits.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlVW5pdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/ManageUsers.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Admin/ManageUsersBlocked.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Admin/ManageUsersBlocked.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlVXNlcnNCbG9ja2VkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Error.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Index.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Privacy.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Recipes/Get.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Recipes/Get.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlc1xHZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Recipes/GetAll.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Recipes/GetAll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlc1xHZXRBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/Account.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Account.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQWNjb3VudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/CreateUserRecipes.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/CreateUserRecipes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQ3JlYXRlVXNlclJlY2lwZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/CreateUserRecipesPage2.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/CreateUserRecipesPage2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQ3JlYXRlVXNlclJlY2lwZXNQYWdlMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/EditUserRecipes.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/EditUserRecipes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRWRpdFVzZXJSZWNpcGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/Info.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Info.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcSW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/Login.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/Register.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/Security.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/Security.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcU2VjdXJpdHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/UserComments.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/UserComments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcVXNlckNvbW1lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/UserFavoriteRecipes.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/UserFavoriteRecipes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcVXNlckZhdm9yaXRlUmVjaXBlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Users/UserRecipes.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Users/UserRecipes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcVXNlclJlY2lwZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/_ViewImports.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/_ViewStart.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vasco/Desktop/Programação/ProjetoFinal/side_branch/Assembly.RecipeApp.WebApp/Pages/Shared/_Layout.cshtml]
+[A:/Work\, Projects/Programação/ProjetoFinal/side_branch/RecipesProject/RecipesProject/Assembly.RecipeApp.WebApp/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-kcmpxyoi24

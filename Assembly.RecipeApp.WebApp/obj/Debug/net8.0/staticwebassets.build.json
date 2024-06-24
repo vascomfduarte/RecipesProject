@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Oj38rsDqUUMlmztupOch0/16DZjWAPcacfQpsZ+w3Ek=",
+  "Hash": "rILK/wiF/qN/g81w/ZgXvFTMLDF7cN/OwokG/nwdnbA=",
   "Source": "Assembly.RecipeApp.WebApp",
   "BasePath": "_content/Assembly.RecipeApp.WebApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Assembly.RecipeApp.WebApp\\wwwroot",
       "Source": "Assembly.RecipeApp.WebApp",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Assembly.RecipeApp.WebApp.styles.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Assembly.RecipeApp.WebApp.styles.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "Assembly.RecipeApp.WebApp.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Assembly.RecipeApp.WebApp.styles.css"
+      "OriginalItemSpec": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Assembly.RecipeApp.WebApp.styles.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Assembly.RecipeApp.WebApp.bundle.scp.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Assembly.RecipeApp.WebApp.bundle.scp.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "Assembly.RecipeApp.WebApp.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Assembly.RecipeApp.WebApp.bundle.scp.css"
+      "OriginalItemSpec": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Assembly.RecipeApp.WebApp.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\css\\site.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\css\\site.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\favicon.ico",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\favicon.ico",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -93,29 +93,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\029a5b0b-7457-42b0-b2cd-8ac8296d3f8d_Imagem WhatsApp 2024-05-26 às 12.37.02_e9551d82.jpg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\0d0db2b6-4234-4f5f-884f-304a6305f247_fricasse-pescada.webp",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/029a5b0b-7457-42b0-b2cd-8ac8296d3f8d_Imagem WhatsApp 2024-05-26 às 12.37.02_e9551d82.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\029a5b0b-7457-42b0-b2cd-8ac8296d3f8d_Imagem WhatsApp 2024-05-26 às 12.37.02_e9551d82.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\0d0db2b6-4234-4f5f-884f-304a6305f247_fricasse-pescada.webp",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/0d0db2b6-4234-4f5f-884f-304a6305f247_fricasse-pescada.webp",
       "AssetKind": "All",
@@ -131,29 +112,10 @@
       "OriginalItemSpec": "wwwroot\\images\\0d0db2b6-4234-4f5f-884f-304a6305f247_fricasse-pescada.webp"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\188f0856-3c0a-4758-bcd2-9aeef878f297_default_recipe.png",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\1df2e242-3a82-4d74-ae23-b248d2749ba7_Capturar2.PNG",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/188f0856-3c0a-4758-bcd2-9aeef878f297_default_recipe.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\188f0856-3c0a-4758-bcd2-9aeef878f297_default_recipe.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\1df2e242-3a82-4d74-ae23-b248d2749ba7_Capturar2.PNG",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/1df2e242-3a82-4d74-ae23-b248d2749ba7_Capturar2.PNG",
       "AssetKind": "All",
@@ -169,29 +131,10 @@
       "OriginalItemSpec": "wwwroot\\images\\1df2e242-3a82-4d74-ae23-b248d2749ba7_Capturar2.PNG"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\327405f3-5736-424d-9733-437a3781b5b4_1715268256 (3).jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\351d8c48-5db6-4a22-b79a-3efa2cf6d9f6_fricasse-pescada.webp",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/327405f3-5736-424d-9733-437a3781b5b4_1715268256 (3).jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\327405f3-5736-424d-9733-437a3781b5b4_1715268256 (3).jpeg"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\351d8c48-5db6-4a22-b79a-3efa2cf6d9f6_fricasse-pescada.webp",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/351d8c48-5db6-4a22-b79a-3efa2cf6d9f6_fricasse-pescada.webp",
       "AssetKind": "All",
@@ -207,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\images\\351d8c48-5db6-4a22-b79a-3efa2cf6d9f6_fricasse-pescada.webp"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\36aaffc2-0193-4bc9-acb9-19b77674efce_Caldo-verde-chourico.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\36aaffc2-0193-4bc9-acb9-19b77674efce_Caldo-verde-chourico.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/36aaffc2-0193-4bc9-acb9-19b77674efce_Caldo-verde-chourico.jpeg",
       "AssetKind": "All",
@@ -226,12 +169,12 @@
       "OriginalItemSpec": "wwwroot\\images\\36aaffc2-0193-4bc9-acb9-19b77674efce_Caldo-verde-chourico.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\413a55bf-fda7-47da-b6f3-6e173afd13ce_1715268256 (3).jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\384ab164-f2ad-4344-9410-b8a11860f01d_Capturar7.PNG",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/413a55bf-fda7-47da-b6f3-6e173afd13ce_1715268256 (3).jpeg",
+      "RelativePath": "images/384ab164-f2ad-4344-9410-b8a11860f01d_Capturar7.PNG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -242,13 +185,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\413a55bf-fda7-47da-b6f3-6e173afd13ce_1715268256 (3).jpeg"
+      "OriginalItemSpec": "wwwroot\\images\\384ab164-f2ad-4344-9410-b8a11860f01d_Capturar7.PNG"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\43d46d9e-bd12-42aa-9a49-33febf8661c5_bacalhau-a-bras.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\43d46d9e-bd12-42aa-9a49-33febf8661c5_bacalhau-a-bras.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/43d46d9e-bd12-42aa-9a49-33febf8661c5_bacalhau-a-bras.jpeg",
       "AssetKind": "All",
@@ -264,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\images\\43d46d9e-bd12-42aa-9a49-33febf8661c5_bacalhau-a-bras.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\44460d73-5776-45bf-a879-5b22f9a3583e_arroz-de-pato.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\44460d73-5776-45bf-a879-5b22f9a3583e_arroz-de-pato.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/44460d73-5776-45bf-a879-5b22f9a3583e_arroz-de-pato.jpeg",
       "AssetKind": "All",
@@ -283,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\images\\44460d73-5776-45bf-a879-5b22f9a3583e_arroz-de-pato.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\466963a7-c553-4efc-9689-1c4adbbb3a05_lasanha.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\466963a7-c553-4efc-9689-1c4adbbb3a05_lasanha.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/466963a7-c553-4efc-9689-1c4adbbb3a05_lasanha.jpeg",
       "AssetKind": "All",
@@ -302,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\images\\466963a7-c553-4efc-9689-1c4adbbb3a05_lasanha.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\4edb26eb-ef79-4a17-a5fa-3239f78c9d96_lasanha.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\4edb26eb-ef79-4a17-a5fa-3239f78c9d96_lasanha.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/4edb26eb-ef79-4a17-a5fa-3239f78c9d96_lasanha.jpeg",
       "AssetKind": "All",
@@ -321,29 +264,10 @@
       "OriginalItemSpec": "wwwroot\\images\\4edb26eb-ef79-4a17-a5fa-3239f78c9d96_lasanha.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\54c9e088-7757-451e-8f65-ffc98618493f_default_recipe.png",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\5d7aaf90-a302-40e4-b203-f9a6b3b06355_imagem_2024-06-18_230130547.png",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/54c9e088-7757-451e-8f65-ffc98618493f_default_recipe.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\54c9e088-7757-451e-8f65-ffc98618493f_default_recipe.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\5d7aaf90-a302-40e4-b203-f9a6b3b06355_imagem_2024-06-18_230130547.png",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/5d7aaf90-a302-40e4-b203-f9a6b3b06355_imagem_2024-06-18_230130547.png",
       "AssetKind": "All",
@@ -359,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\images\\5d7aaf90-a302-40e4-b203-f9a6b3b06355_imagem_2024-06-18_230130547.png"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\5f5238e3-8668-424d-9578-b4f5dd1a74a8_polvo-a-lagareiro.jpg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\5f5238e3-8668-424d-9578-b4f5dd1a74a8_polvo-a-lagareiro.jpg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/5f5238e3-8668-424d-9578-b4f5dd1a74a8_polvo-a-lagareiro.jpg",
       "AssetKind": "All",
@@ -378,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\images\\5f5238e3-8668-424d-9578-b4f5dd1a74a8_polvo-a-lagareiro.jpg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\6035812e-11a8-4c8b-91d9-3367fba77795_bacalhau-a-bras.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\6035812e-11a8-4c8b-91d9-3367fba77795_bacalhau-a-bras.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/6035812e-11a8-4c8b-91d9-3367fba77795_bacalhau-a-bras.jpeg",
       "AssetKind": "All",
@@ -397,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\images\\6035812e-11a8-4c8b-91d9-3367fba77795_bacalhau-a-bras.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\61a48c13-a1db-4c30-9764-efdd803f01d6_Capturar8.PNG",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\61a48c13-a1db-4c30-9764-efdd803f01d6_Capturar8.PNG",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/61a48c13-a1db-4c30-9764-efdd803f01d6_Capturar8.PNG",
       "AssetKind": "All",
@@ -416,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\images\\61a48c13-a1db-4c30-9764-efdd803f01d6_Capturar8.PNG"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\686950d3-f506-41e5-862d-2f8e0164f508_frango-panado-com-queijo-parmesao.jpg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\686950d3-f506-41e5-862d-2f8e0164f508_frango-panado-com-queijo-parmesao.jpg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/686950d3-f506-41e5-862d-2f8e0164f508_frango-panado-com-queijo-parmesao.jpg",
       "AssetKind": "All",
@@ -435,12 +359,12 @@
       "OriginalItemSpec": "wwwroot\\images\\686950d3-f506-41e5-862d-2f8e0164f508_frango-panado-com-queijo-parmesao.jpg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\7296661b-fd1b-4314-9f4e-1ad93d87d927_default_recipe.png",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\7162f6df-793e-4ed5-95d7-b972a65b71aa_salmao-com-espargos-e-batata-doce.jpg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/7296661b-fd1b-4314-9f4e-1ad93d87d927_default_recipe.png",
+      "RelativePath": "images/7162f6df-793e-4ed5-95d7-b972a65b71aa_salmao-com-espargos-e-batata-doce.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -451,13 +375,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\7296661b-fd1b-4314-9f4e-1ad93d87d927_default_recipe.png"
+      "OriginalItemSpec": "wwwroot\\images\\7162f6df-793e-4ed5-95d7-b972a65b71aa_salmao-com-espargos-e-batata-doce.jpg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\73155d06-4e2e-4dca-84f1-2cd0c7f3c741_images.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\73155d06-4e2e-4dca-84f1-2cd0c7f3c741_images.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/73155d06-4e2e-4dca-84f1-2cd0c7f3c741_images.jpeg",
       "AssetKind": "All",
@@ -473,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\images\\73155d06-4e2e-4dca-84f1-2cd0c7f3c741_images.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\7caebb44-e64c-4819-9ad1-abb1b50c6893_lasanha.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\7caebb44-e64c-4819-9ad1-abb1b50c6893_lasanha.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/7caebb44-e64c-4819-9ad1-abb1b50c6893_lasanha.jpeg",
       "AssetKind": "All",
@@ -492,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\images\\7caebb44-e64c-4819-9ad1-abb1b50c6893_lasanha.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\8b520d6e-a42d-4a8f-822e-c95d0a0226af_imagem_2024-06-18_220547678.png",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\8b520d6e-a42d-4a8f-822e-c95d0a0226af_imagem_2024-06-18_220547678.png",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/8b520d6e-a42d-4a8f-822e-c95d0a0226af_imagem_2024-06-18_220547678.png",
       "AssetKind": "All",
@@ -511,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\images\\8b520d6e-a42d-4a8f-822e-c95d0a0226af_imagem_2024-06-18_220547678.png"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\8b6f5d97-9f2d-48c6-bd29-c48af83ad759_fricasse-pescada.webp",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\8b6f5d97-9f2d-48c6-bd29-c48af83ad759_fricasse-pescada.webp",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/8b6f5d97-9f2d-48c6-bd29-c48af83ad759_fricasse-pescada.webp",
       "AssetKind": "All",
@@ -530,67 +454,10 @@
       "OriginalItemSpec": "wwwroot\\images\\8b6f5d97-9f2d-48c6-bd29-c48af83ad759_fricasse-pescada.webp"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\8b7fe566-52c1-4355-8a5c-b257ec55a1f9_default_recipe.png",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\95ba1b7b-026e-403e-96c8-b6f7337aed7e_fricasse-pescada.webp",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/8b7fe566-52c1-4355-8a5c-b257ec55a1f9_default_recipe.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\8b7fe566-52c1-4355-8a5c-b257ec55a1f9_default_recipe.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\8c74da4b-8ef2-4967-a8f8-5940114347c0_default_recipe.png",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/8c74da4b-8ef2-4967-a8f8-5940114347c0_default_recipe.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\8c74da4b-8ef2-4967-a8f8-5940114347c0_default_recipe.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\8e4c7fa7-7440-48c2-81e0-723019b6634c_65ad79c80f0ba50013abedf0_688646114.jpg",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/8e4c7fa7-7440-48c2-81e0-723019b6634c_65ad79c80f0ba50013abedf0_688646114.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\8e4c7fa7-7440-48c2-81e0-723019b6634c_65ad79c80f0ba50013abedf0_688646114.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\95ba1b7b-026e-403e-96c8-b6f7337aed7e_fricasse-pescada.webp",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/95ba1b7b-026e-403e-96c8-b6f7337aed7e_fricasse-pescada.webp",
       "AssetKind": "All",
@@ -606,48 +473,10 @@
       "OriginalItemSpec": "wwwroot\\images\\95ba1b7b-026e-403e-96c8-b6f7337aed7e_fricasse-pescada.webp"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\96a48074-a7b4-40b8-812e-0084b40afec7_65ad79c80f0ba50013abedf0_688646114.jpg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\9e29309b-21d8-4d54-8571-9b2a3fd8c196_francesinha.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/96a48074-a7b4-40b8-812e-0084b40afec7_65ad79c80f0ba50013abedf0_688646114.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\96a48074-a7b4-40b8-812e-0084b40afec7_65ad79c80f0ba50013abedf0_688646114.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\9beaabae-195a-4038-a9cb-31b338678ff9_default_recipe.png",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/9beaabae-195a-4038-a9cb-31b338678ff9_default_recipe.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\9beaabae-195a-4038-a9cb-31b338678ff9_default_recipe.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\9e29309b-21d8-4d54-8571-9b2a3fd8c196_francesinha.jpeg",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/9e29309b-21d8-4d54-8571-9b2a3fd8c196_francesinha.jpeg",
       "AssetKind": "All",
@@ -663,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\images\\9e29309b-21d8-4d54-8571-9b2a3fd8c196_francesinha.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\9fd2eede-4eb7-4e66-9deb-4b1af42dd111_salmao-com-espargos-e-batata-doce.jpg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\9fd2eede-4eb7-4e66-9deb-4b1af42dd111_salmao-com-espargos-e-batata-doce.jpg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/9fd2eede-4eb7-4e66-9deb-4b1af42dd111_salmao-com-espargos-e-batata-doce.jpg",
       "AssetKind": "All",
@@ -682,29 +511,10 @@
       "OriginalItemSpec": "wwwroot\\images\\9fd2eede-4eb7-4e66-9deb-4b1af42dd111_salmao-com-espargos-e-batata-doce.jpg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\a41b5ed3-e864-4c2f-9b63-9636237bf6bc_default_recipe.png",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\a4795cbd-9059-4f79-8121-f4badf22b56a_bacalhau-a-bras.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/a41b5ed3-e864-4c2f-9b63-9636237bf6bc_default_recipe.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\a41b5ed3-e864-4c2f-9b63-9636237bf6bc_default_recipe.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\a4795cbd-9059-4f79-8121-f4badf22b56a_bacalhau-a-bras.jpeg",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/a4795cbd-9059-4f79-8121-f4badf22b56a_bacalhau-a-bras.jpeg",
       "AssetKind": "All",
@@ -720,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\images\\a4795cbd-9059-4f79-8121-f4badf22b56a_bacalhau-a-bras.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\ac6c4941-0cea-4dea-b971-84f8c1a69894_lasanha.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\ac6c4941-0cea-4dea-b971-84f8c1a69894_lasanha.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/ac6c4941-0cea-4dea-b971-84f8c1a69894_lasanha.jpeg",
       "AssetKind": "All",
@@ -739,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\images\\ac6c4941-0cea-4dea-b971-84f8c1a69894_lasanha.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\ae0f10e9-b4c6-4ec7-a093-371eb9cfe0f6_bacalhau-a-bras.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\ae0f10e9-b4c6-4ec7-a093-371eb9cfe0f6_bacalhau-a-bras.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/ae0f10e9-b4c6-4ec7-a093-371eb9cfe0f6_bacalhau-a-bras.jpeg",
       "AssetKind": "All",
@@ -758,29 +568,10 @@
       "OriginalItemSpec": "wwwroot\\images\\ae0f10e9-b4c6-4ec7-a093-371eb9cfe0f6_bacalhau-a-bras.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\b9522b24-931f-4886-97da-e3106479a950_bacalhau-a-bras.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\b750f1dc-0625-4022-9daa-7c9b1f377fdc_default-image.jpg.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\b9522b24-931f-4886-97da-e3106479a950_bacalhau-a-bras.jpeg",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/b9522b24-931f-4886-97da-e3106479a950_bacalhau-a-bras.jpeg",
       "AssetKind": "All",
@@ -796,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\images\\b9522b24-931f-4886-97da-e3106479a950_bacalhau-a-bras.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\c20b73f4-3d6a-4c6c-adb2-abf90737f5f1_Capturar4.PNG",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\c20b73f4-3d6a-4c6c-adb2-abf90737f5f1_Capturar4.PNG",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/c20b73f4-3d6a-4c6c-adb2-abf90737f5f1_Capturar4.PNG",
       "AssetKind": "All",
@@ -815,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\images\\c20b73f4-3d6a-4c6c-adb2-abf90737f5f1_Capturar4.PNG"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\c287c234-fdda-4981-89eb-b5f1cc67d0bc_salmao-com-espargos-e-batata-doce.jpg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\c287c234-fdda-4981-89eb-b5f1cc67d0bc_salmao-com-espargos-e-batata-doce.jpg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/c287c234-fdda-4981-89eb-b5f1cc67d0bc_salmao-com-espargos-e-batata-doce.jpg",
       "AssetKind": "All",
@@ -834,48 +625,10 @@
       "OriginalItemSpec": "wwwroot\\images\\c287c234-fdda-4981-89eb-b5f1cc67d0bc_salmao-com-espargos-e-batata-doce.jpg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\c9376024-f276-464b-b682-34042a12bd39_1715268256 (3).jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\d05a9edd-80e1-4a1e-be00-5a2d426360a7_pastel-de-nata.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/c9376024-f276-464b-b682-34042a12bd39_1715268256 (3).jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\c9376024-f276-464b-b682-34042a12bd39_1715268256 (3).jpeg"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\d048c0b8-91a3-4088-884e-9a178b685a08_recipe-book_5228355.png",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/d048c0b8-91a3-4088-884e-9a178b685a08_recipe-book_5228355.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\d048c0b8-91a3-4088-884e-9a178b685a08_recipe-book_5228355.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\d05a9edd-80e1-4a1e-be00-5a2d426360a7_pastel-de-nata.jpeg",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/d05a9edd-80e1-4a1e-be00-5a2d426360a7_pastel-de-nata.jpeg",
       "AssetKind": "All",
@@ -891,29 +644,10 @@
       "OriginalItemSpec": "wwwroot\\images\\d05a9edd-80e1-4a1e-be00-5a2d426360a7_pastel-de-nata.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\db2587b9-07b1-441a-8c96-c5f47856e86b_esparguete-a-carbonara.jpg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\d2104ee3-a95e-4a0d-a582-b7a6952c7461_recipe-book_5228355.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\db2587b9-07b1-441a-8c96-c5f47856e86b_esparguete-a-carbonara.jpg",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/db2587b9-07b1-441a-8c96-c5f47856e86b_esparguete-a-carbonara.jpg",
       "AssetKind": "All",
@@ -929,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\images\\db2587b9-07b1-441a-8c96-c5f47856e86b_esparguete-a-carbonara.jpg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\default_recipe.png",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\default_recipe.png",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/default_recipe.png",
       "AssetKind": "All",
@@ -948,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\images\\default_recipe.png"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\df13a1a2-01e7-461e-b131-01c60c13f0be_lasanha.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\df13a1a2-01e7-461e-b131-01c60c13f0be_lasanha.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/df13a1a2-01e7-461e-b131-01c60c13f0be_lasanha.jpeg",
       "AssetKind": "All",
@@ -967,29 +701,10 @@
       "OriginalItemSpec": "wwwroot\\images\\df13a1a2-01e7-461e-b131-01c60c13f0be_lasanha.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\ef4e2045-cf75-4197-ba99-f8ba9a1cb3ae_bacalhau-a-bras.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\f0f5cb23-06a0-4bb7-98b0-d5b5d5b5519a_bacalhau-a-bras.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/ef4e2045-cf75-4197-ba99-f8ba9a1cb3ae_bacalhau-a-bras.jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\ef4e2045-cf75-4197-ba99-f8ba9a1cb3ae_bacalhau-a-bras.jpeg"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\f0f5cb23-06a0-4bb7-98b0-d5b5d5b5519a_bacalhau-a-bras.jpeg",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/f0f5cb23-06a0-4bb7-98b0-d5b5d5b5519a_bacalhau-a-bras.jpeg",
       "AssetKind": "All",
@@ -1005,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\images\\f0f5cb23-06a0-4bb7-98b0-d5b5d5b5519a_bacalhau-a-bras.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\f19adebb-7ed4-46a0-b8b6-04bde7421372_lasanha.jpeg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\f19adebb-7ed4-46a0-b8b6-04bde7421372_lasanha.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/f19adebb-7ed4-46a0-b8b6-04bde7421372_lasanha.jpeg",
       "AssetKind": "All",
@@ -1024,48 +739,10 @@
       "OriginalItemSpec": "wwwroot\\images\\f19adebb-7ed4-46a0-b8b6-04bde7421372_lasanha.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\f352eab6-714a-432b-b233-3bc1f50f0c66_profile_3135715.png",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\fc392d06-2388-45ea-88e4-e851f8c81819_arroz-de-pato.jpeg",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/f352eab6-714a-432b-b233-3bc1f50f0c66_profile_3135715.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\f352eab6-714a-432b-b233-3bc1f50f0c66_profile_3135715.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\fb116fea-c410-419b-b3f6-1efc1fc031a3_default_recipe.png",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/fb116fea-c410-419b-b3f6-1efc1fc031a3_default_recipe.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\fb116fea-c410-419b-b3f6-1efc1fc031a3_default_recipe.png"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\fc392d06-2388-45ea-88e4-e851f8c81819_arroz-de-pato.jpeg",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "images/fc392d06-2388-45ea-88e4-e851f8c81819_arroz-de-pato.jpeg",
       "AssetKind": "All",
@@ -1081,29 +758,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fc392d06-2388-45ea-88e4-e851f8c81819_arroz-de-pato.jpeg"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\images\\fdeb8b91-7b64-4c29-a2bb-5f6bdd906007_65ad79c80f0ba50013abedf0_688646114.jpg",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\js\\site.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
-      "BasePath": "_content/Assembly.RecipeApp.WebApp",
-      "RelativePath": "images/fdeb8b91-7b64-4c29-a2bb-5f6bdd906007_65ad79c80f0ba50013abedf0_688646114.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\fdeb8b91-7b64-4c29-a2bb-5f6bdd906007_65ad79c80f0ba50013abedf0_688646114.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\js\\site.js",
-      "SourceId": "Assembly.RecipeApp.WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -1119,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -1138,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -1157,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1176,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1195,10 +853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -1214,10 +872,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -1233,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -1252,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -1271,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -1290,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -1309,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -1328,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -1347,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -1366,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -1385,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -1404,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -1423,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -1442,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -1461,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1480,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1499,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -1518,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -1537,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -1556,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -1575,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -1594,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -1613,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -1632,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -1651,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -1670,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -1689,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1708,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1727,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1746,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1765,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1784,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1803,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1822,10 +1480,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1841,10 +1499,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1860,10 +1518,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1879,10 +1537,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1898,10 +1556,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1917,10 +1575,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1936,10 +1594,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1955,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1974,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1993,10 +1651,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -2012,10 +1670,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -2031,10 +1689,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -2050,10 +1708,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -2069,10 +1727,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -2088,10 +1746,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -2107,10 +1765,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -2126,10 +1784,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -2145,10 +1803,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -2164,10 +1822,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -2183,10 +1841,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Assembly.RecipeApp.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vasco\\Desktop\\Programação\\ProjetoFinal\\side_branch\\Assembly.RecipeApp.WebApp\\wwwroot\\",
+      "ContentRoot": "A:\\Work, Projects\\Programação\\ProjetoFinal\\side_branch\\RecipesProject\\RecipesProject\\Assembly.RecipeApp.WebApp\\wwwroot\\",
       "BasePath": "_content/Assembly.RecipeApp.WebApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
